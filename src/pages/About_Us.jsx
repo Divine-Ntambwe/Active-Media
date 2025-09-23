@@ -4,10 +4,10 @@ import styles from './About_Us.module.css'
 function About_Us() {
   return (
     <div>
-      {/* Ozias Framework (the start) */}
+      {/* Carmel Framework (the start) */}
       <div className={styles.conatiner}>
         <div className={styles.text}>
-        
+        <p><strong>Team</strong></p>
         </div>
           <div className={styles.lightimage}>
 
