@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 .pageWrapper {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #fff;
   background: radial-gradient(circle 500px at center, rgba(255, 92, 155, 0.6), #fff);
   text-align: center;
   padding: 20px;
   padding-bottom: 50px;
+
 }
 
 /* Page Title */
@@ -12,9 +15,8 @@
   margin-top: 40px;
   font-size: 45px;
   letter-spacing: 8px;
-  font-weight: 400;
+  font-weight: 330;
   word-wrap: break-word;
-  font-weight: 100;
   padding-left: 5px;
 }
 
@@ -45,8 +47,8 @@
 
 .subHeadingContact {
   font-size: 18px;
-  padding-top: 15px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 28px;
   color: #333;
   text-align: left;
   padding-left: 32px;
@@ -115,7 +117,7 @@
 /* Footer Text */
 .footerText {
   margin: 30px auto 0 auto;
-  max-width: 90%;
+  max-width: 100%;
   font-size: 18px;
   line-height: 1.6;
   font-weight: 300;
