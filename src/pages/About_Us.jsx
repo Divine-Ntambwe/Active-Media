@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './About_Us.module.css'
+import lightImg from '../assets/Frame 206.png'; 
+
 
 function About_Us() {
   return (
@@ -8,18 +10,19 @@ function About_Us() {
       <div className={styles.conatiner}>
         <div className={styles.text}>
         <h5>Team</h5>
-        <p className='team-text'>Active Media consists of a team of<br>
-        </br> people that are passionate about what <br>
-        </br>they do and strive to ensure that only only the <br>
-        </br>very best service is offered to our <br>
-        </br>clients. We stand by our company ethics <br>
-        </br>-ensuring honesty, authenticity and <br>
-        </br>excellence. You have ideas. We have <br>
-        </br>software solutions</p>
-          <p className='passionate'>Passionate</p>
+        <p className={styles.teamText}>
+        Active Media consists of a team of<br></br>
+        people that are passionate about what<br></br>   
+        they do and strive to ensure that only only the<br></br>
+        very best service is offered to our <br></br>
+        clients. We stand by our company ethics<br></br>
+        -ensuring honesty, authenticity and <br></br>
+        excellence. You have ideas. We have <br></br>
+        software solutions</p>
+          <p className={styles.passionate}>Passionate</p>
         </div>
           <div className={styles.lightimage}>
-            <img src="Frame 206.png" alt="bulb" />
+            <img src={lightImg} alt="LightBulb" />
 
         </div>
 
