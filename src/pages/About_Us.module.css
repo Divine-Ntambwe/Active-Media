@@ -3,7 +3,7 @@
 .conatiner{
     display: flex;
     width: 100%;
-    height: 58vh;
+    height: 53vh;
 }
 
 .text{
@@ -27,16 +27,57 @@
 }
 
 .text2{
-    border: 1px solid black;
+ 
     height: 43vh;
-    width: 35%;
-    margin: 3% 0 0 10%;
+    width: 30%;
+    margin: 1% 0 0 15%;
 }
 
 .phoneimage{
-    border: 1px solid rgb(255, 0, 0);
+   
     height: 43vh;
-    width: 35%;
-    margin: 3% 0 0 8%;
+    width: 25%;
+    margin: 0 0 0 8%;
+}
+
+.paragraph{
+    font-size: 19px;
+    font-weight: 500;
+    font-family: "Inter", sans-serifl;
+}
+
+.paragraph2{
+    margin: -5% 0 0 0;
+    font-weight: 500;
+    font-size: 19px;
+    font-family: "Inter", sans-serifl;
+}
+
+.paragraph3{
+    margin: 0.5% 0 0 0;
+    font-weight: 310;
+    font-size: 19px;
+    font-family: "Inter", sans-serifl;
+}
+
+.title{
+    font-family: "Inter", sans-serifl;
+    font-size: 13px;
+    font-weight: 50000000;
+}
+
+.image1{
+    width: 100%;
+}
+
+.experties{
+    border-radius: 5px;
+    width: 25%;
+    border: none;
+    font-family: "Inter", sans-serifl;
+    font-weight: 300;
+    font-size: 10px;
+    height: 18px;
+    margin: 2% 0 0 0;
 }
 /* Ozias Styling(The End) */
