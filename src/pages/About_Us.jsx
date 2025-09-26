@@ -9,7 +9,7 @@ const positions = [
   { x: "-40%", y: "40%" }, // bottom left
   { x: "-40%", y: "-40%" } // top left
 ];
-import styles from './About_Us.module.css'
+// import styles from './About_Us.module.css'
 import lightImg from '../assets/Frame 206.png'; 
 import "@fontsource/inter/300.css"
 
