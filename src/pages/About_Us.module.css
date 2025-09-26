@@ -1,3 +1,59 @@
+.aboutSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}
+
+.lines {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  width: 25%;              
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.laptopWrapper {
+  position: absolute;
+  top: 11%;               
+  left: 40%;
+  transform: translateX(-50%); 
+  z-index: 2;
+}
+
+.laptopWrapper img {
+  width: 60%;           
+  max-width: 100%;
+  height: auto;
+}
+
+.textContent {
+  position: relative;
+  z-index: 3;
+  max-width: 700px;
+  padding: 10% 15%;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* .paragraph1 {
+  margin-left: 5%;
+  padding-right: 30%;
+}
+
+.paragraph2 {
+  margin-left: 25%;
+  margin-top: 15%;
+}
+
+.paragraph3 {
+  position: absolute;
+  top: 20%;
+  right: 0%;
+} */
 
 /* Ozias Styling (The Start) */
 .conatiner{
