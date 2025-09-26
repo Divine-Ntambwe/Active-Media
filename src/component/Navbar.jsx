@@ -1,6 +1,5 @@
-import React from 'react'
-import styles from './Navbar.module.css'
-import logo from '../assets/ActivemediaLogo.png'
+import styles from './Navbar.module.css';
+import logo from "../assets/ActiveMediaLogo.png";
 
 function Navbar() {
   return (
