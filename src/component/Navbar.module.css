@@ -1,0 +1,90 @@
+.navBar {
+  display: flex;
+  justify-content: space-between; /* logo left, menu right */
+  align-items: center;
+  width: 80%; /* fill screen width */
+  max-width: 100vw; /* prevent overflow */
+  padding: 0px 5vw;
+  /* background-color: #f8f8f8; */
+  /* border: 2px solid black; */
+  box-sizing: border-box; /* include padding in width */
+}
+
+.logo {
+  height: 100px; 
+  width: auto;
+  cursor: pointer;
+}
+
+
+.navList {
+  display: flex;
+  gap: 3vw; /* spacing between items */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  font-size: 15px;
+  font-weight: 50px;
+  font-family: 'MyFont', sans-serif;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navItem:hover {
+  color: #007acc;
+}
+
+
+/* Responsiveness */
+
+/* Responsiveness */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .navBar {
+    width: 90%; /* allow more room */
+    padding: 0 4vw;
+  }
+
+  .logo {
+    height: 80px; /* shrink logo */
+  }
+
+  .navList {
+    gap: 2vw; /* reduce spacing */
+  }
+
+  .navItem {
+    font-size: 1.5vw; /* scale with viewport */
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .navBar {
+    flex-direction: column; /* stack logo and menu */
+    align-items: flex-start;
+    width: 95%; /* use more width */
+    padding: 2% 5%;
+  }
+
+  .logo {
+    height: 60px; /* smaller logo for mobile */
+  }
+
+  .navList {
+    flex-direction: column; /* stack items vertically */
+    width: 100%;
+    gap: 4%; /* vertical spacing */
+    margin-top: 3%;
+  }
+
+  .navItem {
+    font-size: 3vw; /* scale text with viewport */
+    padding: 2% 0;
+  }
+}
+
