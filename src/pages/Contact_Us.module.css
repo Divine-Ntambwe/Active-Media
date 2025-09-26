@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.pageWrapper {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  background: radial-gradient(circle 500px at center, rgba(255, 92, 155, 0.6), #fff);
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 50px;
+
+}
+
+/* Page Title */
+.heading {
+  margin-top: 40px;
+  font-size: 45px;
+  letter-spacing: 8px;
+  font-weight: 330;
+  word-wrap: break-word;
+  padding-left: 5px;
+}
+
+/* Contact Card */
+.contactCard {
+  margin: 40px auto;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 455px;
+  background: radial-gradient(circle, rgba(255, 103, 161, 0.6), #fff);
+  border-radius: 15px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contactCard h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.subHeadingAbout {
+  font-size: 14px;
+  padding-top: 15px;
+  padding-bottom: 50px;
+  color: #333;
+  text-align: left;
+  padding-left: 33px  ;
+}
+
+.subHeadingContact {
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 28px;
+  color: #333;
+  text-align: left;
+  padding-left: 32px;
+}
+
+.subHeadingContact2 {
+  font-size: 25px;
+  font-weight: 300;
+  padding-left: 32px;
+  text-align: left;
+}
+
+.contactCard hr {
+  border: none;
+  border-top: 1px solid #999;
+  
+}
+
+.divider{
+  border-top: 1px solid #000000;
+  width: 85%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.form label {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  width: 88%;
+  background: #fff;
+  font-size: 14px;
+}
+
+.form button {
+  margin-top: 15px;
+  padding: 8px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 93%;
+  font-weight: 400;
+  font-size: 20px;
+  box-shadow: 0 0 10px 5px rgba(255, 92, 155, 0.6);
+}
+
+.form button:hover {
+  background: #444;
+}
+
+/* Footer Text */
+.footerText {
+  margin: 30px auto 0 auto;
+  max-width: 100%;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* -------------------
+   MEDIA QUERIES
+------------------- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 22px;
+    letter-spacing: 5px;
+  }
+
+  .contactCard {
+    padding: 25px 20px;
+    max-width: 90%;
+  }
+
+  .footerText {
+    font-size: 16px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .heading {
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
+
+  .contactCard {
+    padding: 20px 15px;
+  }
+
+  .form input {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .footerText {
+    font-size: 15px;
+  }
+}
