@@ -21,13 +21,13 @@
   /*justify-content:space-between;*/
   
   padding:48px 24px;
-   border: solid;
+   /*border: solid;*/
 }
 
 .left{
   flex:0 0 46%;
   padding-left:8px;
-  border: solid;
+ /*border: solid;*/
 }
 
 .title{
@@ -65,7 +65,7 @@
   width:56%;
   opacity:0.95;
   z-index:1;
-  border: solid;
+  /*border: solid;*/
 }
 
 .orb1{
@@ -74,7 +74,7 @@
   top:0%;
   width:100%;
   transform:translateY(-10%);
-  border: solid;
+ /*border: solid;*/
 }
 
 .orb2{
