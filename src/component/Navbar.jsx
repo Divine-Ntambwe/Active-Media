@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-import React from 'react'
-import styles from './Navbar.module.css'
-import logo from '../assets/ActiveMediaLogo.png'
-=======
 import styles from './Navbar.module.css';
 import logo from "../assets/ActiveMediaLogo.png";
->>>>>>> e46a55fb261df264cd32d067d797e46702b6c106
 
 function Navbar() {
   return (
