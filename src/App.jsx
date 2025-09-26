@@ -4,10 +4,12 @@ import "./App.css";
 import Home from "./pages/Home";
 import About_Us from "./pages/About_Us";
 import Contact_Us from "./pages/Contact_Us";
+import Navbar from "./component/Navbar";
 
 function App() {
   return (
     <>
+    <Navbar/>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
