@@ -23,7 +23,7 @@ h5{
 }
 
 .teamText{
-    font-size: 18px;
+    font-size: 20px;
     text-align: justify;
     text-align-last: right;
     font-family: "Inter"; 
@@ -37,11 +37,11 @@ h5{
     font-family: "Inter", sans-serif; 
     height: 20px;
     width: 100px;
-    margin-left: 350px;
+    margin-left: 365px;
     margin-top: 20px;
     text-align: center;
     padding-top: 7px;
-    background-color: rgba(211, 211, 211, 0.5);
+    background-color: rgba(200, 200, 200, 0.5);
     border: none;
     border-radius: 3px;
 }
@@ -54,7 +54,7 @@ h5{
 
 img{
   width: 100%;       
-  max-width: 390px;
+  max-width: 400px;
 }
 
 .conatiner2{
@@ -87,18 +87,18 @@ img{
     margin: -5% 0 0 0;
     font-weight: 500;
     font-size: 19px;
-    font-family: "Inter", sans-serifl;
+    font-family: "Inter", sans-serif;
 }
 
 .paragraph3{
     margin: 0.5% 0 0 0;
     font-weight: 310;
     font-size: 19px;
-    font-family: "Inter", sans-serifl;
+    font-family: "Inter", sans-serif;
 }
 
 .title{
-    font-family: "Inter", sans-serifl;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 50000000;
 }
