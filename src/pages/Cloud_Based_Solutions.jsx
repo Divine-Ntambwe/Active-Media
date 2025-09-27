@@ -1,18 +1,14 @@
 import React from 'react'
 import styles from './Cloud_Based_Solutions.module.css'
-import Navbar from '../component/Navbar'
 
-// Import assets that best match the design
 import serverStack from '../assets/Untitled/https_/lottiefiles.com/animations/computerztech-lhmk6qciBg.png'
 import swirl from '../assets/blending 1755804129410.png'
 import backgroundElement from '../assets/Frame 77.png'
 
 function Cloud_Based_Solutions() {
   return (
-    <>
-      <Navbar />
-      <section className={styles.container}>
-        <div className={styles.content}>
+    <section className={styles.container}>
+      <div className={styles.content}>
           <div className={styles.left}>
             <div className={styles.serverImageContainer}>
               <img src={serverStack} alt="Server stack" className={styles.serverImage} />
@@ -48,7 +44,6 @@ function Cloud_Based_Solutions() {
           </div>
         </div>
       </section>
-    </>
   )
 }
 
