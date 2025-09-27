@@ -8,13 +8,11 @@ import Contact_Us from "./pages/Contact_Us";
 function App() {
   return (
     <>
-      <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/aboutUs" element={<About_Us />} />
           <Route path="/contactUs" element={<Contact_Us />} />
         </Routes>
-      </Router>
     </>
   );
 }
