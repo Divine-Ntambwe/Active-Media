@@ -4,9 +4,12 @@ import  './About_Us.module.css'
 function About_Us() {
   return (
     <>
+    <>
     <div>
       <h1>Something</h1>
+      <h1>Something</h1>
     </div>
+    </>
     </>
   )
 }
