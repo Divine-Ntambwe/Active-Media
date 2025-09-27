@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from "./Our_Services.module.css"
-import Navbar from "../component/Navbar"
 
 import blending from "../assets/blending 1755804129410.png"
 import clouds from "../assets/Clouds 2.png"
@@ -8,7 +7,6 @@ import clouds from "../assets/Clouds 2.png"
 function Our_Services() {
   return (
     <section className={styles.hero}>
-      <Navbar />
       <div className={styles.container}>
         <div className={styles.left}>
           <h1 className={styles.title}>
