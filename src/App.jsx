@@ -12,15 +12,17 @@ import Digital_Marketing from "./pages/Digital_Marketing";
 function App() {
   return (
     <>
-    <Navbar/>
+      <Navbar />
       <Router>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/aboutUs" element={<About_Us />} />
-          <Route exact path="/contactUs" element={<Contact_Us />} />
-          <Route exact path="/DigitalMarketing" element={<Digital_Marketing />} />
-        </Routes>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/aboutUs" element={<About_Us />} />
+        <Route path="/contactUs" element={<Contact_Us />} />
+        <Route path="/digitalMarketing" element={<Digital_Marketing />} />
+      </Routes>
       </Router>
+
     </>
   );
 }

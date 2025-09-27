@@ -19,3 +19,40 @@ left: 0px;
     0%{top:-200px;border:1px solid red}
     100%{top:200px;border:1px solid red}
 }
+
+/* Main container */
+.container {
+  max-width: 64rem; 
+  margin-left: auto; 
+  margin-right: auto;
+  padding-left: 1.5rem; 
+  padding-right: 1.5rem; 
+  padding-top: 4rem; 
+  padding-bottom: 4rem; 
+  text-align: center; 
+}
+
+/* Heading (h1) */
+.container h1 {
+  font-size: 2.25rem; 
+  font-weight: bold; 
+  color: #111827; 
+  margin-bottom: 2rem;
+  line-height: 1.25; 
+  font-family: inter;
+}
+
+
+/* Paragraph container */
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; 
+  color: #374151; 
+  font-size: 1.125rem; 
+  line-height: 1.625;
+  max-width: 48rem; 
+  margin-left: 140px; 
+  margin-right: auto;
+  font-family: inter;
+}
