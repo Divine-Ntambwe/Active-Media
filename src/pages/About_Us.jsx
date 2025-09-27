@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import "./About_Us.module.css";
+import styles from "./About_Us.module.css";
 
 const positions = [
   { x: "0%", y: "0%" }, // center

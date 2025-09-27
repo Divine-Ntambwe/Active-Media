@@ -1,3 +1,4 @@
+
 /* Main container */
 .container {
   max-width: 64rem; 
@@ -17,6 +18,7 @@
   color: #111827; 
   margin-bottom: 2rem;
   line-height: 1.25; 
+  font-family: inter;
 }
 
 
@@ -31,4 +33,5 @@
   max-width: 48rem; 
   margin-left: 140px; 
   margin-right: auto;
+  font-family: inter;
 }
