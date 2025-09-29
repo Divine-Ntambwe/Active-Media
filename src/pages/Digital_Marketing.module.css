@@ -1,7 +1,18 @@
 *{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.digitalBackground{
+transition: 1s;  
+/* border: 1px solid red; */
+transform: scale(0.9) rotate(-90deg);
+/* object-fit:contain; */
+position: absolute;
+top: -200px;
+left: 0px;
+/* animation: moveDown 3s; */
 }
 
 
@@ -15,8 +26,20 @@
   padding-top: 4rem; 
   padding-bottom: 4rem; 
   text-align: center; 
+  
 }
 
+@keyframes moveUp {
+    0%{top:0px}
+    100%{top:-500px}
+}
+.container h1 {
+  animation: moveUp 2s;
+  transition: 2s;
+  animation-fill-mode:forwards;  
+  animation-play-state: paused;
+
+}
 /* Heading (h1) */
 .container h1 {
   font-size: 2.29em; 
@@ -24,9 +47,19 @@
   color: #111827; 
   margin-bottom: 2rem;
   line-height: 1.28; 
-  font-family: inter;
+  font-family: "Inter";
+  position: relative;
 }
-
+@keyframes moveDown {
+    0%{opacity:100%}
+    100%{opacity:0%}
+}
+.paragraphs{
+  animation: moveDown 1s;
+  transition: 2s;
+  animation-fill-mode:forwards;  
+  animation-play-state: paused;
+}
 
 /* Paragraph container */
 .paragraphs {
@@ -171,4 +204,5 @@
   height: 6px;
   background: #fff;
   border-radius: 50%;
+   position: relative;
 }
