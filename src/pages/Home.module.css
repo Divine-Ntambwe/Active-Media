@@ -31,7 +31,7 @@
 }
 
 .title{
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-weight:300;
   font-size:48px;
   line-height:1.05;
@@ -60,19 +60,17 @@
 
 .swirl{
   position:absolute;
-  left:-20%;
-  top:-10%;
-  width:56%;
-  opacity:0.95;
-  z-index:1;
+  left:-30%;
+  top:10%;
+  min-width:100%;
   /*border: solid;*/
 }
 
 .orb1{
   position:absolute;
-  left:30%;
-  top:0%;
-  width:100%;
+  left:50%;
+  top:-9%;
+ min-width: 100%;
   transform:translateY(-10%);
  /*border: solid;*/
 }

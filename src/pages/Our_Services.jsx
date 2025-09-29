@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from "./Our_Services.module.css"
-import Navbar from "../component/Navbar"
 
 import blending from "../assets/blending 1755804129410.png"
 import clouds from "../assets/Clouds 2.png"
