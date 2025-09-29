@@ -27,7 +27,8 @@ left: 0px;
     padding-top: 4rem; 
     padding-bottom: 4rem; 
     text-align: center; 
-    height: 100vh;
+    height: 200vh;
+    border: 1px solid red;
 }
 
 @keyframes moveUp {

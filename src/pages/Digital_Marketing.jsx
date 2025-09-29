@@ -7,31 +7,36 @@ const Digital_Marketing = () => {
     const BGImg = useRef();
     const heading = useRef();
     const par = useRef();
-  useEffect(() => {
-    const onScroll = () => {
-      const y = window.scrollY;
-      if (y > lastY) {
+    const container = useRef();
+    let num = 0
+    function onScroll(){
+      console.log(document.documentElement.scrollTop)
+
+    const y = window.scrollY;
+      if (document.documentElement.scrollTop > 50 && document.documentElement.scrollTop < 190) {
         BGImg.current.style.top = "200px"
         heading.current.style.animationPlayState = "running"
         heading.current.style.animationFillMode = "forwards"
 
         par.current.style.animationPlayState = "running"
         par.current.style.animationFillMode = "forwards"
-        
+      }
+      if (document.documentElement.scrollTop > 190){
       }
       else {
       heading.current.style.animationFillMode = "backwards"
       par.current.style.animationFillMode = "backwards"
       BGImg.current.style.top = "-200px"
-      setLastY(y);
-     
     }
-    };
+  }
+    
+    useEffect(() => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, [lastY]);
+  }, []);
+  
     return (
-    <div className={styles.container}>
+    <div ref={container} className={styles.container}>
         <img ref={BGImg} className={styles.digitalBackground} src="./backgroundLines.png"/>
       <h1 ref={heading} className={styles.heading}>
         GRAPHIC DESIGN &<br />
