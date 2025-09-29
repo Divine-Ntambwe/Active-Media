@@ -6,13 +6,15 @@ import RhLogo from "../assets/Frame 203.png";
 import Group72 from "../assets/Group 72.png";
 import Blending from "../assets/blending 1755804129410.png";
 
-const Rhaddock = () => {
+const Recent_Work = () => {
   return (
     <>
       <div className={styles.supreme}></div>
+
       <div className={styles.rapidtrade}></div>
 
-      <div className={styles.wrapper}>
+      <div className={styles.rhaddock}>
+        <div className={styles.wrapper}>
         {/* Left Column */}
         <div className={styles.left}>
           {/* Heading */}
@@ -59,8 +61,9 @@ const Rhaddock = () => {
           </div>
         </div>
       </div>
+      </div>
     </>
   );
 };
 
-export default Rhaddock;
+export default Recent_Work;
