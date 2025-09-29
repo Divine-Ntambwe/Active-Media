@@ -76,7 +76,7 @@ left: 0px;
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   display: flex;
   gap: 40px;
@@ -88,10 +88,14 @@ left: 0px;
 
 /* Shared Card Styles */
 .cardOne,
-.cardTwo {
+.cardTwo,
+.cardThree,
+.cardFour,
+.cardFive,
+.cardSix{
   border-radius: 30px;
-  padding: 50px 40px;
-  width: 380px;
+  padding: 60px 50px;
+  width: 340px;
   box-shadow: 0 20px 60px rgba(255, 182, 193, 0.3);
   transition: transform 0.3s ease;
   position: relative;
@@ -100,15 +104,41 @@ left: 0px;
 /* Individual Card Styles */
 .cardOne {
   background: linear-gradient(135deg, #ffd6e8 0%, #ffe5f0 100%);
-  transform: rotate(-8deg);
+  transform: rotate(-12deg);
   margin-right: 600px;
+  margin-top: 50px;
 }
 
 .cardTwo {
   background: linear-gradient(135deg, #ffd6e8 0%, #ffe5f0 100%);
-  transform: rotate(6deg);
+  transform: rotate(20deg);
   margin-top: -440px;
-  margin-left: 300px;
+  margin-left: 350px;
+}
+
+.cardThree {
+ background: linear-gradient(135deg, #ffd6e8 0%, #ffe5f0 100%);
+ margin-top: 110px;
+
+}
+
+.cardFour{
+  background: linear-gradient(135deg, #ffd6e8 0%, #ffe5f0 100%);
+  transform: rotate(-12deg);
+   margin-left: 510px;
+   margin-top: -470px;
+}
+
+.cardFive{
+   background: linear-gradient(135deg, #fce3ed 0%, #ffe5f0 100%);
+  transform: rotate(20deg);
+  margin-top: -70px;
+}
+
+.cardSix{
+  background: linear-gradient(135deg, #ffe3ef 0%, #ffe5f0 100%);
+   margin-top: -480px;
+   margin-left: 800px;
 }
 
 
