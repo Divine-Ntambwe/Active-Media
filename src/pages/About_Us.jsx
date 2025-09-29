@@ -112,7 +112,7 @@ function About_Us() {
         -ensuring honesty, authenticity and <br></br>
         excellence. You have ideas. We have <br></br>
         software solutions</p>
-          <p className={styles.passionate}>Passionate</p>
+          <button className={styles.passionate}>Passionate</button>
         </div>
           <div className={styles.lightimage}>
             <img src={lightImg} alt="LightBulb" />

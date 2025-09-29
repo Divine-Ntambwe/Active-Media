@@ -63,7 +63,7 @@
 }
 
 .text{
-    /* border: 1px solid black; */
+    border: 1px solid black;
     height: 43vh;
     width: 35%;
     margin: 3% 0 0 10%;
@@ -74,15 +74,15 @@ h5{
     text-align: justify;
     text-align-last: right;
     font-family: "Lato", sans-serif;
-
+    margin-top: -2px;
 
 }
 
 .teamText{
-    font-size: 16px;
+    font-size: 19px;
     text-align: justify;
     text-align-last: right;
-    font-family: "Lato", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 300;
     font-style: normal;
 
@@ -90,19 +90,18 @@ h5{
 
 .passionate{
     font-size: 10px;
-    font-family: sans-serif;
+    font-family: "Inter", sans-serif;
     height: 20px;
     width: 100px;
-    margin-left: 350px;
-    margin-top: 20px;
+    margin-left: 366px;
+    margin-top: -25px;
     text-align: center;
     padding-top: 7px;
-    background-color: rgba(211, 211, 211, 0.5);
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 .lightimage{
-    /* border: 1px solid rgb(29, 4, 255); */
+    border: 1px solid rgb(29, 4, 255);
     height: 43vh;
     width: 35%;
     margin: 3% 0 0 8%;
