@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import About_Us from "./pages/About_Us";
 import Contact_Us from "./pages/Contact_Us";
+import Rhaddock from "./pages/Rhaddock";
 import Our_Services from "./pages/Our_Services";
 import Navbar from "./component/Navbar";
 
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/aboutUs" element={<About_Us />} />
           <Route exact path="/contactUs" element={<Contact_Us />} />
+          <Route exact path="/rhaddock" element={<Rhaddock />} />
         </Routes>
       </Router>
     </>
