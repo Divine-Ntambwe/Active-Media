@@ -4,7 +4,6 @@ import "./App.css";
 import Home from "./pages/Home";
 import About_Us from "./pages/About_Us";
 import Contact_Us from "./pages/Contact_Us";
-import Our_Services from "./pages/Our_Services";
 import Cloud_Based_Solutions from "./pages/Cloud_Based_Solutions";
 import Navbar from "./component/Navbar";
 
