@@ -3,16 +3,24 @@ import styles from './Digital_Marketing.module.css'
 const Digital_Marketing = () => {
     const [lastY, setLastY] = useState(0);
     const [index,setIndex] = useState(0)
-    const BGImg = useRef()
+    const BGImg = useRef();
+    const heading = useRef();
+    const par = useRef();
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
       if (y > lastY) {
         BGImg.current.style.top = "200px"
-      
+        heading.current.style.animationPlayState = "running"
+        heading.current.style.animationFillMode = "forwards"
+
+        par.current.style.animationPlayState = "running"
+        par.current.style.animationFillMode = "forwards"
+        
       }
       else {
-      console.log("up");
+      heading.current.style.animationFillMode = "backwards"
+      par.current.style.animationFillMode = "backwards"
       BGImg.current.style.top = "-200px"
       setLastY(y);
      
@@ -23,13 +31,13 @@ const Digital_Marketing = () => {
   }, [lastY]);
     return (
     <div className={styles.container}>
-                <img ref={BGImg} className={styles.digitalBackground} src="./backgroundLines.png"/>
-      <h1 className={styles.heading}>
+        <img ref={BGImg} className={styles.digitalBackground} src="./backgroundLines.png"/>
+      <h1 ref={heading} className={styles.heading}>
         GRAPHIC DESIGN &<br />
         DIGITAL MARKETING
       </h1>
       
-      <div className={styles.paragraphs}>
+      <div ref={par} className={styles.paragraphs}>
         <p>
           We help businesses express the benefits of their products and services in an attractive, compact and 
           concise way through colorful brochures, descriptive flyers, eye-catching advertisements etc.
