@@ -1,177 +1,296 @@
+/* Top-level */
 .aboutSection {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-y: hidden;
   background: #fff;
+  font-family: "Inter", sans-serif;
 }
 
+/* purple moving background */
 .lines {
   position: absolute;
   top: 25%;
-  left: 15%;
-  width: 25%;              
+  left: 50%;
+  width: 45%;
   transform: translate(-50%, -50%);
   opacity: 0.9;
-  z-index: 1;
+  z-index: 0;
+  
 }
 
+/* laptop */
 .laptopWrapper {
   position: absolute;
-  top: 11%;               
-  left: 40%;
-  transform: translateX(-50%); 
-  z-index: 2;
+  top: 12%;
+  left: 52%;
+  transform: translateX(-90%);
+  z-index: 4;
+  cursor: pointer;       
 }
-
 .laptopWrapper img {
-  width: 60%;           
-  max-width: 100%;
+  width: 60%;
+  max-width: 40vw;
   height: auto;
+  display: block;
 }
 
-.textContent {
-  position: relative;
+/* PANELS CONTAINER: set to full-viewport scroll area to enable single-swipe scroll-snap */
+.panelsWrapper {
+  /* position: relative; */
   z-index: 3;
-  max-width: 700px;
-  padding: 10% 15%;
-  font-size: 18px;
-  line-height: 1.6;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  /* -webkit-overflow-scrolling: touch; */
+  scroll-behavior: smooth;
 }
 
-/* .paragraph1 {
-  margin-left: 5%;
-  padding-right: 30%;
+/* each panel is one viewport high and will snap into view */
+.panel {
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* inner sliding wrappers (we animate their X) */
+.textPanelInner,
+.mediaPanelInner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Text panel layout: three blocks positioned precisely */
+.blockTopLeft {
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  width: 40%;
+  z-index: 5;
+  text-align: left;
+}
+
+.blockBottomLeft {
+  position: absolute;
+  bottom: 9%;
+  left: 32%;
+  width: 15%;
+  z-index: 5;
+  text-align: left;
+}
+
+.blockMiddleRight {
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  transform: translateY(-50%);
+  width: 40%;
+  z-index: 5;
+  text-align: right;
+}
+
+.heading {
+  font-size: 2.1rem;
+  margin: 0 0 0.5rem 0;
+  color: #111;
+  font-weight: 700;
+}
+
+.blockText {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #222;
+  margin: 0;
+}
+
+/* Media panel (Team & Solutions) preserved from your original styles but cleaned */
+.mediaPanelInner {
+  position: absolute;
+  inset: 0;
+  padding-top: 6vh;
+  box-sizing: border-box;
+}
+
+/* Carmel/Ozias styling (kept and cleaned) */
+.conatiner {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: 53vh;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+.text {
+  height: 43vh;
+  width: 45%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h5 {
+  font-size: 14px;
+  text-align: right;
+  font-family: "Lato", sans-serif;
+  margin: 0 0 1rem 0;
+}
+
+.teamText {
+  font-size: 16px;
+  text-align: right;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+.passionate {
+  font-size: 10px;
+  font-family: sans-serif;
+  padding: 6px 10px;
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: rgba(211, 211, 211, 0.5);
+  border-radius: 3px;
+}
+
+.lightimage {
+  height: 43vh;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightimage img {
+  width: 85%;
+  max-width: 300px;
+  display: block;
+}
+
+/* second container (solutions) */
+.conatiner2 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: 50vh;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+.text2 {
+  height: 43vh;
+  width: 40%;
+  margin: 0;
+}
+
+.image1 {
+  width: 100%;
+  max-width: 320px;
+  display: block;
+}
+
+.phoneimage {
+  height: 43vh;
+  width: 45%;
+  box-sizing: border-box;
+}
+
+.paragraph {
+  font-size: 19px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  margin: 0 0 0.6rem 0;
 }
 
 .paragraph2 {
-  margin-left: 25%;
-  margin-top: 15%;
+  margin: 0 0 0.6rem 0;
+  font-weight: 500;
+  font-size: 19px;
 }
 
 .paragraph3 {
-  position: absolute;
-  top: 20%;
-  right: 0%;
-} */
+  margin: 0;
+  font-weight: 300;
+  font-size: 19px;
+}
 
-/* Ozias Styling (The Start) */
-.conatiner{
-    display: flex;
+.title {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.experties {
+  border-radius: 5px;
+  width: 30%;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  height: 36px;
+  margin-top: 1rem;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* responsiveness */
+@media (max-width: 900px) {
+  .lines {
+    width: 80%;
+    top: 12%;
+    opacity: 0.06;
+  }
+
+  .laptopWrapper {
+    left: 50%;
+    top: 6%;
+    transform: translateX(-50%);
+  }
+
+  .blockTopLeft,
+  .blockBottomLeft,
+  .blockMiddleRight {
+    position: relative;
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    transform: none;
+    text-align: left;
+  }
+
+  .conatiner,
+  .conatiner2 {
+    flex-direction: column;
+    padding: 2rem 4%;
+    height: auto;
+  }
+
+  .text,
+  .lightimage,
+  .text2,
+  .phoneimage {
     width: 100%;
-    height: 53vh;
+  }
+
+  .lightimage img,
+  .image1 {
+    max-width: 60%;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
-.text{
-    /* border: 1px solid black; */
-    height: 43vh;
-    width: 35%;
-    margin: 3% 0 0 10%;
+.circle1{
+  width: 100%;
+  height: 100%;
+  border: 3px solid red;
 }
-
-h5{
-    font-size: 14px;
-    text-align: justify;
-    text-align-last: right;
-    font-family: "Lato", sans-serif;
-
-
-}
-
-.teamText{
-    font-size: 16px;
-    text-align: justify;
-    text-align-last: right;
-    font-family: "Lato", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-
-}
-
-.passionate{
-    font-size: 10px;
-    font-family: sans-serif;
-    height: 20px;
-    width: 100px;
-    margin-left: 350px;
-    margin-top: 20px;
-    text-align: center;
-    padding-top: 7px;
-    background-color: rgba(211, 211, 211, 0.5);
-    border: none;
-    border-radius: 3px;
-}
-.lightimage{
-    /* border: 1px solid rgb(29, 4, 255); */
-    height: 43vh;
-    width: 35%;
-    margin: 3% 0 0 8%;
-}
-
-img{
-  width: 100%;       
-  max-width: 390px;
-}
-
-.conatiner2{
-    display: flex;
-    width: 100%;
-    height: 50vh;
-}
-
-.text2{
- 
-    height: 43vh;
-    width: 30%;
-    margin: 1% 0 0 15%;
-}
-
-.phoneimage{
-   
-    height: 43vh;
-    width: 25%;
-    margin: 0 0 0 8%;
-}
-
-.paragraph{
-    font-size: 19px;
-    font-weight: 500;
-    font-family: "Inter", sans-serifl;
-}
-
-.paragraph2{
-    margin: -5% 0 0 0;
-    font-weight: 500;
-    font-size: 19px;
-    font-family: "Inter", sans-serifl;
-}
-
-.paragraph3{
-    margin: 0.5% 0 0 0;
-    font-weight: 310;
-    font-size: 19px;
-    font-family: "Inter", sans-serifl;
-}
-
-.title{
-    font-family: "Inter", sans-serifl;
-    font-size: 13px;
-    font-weight: 50000000;
-}
-
-.image1{
-    width: 100%;
-}
-
-.experties{
-    border-radius: 5px;
-    width: 25%;
-    border: none;
-    font-family: "Inter", sans-serifl;
-    font-weight: 300;
-    font-size: 10px;
-    height: 18px;
-    margin: 2% 0 0 0;
-}
-/* Ozias Styling(The End) */
-

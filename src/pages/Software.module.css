@@ -1,0 +1,96 @@
+.softwareSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+/* Background lines animation */
+.lines {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 45%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  z-index: 0;
+  animation: moveLines 20s infinite ease-in-out;
+}
+
+@keyframes moveLines {
+  0%   { transform: translate(-50%, -50%); }
+  20%  { transform: translate(-10%, -40%); }
+  40%  { transform: translate(-10%, 10%); }
+  60%  { transform: translate(-90%, 10%); }
+  80%  { transform: translate(-90%, -40%); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+/* Text block on left */
+.textBlock {
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  z-index: 2;
+  color: #000;
+}
+
+.title {
+  font-size: 3.9rem;
+  font-weight: 700; /* bold */
+  line-height: 1.2;
+  margin-bottom: 5rem;
+}
+
+.services {
+  font-size: 2.5rem;
+  font-weight: 400; /* lighter */
+  line-height: 0.6;
+}
+
+/* Laptop */
+.laptopWrapper {
+  position: absolute;
+  top: 12%;
+  left: 60%;
+  transform: translateX(-50%);
+  z-index: 3;
+  cursor: pointer;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
+.laptopImage {
+  width: 320px;
+  height: auto;
+  display: block;
+}
+
+/* Laptop click animation */
+.laptopClicked {
+  transform: translate(-50%, 120px) scale(0.7) rotate(-15deg);
+  opacity: 0.5;
+}
+
+/* Paragraph box */
+.paragraphBox {
+  position: absolute;
+  top: 50%;
+  left: 68%;
+  transform: translateX(-50%);
+  background: #ffeef5d2;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  /* max-width: 500px; */
+  z-index: 2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.paragraphBox p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
