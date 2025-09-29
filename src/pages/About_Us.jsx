@@ -98,9 +98,16 @@ function About_Us() {
           Active Media is a <br /> premier multimedia <br /> solution company <br /> with innovative and <br /> distinctive solutions <br /> that go beyond the <br />traditional means of <br /> marketing. Great <br /> business needs <br />great software.
         </motion.p>
       </div>
+
+      {/* Britney's div sections */}
+
+      <div className={styles.containerB}>
+
+      </div>
+
     <div>
       {/* Carmel Framework (the start) */}
-      <div className={styles.conatiner}>
+      <div className={styles.container}>
         <div className={styles.text}>
         <h5>Team</h5>
         <p className={styles.teamText}>
@@ -118,14 +125,14 @@ function About_Us() {
             <img src={lightImg} alt="LightBulb" />
 
         </div>
-
+            
       </div>
         <div className={styles.conatiner2}>
-          <div className={styles.text2}>
+          <div className={styles.phoneimage }>
             <img src="/src/assets/Frame 201.png" alt="PhoneImage" className={styles.image1} />
 
           </div>
-            <div className={styles.phoneimage}>
+            <div className={styles.text2}>
               <h1 className={styles.title}>Solutions</h1>
                 <p className={styles.paragraph}>
                 We aim to provide each individual service to a whole host of industries.
