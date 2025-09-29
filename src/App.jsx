@@ -11,17 +11,13 @@ import Navbar from "./component/Navbar";
 
 function App() {
   return (
-    <> 
-
-    <Router>
-    <Navbar/>
+    <>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About_Us />} />
           <Route path="/contact-us" element={<Contact_Us />} />
           <Route path= '/rhaddock' element= {<Rhaddock/>}/>
         </Routes>
-    </Router>
     </>
   );
 }
