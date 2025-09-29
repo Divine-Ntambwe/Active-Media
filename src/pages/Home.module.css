@@ -31,12 +31,16 @@
 }
 
 .title{
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;;
   font-weight:300;
   font-size:48px;
-  line-height:1.05;
+  line-height:1.15;
   color:var(--dark);
   margin:0 0 28px 0;
+  width: 120%;
+  position: relative;
+  z-index: 10;
+  /* border: solid; */
 }
 
 .cta{
@@ -47,7 +51,7 @@
   border-radius:10px;
   font-size:16px;
   cursor:pointer;
-  box-shadow:0 6px 18px rgba(255,111,176,0.18);
+  box-shadow:0 6px 18px rgb(245, 120, 222);
 }
 
 .cta .arrow{padding-left:8px;font-weight:700}
@@ -58,20 +62,26 @@
   height:480px;
 }
 
-.swirl{
+.blendingBackground{
   position:absolute;
-  left:-30%;
-  top:10%;
-  min-width:100%;
-  /*border: solid;*/
+  left:-8%;
+  top:-5%;
+  width:90%;
+  height:100%;
+  background-image: url('../assets/Active_M.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
 }
 
 .orb1{
   position:absolute;
   left:50%;
-  top:-9%;
- min-width: 100%;
+  top:-10%;
+  min-width: 90%;
   transform:translateY(-10%);
+  z-index: 2;
  /*border: solid;*/
 }
 

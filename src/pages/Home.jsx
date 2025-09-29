@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Home.module.css'
 import Navbar from "../component/Navbar"
 
-import blending from "../assets/blending 1755804129410.png"
+import blending from "../assets/Active_M.jpg"
 import clouds from "../assets/Clouds 2.png"
 
 function Home() {
@@ -29,7 +29,7 @@ function Home() {
         </div>
 
         <div className={styles.right}>
-          <img src={blending} alt="decorative blend" className={styles.swirl} />
+          <div className={styles.blendingBackground}></div>
           <img src={clouds} alt="decorative clouds" className={styles.orb1} />
         </div>
       </div>
