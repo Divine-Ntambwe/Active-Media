@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   return (
     <div className={styles.navBar}>
-      <img src={logo} alt="Active Media Logo" className={styles.logo} />
+      <Link to="/">
+        <img src={logo} alt="Active Media Logo" className={styles.logo} />
+      </Link>
       <ol className={styles.navList}>
         <li className={styles.navItem}>
           <Link to="/our-services" className={styles.navLink}>Software & Development</Link>
