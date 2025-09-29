@@ -6,7 +6,6 @@ import RhLogo from "../assets/Frame 203.png";
 import Group72 from "../assets/Group 72.png";
 import Blending from "../assets/blending 1755804129410.png";
 
-
 const Rhaddock = () => {
     return (
         <div className={styles.wrapper}>
