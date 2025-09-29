@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Rhaddock.module.css";
+import styles from "./Our_Work.module.css";
 
 // Import the 3D RH logo
 import RhLogo from "../assets/Frame 203.png";
