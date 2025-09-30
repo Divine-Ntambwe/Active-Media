@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import styles from "./Software.module.css";
+import PurpleLines from "../component/PurpleLines"; 
 import laptopImage from "../assets/lottiefiles.com/animations/computerztech-lhmk6qciBg.png";
 
 export default function Software() {
@@ -19,14 +20,10 @@ export default function Software() {
 
   return (
     <section className={styles.softwareSection}>
-      {/* Background lines */}
-      <img
-        src="/backgroundLines.png"
-        alt="Background lines"
-        className={styles.lines}
-      />
+      {/*  Purple animated background lines */}
+      <PurpleLines />
 
-      {/* Left text */}
+      {/*  Left text content */}
       <div className={styles.textBlock}>
         <h1 className={styles.title}>
           Software <br /> Development
@@ -38,7 +35,7 @@ export default function Software() {
         </div>
       </div>
 
-      {/* Laptop PNG */}
+      {/*  Right laptop image */}
       <div
         className={`${styles.laptopWrapper} ${
           laptopClicked ? styles.laptopClicked : ""
@@ -48,13 +45,13 @@ export default function Software() {
         <img src={laptopImage} alt="Laptop" className={styles.laptopImage} />
       </div>
 
-      {/* Paragraph box */}
+      {/*  Bottom-right paragraph box */}
       <div ref={sectionRef} className={styles.paragraphBox}>
         <p>
           With The Rapid Move of Technology, <br />
           Active Media Has Ensured That Only <br />
           The Latest In Technology Is Used In <br />
-           Website Development.
+          Website Development.
         </p>
       </div>
     </section>

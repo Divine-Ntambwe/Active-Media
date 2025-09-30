@@ -1,0 +1,51 @@
+/* ===== Main container ===== */
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lines {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: url("../assets/lines.png") no-repeat center center; 
+  background-size: cover;
+  opacity: 4.25;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* ===== Different scroll "zones" ===== */
+.position-0 {
+  transform: translateY(0px) scale(1);
+}
+
+.position-1 {
+  transform: translateY(-150px) scale(1.1);
+}
+
+.position-2 {
+  transform: translateY(-300px) scale(1.2);
+}
+
+.position-3 {
+  transform: translateY(-450px) scale(1.3);
+}
+
+.image-placeholder {
+  position: relative;
+  z-index: 2;
+}
+
+.image-placeholder img {
+  max-width: 60%; /* makes it small */
+  height: auto;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
+  z-index: -2;
+}
