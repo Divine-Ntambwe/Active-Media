@@ -21,7 +21,7 @@ const Recent_Work = () => {
           <h1 className={styles.heading}>SUPREME BUILD IT</h1>
 
           {/* Paragraph */}
-          <p className={styles.paragraph1}>
+          <p className={styles.paragraph}>
             Yorem ipsum dolor sit amet, consectetur 
             adipiscing elit. Etiam eu turpis molestie,
             dictum est a, mattis tellus. Sed dignissim, 

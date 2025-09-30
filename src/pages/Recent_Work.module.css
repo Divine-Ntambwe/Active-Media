@@ -28,7 +28,6 @@
     margin-bottom: 40px;
     max-width: 500px;
     font-weight: 450;
-    /* border: 1px solid blue; */
 }
 
 .viewSite {
@@ -121,9 +120,9 @@
     /* border: 1px solid blue; */
 }
 
-.Supreme{
-    /* border: 1px solid red; */
-}
+/* .Supreme{
+    border: 1px solid red;
+} */
 
 .SupremeLogo{
   width: 26vh;
@@ -135,4 +134,13 @@
   margin-top: 128vh;
   position: absolute;
   z-index: 1000;
+}
+
+.paragraph{
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 40px;
+  max-width: 400px;
+  font-weight: 450;
+  /* border: 1px solid blue; */
 }
