@@ -1,0 +1,47 @@
+/* ===== Main container ===== */
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -4000;
+}
+
+/* ===== Moving image ===== */
+.image-placeholder {
+  position: absolute;
+  transition: all 0.8s ease-in-out;
+  z-index: 2;
+}
+
+.image-placeholder img {
+  max-width: 50%; /* adjust size */
+  height: auto;
+  filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
+}
+
+/* ===== Scroll positions ===== */
+.image-placeholder.position-0 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* center */
+}
+
+.image-placeholder.position-1 {
+  top: 10%;
+  right: 10%;
+  transform: translate(0, 0); /* top-right */
+}
+
+.image-placeholder.position-2 {
+  bottom: 10%;
+  right: 10%;
+  transform: translate(0, 0); /* bottom-right */
+}
+
+.image-placeholder.position-3 {
+  bottom: 10%;
+  left: 10%;
+  transform: translate(0, 0); /* bottom-left */
+}
