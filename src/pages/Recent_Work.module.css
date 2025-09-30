@@ -116,8 +116,8 @@
 /* Britney's styles */
 
 .supreme{
-    height: 105vh;
-    /* border: 1px solid blue; */
+    height: 100vh;
+    border: 2px solid blue;
 }
 
 /* .Supreme{
@@ -131,7 +131,8 @@
   justify-content: center;
   align-items: center;
   width: 25vw;
-  margin-top: 128vh;
+  margin-top: 105vh;
+  margin-right: 10vw;
   position: absolute;
   z-index: 1000;
 }
@@ -143,4 +144,27 @@
   max-width: 400px;
   font-weight: 450;
   /* border: 1px solid blue; */
+}
+
+.wrapperSupreme{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 80px;
+    gap: 60px;
+    font-family: 'Inter', sans-serif;
+}
+
+.supremeBanner {
+    position: absolute;
+    z-index: 1000;
+    margin-top: -70vh;
+    margin-left: 19.7vw;
+    width: 90vh;
+}
+
+.supremeBanner img {
+    width: 100%;
+    border-radius: 6px;
+    max-width: 900px;
 }

@@ -13,7 +13,7 @@ const Recent_Work = () => {
     <>
       {/* Supreme */}
       <div className={styles.supreme}>
-        <div className={styles.wrapper}>
+        <div className={styles.wrapperSupreme}>
         {/* Left Column */}
         <div className={styles.left}>
           <div className={styles.Supreme}>
@@ -47,7 +47,7 @@ const Recent_Work = () => {
           </div>
 
           {/* Website Preview */}
-          <div className={styles.websitePreview}>
+          <div className={styles.supremeBanner}>
             <img src={SupremeBanner} alt="website-preview" />
           </div>
         </div>
@@ -62,6 +62,7 @@ const Recent_Work = () => {
         </div>
       </div>
       </div>
+      
       {/* RapidTrade */}
       <div className={styles.rapidtrade}></div>
 

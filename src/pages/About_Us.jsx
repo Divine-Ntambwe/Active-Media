@@ -104,50 +104,65 @@ function About_Us() {
       {/* Britney's div sections */}
 
       <div className={styles.containerB}>
-        
-         <div className={styles.aimSection}>
-          <div className={styles.bigText}>
-          WE ARE A SOFTWARE <br />
-          DEVELOPMENT AND MEDIA <br />
-          AGENCY THAT FOCUSES ON <br />
-          BUSINESSES 
-          GROWTH.
-         </div>
 
-         <div className={styles.aimParagraph}>
-           We aim to provide each individual service <br />
-           to a whole host of industries. Our <br />
-           expertise allows us to fully customise <br />
-           each product to work for every individual <br />
-           business model - providing a strong <br />
-           foundation with which any business can <br />
-           begin to maximise on their potential.
-         </div>
-         
+          {/* This is the top section you did not want me to touch */}
+          <div className={styles.aimSection}>
+           <div className={styles.bigText}>
+           WE ARE A SOFTWARE <br />
+           DEVELOPMENT AND MEDIA <br />
+           AGENCY THAT FOCUSES ON <br />
+           BUSINESSES
+           GROWTH.
+           </div>
 
+           <div className={styles.aimParagraph}>
+             We aim to provide each individual service <br />
+             to a whole host of industries. Our <br />
+             expertise allows us to fully customise <br />
+             each product to work for every individual <br />
+             business model - providing a strong <br />
+             foundation with which any business can <br />
+             begin to maximise on their potential.
+           </div>
+          </div>
+
+
+          {/* The section with the green border that needs fixing */}
           <div className={styles.SoftwareSection}>
-         <div className={styles.mediaImage}>
-          <img src={MultiMedia} alt="Multimedia Image" />
-         </div>
-          <div className={styles.multimedia}>
-           Multimedia
+            <div className={styles.mediaImageDiv}>
+              <img
+                src={MultiMedia}
+                alt="Multimedia Image"
+                className={styles.mediaImage}
+                />
+            </div>
+
+            {/* NEW CONTAINER for the text content to group and align it */}
+            <div className={styles.mediaContent}>
+              <div className={styles.multimedia}>
+               <b>
+                Multimedia
+               </b>
+              </div>
+
+              <div className={styles.multimediaParagraph}>
+                 Active Media is a premier multimedia solution company
+                 with innovative and distinctive solutions that go
+                 beyond the traditional means of marketing. Great
+                 business needs great software.
+              </div>
+
+             <div className={styles.software}>
+                Software
+             </div>
+            </div>
+            {/* END NEW CONTAINER */}
           </div>
 
-         <div className={styles.multimediaParagraph}>
-          Active Media is a premier multimedia solution company
-           with innovative and distinctive solutions that go 
-           beyond the traditional means of marketing. Great 
-           business needs great software.
-         </div>
-
-         <div className={styles.software}>
-           Software
-         </div>
-         </div>
-          </div>
       </div>
 
     <div>
+
       {/* Carmel Framework (the start) */}
       <div className={styles.container}>
         <div className={styles.text}>
