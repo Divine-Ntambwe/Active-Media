@@ -46,6 +46,11 @@ export default function Software() {
 
       {/* Slide 4 */}
       <div className={`${styles.slide} ${styles.div4}`}></div>
+      
+      {/* Carmel Software */}
+      <div className={styles.ecommerce}>
+
+      </div>
     </section>
   );
 }
