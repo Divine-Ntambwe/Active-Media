@@ -1,65 +1,64 @@
+/* Container */
 .aboutSection {
+  display: flex; /* horizontal layout */
+  width: 400vw; /* 4 slides */
+  height: 88vh;
+  transition: transform 0.6s ease-in-out;
   position: relative;
-  width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  background: #fff;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
 }
 
-.lines {
-  position: absolute;
-  top: 25%;
-  left: 15%;
-  width: 25%;              
-  transform: translate(-50%, -50%);
-  opacity: 0.9;
-  z-index: 1;
+/* Each slide */
+.aboutDiv {
+  width: 100vw;
+  height: 88vh;
+  flex-shrink: 0;
+  position: relative;
+  opacity: 1;
 }
 
+/* Laptop image only on first slide */
 .laptopWrapper {
   position: absolute;
-  top: 11%;               
-  left: 40%;
-  transform: translateX(-50%); 
-  z-index: 2;
+  top: 5%;
+  right: 18%;
+  z-index: 10;
 }
 
-.laptopWrapper img {
-  width: 60%;           
-  max-width: 100%;
+.laptop {
+  max-width: 60%;
   height: auto;
 }
 
-.textContent {
-  position: relative;
-  z-index: 3;
-  max-width: 700px;
-  padding: 10% 15%;
-  font-size: 18px;
-  line-height: 1.6;
+/* Slide 1: About content */
+.div1 {
+  background: #ffffff;
 }
 
-/* .paragraph1 {
-  margin-left: 5%;
-  padding-right: 30%;
+/* Placeholder slides */
+.div2 {
+  background: #ff6b6b;
 }
 
-.paragraph2 {
-  margin-left: 25%;
-  margin-top: 15%;
+.div3 {
+  background: #4ecdc4;
 }
 
-.paragraph3 {
+.div4 {
+  background: #ffd93d;
+}
+
+/* Text & heading */
+.heading {
   position: absolute;
-  top: 20%;
-  right: 0%;
-} */
-
-/* Ozias Styling (The Start) */
-.conatiner{
-    display: flex;
-    width: 100%;
-    height: 53vh;
+  top: 5%;
+  left: 10%;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  z-index: 2;
 }
 
 .text{
@@ -107,70 +106,37 @@ h5{
     margin: 3% 0 0 8%;
 }
 
-img{
-  width: 100%;       
-  max-width: 390px;
+.textBlock {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #222;
+  margin: 0;
+  position: absolute;
+  z-index: 2;
 }
 
-.conatiner2{
-    display: flex;
-    width: 100%;
-    height: 50vh;
+/* Placement */
+.topLeft {
+  top: 13%;
+  left: 10%;
+  width: 20%;
 }
 
-.text2{
+.bottomLeft {
+  bottom: 18%;
+  left: 25%;
+  width: 18%;
+}
+
+.rightBlock {
+  top: 19%;
+  right: 16%;
+  width: 22%;
+  text-align: left;
  
-    height: 43vh;
-    width: 30%;
-    margin: 1% 0 0 15%;
 }
 
-.phoneimage{
-   
-    height: 43vh;
-    width: 25%;
-    margin: 0 0 0 8%;
+/* Prevent page from vertical scroll */
+body {
+  overflow-y: hidden;
 }
-
-.paragraph{
-    font-size: 19px;
-    font-weight: 500;
-    font-family: "Inter", sans-serifl;
-}
-
-.paragraph2{
-    margin: -5% 0 0 0;
-    font-weight: 500;
-    font-size: 19px;
-    font-family: "Inter", sans-serifl;
-}
-
-.paragraph3{
-    margin: 0.5% 0 0 0;
-    font-weight: 310;
-    font-size: 19px;
-    font-family: "Inter", sans-serifl;
-}
-
-.title{
-    font-family: "Inter", sans-serifl;
-    font-size: 13px;
-    font-weight: 50000000;
-}
-
-.image1{
-    width: 100%;
-}
-
-.experties{
-    border-radius: 5px;
-    width: 25%;
-    border: none;
-    font-family: "Inter", sans-serifl;
-    font-weight: 300;
-    font-size: 10px;
-    height: 18px;
-    margin: 2% 0 0 0;
-}
-/* Ozias Styling(The End) */
-
