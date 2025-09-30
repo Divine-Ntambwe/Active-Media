@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 .digitalBackground{
@@ -27,6 +27,7 @@ left: -55px;
   /* padding-bottom: 4rem;  */
   text-align: center; 
   overflow: hidden;
+  transition: 1s;  
   /* border: 1px solid blue; */
 }
 
@@ -88,6 +89,7 @@ left: -55px;
   position: relative;
   z-index: 1;
   padding: 0 100px;
+  
   /* border:1px solid red; */
   
 }
@@ -112,7 +114,7 @@ left: -55px;
 
 @keyframes moveUp2 {
     0%{top:0px}
-    100%{top:-500px}
+    100%{top:-455px}
 }
 
 .moveUp2 {
