@@ -12,6 +12,8 @@ const positions = [
 import lightImg from '../assets/Frame 206.png'; 
 import "@fontsource/inter/300.css"
 
+import MultiMedia from "../assets/Multimedia.png"
+
 function About_Us() {
   const [posIndex, setPosIndex] = useState(0);
   const [laptopVisible, setLaptopVisible] = useState(true);
@@ -102,7 +104,47 @@ function About_Us() {
       {/* Britney's div sections */}
 
       <div className={styles.containerB}>
+        
+         <div className={styles.aimSection}>
+          <div className={styles.bigText}>
+          WE ARE A SOFTWARE <br />
+          DEVELOPMENT AND MEDIA <br />
+          AGENCY THAT FOCUSES ON <br />
+          BUSINESSES 
+          GROWTH.
+         </div>
 
+         <div className={styles.aimParagraph}>
+           We aim to provide each individual service <br />
+           to a whole host of industries. Our <br />
+           expertise allows us to fully customise <br />
+           each product to work for every individual <br />
+           business model - providing a strong <br />
+           foundation with which any business can <br />
+           begin to maximise on their potential.
+         </div>
+         
+
+          <div className={styles.SoftwareSection}>
+         <div className={styles.mediaImage}>
+          <img src={MultiMedia} alt="Multimedia Image" />
+         </div>
+          <div className={styles.multimedia}>
+           Multimedia
+          </div>
+
+         <div className={styles.multimediaParagraph}>
+          Active Media is a premier multimedia solution company
+           with innovative and distinctive solutions that go 
+           beyond the traditional means of marketing. Great 
+           business needs great software.
+         </div>
+
+         <div className={styles.software}>
+           Software
+         </div>
+         </div>
+          </div>
       </div>
 
     <div>

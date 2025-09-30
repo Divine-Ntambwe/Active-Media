@@ -178,4 +178,37 @@ img{
 .containerB{
     border: 2px solid rgb(0, 12, 66);
     height: 100vh;
+    font-family: "Inter", sans-serif;
+}
+
+.bigText{
+  border: 1px solid red;
+  height: 20vh;
+  width: 160vw;
+  font-size: x-large;
+  font-weight: 703;
+  font-family: Helvetica;
+}
+
+.aimParagraph{
+  height: 21vh;
+  width: 140vw;
+  border: 1px solid blue;
+}
+
+.mediaImage{
+  /* width: 160vw;
+  height: 20vh; */
+}
+
+.SoftwareSection{
+  border: 1px solid green;
+  display: flex;
+  width: 100%;
+}
+
+.aimSection{
+  display: flex;
+  width: 100%;
+
 }
