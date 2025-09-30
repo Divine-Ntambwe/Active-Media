@@ -18,41 +18,46 @@ const Digital_Marketing = () => {
     const y = window.scrollY;
       if (document.documentElement.scrollTop > 0) {
         BGImg.current.style.top = "100px"
-        heading.current.style.animationPlayState = "running"
-        heading.current.style.animationFillMode = "forwards"
+        
+        heading.current.classList.add(styles.moveUp)
+        // heading.current.style.animationFillMode = "forwards"
 
-        par.current.style.animationPlayState = "running"
-        par.current.style.animationFillMode = "forwards"
+        par.current.classList.add(styles.disappear)
+        // par.current.style.animationFillMode = "forwards"
 
-        wrapper.current.style.animationPlayState = "running"
-        wrapper.current.style.animationFillMode = "forwards"
+        wrapper.current.classList.add(styles.moveUp)
+        container.current.style.height = "105vh"
+        // wrapper.current.style.animationFillMode = "forwards"
         
       }
 
-      if (document.documentElement.scrollTop > 105){
-           BGImg.current.style.left = "700px"
+      if (document.documentElement.scrollTop > 140){
+         BGImg.current.style.left = "700px"
 
-         lastFour.current.style.animationPlayState = "running"
-         lastFour.current.style.animationFillMode = "forwards"
+         lastFour.current.classList.add(styles.moveUp2)
+        //  lastFour.current.style.animationFillMode = "forwards"
 
-         firstTwo.current.style.animationPlayState = "running"
-         firstTwo.current.style.animationFillMode = "forwards"
+         firstTwo.current.classList.add(styles.disappear)
+        //  firstTwo.current.style.animationFillMode = "forwards"
         
          
     
       }
       if (document.documentElement.scrollTop == 0){
-       firstTwo.current.style.animationFillMode = "backwards"
-       lastFour.current.style.animationFillMode = "backwards"
-       wrapper.current.style.animationFillMode = "backwards"
-       heading.current.style.animationFillMode = "backwards"
-       par.current.style.animationFillMode = "backwards"
+       firstTwo.current.classList.remove(styles.disappear)
+       lastFour.current.classList.remove(styles.moveUp2)
+       wrapper.current.classList.remove(styles.moveUp)
+       heading.current.classList.remove(styles.moveUp)
+       par.current.classList.remove(styles.disappear)
+
+       BGImg.current.style.left = "-55px"
+       BGImg.current.style.top = "-200px"
     }
   }
     
     useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("wheel", onScroll);
+    return () => window.removeEventListener("wheel", onScroll);
   }, []);
   
     return (

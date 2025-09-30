@@ -18,7 +18,7 @@ left: -55px;
 /* Main container */
 .container {
   /* max-width: 70rem;  */
-  height: 100.5vh;
+  height: 98vh;
   /* margin-left: auto; 
   margin-right: auto; */
   /* padding-left: 1.5rem; 
@@ -31,16 +31,17 @@ left: -55px;
 }
 
 @keyframes moveUp {
-    0%{top:0px}
-    100%{top:-400px}
+    0%{top:0px;}
+    100%{top:-400px;}
 }
-.container h1 {
-  animation: moveUp 2s;
-  transition: 2s;
-  animation-fill-mode:forwards;  
-  animation-play-state: paused;
 
+.moveUp {
+  animation: moveUp 2s;
+  transition: 2s; 
+  animation-fill-mode:forwards;  
+  animation-play-state: running;
 }
+
 /* Heading (h1) */
 .container h1 {
   font-size: 3.5em; 
@@ -51,17 +52,15 @@ left: -55px;
   font-family: "Inter";
   position: relative;
 }
-@keyframes moveDown {
+@keyframes disappear {
     0%{opacity:100%}
     100%{opacity:0%}
 }
-.paragraphs{
-  animation: moveDown 1s;
+
+.disappear {
+ animation: disappear 1s;
   transition: 2s;
   animation-fill-mode:forwards;  
-  animation-play-state: paused;
-
-  /* animation-iteration-count: infinite; */
 }
 
 /* Paragraph container */
@@ -89,10 +88,6 @@ left: -55px;
   position: relative;
   z-index: 1;
   padding: 0 100px;
-  animation: moveUp 2s;
-  transition: transform 0.3s ease;
-  animation-fill-mode:forwards;  
-  animation-play-state: paused;
   /* border:1px solid red; */
   
 }
@@ -117,7 +112,16 @@ left: -55px;
 
 @keyframes moveUp2 {
     0%{top:0px}
-    100%{top:-550px}
+    100%{top:-500px}
+}
+
+.moveUp2 {
+
+  animation: moveUp2 2s;
+  transition: transform 0.3s ease;
+  animation-fill-mode:forwards;  
+
+  position:relative;
 }
 
 .lastFour{
@@ -125,21 +129,12 @@ left: -55px;
   display: grid;
   grid-template-columns: 50% 50%;
   gap: 50px;
-  animation: moveUp2 2s;
-  transition: transform 0.3s ease;
-  animation-fill-mode:forwards;  
-  animation-play-state: paused;
-  position:relative;
 }
 
 .firstTwo{
    width: 80vw;
   display: grid;
   grid-template-columns: 50% 50%; 
-  animation: moveDown 2s;
-  animation-play-state: paused;
-  /* transition: transform 0.3s ease; */
-  animation-fill-mode:forwards;  
 }
 
 /* Individual Card Styles */
