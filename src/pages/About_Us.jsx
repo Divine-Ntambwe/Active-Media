@@ -136,10 +136,9 @@ function About_Us() {
               <h1 className={styles.title}>Solutions</h1>
                 <p className={styles.paragraph}>
                 We aim to provide each individual service to a whole host of industries.
-                Our expertise allow us to fully customise each</p>
-                <p className={styles.paragraph2}>product work for every individual business model
-                 - providing a strong foundation with which any business can begin</p>
-                <p className={styles.paragraph3}>to maximise on their potential.</p>
+                Our expertise allow us to fully customise each
+                <br></br> product work for every individual business model - providing a strong foundation with which any business can begin
+                <br></br> to maximise on their potential.</p>
               <button className={styles.experties}>Experties</button>
         </div>
         </div>
