@@ -1,37 +1,27 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
 import styles from "./About_Us.module.css";
+import PurpleLines from "../component/PurpleLines"; 
 
-const positions = [
-  { x: "0%", y: "0%" }, // center
-  { x: "40%", y: "-40%" }, // top right
-  { x: "40%", y: "40%" }, // bottom right
-  { x: "-40%", y: "40%" }, // bottom left
-  { x: "-40%", y: "-40%" } // top left
-];
-import lightImg from '../assets/Frame 206.png'; 
-import "@fontsource/inter/300.css"
-
-function About_Us() {
-  const [posIndex, setPosIndex] = useState(0);
-  const [laptopVisible, setLaptopVisible] = useState(true);
+export default function About_Us() {
+  const bgRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollValue = window.scrollY;
+      if (!bgRef.current) return;
 
-      // Background cycles every 400px
-      const newIndex = Math.floor(scrollValue / 400) % positions.length;
-      setPosIndex(newIndex);
+      const scrollY = window.scrollY;
+      const maxScroll = window.innerHeight; // 1 viewport height
+      const progress = Math.min(scrollY / maxScroll, 1); // clamp 0–1
 
-      // Laptop logic
-      if (scrollValue > 200 && scrollValue < 600) {
-        setLaptopVisible(true);
-      } else if (scrollValue >= 600) {
-        setLaptopVisible(false);
-      } else {
-        setLaptopVisible(true);
-      }
+      // Move diagonally down-left as you scroll
+      const translateX = -300 * progress;
+      const translateY = 300 * progress;
+
+      // Fade out towards the end
+      const opacity = 1 - progress;
+
+      bgRef.current.style.transform = `translate(${translateX}px, ${translateY}px)`;
+      bgRef.current.style.opacity = opacity;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -39,117 +29,71 @@ function About_Us() {
   }, []);
 
   return (
-    <section className={styles.aboutSection}>
-      {/* Background purple lines */}
-      <motion.img
-        src="/backgroundLines.png"
-        alt="Background lines"
-        className={styles.lines}
-        animate={{ x: positions[posIndex].x, y: positions[posIndex].y }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-      />
-
-      {/* Laptop with bubbles */}
-      <motion.div
-        className={styles.laptopWrapper}
-        animate={laptopVisible ? { x: "-1%", opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 1.2, ease: "easeInOut" }}
-      >
-        <img src="/laptop.png" alt="Laptop with bubbles" />
-      </motion.div>
-
-      {/* Text content */}
-      <div className={styles.textContent}>
-        <motion.h1
-          className={styles.title}
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          WHO ARE WE?
-        </motion.h1>
-
-        <motion.p
-          className={styles.paragraph1}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          We are a software development and <br /> media agency that focuses on <br /> business growth.
-        </motion.p>
-
-        <motion.p
-          className={styles.paragraph2}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1.2 }}
-        >
-          Active Media consists <br /> of a team of people <br />that are passionate <br /> about what they do <br /> and strive to ensure <br />
-           that only the very best <br /> service is offered to <br />our clients.We stand <br />by our company ethics <br />-ensuring honesty, <br /> authenticity and <br />
-           excellence. You have <br />ideas. We have <br /> software solutions.
-        </motion.p>
-
-        <motion.p
-          className={styles.paragraph3}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1.4 }}
-        >
-          Active Media is a <br /> premier multimedia <br /> solution company <br /> with innovative and <br /> distinctive solutions <br /> that go beyond the <br />traditional means of <br /> marketing. Great <br /> business needs <br />great software.
-        </motion.p>
-      </div>
-
-      {/* Britney's div sections */}
-
-      <div className={styles.containerB}>
-
-      </div>
-
-    <div>
-      {/* Carmel Framework (the start) */}
-      <div className={styles.container}>
-        <div className={styles.text}>
-        <h5>Team</h5>
-        <p className={styles.teamText}>
-        Active Media consists of a team of<br></br>
-        people that are passionate about what<br></br>   
-        they do and strive to ensure that only only the<br></br>
-        very best service is offered to our <br></br>
-        clients. We stand by our company ethics<br></br>
-        -ensuring honesty, authenticity and <br></br>
-        excellence. You have ideas. We have <br></br>
-        software solutions</p>
-          <p className={styles.passionate}>Passionate</p>
+    <>
+      {/* ABOUT SECTION */}
+      <section className={styles.aboutSection}>
+        {/* Background Lines */}
+        <div className={styles.bgLinesWrapper}>
+          <PurpleLines />
+          <img
+            ref={bgRef}
+            src="/laptop.png"
+            alt="Laptop"
+            className={styles.bgLines}
+            draggable={false}
+          />
         </div>
-          <div className={styles.lightimage}>
-            <img src={lightImg} alt="LightBulb" />
 
-        </div>
-            
-      </div>
-        <div className={styles.conatiner2}>
-          <div className={styles.phoneimage }>
-            <img src="/src/assets/Frame 201.png" alt="PhoneImage" className={styles.image1} />
+        {/* Heading */}
+        <h2 className={styles.heading}>WHO ARE WE ?</h2>
 
-          </div>
-            <div className={styles.text2}>
-              <h1 className={styles.title}>Solutions</h1>
-                <p className={styles.paragraph}>
-                We aim to provide each individual service to a whole host of industries.
-                Our expertise allow us to fully customise each</p>
-                <p className={styles.paragraph2}>product work for every individual business model
-                 - providing a strong foundation with which any business can begin</p>
-                <p className={styles.paragraph3}>to maximise on their potential.</p>
-              <button className={styles.experties}>Experties</button>
-        </div>
-        </div>
-      {/* Ozias Framework (The End) */}
-    </div>
-    </section>
+        {/* Left top paragraph */}
+        <p className={`${styles.textBlock} ${styles.topLeft}`}>
+          We are a software development and <br />
+          media agency that focuses on <br />
+          business growth
+        </p>
+
+        {/* Left bottom paragraph */}
+        <p className={`${styles.textBlock} ${styles.bottomLeft}`}>
+          Active Media consists <br /> of a team of people <br />
+          that are passionate <br />about what they do <br />
+          and strive to ensure <br />that only the very best <br />
+          service is offered to <br />our clients. 
+          We stand <br /> by our company ethics <br />– ensuring honesty, <br />
+          authenticity and <br /> excellence. 
+          You have <br />ideas. We have <br /> software solutions.
+        </p>
+
+        {/* Right paragraph */}
+        <p className={`${styles.textBlock} ${styles.rightBlock}`}>
+          Active Media is a premier multimedia solution company <br />
+          with innovative and distinctive solutions <br />
+          that go beyond the traditional means of marketing. <br />
+          Great business needs great software
+        </p>
+      </section>
+
+      {/* EXTRA SLIDE SECTIONS */}
+      <section className={`${styles.slideSection} ${styles.fromLeft}`}>
+       <div className={styles.contentWrapper}>
+
+       </div>
+      </section>
+
+      <section className={`${styles.slideSection} ${styles.fromRight}`}>
+        <h2>Our Vision</h2>
+        <p>
+          We envision software as the core driver of innovation and growth.
+        </p>
+      </section>
+
+      <section className={`${styles.slideSection} ${styles.fromLeft}`}>
+        <h2>Contact Us</h2>
+        <p>
+          Ready to collaborate? Let's create something powerful together.
+        </p>
+      </section>
+    </>
   );
 }
-
-//   )
-// }
-
-export default About_Us

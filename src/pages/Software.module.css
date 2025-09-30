@@ -1,0 +1,72 @@
+.softwareSection {
+  position: relative;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  background: #fff;
+}
+
+/* Background lines sit behind everything */
+.softwareSection > div:first-child {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Left content */
+.textBlock {
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 550;
+  line-height: 1.2;
+  margin-bottom: 2.9rem;
+  margin-top: 2%;
+}
+
+.services p {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin: 0.2rem 0;
+  letter-spacing: 2px;
+}
+
+/* Laptop image */
+.laptopWrapper {
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.laptopWrapper:hover {
+  transform: scale(1.05);
+}
+
+.laptopImage {
+  max-width: 350px;
+  height: auto;
+  margin-right: 60%;
+}
+
+.laptopClicked {
+  transform: rotate(-5deg) scale(1.1);
+}
+
+/* Paragraph box bottom-right */
+.paragraphBox {
+  position: absolute;
+  right: 26%;
+  top: 83%;
+  background: rgba(160, 32, 240, 0.08); /* light purple background */
+  padding: 2.5rem 4rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  z-index: 4;
+}
