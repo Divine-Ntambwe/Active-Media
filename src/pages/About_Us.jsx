@@ -1,60 +1,55 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styles from "./About_Us.module.css";
-import PurpleLines from "../component/PurpleLines"; 
 
 export default function About_Us() {
-  const bgRef = useRef(null);
+  const containerRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const isScrolling = useRef(false);
+
+  const slidesCount = 4;
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!bgRef.current) return;
+    const handleWheel = (e) => {
+      e.preventDefault(); // prevents vertical scroll from page
+      if (isScrolling.current) return;
+      isScrolling.current = true;
 
-      const scrollY = window.scrollY;
-      const maxScroll = window.innerHeight; // 1 viewport height
-      const progress = Math.min(scrollY / maxScroll, 1); // clamp 0–1
+      if (e.deltaY > 0) {
+        // for scrolling down
+        setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
+      } else {
+        // for scrolling up
+        setCurrentSlide((prev) => Math.max(0, prev - 1));
+      }
 
-      // Move diagonally down-left as you scroll
-      const translateX = -300 * progress;
-      const translateY = 300 * progress;
-
-      // Fade out towards the end
-      const opacity = 1 - progress;
-
-      bgRef.current.style.transform = `translate(${translateX}px, ${translateY}px)`;
-      bgRef.current.style.opacity = opacity;
+      setTimeout(() => {
+        isScrolling.current = false;
+      }, 500); 
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    return () => window.removeEventListener("wheel", handleWheel);
   }, []);
 
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const offset = -currentSlide * window.innerWidth;
+    containerRef.current.style.transform = `translateX(${offset}px)`;
+  }, [currentSlide]);
+
   return (
-    <>
-      {/* ABOUT SECTION */}
-      <section className={styles.aboutSection}>
-        {/* Background Lines */}
-        <div className={styles.bgLinesWrapper}>
-          <PurpleLines />
-          <img
-            ref={bgRef}
-            src="/laptop.png"
-            alt="Laptop"
-            className={styles.bgLines}
-            draggable={false}
-          />
+    <section className={styles.aboutSection} ref={containerRef}>
+      {/* Slide 1 */}
+      <div className={`${styles.aboutDiv} ${styles.div1}`}>
+        <div className={styles.laptopWrapper}>
+          <img src="/laptop.png" alt="Laptop" className={styles.laptop} />
         </div>
-
-        {/* Heading */}
         <h2 className={styles.heading}>WHO ARE WE ?</h2>
-
-        {/* Left top paragraph */}
         <p className={`${styles.textBlock} ${styles.topLeft}`}>
           We are a software development and <br />
           media agency that focuses on <br />
           business growth
         </p>
-
-        {/* Left bottom paragraph */}
         <p className={`${styles.textBlock} ${styles.bottomLeft}`}>
           Active Media consists <br /> of a team of people <br />
           that are passionate <br />about what they do <br />
@@ -64,36 +59,24 @@ export default function About_Us() {
           authenticity and <br /> excellence. 
           You have <br />ideas. We have <br /> software solutions.
         </p>
-
-        {/* Right paragraph */}
         <p className={`${styles.textBlock} ${styles.rightBlock}`}>
           Active Media is a premier multimedia solution company <br />
           with innovative and distinctive solutions <br />
           that go beyond the traditional means of marketing. <br />
           Great business needs great software
         </p>
-      </section>
+      </div>
 
-      {/* EXTRA SLIDE SECTIONS */}
-      <section className={`${styles.slideSection} ${styles.fromLeft}`}>
-       <div className={styles.contentWrapper}>
+      {/* Slide 2 */}
+      <div className={`${styles.aboutDiv} ${styles.div2}`}>
+        <p></p>
+      </div>
 
-       </div>
-      </section>
+      {/* Slide 3 */}
+      <div className={`${styles.aboutDiv} ${styles.div3}`}></div>
 
-      <section className={`${styles.slideSection} ${styles.fromRight}`}>
-        <h2>Our Vision</h2>
-        <p>
-          We envision software as the core driver of innovation and growth.
-        </p>
-      </section>
-
-      <section className={`${styles.slideSection} ${styles.fromLeft}`}>
-        <h2>Contact Us</h2>
-        <p>
-          Ready to collaborate? Let's create something powerful together.
-        </p>
-      </section>
-    </>
+      {/* Slide 4 */}
+      <div className={`${styles.aboutDiv} ${styles.div4}`}></div>
+    </section>
   );
 }

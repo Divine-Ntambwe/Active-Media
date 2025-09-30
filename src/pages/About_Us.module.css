@@ -1,35 +1,59 @@
+/* Container */
 .aboutSection {
-  position: relative;
-  /* min-height: 200vh; creates scroll space */
+  display: flex; /* horizontal layout */
+  width: 400vw; /* 4 slides */
   height: 88vh;
-  background: #ff0101;
+  transition: transform 0.6s ease-in-out;
+  position: relative;
   font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
 
-/* Background / Laptop image */
-.bgLinesWrapper {
-  position: sticky;
-  top: 4%;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 0;
-  pointer-events: none;
+/* Each slide */
+.aboutDiv {
+  width: 100vw;
+  height: 88vh;
+  flex-shrink: 0;
+  position: relative;
+  opacity: 1;
 }
 
-.bgLines {
-  width: 490px;
-  max-width: 40vw;
-  transition: transform 0.1s linear, opacity 0.1s linear;
+/* Laptop image only on first slide */
+.laptopWrapper {
+  position: absolute;
+  top: 5%;
+  right: 18%;
+  z-index: 10;
 }
 
-/* Heading */
+.laptop {
+  max-width: 60%;
+  height: auto;
+}
+
+/* Slide 1: About content */
+.div1 {
+  background: #ffffff;
+}
+
+/* Placeholder slides */
+.div2 {
+  background: #ff6b6b;
+}
+
+.div3 {
+  background: #4ecdc4;
+}
+
+.div4 {
+  background: #ffd93d;
+}
+
+/* Text & heading */
 .heading {
   position: absolute;
   top: 5%;
-  left: 6%;
+  left: 10%;
   font-size: 2.4rem;
   font-weight: 700;
   color: #111;
@@ -37,7 +61,6 @@
   z-index: 2;
 }
 
-/* Generic text */
 .textBlock {
   font-size: 1rem;
   line-height: 1.6;
@@ -49,70 +72,25 @@
 
 /* Placement */
 .topLeft {
-  top: 10%;
-  left: 6%;
+  top: 13%;
+  left: 10%;
   width: 20%;
 }
 
 .bottomLeft {
-  bottom: 8%;
-  left: 22%;
+  bottom: 18%;
+  left: 25%;
   width: 18%;
 }
 
 .rightBlock {
-  top: 12%;
+  top: 19%;
   right: 16%;
   width: 22%;
   text-align: left;
 }
 
-/* --- SLIDE SECTIONS --- */
-.slideSection {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: #f7f7f7;
-  font-family: "Inter", sans-serif;
-  font-size: 1.2rem;
-  position: relative;
-  overflow: hidden;
-
-  /* animation prep */
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 0.8s ease;
-}
-
-.slideSection h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #111;
-}
-
-.slideSection p {
-  max-width: 600px;
-  text-align: center;
-  color: #333;
-}
-
-/* Initial states */
-.fromLeft {
-  transform: translateX(-100%);
-}
-.fromRight {
-  transform: translateX(100%);
-}
-
-/* When visible */
-.slideSection.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-.contentWrapper {
-  border: 3px solid blue;
-  width: 100%;
-  height: 100%;
+/* Prevent page from vertical scroll */
+body {
+  overflow-y: hidden;
 }

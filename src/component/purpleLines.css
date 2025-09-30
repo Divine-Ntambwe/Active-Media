@@ -6,46 +6,42 @@
   width: 100%;
   height: 100%;
   z-index: -4000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.lines {
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: url("../assets/lines.png") no-repeat center center; 
-  background-size: cover;
-  opacity: 4.25;
-  transition: transform 0.8s ease-in-out;
-}
-
-/* ===== Different scroll "zones" ===== */
-.position-0 {
-  transform: translateY(0px) scale(1);
-}
-
-.position-1 {
-  transform: translateY(-150px) scale(1.1);
-}
-
-.position-2 {
-  transform: translateY(-300px) scale(1.2);
-}
-
-.position-3 {
-  transform: translateY(-450px) scale(1.3);
-}
-
+/* ===== Moving image ===== */
 .image-placeholder {
-  position: relative;
+  position: absolute;
+  transition: all 0.8s ease-in-out;
   z-index: 2;
 }
 
 .image-placeholder img {
-  max-width: 60%; /* makes it small */
+  max-width: 50%; /* adjust size */
   height: auto;
   filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
-  z-index: -2;
+}
+
+/* ===== Scroll positions ===== */
+.image-placeholder.position-0 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* center */
+}
+
+.image-placeholder.position-1 {
+  top: 10%;
+  right: 10%;
+  transform: translate(0, 0); /* top-right */
+}
+
+.image-placeholder.position-2 {
+  bottom: 10%;
+  right: 10%;
+  transform: translate(0, 0); /* bottom-right */
+}
+
+.image-placeholder.position-3 {
+  bottom: 10%;
+  left: 10%;
+  transform: translate(0, 0); /* bottom-left */
 }

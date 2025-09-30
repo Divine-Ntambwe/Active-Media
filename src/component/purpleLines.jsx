@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./purpleLines.css";
-import blendingImage from "../assets/blending 1755804129410.png"; // ✅ imported image
+import blendingImage from "../assets/blending 1755804129410.png"; 
 
 const BackgroundLines = () => {
   const [position, setPosition] = useState(0);
@@ -8,7 +8,7 @@ const BackgroundLines = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const step = Math.floor(scrollY / 300) % 4; // ✅ changes every 300px scroll
+      const step = Math.floor(scrollY / 250) % 4; // changes position every 250px
       setPosition(step);
     };
 
@@ -18,11 +18,8 @@ const BackgroundLines = () => {
 
   return (
     <div className="background-container">
-      {/* ✅ background lines that shift on scroll */}
-      <div className={`lines position-${position}`} />
-
-      {/* ✅ small image that stays centered once */}
-      <div className="image-placeholder">
+      
+      <div className={`image-placeholder position-${position}`}>
         <img src={blendingImage} alt="Blending" />
       </div>
     </div>
