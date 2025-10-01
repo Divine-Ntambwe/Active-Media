@@ -39,6 +39,7 @@
 /* Placeholder slides */
 .div2 {
   background: #ff6b6b;
+  display: flex;
 }
 
 .div3 {
@@ -134,3 +135,5 @@ h5{
 body {
   overflow-y: hidden;
 }
+
+

@@ -71,7 +71,46 @@ export default function About_Us() {
 
       {/* Slide 2 */}
       <div className={`${styles.aboutDiv} ${styles.div2}`}>
-      <div className={styles.conatiner}>
+        
+      {/* Carmel Framework (the start) */}
+      <div className={styles.container}>
+        <div className={styles.text}>
+        <h5>Team</h5>
+        <p className={styles.teamText}>
+        Active Media consists of a team of<br></br>
+        people that are passionate about what<br></br>   
+        they do and strive to ensure that only only the<br></br>
+        very best service is offered to our <br></br>
+        clients. We stand by our company ethics<br></br>
+        -ensuring honesty, authenticity and <br></br>
+        excellence. You have ideas. We have <br></br>
+        software solutions</p>
+          <p className={styles.passionate}>Passionate</p>
+        </div>
+          <div className={styles.lightimage}>
+            <img src={lightImg} alt="LightBulb" />
+
+        </div>
+            
+      </div>
+        <div className={styles.conatiner2}>
+          <div className={styles.phoneimage }>
+            <img src="/src/assets/Frame 201.png" alt="PhoneImage" className={styles.image1} />
+
+          </div>
+            <div className={styles.text2}>
+              <h1 className={styles.title}>Solutions</h1>
+                <p className={styles.paragraph}>
+                We aim to provide each individual service to a whole host of industries.
+                <br></br>Our expertise allow us to fully customise each
+                <br></br> product to work for every individual business model - providing a strong foundation with which any business can begin
+                <br></br> to maximise on their potential.</p>
+              <button className={styles.experties}>Experties</button>
+        </div>
+        </div>
+      {/* Ozias Framework (The End) */}
+    
+      {/* <div className={styles.conatiner}>
         <div className={styles.text}>
         <h5>Team</h5>
         <p className={styles.teamText}>
@@ -89,7 +128,7 @@ export default function About_Us() {
             <img src={lightImg} alt="LightBulb" />
           </div>
         </div>
-        <p></p>
+        <p></p> */}
       </div>
 
       {/* Slide 3 */}
