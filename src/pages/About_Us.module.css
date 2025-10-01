@@ -6,7 +6,8 @@
   transition: transform 0.6s ease-in-out;
   position: relative;
   font-family: "Inter", sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden ;
+  
 }
 
 /* Each slide */
@@ -39,11 +40,21 @@
 /* Placeholder slides */
 .div2 {
   background: #ff6b6b;
+  /* font-family: "Inter", sans-serif;
+  width: 100vw;
   display: flex;
+  flex-direction: column;
+  align-items: center; */
+
 }
 
 .div3 {
   background: #4ecdc4;
+  font-family: "Inter", sans-serif;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .div4 {
@@ -62,20 +73,20 @@
   z-index: 2;
 }
 
-.text{
+/* .text{
     height: 43vh;
     width: 35%;
     margin: 3% 0 0 10%;
-}
+} */
 
-h5{
+/* h5{
     font-size: 14px;
     text-align: justify;
     text-align-last: right;
     font-family: "Lato", sans-serif;
     margin-top: -2px;
 
-}
+} */
 
 .teamText{
     font-size: 19px;
@@ -87,7 +98,7 @@ h5{
 
 }
 
-.passionate{
+/* .passionate{
     font-size: 10px;
     font-family: "Inter", sans-serif;
     font-weight: 300;
@@ -96,12 +107,12 @@ h5{
     border: none;
     float: right;
     border-radius: 5px;
-}
-.lightimage{
+} */
+/* .lightimage{
     height: 43vh;
     width: 35%;
     margin: 3% 0 0 8%;
-}
+} */
     .textBlock {
   font-size: 1rem;
   line-height: 1.6;
@@ -137,3 +148,178 @@ body {
 }
 
 
+/* AHHHHHHHHHHHHHHHAAAAAAAAAAAAAAAA */
+
+/* .aboutSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #fff;
+} */
+
+.lines {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  width: 25%;              
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* .laptopWrapper {
+  position: absolute;
+  top: 11%;               
+  left: 40%;
+  transform: translateX(-50%); 
+  z-index: 2;
+}
+
+.laptopWrapper img {
+  width: 60%;           
+  max-width: 100%;
+  height: auto;
+} */
+
+.textContent {
+  position: relative;
+  z-index: 3;
+  max-width: 700px;
+  padding: 10% 15%;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* .paragraph1 {
+  margin-left: 5%;
+  padding-right: 30%;
+}
+
+.paragraph2 {
+  margin-left: 25%;
+  margin-top: 15%;
+}
+
+.paragraph3 {
+  position: absolute;
+  top: 20%;
+  right: 0%;
+} */
+
+/* Ozias Styling (The Start) */
+.container1{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 55%;
+    /* border: 1px solid red;   */
+    /* justify-content: flex-end;  */
+    gap: 50px;
+    height: 40vh;
+    /* height: 53vh; */
+}
+
+.text{
+    /* border: 1px solid black; */
+    /* height: 43vh; */
+    /* width: 35%; */
+    /* margin: 3% 0 0 12%; */
+}
+
+h5{
+    font-size: 14px;
+    text-align: justify;
+    text-align-last: right;
+    font-family: "Lato", sans-serif;
+
+
+}
+
+.teamText{
+    font-size: 1.1em;
+    text-align: justify;
+    text-align-last: right;
+    font-family: "Inter", sans-serif;
+    /* font-weight: 300; */
+    font-style: normal;
+
+}
+
+.passionate{
+    font-size: 10px;
+    font-family: sans-serif;
+    height: 20px;
+    width: 100px;
+    margin-left: auto;
+    /* margin-top: 20px; */
+    text-align: center;
+    padding-top: 7px;
+    background-color: rgba(211, 211, 211, 0.5);
+    border: none;
+    border-radius: 3px;
+}
+.lightimage{
+  
+}
+
+.div3 img{
+  /* width: 100%;        */
+  width: 400px;
+  height: 40vh;
+  object-fit: fill !important;
+  /* border: 1px solid blue; */
+}
+
+.conatiner2{
+    display: flex;
+    width: 100%;
+    height: 50vh;
+}
+
+.phoneImage{
+  margin-left: auto ;
+    /* height: 43vh;
+    width: 30%; */
+    /* margin: 1% 0 0 22%; */
+}
+
+.text2{
+    /* height: 43vh;
+    width: 23%; */
+    /* margin: 0 0 0 1%; */
+}
+
+.paragraph{
+    font-size: 1.1em;
+    font-weight: 300;
+    font-family: "Inter", sans-serif;
+    width: 400px;
+}
+
+.title{
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 50000000;
+}
+
+.image1{
+    width: 100%;
+}
+
+.experties{
+    border-radius: 5px;
+    width: 27%;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    height: 22px;
+    margin: 0 0 0 0;
+}
+/* Ozias Styling(The End) */
+
+/* Britney styling start */
+/* .containerB{
+    border: 2px solid rgb(0, 12, 66);
+    height: 100vh;
+} */
