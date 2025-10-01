@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './Digital_Marketing.module.css'
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 const Digital_Marketing = () => {
     const [lastY, setLastY] = useState(0);
     const [index,setIndex] = useState(0)
