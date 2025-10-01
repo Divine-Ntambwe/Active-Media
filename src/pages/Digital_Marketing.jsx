@@ -32,7 +32,9 @@ const Digital_Marketing = () => {
       }
 
       if (document.documentElement.scrollTop > 140){
-         BGImg.current.style.left = "50vw"
+         BGImg.current.style.left = "800px";
+         BGImg.current.style.top = "100px"
+
 
          lastFour.current.classList.add(styles.moveUp2)
         //  lastFour.current.style.animationFillMode = "forwards"
