@@ -211,11 +211,12 @@ body {
 .container1{
     display: grid;
     grid-template-columns: 50% 50%;
-    width: 55%;
+    width: 80%;
     /* border: 1px solid red;   */
     /* justify-content: flex-end;  */
     gap: 50px;
     height: 40vh;
+    margin-bottom: 20px;
     /* height: 53vh; */
 }
 
@@ -236,7 +237,7 @@ h5{
 }
 
 .teamText{
-    font-size: 1.1em;
+    font-size: 1.3em;
     text-align: justify;
     text-align-last: right;
     font-family: "Inter", sans-serif;
@@ -264,7 +265,7 @@ h5{
 
 .div3 img{
   /* width: 100%;        */
-  width: 400px;
+  width: 500px;
   height: 40vh;
   object-fit: fill !important;
   /* border: 1px solid blue; */
@@ -290,10 +291,10 @@ h5{
 }
 
 .paragraph{
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: 300;
     font-family: "Inter", sans-serif;
-    width: 400px;
+    width: 500px;
 }
 
 .title{
@@ -307,14 +308,17 @@ h5{
 }
 
 .experties{
-    border-radius: 5px;
-    width: 27%;
+      font-size: 10px;
+    font-family: sans-serif;
+    height: 20px;
+    width: 100px;
+    margin-right: auto;
+    /* margin-top: 20px; */
+    text-align: center;
+    padding-top: 7px;
+    background-color: rgba(211, 211, 211, 0.5);
     border: none;
-    font-family: "Inter", sans-serif;
-    font-weight: 300;
-    font-size: 10px;
-    height: 22px;
-    margin: 0 0 0 0;
+    border-radius: 3px;
 }
 /* Ozias Styling(The End) */
 

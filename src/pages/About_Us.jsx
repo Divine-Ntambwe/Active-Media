@@ -191,7 +191,7 @@ export default function About_Us() {
                 <br></br>Our expertise allow us to fully customise each
                 <br></br> product to work for every individual business model - providing a strong foundation with which any business can begin
                 <br></br> to maximise on their potential.</p>
-              <button className={styles.passionate}>Experties</button>
+              <p className={styles.experties}>Experties</p>
         </div>
         </div>
       </div>
