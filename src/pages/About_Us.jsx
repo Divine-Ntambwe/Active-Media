@@ -10,26 +10,34 @@ export default function About_Us() {
 
   useEffect(() => {
     const handleWheel = (e) => {
-      e.preventDefault(); // prevents vertical scroll from page
+      // If we're past the last slide then allow normal vertical scroll
+      if (currentSlide === slidesCount - 1 && e.deltaY > 0) {
+        document.body.style.overflowY = "auto"; // enable vertical scroll
+        return;
+      }
+
+      // Otherwise, intercept scrolling
+      e.preventDefault();
+      document.body.style.overflowY = "hidden"; // disables vertical scroll while in slides
       if (isScrolling.current) return;
       isScrolling.current = true;
 
       if (e.deltaY > 0) {
-        // for scrolling down
+        // scrolling down
         setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
       } else {
-        // for scrolling up
+        // scrolling up
         setCurrentSlide((prev) => Math.max(0, prev - 1));
       }
 
       setTimeout(() => {
         isScrolling.current = false;
-      }, 500); 
+      }, 700);
     };
 
     window.addEventListener("wheel", handleWheel, { passive: false });
     return () => window.removeEventListener("wheel", handleWheel);
-  }, []);
+  }, [currentSlide]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -40,7 +48,11 @@ export default function About_Us() {
   return (
     <section className={styles.aboutSection} ref={containerRef}>
       {/* Slide 1 */}
-      <div className={`${styles.aboutDiv} ${styles.div1}`}>
+      <div
+        className={`${styles.aboutDiv} ${styles.div1} ${
+          currentSlide === 0 ? styles.active : ""
+        }`}
+      >
         <div className={styles.laptopWrapper}>
           <img src="/laptop.png" alt="Laptop" className={styles.laptop} />
         </div>
@@ -68,15 +80,25 @@ export default function About_Us() {
       </div>
 
       {/* Slide 2 */}
-      <div className={`${styles.aboutDiv} ${styles.div2}`}>
-        <p></p>
-      </div>
+      <div
+        className={`${styles.aboutDiv} ${styles.div2} ${
+          currentSlide === 1 ? styles.active : ""
+        }`}
+      ></div>
 
       {/* Slide 3 */}
-      <div className={`${styles.aboutDiv} ${styles.div3}`}></div>
+      <div
+        className={`${styles.aboutDiv} ${styles.div3} ${
+          currentSlide === 2 ? styles.active : ""
+        }`}
+      ></div>
 
       {/* Slide 4 */}
-      <div className={`${styles.aboutDiv} ${styles.div4}`}></div>
+      <div
+        className={`${styles.aboutDiv} ${styles.div4} ${
+          currentSlide === 3 ? styles.active : ""
+        }`}
+      ></div>
     </section>
   );
 }
