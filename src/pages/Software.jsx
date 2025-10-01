@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Software.module.css";
-import PurpleLines from "../component/PurpleLines"; 
+import PurpleLines from "../component/purpleLines"; 
 import laptopImage from "../assets/lottiefiles.com/animations/computerztech-lhmk6qciBg.png";
 
 export default function Software() {
@@ -46,6 +46,11 @@ export default function Software() {
 
       {/* Slide 4 */}
       <div className={`${styles.slide} ${styles.div4}`}></div>
+      
+      {/* Carmel Software */}
+      <div className={styles.ecommerce}>
+
+      </div>
     </section>
   );
 }
