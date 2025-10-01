@@ -319,7 +319,86 @@ h5{
 /* Ozias Styling(The End) */
 
 /* Britney styling start */
-/* .containerB{
-    border: 2px solid rgb(0, 12, 66);
-    height: 100vh;
-} */
+.containerB{
+    /* border: 2px solid rgb(0, 12, 66); */
+    height: 90vh;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* No changes to the top section */
+.bigText{
+  /* border: 1px solid red; */
+  height: 27vh;
+  width: 70vw;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: Helvetica;
+  margin-left: 9vw;
+}
+
+.aimParagraph{
+  height: 27vh;
+  width: 55vw;
+  display: block;
+  /* border: 1px solid blue; */
+  /* margin-top: 3vw; */
+  font-weight: 300;
+  font-size: 19px;
+}
+
+.aimSection{
+  display: flex;
+  margin-top: 10vh;
+}
+
+.SoftwareSection{
+  /* border: 1px solid green; */
+  display: flex; /* Use flex to put image next to text block */
+  gap: 2vw; /* Use gap instead of margin between image and text */
+  margin-left: 9vw;
+  margin-top: 10vh;
+  align-items: flex-start;
+}
+
+.mediaImage{
+  width: 28vw;
+  height: 35vh;
+  /* border: 3px solid blue; */
+}
+
+.mediaContent {
+  display: flex;
+  flex-direction: column; /* Stack the text elements vertically */
+  gap: 2vh; 
+  width: 30vw; /* Give the text content a specific width */
+  padding-top: 2vh; /* Use padding instead of margin to align the title with the image top */
+}
+
+.multimedia{
+  font-size: 16px;
+  font-family: Helvetica;
+}
+
+.multimediaParagraph{
+  width: 100%; 
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5; /* Added line-height for better readability */
+}
+
+.software{
+  font-size: 12px;
+  font-family: sans-serif;
+  height: 4.5vh; /* Changed to vh for consistency */
+  width: 8vw; /* Changed to vw for consistency */
+  text-align: center;
+  /* Use flex properties for vertical centering instead of padding-top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(211, 211, 211, 0.5);
+  border: none;
+  border-radius: 3px;
+}
