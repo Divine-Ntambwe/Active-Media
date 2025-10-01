@@ -174,15 +174,16 @@
     align-items: center;
     gap: 15px;
     margin-bottom: 30px;
-    position: absolute;
-    z-index: 1000;
+    position: relative;
+    top: -425px;
+    cursor: pointer;
 }
 
 /* Renamed from .supremeBanner */
 .SupremeBanner {
     position: absolute;
     z-index: 1000;
-    margin-top: -70vh;
+    margin-top: -85vh;
     margin-left: 19.7vw;
     width: 90vh;
 }
@@ -209,10 +210,15 @@
     justify-content: center;
     align-items: center;
     width: 25vw;
-    margin-top: 100vh;
+    margin-top: 107vh;
     margin-right: 10vw;
     position: absolute;
     z-index: 1000;
+}
+
+.SupremeArrow{
+    width: 85px;
+    height: 85px;
 }
 
 
