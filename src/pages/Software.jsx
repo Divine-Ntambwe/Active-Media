@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Software.module.css";
-import PurpleLines from "../component/PurpleLines"; 
+import PurpleLines from "../component/purpleLines"; 
 import laptopImage from "../assets/lottiefiles.com/animations/computerztech-lhmk6qciBg.png";
 
 export default function Software() {

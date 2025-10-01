@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import styles from "./About_Us.module.css";
+import lightImg from "../assets/Frame 206.png"
 
 export default function About_Us() {
   const containerRef = useRef(null);
