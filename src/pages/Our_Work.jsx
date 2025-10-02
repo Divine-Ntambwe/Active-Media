@@ -14,30 +14,35 @@ const Recent_Work = () => {
   const headings = ["RAPIDTRADE", "R HADDOCK","Supreme3"];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true); // true = visible, false = faded out
-
+   
   useEffect(() => {
-    const handleScroll = () => {
-      const step = Math.floor(window.scrollY / 20); // every 200px scroll → new index
-      if (step !== currentIndex && step < headings.length) {
+    const handleScroll = (e) => {
+      // const step = window.scrollY + 1 // every 200px scroll → new index
+      // if (step !== currentIndex && step < headings.length) {
         // fade out first
         setFade(false);
-
+        const diff = e.deltaY
         // after fade out, switch text and fade back in
         setTimeout(() => {
-          setCurrentIndex(step);
+          if (diff > 20 && currentIndex < 2){
+            setCurrentIndex(currentIndex +1);
+            
+          } else if (diff < 1 && currentIndex > 0 && diff < -20){
+            setCurrentIndex(currentIndex -1);
+            
+          }
           setFade(true);
         }, 300); // duration matches CSS fade
-      }
+      // }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("wheel", handleScroll);
+    return () => window.removeEventListener("wheel", handleScroll);
   }, [currentIndex, headings.length]);
 
   return (
     <>
     <div className={styles.container}>
-
       <div className={styles.supreme}></div>
 
       <div className={styles.rapidtrade}>
