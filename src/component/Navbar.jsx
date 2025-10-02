@@ -11,7 +11,7 @@ function Navbar() {
       </Link>
       <ol className={styles.navList}>
         <li className={styles.navItem}>
-          <Link to="/our-services" className={styles.navLink}>Software & Development</Link>
+          <Link to="/software" className={styles.navLink}>Software & Development</Link>
         </li>
         <li className={styles.navItem}>
           <Link to="/design-marketing" className={styles.navLink}>Design & Marketing</Link>
@@ -27,4 +27,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;
