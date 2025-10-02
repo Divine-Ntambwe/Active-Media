@@ -56,7 +56,7 @@
 } */
 
 /* Ozias Styling (The Start) */
-.conatiner{
+.container{
     display: flex;
     width: 100%;
     height: 53vh;
@@ -66,7 +66,7 @@
     /* border: 1px solid black; */
     height: 43vh;
     width: 35%;
-    margin: 3% 0 0 10%;
+    margin: 3% 0 0 12%;
 }
 
 h5{
@@ -105,10 +105,10 @@ h5{
     /* border: 1px solid rgb(29, 4, 255); */
     height: 43vh;
     width: 35%;
-    margin: 3% 0 0 8%;
+    margin: 3% 0 0 5%;
 }
 
-img{
+section img{
   width: 100%;       
   max-width: 390px;
 }
@@ -119,42 +119,41 @@ img{
     height: 50vh;
 }
 
-.text2{
- 
+.phoneimage{
+    border: 1px solid green;
     height: 43vh;
     width: 30%;
-    margin: 1% 0 0 15%;
+    margin: 1% 0 0 17%;
 }
 
-.phoneimage{
-   
+.text2{
     height: 43vh;
     width: 25%;
-    margin: 0 0 0 8%;
+    margin: 0 0 0 5%;
 }
 
 .paragraph{
     font-size: 19px;
-    font-weight: 500;
+    font-weight: 300;
     font-family: "Inter", sans-serifl;
 }
 
 .paragraph2{
-    margin: -5% 0 0 0;
-    font-weight: 500;
+    margin: -6% 0 0 0;
+    font-weight: 300;
     font-size: 19px;
     font-family: "Inter", sans-serifl;
 }
 
 .paragraph3{
-    margin: 0.5% 0 0 0;
-    font-weight: 310;
+    margin: 0.1% 0 0 0;
+    font-weight: 300;
     font-size: 19px;
-    font-family: "Inter", sans-serifl;
+    font-family: "Inter", sans-serif;
 }
 
 .title{
-    font-family: "Inter", sans-serifl;
+    font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 50000000;
 }
@@ -167,7 +166,7 @@ img{
     border-radius: 5px;
     width: 25%;
     border: none;
-    font-family: "Inter", sans-serifl;
+    font-family: "Inter", sans-serif;
     font-weight: 300;
     font-size: 10px;
     height: 18px;
@@ -175,3 +174,8 @@ img{
 }
 /* Ozias Styling(The End) */
 
+/* Britney styling start */
+.containerB{
+    border: 2px solid rgb(0, 12, 66);
+    height: 100vh;
+}
