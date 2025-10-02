@@ -8,6 +8,8 @@
   /* background-color: #f8f8f8; */
   /* border: 2px solid black; */
   box-sizing: border-box; /* include padding in width */
+  background-color: transparent !important;
+  z-index: -2;
 }
 
 .logo {

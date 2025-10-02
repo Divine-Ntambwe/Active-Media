@@ -3,13 +3,15 @@ import styles from "./About_Us.module.css";
 import lightImg from "../assets/Frame 206.png";
 import MultiMedia from "../assets/Multimedia.png";
 import PurpleLines from "../component/purpleLines.jsx";
+import { useNavigate } from "react-router-dom";
 
 export default function About_Us() {
   const containerRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const isScrolling = useRef(false);
-
+  const purpleLines = useRef();
   const slidesCount = 4;
+  const nav = useNavigate()
 
   useEffect(() => {
     const handleWheel = (e) => {
@@ -20,6 +22,8 @@ export default function About_Us() {
 
       if (e.deltaY > 0) {
         setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
+        
+
       } else {
         setCurrentSlide((prev) => Math.max(0, prev - 1));
       }
@@ -46,12 +50,27 @@ export default function About_Us() {
         slide.classList.remove(styles.active);
       }
     });
+    switch (currentSlide){
+      case 0 : purpleLines.current.style.left = "-250px"
+      purpleLines.current.style.top = "0px"
+      return;
+      case 1: { 
+        purpleLines.current.style.left = "200px"
+      purpleLines.current.style.top = "-250px"
+      return
+    }
+      case 2: purpleLines.current.style.top = "-50px"
+      return
+
+      case 3: nav("/design-marketing")
+    }
+
   }, [currentSlide]);
 
   return (
     <section className={styles.aboutSection}>
       {/* PurpleLines always behind everything */}
-      <div className={styles.purpleLinesWrapper}>
+      <div className={styles.purpleLinesWrapper} ref={purpleLines}>
         <PurpleLines />
       </div>
 
