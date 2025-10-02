@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
-    "framer-motion": "^12.23.22",
-    "motion": "^12.23.22",
+    "framer-motion": "^12.23.18",
+    "mui": "^0.0.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.1"
