@@ -7,7 +7,8 @@
 
 .slide {
   width: 100%;
-  height: 100vh; /* full viewport height */
+  min-height: 100vh; 
+  /* full viewport height */
   position: relative;
 }
 

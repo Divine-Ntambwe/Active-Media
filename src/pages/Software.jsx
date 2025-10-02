@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./Software.module.css";
 import PurpleLines from "../component/PurpleLines"; 
 import laptopImage from "../assets/lottiefiles.com/animations/computerztech-lhmk6qciBg.png";
+import ECommercePage from "./ECommercePage";
+import Cloud_Based_Solutions from "./Cloud_Based_Solutions";
 
 export default function Software() {
   return (
@@ -36,12 +38,12 @@ export default function Software() {
 
       {/* Slide 2 */}
       <div className={`${styles.slide} ${styles.div2}`}>
-        <p>cloud based solutions </p>
+        <Cloud_Based_Solutions/>
       </div>
 
       {/* Slide 3 */}
       <div className={`${styles.slide} ${styles.div3}`}>
-        <p>e-commerce</p>
+       <ECommercePage/>
       </div>
 
       {/* Slide 4 */}
