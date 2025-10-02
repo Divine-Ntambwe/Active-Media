@@ -40,9 +40,11 @@ const Digital_Marketing = () => {
 
          firstTwo.current.classList.add(styles.disappear)
         //  firstTwo.current.style.animationFillMode = "forwards"
-        
-         
     
+      }
+
+      if (document.documentElement.scrollTop > 236){
+        // alert("oooooo")
       }
       if (document.documentElement.scrollTop == 0){
        firstTwo.current.classList.remove(styles.disappear)
