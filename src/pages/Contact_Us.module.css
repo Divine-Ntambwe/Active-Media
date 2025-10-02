@@ -95,6 +95,20 @@
   font-size: 14px;
 }
 
+.form textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  width: 88%;
+  background: #fff;
+  font-size: 14px;
+  resize: none; /* Prevent manual resizing */
+  overflow: hidden; /* Hide scrollbars */
+  min-height: 100px;
+}
+
+
 .form button {
   margin-top: 15px;
   padding: 8px;
