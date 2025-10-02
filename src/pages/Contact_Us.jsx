@@ -1,10 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./Contact_Us.module.css";
-<<<<<<< HEAD
 import emailjs from "@emailjs/browser";
-=======
-import Navbar from "../component/Navbar";
->>>>>>> master
 
 const Contact_Us = () => {
   const form = useRef();
