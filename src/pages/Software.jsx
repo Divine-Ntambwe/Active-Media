@@ -37,6 +37,14 @@ export default function Software() {
       {/* Slide 2 */}
       <div className={`${styles.slide} ${styles.div2}`}>
         <p>cloud based solutions </p>
+        {/* Ozias(start) */}
+        <div className={styles.div2_2}>
+            <img src="/src/assets/Frame 78.png" alt="" />
+        <div className={styles.div2_3}>
+            <img src={laptopImage} alt="" className={styles.laptop} />
+        </div>
+            </div>
+        {/* Ozias(End) */}
       </div>
 
       {/* Slide 3 */}
