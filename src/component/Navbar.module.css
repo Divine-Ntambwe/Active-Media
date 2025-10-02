@@ -5,9 +5,13 @@
   width: 80%; /* fill screen width */
   max-width: 100vw; /* prevent overflow */
   padding: 0px 5vw;
-  /* background-color: #f8f8f8; */
   /* border: 2px solid black; */
   box-sizing: border-box; /* include padding in width */
+  background-color: transparent !important;
+  z-index: -2;
+  position: sticky !important;
+  top:0;
+
 }
 
 .logo {
@@ -71,6 +75,7 @@
     align-items: flex-start;
     width: 95%; /* use more width */
     padding: 2% 5%;
+    background-color: transparent !important;
   }
 
   .logo {

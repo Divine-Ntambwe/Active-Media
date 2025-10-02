@@ -10,12 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fontsource/inter": "^5.2.8",
     "framer-motion": "^12.23.22",
-<<<<<<< HEAD
     "lottie-react": "^2.4.1",
-=======
->>>>>>> ada18713a75f5cdb1923bb1b2331c466b4eca61a
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.1"

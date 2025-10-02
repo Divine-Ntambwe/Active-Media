@@ -39,7 +39,7 @@ function Cloud_Based_Solutions() {
             </div>
             
             {/* Background decorative elements */}
-            <img src={swirl} alt="decorative swirl" className={styles.swirl} />
+            {/* <img src={swirl} alt="decorative swirl" className={styles.swirl} /> */}
             <img src={backgroundElement} alt="decorative element" className={styles.backgroundDecor} />
           </div>
         </div>

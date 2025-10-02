@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Software.module.css";
-import PurpleLines from "../component/PurpleLines"; 
+import PurpleLines from "../component/purpleLines"; 
 import laptopImage from "../assets/lottiefiles.com/animations/computerztech-lhmk6qciBg.png";
 import ECommercePage from "./ECommercePage";
 import Cloud_Based_Solutions from "./Cloud_Based_Solutions";
@@ -39,6 +39,14 @@ export default function Software() {
       {/* Slide 2 */}
       <div className={`${styles.slide} ${styles.div2}`}>
         <Cloud_Based_Solutions/>
+        {/* Ozias(start) */}
+        <div className={styles.div2_2}>
+            <img src="/src/assets/Frame 78.png" alt="" />
+        <div className={styles.div2_3}>
+            <img src={laptopImage} alt="" className={styles.laptop} />
+        </div>
+            </div>
+        {/* Ozias(End) */}
       </div>
 
       {/* Slide 3 */}
@@ -47,7 +55,12 @@ export default function Software() {
       </div>
 
       {/* Slide 4 */}
-      <div className={`${styles.slide} ${styles.div4}`}></div>
+      {/* <div className={`${styles.slide} ${styles.div4}`}></div> */}
+      
+      {/* Carmel Software */}
+      {/* <div className={styles.ecommerce}>
+
+      </div> */}
     </section>
   );
 }
