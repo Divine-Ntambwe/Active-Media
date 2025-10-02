@@ -115,7 +115,156 @@
   margin-top: 10vh;
 }
 
-.bigText {
+.laptopWrapper img {
+  width: 60%;           
+  max-width: 100%;
+  height: auto;
+} 
+
+.textContent {
+  position: relative;
+  z-index: 3;
+  max-width: 700px;
+  padding: 10% 15%;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* .paragraph1 {
+  margin-left: 5%;
+  padding-right: 30%;
+}
+
+.paragraph2 {
+  margin-left: 25%;
+  margin-top: 15%;
+}
+
+.paragraph3 {
+  position: absolute;
+  top: 20%;
+  right: 0%;
+} */
+
+/* Ozias Styling (The Start) */
+.container1{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 80%;
+    /* border: 1px solid red;   */
+    /* justify-content: flex-end;  */
+    gap: 50px;
+    height: 40vh;
+    margin-bottom: 20px;
+    /* height: 53vh; */
+}
+
+.text{
+    /* border: 1px solid black; */
+    /* height: 43vh; */
+    /* width: 35%; */
+    /* margin: 3% 0 0 12%; */
+}
+
+h5{
+    font-size: 14px;
+    text-align: justify;
+    text-align-last: right;
+    font-family: "Lato", sans-serif;
+
+
+}
+
+.passionate{
+    font-size: 10px;
+    font-family: sans-serif;
+    height: 20px;
+    width: 100px;
+    margin-left: auto;
+    /* margin-top: 20px; */
+    text-align: center;
+    padding-top: 7px;
+    background-color: rgba(211, 211, 211, 0.5);
+    border: none;
+    border-radius: 3px;
+}
+.lightimage{
+  
+}
+
+.div3 img{
+  /* width: 100%;        */
+  width: 500px;
+  height: 40vh;
+  object-fit: fill !important;
+  /* border: 1px solid blue; */
+}
+
+.conatiner2{
+    display: flex;
+    width: 100%;
+    height: 50vh;
+}
+
+.phoneImage{
+  margin-left: auto ;
+    /* height: 43vh;
+    width: 30%; */
+    /* margin: 1% 0 0 22%; */
+}
+
+.text2{
+    /* height: 43vh;
+    width: 23%; */
+    /* margin: 0 0 0 1%; */
+}
+
+.paragraph{
+    /* font-size: 1.3em; */
+    /* text-align: justify; */
+    /* text-align-last: right; */
+    /* font-family: "Inter", sans-serif; */
+    /* font-weight: 300; */
+    /* font-style: normal; */
+}
+
+.title{
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 50000000;
+}
+
+.image1{
+    width: 100%;
+}
+
+.experties{
+      font-size: 10px;
+    font-family: sans-serif;
+    height: 20px;
+    width: 100px;
+    margin-right: auto;
+    /* margin-top: 20px; */
+    text-align: center;
+    padding-top: 7px;
+    background-color: rgba(211, 211, 211, 0.5);
+    border: none;
+    border-radius: 3px;
+}
+/* Ozias Styling(The End) */
+
+/* Britney styling start */
+.containerB{
+    /* border: 2px solid rgb(0, 12, 66); */
+    height: 90vh;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+/* No changes to the top section */
+.bigText{
+  /* border: 1px solid red; */
   height: 27vh;
   width: 70vw;
   font-size: 36px;
@@ -185,14 +334,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid red;
 }
 
 .container1 {
   display: grid;
   grid-template-columns: 50% 50%;
-  width: 55%;
+  width: 80%;
   gap: 50px;
-  height: 40vh;
+  height: 300px;
+  margin-top: 1.2em;
 }
 
 h5 {
@@ -203,11 +354,10 @@ h5 {
 }
 
 .teamText {
-  font-size: 1.1em;
-  text-align: justify;
-  text-align-last: right;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
+  text-align: justify !important;
+  text-align-last: right !important;
+  margin-left: auto;
+ 
 }
 
 .passionate {
@@ -224,12 +374,12 @@ h5 {
 }
 
 .div3 img {
-  width: 400px;
-  height: 40vh;
+  width: 500px;
+  height: 280px;
   object-fit: fill !important;
 }
 
-.phoneImage {
+.oneImage {
   margin-left: auto;
 }
 
@@ -251,13 +401,16 @@ h5 {
 }
 
 .experties {
-  border-radius: 5px;
-  width: 27%;
-  border: none;
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
   font-size: 10px;
-  height: 22px;
+  font-family: sans-serif;
+  height: 20px;
+  width: 100px;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 7px;
+  background-color: rgba(211, 211, 211, 0.5);
+  border: none;
+  border-radius: 3px;
 }
 
 /* Slide 4 */
@@ -275,7 +428,7 @@ body {
 /* Slide visibility + fade control */
 .aboutDiv {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 .aboutDiv.active {
   opacity: 1;
@@ -285,7 +438,7 @@ body {
 .fadeInStagger {
   opacity: 0;
   transform: translateY(25px);
-  transition: all 1.3s ease;
+  transition: all 1.5s ease;
 }
 .aboutDiv.active .fadeInStagger {
   opacity: 3;
