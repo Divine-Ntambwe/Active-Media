@@ -74,6 +74,7 @@
     align-items: flex-start;
     width: 95%; /* use more width */
     padding: 2% 5%;
+    background-color: transparent !important;
   }
 
   .logo {
