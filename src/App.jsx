@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
@@ -8,6 +8,7 @@ import Software from "./pages/Software";
 import Recent_Work from "./pages/Recent_Work";
 import Cloud_Based_Solutions from "./pages/Cloud_Based_Solutions";
 import Navbar from "./component/Navbar";
+import Digital_Marketing from "./pages/Digital_Marketing";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about-us" element={<About_Us />} />
         <Route path="/contact-us" element={<Contact_Us />} />
         <Route path="/software" element={<Software />} />
+        <Route path="/design-marketing" element={<Digital_Marketing />} />
       </Routes>
     </Router>
   );

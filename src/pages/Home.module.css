@@ -93,3 +93,23 @@
   .title{font-size:28px}
   .swirl{display:none}
 }
+
+.bottomCenter {
+  position: fixed;
+  bottom: 0; /* touch bottom of page */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 25px; 
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  color:  #ffffff;
+
+  /* Half-capsule styles */
+  background-color: #000;
+  padding: 12px 32px; /* increased horizontal spacing for wider look */
+  border-radius: 42px 42px 0 0; /* only top corners rounded */
+  width: 130px; /* wider (adjust as needed) */
+  max-width: 90%; /* responsive */
+  border: 1px solid #000; /* black border */
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3); /* subtle shadow from bottom */
+}
