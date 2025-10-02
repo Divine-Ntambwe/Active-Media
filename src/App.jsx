@@ -20,11 +20,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<About_Us />} />
           <Route path="/contact-us" element={<Contact_Us />} />
-<<<<<<< HEAD
           <Route path="/recent-work" element={<Recent_Work />} />
-=======
           <Route path="/design-marketing" element={<Digital_Marketing />} />
->>>>>>> aed33a44b4c8a74c6e5979353352dceec6dfefac
         </Routes>
     </Router>
     </>
