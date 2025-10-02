@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import React from 'react';
 import styles from './Navbar.module.css';
-import logo from "../assets/ActiveMediaLogo.png";
+import logo from '../assets/ActiveMediaLogo.png';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -31,7 +32,7 @@ function Navbar() {
         </li>
       </ol>
     </div>
-  )
+  );
 }
 
 export default Navbar;
