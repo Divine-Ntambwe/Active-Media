@@ -14,7 +14,10 @@ left: -55px;
 /* animation: moveDown 3s; */
 }
 
-
+@keyframes startAnimation {
+  0%{top:800px}
+  100%{top:0px}
+}
 /* Main container */
 .container {
   /* max-width: 70rem;  */
@@ -26,8 +29,10 @@ left: -55px;
   padding-top: 6rem; 
   /* padding-bottom: 4rem;  */
   text-align: center; 
+  position: relative;
   overflow: hidden;
   transition: 1s;  
+  animation: startAnimation 2s;
   /* border: 1px solid blue; */
 }
 
