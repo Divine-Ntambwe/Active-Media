@@ -31,6 +31,7 @@ function Home() {
         </div>
 
         <div className={styles.right}>
+          
           <div className={styles.blendingBackground}></div>
           <img src={clouds} alt="decorative clouds" className={styles.orb1} />
         </div>
