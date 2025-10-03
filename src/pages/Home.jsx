@@ -4,8 +4,10 @@ import Navbar from "../component/Navbar"
 
 import blending from "../assets/Active_M.jpg"
 import clouds from "../assets/Clouds 2.png"
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
+  const nav = useNavigate()
   return (
     <div>
        <section className={styles.hero}>
@@ -23,7 +25,7 @@ function Home() {
             solution
           </h1>
 
-          <button className={styles.cta} aria-label="Our Services">
+          <button onClick={()=>{nav("/software")}} className={styles.cta} aria-label="Our Services">
             Our Services <span className={styles.arrow}>›</span>
           </button>
         </div>
