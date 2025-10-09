@@ -31,9 +31,18 @@ left: -55px;
   text-align: center; 
   position: relative;
   overflow: hidden;
-  transition: 1s;  
+  transition: 3s;  
   animation: startAnimation 2s;
   /* border: 1px solid blue; */
+}
+
+@keyframes slide-out {
+    0%{left:0}
+    100%{left:-800px}
+}
+
+.slideOut {
+    animation: slide-out 3s;
 }
 
 @keyframes moveUp {

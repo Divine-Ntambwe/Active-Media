@@ -43,8 +43,8 @@ const Digital_Marketing = () => {
     
       }
 
-      if (document.documentElement.scrollTop > 236){
-        // alert("oooooo")
+      if (document.documentElement.scrollTop > 240){
+        container.current.classList.add(styles.slideOut)
       }
       if (document.documentElement.scrollTop == 0){
        firstTwo.current.classList.remove(styles.disappear)
