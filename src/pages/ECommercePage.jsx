@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect, useEffect, useState } from "react";
+import React, { useRef, useEffect, useLayoutEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import styles from "./ECommercePage.module.css";
 
@@ -9,6 +9,10 @@ const ECommercePage = () => {
   const placeholder2Ref = useRef(null); // bottom laptop spot
   const laptopRef = useRef(null);
   const supremeRef = useRef(null); // reference for Supreme Build It image
+  const titleRef = useRef(null); // reference for title
+  const descriptionRef = useRef(null); // reference for description
+  const firstImageRef = useRef(null); // reference for first section image
+  const laptopImageRef = useRef(null); // reference for laptop image
 
   // Motion values (numbers are in px for top/left/width)
   const topMV = useMotionValue(window?.innerHeight ? window.innerHeight * 0.75 : 700); // visible by default
@@ -22,6 +26,12 @@ const ECommercePage = () => {
 
   // State to control visibility of Supreme Build It image
   const [isSupremeVisible, setIsSupremeVisible] = useState(false);
+  // State to control fade-in animation for each element
+  const [isTitleVisible, setIsTitleVisible] = useState(false);
+  const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
+  const [isFirstImageVisible, setIsFirstImageVisible] = useState(false);
+  const [isSupremeImageVisible, setIsSupremeImageVisible] = useState(false);
+  const [isLaptopImageVisible, setIsLaptopImageVisible] = useState(false);
 
   // Compute and set initial position once placeholders are mounted
   useLayoutEffect(() => {
@@ -35,12 +45,52 @@ const ECommercePage = () => {
       widthMV.set(r1.width);
     };
 
-    // small timeout to ensure layout done
+    // Run immediately and after a small timeout to ensure layout is done
+    setInitialFromPlaceholder();
     setTimeout(setInitialFromPlaceholder, 0);
-    // also try again on load in case fonts/images change sizes
+    // Also try again on load in case fonts/images change sizes
     window.addEventListener("load", setInitialFromPlaceholder);
     return () => window.removeEventListener("load", setInitialFromPlaceholder);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // IntersectionObserver to trigger fade-in animations
+  useEffect(() => {
+    const createObserver = (ref, setVisible) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.disconnect(); // Stop observing once visible
+          }
+        },
+        { threshold: 0.2 } // Trigger when 20% of the element is visible
+      );
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    };
+
+    const cleanupTitle = createObserver(titleRef, setIsTitleVisible);
+    const cleanupDescription = createObserver(descriptionRef, setIsDescriptionVisible);
+    const cleanupFirstImage = createObserver(firstImageRef, setIsFirstImageVisible);
+    const cleanupSupremeImage = createObserver(supremeRef, setIsSupremeImageVisible);
+    const cleanupLaptopImage = createObserver(laptopImageRef, setIsLaptopImageVisible);
+
+    return () => {
+      cleanupTitle();
+      cleanupDescription();
+      cleanupFirstImage();
+      cleanupSupremeImage();
+      cleanupLaptopImage();
+    };
   }, []);
 
   useEffect(() => {
@@ -116,20 +166,29 @@ const ECommercePage = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>E-COMMERCE</h1>
+      <h1
+        ref={titleRef}
+        className={`${styles.title} ${isTitleVisible ? styles.visibleFade : styles.fadeOnScroll}`}
+      >
+        E-COMMERCE
+      </h1>
 
       {/* First Section - like the screenshot */}
       <div className={styles.section}>
         <div className={styles.leftSection}>
           <img
+            ref={firstImageRef}
             src="../src/assets/Frame 79.png"
             alt="A cut above the rest"
-            className={`${styles.mainImage} ${styles.fadeIn}`}
+            className={`${styles.mainImage} ${isFirstImageVisible ? styles.visibleFade : styles.fadeOnScroll}`}
           />
         </div>
 
         <div className={styles.rightSection}>
-          <p className={`${styles.description} ${styles.fadeInUp}`}>
+          <p
+            ref={descriptionRef}
+            className={`${styles.description} ${isDescriptionVisible ? styles.visibleFade : styles.fadeOnScroll}`}
+          >
             From entry level online stores to enterprise-grade solutions, we
             have the technical ability to deliver on your requirements and
             provide you with a high-converting and well-performing online
@@ -157,7 +216,7 @@ const ECommercePage = () => {
             alt="Supreme Build It"
             className={`${styles.mainImage} ${styles.fadeInFromBottom} ${
               isSupremeVisible ? styles.visible : ""
-            }`}
+            } ${isSupremeImageVisible ? styles.visibleFade : styles.fadeOnScroll}`}
           />
         </div>
       </div>
@@ -173,9 +232,10 @@ const ECommercePage = () => {
         }}
       >
         <img
+          ref={laptopImageRef}
           src="../src/assets/computerztech-lhmk6qciBg.png"
           alt="Laptop"
-          className={styles.laptopImage}
+          className={`${styles.laptopImage} ${isLaptopImageVisible ? styles.visibleFade : styles.fadeOnScroll}`}
         />
       </motion.div>
     </div>

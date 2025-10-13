@@ -123,3 +123,94 @@ body {
 .laptop{
   width: 80%;
 }
+/* Rising Fade In Animation */
+@keyframes riseFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply to heading */
+.titleAnimate {
+  animation: riseFadeIn 1.2s ease-out forwards;
+}
+
+/* Apply to laptop */
+.laptopAnimate {
+  animation: riseFadeIn 1.5s ease-out forwards;
+  animation-delay: 0.4s; /* small delay after heading */
+}
+
+/* Fade In (already made, but refined) */
+@keyframes riseFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade Out */
+@keyframes riseFadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+/* Laptop Fade Out (moves to bottom-left corner) */
+@keyframes laptopFadeOut {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50vw, 50vh); /* moves bottom-left */
+  }
+}
+
+/* States for fade in/out */
+.fadeIn {
+  animation: riseFadeIn 1.2s ease-out forwards;
+}
+
+.fadeOut {
+  animation: riseFadeOut 1s ease-in forwards;
+}
+
+.laptopFadeIn {
+  animation: riseFadeIn 1.5s ease-out forwards;
+}
+
+.laptopFadeOut {
+  animation: laptopFadeOut 1.5s ease-in forwards;
+}
+
+/* Fade Out whole section */
+.fadeOutSection {
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
+}
+
+/* Heading & text fade out */
+.fadeOut {
+  animation: riseFadeOut 0.8s ease-in forwards;
+}
+
+/* Laptop fade out to bottom-left */
+.laptopFadeOut {
+  animation: laptopFadeOut 1s ease-in forwards;
+}
