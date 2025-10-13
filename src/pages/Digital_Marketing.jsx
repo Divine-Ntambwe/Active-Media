@@ -64,8 +64,9 @@ const Digital_Marketing = () => {
   }, []);
   
     return (
-    <div ref={container} className={styles.container}>
+      <>
         <img ref={BGImg} className={styles.digitalBackground} src="./backgroundLines.png"/>
+    <div ref={container} className={styles.container}>
       <h1 ref={heading} >
         GRAPHIC DESIGN &<br />
         DIGITAL MARKETING
@@ -128,6 +129,7 @@ const Digital_Marketing = () => {
      {/* Card 3 */}
       
     </div>
+      </>
   );
 };
 
