@@ -110,7 +110,7 @@ const Recent_Work = () => {
               }`}
             />
           </div>
-            <img src={Blending} className={styles.bgImage} alt="" />
+            {/* <img src={Blending} className={styles.bgImage} alt="" /> */}
         </div>
 
         {/* <div className={styles.rhaddock}>
