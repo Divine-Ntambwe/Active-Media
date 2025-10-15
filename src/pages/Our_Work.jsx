@@ -20,31 +20,30 @@ const Recent_Work = () => {
   const logo = [SupremeLogo, rapidtradeLogo, RhLogo];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true); // true = visible, false = faded out
-
-  useEffect(() => {
-    let isScrolling = false;
-
+useEffect(() => {
     const handleScroll = (e) => {
-      if (isScrolling) return;
-      isScrolling = true;
-
-      setFade(false);
-      const diff = e.deltaY;
-
-      setTimeout(() => {
-        if (diff > 20 && currentIndex < headings.length - 1) {
-          setCurrentIndex((prev) => prev + 1);
-        } else if (diff < -20 && currentIndex > 0) {
-          setCurrentIndex((prev) => prev - 1);
-        }
-        setFade(true);
-        isScrolling = false;
-      }, 500); // match with fade animation duration
+      // const step = window.scrollY + 1 // every 200px scroll → new index
+      // if (step !== currentIndex && step < headings.length) {
+        // fade out first
+        setFade(false);
+        const diff = e.deltaY
+        // after fade out, switch text and fade back in
+        setTimeout(() => {
+          if (diff > 20 && currentIndex < 2){
+            setCurrentIndex(currentIndex +1);
+            
+          } else if (diff < 1 && currentIndex > 0 && diff < -20){
+            setCurrentIndex(currentIndex -1);
+            
+          }
+          setFade(true);
+        }, 300); // duration matches CSS fade
+      // }
     };
 
     window.addEventListener("wheel", handleScroll);
     return () => window.removeEventListener("wheel", handleScroll);
-  }, [currentIndex]);
+  }, [currentIndex, headings.length]);
 
   return (
     <>
