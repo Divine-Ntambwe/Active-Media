@@ -43,7 +43,7 @@ left: -55px;
 }
 
 .slideOut {
-    animation: slide-out 3s forwards ;
+    animation: slide-out 2s forwards ;
     animation-timing-function: ease-out;
 }
 

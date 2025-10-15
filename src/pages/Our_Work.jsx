@@ -62,6 +62,12 @@ useEffect(() => {
   return (
     <>
     <Navbar/>
+    <h1
+            className={styles.recentWork}
+            // ref={rwHeading}
+            >
+              Recent Work
+            </h1>
       <div className={styles.container}
      
       >

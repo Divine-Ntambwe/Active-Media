@@ -6,7 +6,10 @@
   height: 80vh;
   overflow: hidden !important;
   transition: 1s;
-  animation: startAnimation 1s;
+  animation: startAnimation 3.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @keyframes disappear {
@@ -19,8 +22,20 @@
 }
 
 @keyframes startAnimation {
-  0%{transform: translateX(1000px);}
+  0%{transform: translateX(1800px);}
   100%{transform: translateX(0px);}
+}
+
+.recentWork{
+    position: absolute;
+    left: -20vw;
+    top: 50vh;
+    /* display: none; */
+    z-index: 1;
+    font-size: 3rem;
+    width: 300px;
+    animation: startAnimation 3.5s;
+
 }
 
 .wrapper {

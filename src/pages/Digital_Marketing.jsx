@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './Digital_Marketing.module.css'
 import Navbar from '../component/Navbar';
+import { useNavigate } from 'react-router-dom';
 const Digital_Marketing = () => {
     const [lastY, setLastY] = useState(0);
     const [index,setIndex] = useState(0)
@@ -12,6 +13,7 @@ const Digital_Marketing = () => {
     const lastFour = useRef()
     const firstTwo = useRef()
     const rwHeading = useRef();
+    const nav = useNavigate()
     let num = 0
     function onScroll(){
       console.log(document.documentElement.scrollTop)
@@ -47,9 +49,12 @@ const Digital_Marketing = () => {
 
       if (document.documentElement.scrollTop > 235){
         container.current.classList.add(styles.slideOut);
-        rwHeading.current.style.display = "inline";
-        rwHeading.current.classList.add(styles.moveRW)
-
+         BGImg.current.classList.add(styles.disappear);
+        // rwHeading.current.style.display = "inline";
+        // rwHeading.current.classList.add(styles.moveRW)
+        setTimeout(()=>{
+          nav("/recent")
+        },1500)
         
       }
       if (document.documentElement.scrollTop == 0){
@@ -74,12 +79,7 @@ const Digital_Marketing = () => {
       <Navbar/>
     
         <img ref={BGImg} className={styles.digitalBackground} src="./backgroundLines.png"/>
-        <h1
-        className={styles.recentWork}
-        ref={rwHeading}
-        >
-          Recent Work
-        </h1>
+       
     <div ref={container} className={styles.container}>
       <h1 ref={heading} >
         GRAPHIC DESIGN &<br />
