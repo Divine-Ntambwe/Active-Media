@@ -3,10 +3,12 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import styles from "./Software.module.css";
 import PurpleLines from "../component/purpleLines";
 
-// Import assets for cloud section
+
 import serverStack from "../assets/Untitled/https_/lottiefiles.com/animations/computerztech-lhmk6qciBg.png";
 import backgroundElement from "../assets/Frame 77.png";
 import Navbar from "../component/Navbar";
+import ECommercePage from "./ECommercePage";
+import { useNavigate } from "react-router-dom";
 
 export default function Software() {
   const [showFirst, setShowFirst] = useState(true);
@@ -52,33 +54,69 @@ export default function Software() {
   const par1 = useRef(),
     title1 = useRef(),
     par2 = useRef(),
-    div3 = useRef();
-  const [slide,setSlide] = useState(0)
+    div3 = useRef(),
+    div4 = useRef(),
+    div5 = useRef(),
+    title2 = useRef(),
+    title3 = useRef(),
+    par3 = useRef(),
+    par4 = useRef(),
+    cloudBasedImg = useRef(),
+    supremeImg = useRef()
+  const [slide, setSlide] = useState(0);
+  const [fade, setFade] = useState(true);
+  const nav = useNavigate()
 
   useEffect(() => {
     const handleScroll = (e) => {
-      if (e.deltaY > 5) {
-        title1.current.classList.remove(styles.fadeIn);
-        title1.current.classList.add(styles.fadeOut);
-        par1.current.classList.remove(styles.fadeIn);
-        par1.current.classList.add(styles.disappear);
-        par2.current.classList.remove(styles.fadeIn);
-        par2.current.classList.add(styles.disappear);
+      setFade(false);
+      setTimeout(() => {
+        if (e.deltaY > 20) {
+          if (slide === 0) {
+            title1.current.classList.remove(styles.fadeIn);
+            title1.current.classList.add(styles.fadeOut);
+            par1.current.classList.remove(styles.fadeIn);
+            par1.current.classList.add(styles.disappear);
+            par2.current.classList.remove(styles.fadeIn);
+            par2.current.classList.add(styles.disappear);
 
-        cloudRef.current.classList.add(styles.fadeIn2);
-        
-      }
-      setSlide(slide => slide+1)
-      console.log("hehe")
-      if (e.deltaY > 6) {
-         div3.current.classList.add(styles.fadeIn2);
-      }
+            cloudRef.current.classList.add(styles.fadeIn2);
+          }
+          if (slide === 1) {
+            cloudBasedImg.current.classList.add(styles.disappear);
+            title2.current.classList.add(styles.fadeOut2);
+            par3.current.classList.add(styles.fadeOut2);
+
+            div3.current.classList.add(styles.fadeIn3);
+          }
+          if (slide === 2) {
+            div3.current.classList.remove(styles.fadeIn3);
+            div3.current.classList.add(styles.fadeOut3);
+
+            div4.current.classList.add(styles.fadeIn4);
+          }
+
+          if (slide === 3){
+            // div4.current.classList.remove(styles.fadeIn4);
+            title3.current.classList.add(styles.fadeOut2);
+            par4.current.classList.add(styles.fadeOut2);
+            supremeImg.current.classList.add(styles.disappear)
+
+            div5.current.classList.add(styles.fadeIn5);
+          }
+          if (slide === 4){
+          //  nav("/design-marketing")
+          }
+          setSlide(slide + 1);
+        }
+      }, 300);
+      setFade(true);
     };
 
     window.addEventListener("wheel", handleScroll);
     return () => window.removeEventListener("wheel", handleScroll);
-  }, []);
-  console.log(slide)
+  }, [slide]);
+  console.log(slide);
 
   // // Cloud observer
   // useEffect(() => {
@@ -248,7 +286,7 @@ export default function Software() {
             showFirst ? styles.active : styles.fadeOutSection
           }`}
         >
-          <PurpleLines />
+          {/* <PurpleLines /> */}
           <div className={styles.textBlock}>
             <h1
               ref={title1}
@@ -271,17 +309,7 @@ export default function Software() {
             </div>
           </div>
 
-          <div className={styles.laptopWrapper}>
-            <img
-              src={
-                "src/assets/lottiefiles.com/animations/computerztech-lhmk6qciBg.png"
-              }
-              alt="Laptop"
-              className={`${styles.laptopImage} ${
-                showFirst ? styles.laptopFadeIn : styles.laptopFadeOut
-              }`}
-            />
-          </div>
+          
 
           <div
             ref={par2}
@@ -305,19 +333,17 @@ export default function Software() {
         >
           <div className={styles.content}>
             <div className={styles.left}>
-              <div className={styles.serverImageContainer}>
-                <img
-                  src={serverStack}
-                  alt="Server stack"
-                  className={styles.serverImage}
-                />
-              </div>
+             
+              <div
+              ref={title2}
+              >
               <h1 className={styles.title}>CLOUD-BASED</h1>
               <h1 className={styles.title2}>SOLUTIONS</h1>
+              </div>
             </div>
 
             <div className={styles.right}>
-              <div className={styles.textContent}>
+              <div className={styles.textContent} ref={par3}>
                 <p className={styles.description}>
                   Whether you want to move your
                 </p>
@@ -333,6 +359,7 @@ export default function Software() {
                 src={backgroundElement}
                 alt="decorative element"
                 className={styles.backgroundDecor}
+                ref={cloudBasedImg}
               />
             </div>
           </div>
@@ -341,119 +368,67 @@ export default function Software() {
         <div ref={div3}>
           <div className={styles.div2_2}>
             <img src="/src/assets/Frame 78.png" alt="" />
-            <div className={styles.div2_3}>
-              <img
-                src={"src/assets/computerztech-lhmk6qciBg.png"}
-                alt=""
-                className={styles.laptop}
-              />
-            </div>
+            
           </div>
         </div>
         {/* Ozias(start) */}
         {/* Ozias(End) */}
         {/* Slide 3 (ECommerce) */}
 
-        <div className={`${styles.slide} ${styles.div3}`}>
-          <div className={styles.ecommerceContainer}>
-            <h1
-              ref={titleRef}
-              className={`${styles.ecommerceTitle} ${
-                isTitleVisible ? styles.visibleFade : styles.fadeOnScroll
-              }`}
-            >
-              E-COMMERCE
-            </h1>
+        <div className={`${styles.slide}`} ref={div4}>
+          <h1
+            ref={title3}
+            className={`${styles.title}`}
+          >
+            E-COMMERCE
+          </h1>
 
-            {/* First Section - like the screenshot */}
-            <div className={styles.ecommerceSection}>
-              <div className={styles.ecommerceLeftSection}>
-                <img
-                  ref={firstImageRef}
-                  src={"src/assets/Frame 79.png"}
-                  alt="A cut above the rest"
-                  className={`${styles.ecommerceMainImage} ${
-                    isFirstImageVisible
-                      ? styles.visibleFade
-                      : styles.fadeOnScroll
-                  }`}
-                />
-              </div>
-
-              <div className={styles.ecommerceRightSection}>
-                <p
-                  ref={descriptionRef}
-                  className={`${styles.ecommerceDescription} ${
-                    isDescriptionVisible
-                      ? styles.visibleFade
-                      : styles.fadeOnScroll
-                  }`}
-                >
-                  From entry level online stores to enterprise-grade solutions,
-                  we have the technical ability to deliver on your requirements
-                  and provide you with a high-converting and well-performing
-                  online shopping environment.
-                </p>
-
-                {/* Placeholder where laptop sits initially (top) */}
-                <div className={styles.lap} aria-hidden>
-                  <div
-                    ref={placeholder1Ref}
-                    className={styles.laptopPlaceholder}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Second Section - mirrored: laptop left, big supreme right */}
-            <div className={styles.ecommerceSection}>
-              <div className={styles.ecommerceLeftSection}>
-                {/* bottom placeholder where laptop lands */}
-                <div
-                  ref={placeholder2Ref}
-                  className={styles.laptopPlaceholder}
-                />
-              </div>
-
-              <div className={styles.ecommerceRightSection}>
-                <img
-                  ref={supremeRef}
-                  src={"src/assets/Frame 111.png"}
-                  alt="Supreme Build It"
-                  className={`${styles.ecommerceMainImage} ${
-                    styles.fadeInFromBottom
-                  } ${isSupremeVisible ? styles.visible : ""} ${
-                    isSupremeImageVisible
-                      ? styles.visibleFade
-                      : styles.fadeOnScroll
-                  }`}
-                />
-              </div>
-            </div>
-
-            {/* Floating laptop that visually moves between placeholders */}
-            <motion.div
-              ref={laptopRef}
-              className={styles.ecommerceLaptopContainer}
-              style={{
-                top: topSpring,
-                left: leftSpring,
-                width: widthSpring,
-              }}
-            >
+          {/* First Section - like the screenshot */}
+          <div className={styles.div4}>
+            <div className={styles.leftSection}>
               <img
-                ref={laptopImageRef}
-                src={"src/assets/computerztech-lhmk6qciBg.png"}
-                alt="Laptop"
-                className={`${styles.ecommerceLaptopImage} ${
-                  isLaptopImageVisible
-                    ? styles.visibleFade
-                    : styles.fadeOnScroll
+                ref={supremeImg}
+                src="../src/assets/Frame 79.png"
+                alt="A cut above the rest"
+                className={`${styles.mainImage} 
                 }`}
               />
-            </motion.div>
+            </div>
+
+            <div className={styles.rightSection}>
+              <p
+                ref={par4}
+                className={`${styles.description}`}
+              >
+                From entry level online stores to enterprise-grade solutions, we
+                have the technical ability to deliver on your requirements and
+                provide you with a high-converting and well-performing online
+                shopping environment.
+              </p>
+
+            
+            </div>
           </div>
         </div>
+
+        <div ref={div5}
+        className={styles.div5}
+        >
+          
+                  <div className={styles.rightSection}>
+                    <img
+                      ref={supremeRef}
+                      src="../src/assets/Frame 111.png"
+                      alt="Supreme Build It"
+                      className={`${styles.mainImage}`}
+                    />
+                  </div>
+                
+        </div>
+       
+           
+          
+        
       </section>
     </div>
   );
