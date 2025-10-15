@@ -21,6 +21,7 @@ function App() {
         <Route path="/about-us" element={<About_Us />} />
         <Route path="/contact-us" element={<Contact_Us />} />
         <Route path="/software" element={<Software />} />
+        <Route path="/cloud" element={<Cloud_Based_Solutions />} />
         <Route path="/design-marketing" element={<Digital_Marketing />} />
       </Routes>
     </Router>
