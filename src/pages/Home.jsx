@@ -2,13 +2,15 @@ import React from 'react'
 import styles from './Home.module.css'
 import Navbar from "../component/Navbar"
 
-import blending from "../assets/blending 1755804129410.png"
+import blending from "../assets/Active_M.jpg"
 import clouds from "../assets/Clouds 2.png"
+import { useNavigate } from 'react-router-dom'
 
 // Import the looping decrypt/encrypt text
 import LoopingText from "../component/LoopingText"
 
 function Home() {
+  const nav = useNavigate()
   return (
     <div>
       <Navbar/>
@@ -27,16 +29,17 @@ function Home() {
               solution
             </h1>
 
-            <button className={styles.cta} aria-label="Our Services">
-              Our Services <span className={styles.arrow}>›</span>
-            </button>
-          </div>
-
-          <div className={styles.right}>
-            <img src={blending} alt="decorative blend" className={styles.swirl} />
-            <img src={clouds} alt="decorative clouds" className={styles.orb1} />
-          </div>
+          <button onClick={()=>{nav("/about-us")}} className={styles.cta} aria-label="Our Services">
+            Our Services <span className={styles.arrow}>›</span>
+          </button>
         </div>
+
+        <div className={styles.right}>
+          <div className={styles.blendingBackground}></div>
+          <img src={clouds} alt="decorative clouds" className={styles.orb1} />
+        </div>
+
+      </div>
       </section>
 
       {/* 🔑 Bottom center decrypt/encrypt looping text */}

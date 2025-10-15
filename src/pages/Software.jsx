@@ -135,8 +135,11 @@ export default function Software() {
       }, 300);
     };
 
-    window.addEventListener("wheel", handleScroll);
+    setTimeout(()=>{
+      window.addEventListener("wheel", handleScroll);
     return () => window.removeEventListener("wheel", handleScroll);
+    },500)
+      
   }, [slide]);
   console.log(slide);
 

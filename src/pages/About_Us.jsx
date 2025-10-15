@@ -63,7 +63,7 @@ export default function About_Us() {
       case 2: purpleLines.current.style.top = "-50px"
       return
 
-      case 3: nav("/design-marketing")
+      case 3: nav("/software")
     }
 
   }, [currentSlide]);
