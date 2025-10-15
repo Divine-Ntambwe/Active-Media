@@ -4,6 +4,7 @@ import lightImg from "../assets/Frame 206.png";
 import MultiMedia from "../assets/Multimedia.png";
 import PurpleLines from "../component/purpleLines.jsx";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../component/Navbar.jsx";
 
 export default function About_Us() {
   const containerRef = useRef(null);
@@ -68,6 +69,8 @@ export default function About_Us() {
   }, [currentSlide]);
 
   return (
+    <>
+      <Navbar/>
     <section className={styles.aboutSection}>
       {/* PurpleLines always behind everything */}
       <div className={styles.purpleLinesWrapper} ref={purpleLines}>
@@ -203,5 +206,6 @@ export default function About_Us() {
         </div>
       </div>
     </section>
+    </>
   );
 }

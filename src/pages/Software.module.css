@@ -7,11 +7,11 @@
 }
 
 .softwareSection {
-  border: 1px solid red;
   /* width: 100%; */
   font-family: "Inter", sans-serif;
   height: 90vh !important;
   /* overflow: hidden !important; */
+  padding-left: 60px;
 }
 
 .slide {
@@ -22,12 +22,16 @@
 }
 
 /* Slide 1: content with laptop */
-.div1 {
-  background: #fff;
+.div1 { 
   display: flex;
   align-items: flex-start; /* Changed from center to start to move content up */
   justify-content: space-between;
-  padding-top: 80px; /* Added top padding to control vertical position without huge top gap */
+  margin-top: 100px;
+  padding-top: 0px; /* Added top padding to control vertical position without huge top gap */
+}
+
+.title1{
+  font-size: 4em;
 }
 
 /* Placeholder slides */
@@ -63,7 +67,7 @@
 .textBlock {
   position: relative;
   z-index: 2;
-  margin-left: 10%; /* Reduced from 20% to spread horizontally (move left content more to the edge) */
+   /* Reduced from 20% to spread horizontally (move left content more to the edge) */
 }
 
 .title {
@@ -76,8 +80,8 @@
 
 .services {
   font-size: 2.5rem;
-  font-weight: 400;
-  margin-top: 2rem;
+  font-weight: 300;
+  margin-top: 3.5rem;
 }
 
 .services p {
@@ -101,14 +105,24 @@
 /* Paragraph box */
 .paragraphBox {
   position: absolute;
-  right: 10%; /* Reduced from 21% to push more to the right edge for spread */
-  top: 55%; /* Adjusted to maintain relative position after moving up */
-  background: rgba(160, 32, 240, 0.08);
-  padding: 2.5rem 4rem;
-  border-radius: 12px;
-  font-size: 1.2rem;
+  
   line-height: 1.6;
   z-index: 4;
+  width:80%;
+  height: 55%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+}
+
+.paragraphBox p, .pinkBox {
+ background:rgb(255, 221, 239,0.3);
+  padding: 0.1em 1em 5rem 1em  ;
+  border-radius: 12px;
+  font-family: "Inter",sans-serif;
+  font-weight: 200;
+  font-size: 1.3rem;
 }
 
 /* Reset body scroll */
@@ -161,7 +175,7 @@ body {
     top:0;
   }
   100% {
-    transform: translateY(-350px);
+    transform: translateY(-100vh);
   }
 }
 
@@ -216,11 +230,11 @@ body {
 
 @keyframes fadeIn2 {
    0% {
-    top:0;
+     transform: translateY(0px);
   }
   100% {
-    top: -100px !important;
-    transform: translateY(-850px);
+    
+    transform: translateY(-880px);
   }
 }
 
@@ -231,7 +245,6 @@ body {
 @keyframes fadeOut2 {
   0% {
     transform: translateY(0px);
-    color: red !important;
   }
   100% {
     transform: translateY(-2050px);
@@ -248,11 +261,10 @@ body {
 
 @keyframes fadeIn3 {
    0% {
-    top:0;
+    transform: translateY(0px);
   }
   100% {
-    top: -100px !important;
-    transform: translateY(-1550px);
+    transform: translateY(-210vh);
   }
 }
 
@@ -263,10 +275,10 @@ animation: fadeIn3 1s forwards;
 
 @keyframes fadeOut3 {
   0% {
-    transform: translateY(-1550px);
+    transform: translateY(-1650px);
   }
   100% {
-    transform: translateY(-2250px);
+    transform: translateY(-2750px);
   }
 }
 
@@ -276,11 +288,10 @@ animation: fadeIn3 1s forwards;
 
 @keyframes fadeIn4 {
    0% {
-    top:0;
+     transform: translateY(0px);
   }
   100% {
-    top: -100px !important;
-    transform: translateY(-2150px);
+    transform: translateY(-285vh);
   }
 }
 
@@ -290,12 +301,12 @@ animation: fadeIn4 1s forwards;
 
 @keyframes fadeIn5 {
    0% {
-     transform: translateY(-2850px);
+     transform: translateY(-400vh);
     opacity: 0;
   }
   100% {
     opacity: 1;
-    transform: translateY(-2850px);
+    transform: translateY(-400vh);
   }
 }
 
@@ -303,6 +314,65 @@ animation: fadeIn4 1s forwards;
 animation: fadeIn5 1s forwards;
 }
 
+.laptopGif{
+  position: absolute;
+  /* width: 300px; */
+  z-index: 10;
+  transition: 1s;
+  transform:scale(2.5);
+  top: 200px;
+  left: 1000px;
+}
+
+@keyframes moveLaptop1 {
+  0%{
+    left: 1000px;
+  }
+  
+  100%{
+    left: 300px
+  }
+}
+
+.moveLaptop1{
+  animation: moveLaptop1 1s 0.1s forwards;
+
+}
+
+@keyframes moveLaptop2 {
+  0%{
+    left: 300px;
+  }
+  
+  100%{
+    left: 1200px;
+    top: 350px;
+  }
+}
+
+.moveLaptop2{
+  animation: moveLaptop2 1s forwards ease-out;
+
+}
+
+@keyframes moveLaptop3 {
+  0%{
+    top:300px
+  }
+  
+  100%{
+    top: 550px
+  }
+}
+
+.moveLaptop3{
+  animation: moveLaptop3 1s forwards ease-out;
+
+}
+
+.bgImg{
+  transition: 1s;
+}
 
 
 /* Cloud specific styles - directly from original component */
@@ -329,10 +399,13 @@ animation: fadeIn5 1s forwards;
 .left {
   flex: 0 0 38%;
   display: flex;
-  margin-top: -90px;
+  /* margin-top: -90px; */
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   padding-top: 30px;
+  /* border: 1px solid red; */
+  height: 65vh;
 }
 
 .serverImageContainer {
@@ -375,8 +448,12 @@ animation: fadeIn5 1s forwards;
   position: absolute;
   left: 40%;
   top: 60%;
-  padding-left: 20px;
-  min-height: 190px;
+  padding: 20px;
+  /* min-height: 190px; */
+}
+
+.right p {
+  padding-bottom: 2em;
 }
 
 .textContent {
@@ -404,9 +481,9 @@ animation: fadeIn5 1s forwards;
 .backgroundDecor {
   position: absolute;
   bottom: 99%;
-  min-width: 848px;
-  height: 448px;
-  padding-right: 400px;
+  min-width: 800px;
+  height: 450px;
+  /* padding-right: 300px; */
 }
 
 /* Responsive design */
@@ -540,6 +617,21 @@ animation: fadeIn5 1s forwards;
   display: block;
 }
 
+.mainImage{
+  margin-top: 50px;
+  width: 900px;
+  height: 500px;
+ 
+}
+
+.supImage{
+   margin-right: 100px;
+}
+
+.rightSection{
+  margin-top: 50px;
+}
+
 /* Right column description styling */
 .ecommerceDescription {
   /* background-color: #f6dfe6; */
@@ -659,13 +751,14 @@ animation: fadeIn5 1s forwards;
 }
 /* Ozias Styling(Start) */
 .div2_2{
-  border: 1px solid black;
+
   height: 70vh;
   display: flex;
+  /* margin-left: 100px; */
 }
 
 .div2_3{
-  border: 1px solid blue;
+
   height: 60%;
   width: 25%;
   margin: 5% 0 0 20%;

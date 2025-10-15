@@ -11,6 +11,7 @@ import LoopingText from "../component/LoopingText"
 function Home() {
   return (
     <div>
+      <Navbar/>
       <section className={styles.hero}>
         <div className={styles.container}>
           <div className={styles.left}>

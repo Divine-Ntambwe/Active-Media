@@ -4,7 +4,7 @@ import styles from "./Software.module.css";
 import PurpleLines from "../component/purpleLines";
 
 
-import serverStack from "../assets/Untitled/https_/lottiefiles.com/animations/computerztech-lhmk6qciBg.png";
+import laptop from "../assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif";
 import backgroundElement from "../assets/Frame 77.png";
 import Navbar from "../component/Navbar";
 import ECommercePage from "./ECommercePage";
@@ -62,14 +62,18 @@ export default function Software() {
     par3 = useRef(),
     par4 = useRef(),
     cloudBasedImg = useRef(),
-    supremeImg = useRef()
+    supremeImg = useRef(),
+    supremeImg2 = useRef(),
+    laptopGif = useRef(),
+    bgImg = useRef();
   const [slide, setSlide] = useState(0);
-  const [fade, setFade] = useState(true);
-  const nav = useNavigate()
+  const [show, setShow] = useState(true);
+  const nav = useNavigate();
+
 
   useEffect(() => {
     const handleScroll = (e) => {
-      setFade(false);
+      
       setTimeout(() => {
         if (e.deltaY > 20) {
           if (slide === 0) {
@@ -79,21 +83,31 @@ export default function Software() {
             par1.current.classList.add(styles.disappear);
             par2.current.classList.remove(styles.fadeIn);
             par2.current.classList.add(styles.disappear);
-
             cloudRef.current.classList.add(styles.fadeIn2);
+
+            laptopGif.current.classList.add(styles.moveLaptop1) ;
+            bgImg.current.style.transform ="translateY(200px) translateX(100px)"
+
           }
           if (slide === 1) {
             cloudBasedImg.current.classList.add(styles.disappear);
             title2.current.classList.add(styles.fadeOut2);
             par3.current.classList.add(styles.fadeOut2);
-
             div3.current.classList.add(styles.fadeIn3);
+            
+            laptopGif.current.classList.remove(styles.moveLaptop1);
+            laptopGif.current.classList.add(styles.moveLaptop2) ;
+            bgImg.current.style.transform ="translateY(0px) translateX(500px)"
           }
           if (slide === 2) {
             div3.current.classList.remove(styles.fadeIn3);
             div3.current.classList.add(styles.fadeOut3);
 
             div4.current.classList.add(styles.fadeIn4);
+
+            laptopGif.current.classList.remove(styles.moveLaptop2);
+            laptopGif.current.classList.add(styles.moveLaptop3)
+            bgImg.current.style.transform ="translateY(0px) translateX(0px)"
           }
 
           if (slide === 3){
@@ -101,16 +115,24 @@ export default function Software() {
             title3.current.classList.add(styles.fadeOut2);
             par4.current.classList.add(styles.fadeOut2);
             supremeImg.current.classList.add(styles.disappear)
+            bgImg.current.style.transform ="translateY(300px) translateX(0px)"
 
             div5.current.classList.add(styles.fadeIn5);
+            laptopGif.current.style.transform ="translateY(-100px) translateX(-800px) scale(2.5)" 
           }
           if (slide === 4){
-          //  nav("/design-marketing")
+            supremeImg2.current.classList.add(styles.disappear);
+            laptopGif.current.style.transform ="translateY(-500px) scale(2.5)" 
+
+            setTimeout(()=>{
+
+              nav("/design-marketing")
+            },300)
           }
           setSlide(slide + 1);
+         
         }
       }, 300);
-      setFade(true);
     };
 
     window.addEventListener("wheel", handleScroll);
@@ -277,7 +299,12 @@ export default function Software() {
 
   return (
     <div className={styles.softwarePage}>
+     <img key={slide} src={laptop} ref={laptopGif} className={styles.laptopGif}/>
       <Navbar />
+      <div ref={bgImg} className={styles.bgImg}>
+
+      <PurpleLines/>
+      </div>
 
       <section className={styles.softwareSection}>
         {/* Slide 1 */}
@@ -290,7 +317,7 @@ export default function Software() {
           <div className={styles.textBlock}>
             <h1
               ref={title1}
-              className={`${styles.title} ${
+              className={`${styles.title1} ${
                 showFirst ? styles.fadeIn : styles.fadeOut
               }`}
             >
@@ -333,7 +360,7 @@ export default function Software() {
         >
           <div className={styles.content}>
             <div className={styles.left}>
-             
+           
               <div
               ref={title2}
               >
@@ -342,19 +369,19 @@ export default function Software() {
               </div>
             </div>
 
-            <div className={styles.right}>
-              <div className={styles.textContent} ref={par3}>
-                <p className={styles.description}>
-                  Whether you want to move your
-                </p>
-                <p className={styles.description}>
-                  current solutions to the cloud or
-                </p>
-                <p className={styles.description}>
-                  develop <br /> a new project from scratch, we got
-                </p>
-                <p className={styles.description}>you covered.</p>
-              </div>
+            <div className={styles.right}
+           
+            >
+              <p className={styles.pinkBox}  ref={par3}>
+                Whether you want to move your<br/>
+
+current solutions to the cloud or<br/>
+
+develop<br/>
+a new project from scratch, we got<br/>
+
+you covered
+              </p>
               <img
                 src={backgroundElement}
                 alt="decorative element"
@@ -398,12 +425,18 @@ export default function Software() {
             <div className={styles.rightSection}>
               <p
                 ref={par4}
-                className={`${styles.description}`}
+                className={`${styles.pinkBox}`}
               >
-                From entry level online stores to enterprise-grade solutions, we
-                have the technical ability to deliver on your requirements and
-                provide you with a high-converting and well-performing online
-                shopping environment.
+                From entry level online stores to <br/>
+                enterprise-grade solutions, we
+                have <br/>
+                the technical ability to deliver on your<br/> 
+                requirements and
+                provide you with<br/> 
+                a high-converting and well-<br/>
+                performing online
+                shopping <br/>
+                environment.
               </p>
 
             
@@ -417,10 +450,10 @@ export default function Software() {
           
                   <div className={styles.rightSection}>
                     <img
-                      ref={supremeRef}
+                      ref={supremeImg2}
                       src="../src/assets/Frame 111.png"
                       alt="Supreme Build It"
-                      className={`${styles.mainImage}`}
+                      className={`${styles.supImage} ${styles.mainImage}`}
                     />
                   </div>
                 

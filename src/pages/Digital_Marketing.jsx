@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './Digital_Marketing.module.css'
+import Navbar from '../component/Navbar';
 const Digital_Marketing = () => {
     const [lastY, setLastY] = useState(0);
     const [index,setIndex] = useState(0)
@@ -64,6 +65,8 @@ const Digital_Marketing = () => {
   }, []);
   
     return (
+      <>
+      <Navbar/>
     <div ref={container} className={styles.container}>
         <img ref={BGImg} className={styles.digitalBackground} src="./backgroundLines.png"/>
       <h1 ref={heading} >
@@ -128,6 +131,7 @@ const Digital_Marketing = () => {
      {/* Card 3 */}
       
     </div>
+    </>
   );
 };
 
