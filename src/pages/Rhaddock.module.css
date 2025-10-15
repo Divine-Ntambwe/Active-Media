@@ -5,6 +5,22 @@
 .container {
   height: 80vh;
   overflow: hidden !important;
+  transition: 1s;
+  animation: startAnimation 1s;
+}
+
+@keyframes disappear {
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+}
+
+.disappear{
+  animation: disappear 0.8s forwards;
+}
+
+@keyframes startAnimation {
+  0%{transform: translateX(1000px);}
+  100%{transform: translateX(0px);}
 }
 
 .wrapper {

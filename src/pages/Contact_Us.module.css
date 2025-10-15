@@ -7,7 +7,16 @@
   text-align: center;
   padding: 20px;
   padding-bottom: 50px;
+  animation: appear 0.3s forwards;
 
+}
+
+@keyframes appear {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.disappear{
 }
 
 /* Page Title */

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Rhaddock.module.css";
 
 // Import the 3D RH logo
@@ -13,13 +13,16 @@ import SupremeLogo from "../assets/SupremeLogo.png";
 // Rapidtrade assets
 import deliveryImg from "../assets/rapidtrade1.png";
 import rapidtradeLogo from "../assets/rapidtrade2.png";
+import { useNavigate } from "react-router-dom";
 
 const Recent_Work = () => {
+  const nav = useNavigate()
   const headings = ["SUPREME BUILD IT", "RAPIDTRADE", "R HADDOCK"];
   const banner = [SupremeBanner, deliveryImg, Group72];
   const logo = [SupremeLogo, rapidtradeLogo, RhLogo];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true); // true = visible, false = faded out
+  const recentWork = useRef()
 useEffect(() => {
     const handleScroll = (e) => {
       // const step = window.scrollY + 1 // every 200px scroll → new index
@@ -29,12 +32,22 @@ useEffect(() => {
         const diff = e.deltaY
         // after fade out, switch text and fade back in
         setTimeout(() => {
-          if (diff > 20 && currentIndex < 2){
+          if (diff > 20 && currentIndex < headings.length-1){
             setCurrentIndex(currentIndex +1);
             
           } else if (diff < 1 && currentIndex > 0 && diff < -20){
             setCurrentIndex(currentIndex -1);
             
+          } 
+
+          if (diff > 20 && currentIndex === headings.length-1){
+          
+            recentWork.current.classList.add(styles.disappear);
+            setTimeout(()=>{
+
+              nav("/contact-us")
+            },1000)
+
           }
           setFade(true);
         }, 300); // duration matches CSS fade
@@ -47,10 +60,14 @@ useEffect(() => {
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container}
+     
+      >
         <div className={styles.supreme}></div>
 
-        <div className={styles.rapidtrade}>
+        <div className={styles.rapidtrade}
+         ref={recentWork}
+        >
           <div className={styles.leftSection}>
             <h1
               className={`${styles.title} ${
