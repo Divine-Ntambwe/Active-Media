@@ -10,9 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fontsource/inter": "^5.2.8",
-    "framer-motion": "^12.23.18",
-    "mui": "^0.0.1",
+    "framer-motion": "^12.23.22",
+    "lottie-react": "^2.4.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.1"

@@ -8,6 +8,7 @@
   background-color: transparent;
   /* border: 2px solid black; */
   box-sizing: border-box; /* include padding in width */
+  z-index: -2;
   position: sticky !important;
   top:0;
 
