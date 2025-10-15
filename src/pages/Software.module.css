@@ -1,9 +1,17 @@
 /* Software.module.css */
+.softwarePage{
+  /* overflow: hidden; */
+  height: 100vh;
+  position: relative;
+  /* top: -100px; */
+}
+
 .softwareSection {
-  display: flex;
-  flex-direction: column; /* vertical stacking */
-  width: 100%;
+  border: 1px solid red;
+  /* width: 100%; */
   font-family: "Inter", sans-serif;
+  height: 90vh !important;
+  overflow: hidden !important;
 }
 
 .slide {
@@ -24,10 +32,11 @@
 
 /* Placeholder slides */
 .div2 {
-  background: #ffffff;
+  /* background: #ffffff; */
   padding: 80px 0 40px 0;
-  position: relative;
+  /* position: relative; */
   overflow: hidden;
+  background: transparent !important;
 }
 
 .div3 {
@@ -53,6 +62,7 @@
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 2rem;
+  position: absolute;
 }
 
 .services {
@@ -139,12 +149,19 @@ body {
 /* Fade Out */
 @keyframes riseFadeOut {
   0% {
-    opacity: 1;
-    transform: translateY(0);
+    top:0;
   }
   100% {
+    transform: translateY(-350px);
+  }
+}
+
+@keyframes disappear {
+  0%{
+    opacity: 1;
+  }
+  100%{
     opacity: 0;
-    transform: translateY(-40px);
   }
 }
 
@@ -165,8 +182,12 @@ body {
   animation: riseFadeIn 1.2s ease-out forwards;
 }
 
+.disappear{
+  animation: disappear 1s forwards;
+}
+
 .fadeOut {
-  animation: riseFadeOut 1.2s ease-in forwards;
+  animation: riseFadeOut 0.5s ease-in forwards;
 }
 
 .laptopFadeIn {
@@ -182,6 +203,36 @@ body {
   opacity: 0;
   transition: opacity 0.8s ease-in;
 }
+
+
+@keyframes fadeIn2 {
+   0% {
+    top:0;
+  }
+  100% {
+    top: -100px !important;
+    transform: translateY(-850px);
+  }
+}
+
+.fadeIn2{
+  animation: fadeIn2 1.5s forwards;
+}
+
+@keyframes fadeOut2 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-850px);
+  }
+}
+
+.fadeOut2{
+  animation: fadeOut2 1s forwards;
+}
+
+
 
 /* Cloud specific styles - directly from original component */
 .container {
@@ -233,6 +284,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin: 0;
+  position: relative;
  
 }
 .title2 {

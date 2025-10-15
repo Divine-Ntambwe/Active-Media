@@ -15,7 +15,7 @@ import Digital_Marketing from "./pages/Digital_Marketing";
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<About_Us />} />
