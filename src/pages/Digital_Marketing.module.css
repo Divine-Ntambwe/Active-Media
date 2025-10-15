@@ -31,19 +31,22 @@ left: -55px;
   text-align: center; 
   position: relative;
   overflow: hidden;
+  /* width: 150vw; */
   transition: 3s;  
   animation: startAnimation 2s;
 
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 @keyframes slide-out {
     0%{left:0}
-    100%{left:-800px}
+    50%{left:-800px}
+    100%{left:-800px;opacity: 0%;}
 }
 
 .slideOut {
-    animation: slide-out 3s;
+    animation: slide-out 3s forwards ;
+    animation-timing-function: ease-out;
 }
 
 @keyframes moveUp {
@@ -293,6 +296,28 @@ Icons
    position: relative;
 }
 
+@keyframes moveRW {
+    0%{
+         left: 1700px;
+    }
+    100%{
+        left: 900px;
+    }
+}
+.recentWork{
+    position: absolute;
+    left: 1900px;
+    top: 600px;
+    /* display: none; */
+    z-index: 1;
+    font-size: 3rem;
+    width: 300px;
+}
+
+.moveRW{
+    animation: moveRW 3s forwards ;
+}
+
 
 @media (max-width: 576px) {
     .container {
@@ -531,6 +556,7 @@ Icons
         padding-top: 7rem;
         /* max-width: 1400px; */
         margin: 0 auto;
+
     }
 
     .container h1 {
@@ -605,11 +631,12 @@ Icons
 }
 
 /* Extra ultra-wide screens (1601px and above) */
-@media (min-width: 1601px) {
+@media (min-width: 1601px) and (max-width: 2210px) {
     .container {
         padding-top: 8rem;
         max-width: 1600px;
         margin: 0 auto;
+        
     }
 
     .container h1 {
@@ -680,5 +707,47 @@ Icons
         height: 6px;
         top: 10px;
         left: 5px;
+    }
+}
+
+@media (min-width:2211px) {
+    .container {
+        font-size: 1.6em;
+    }
+
+    .paragraphs{
+        font-size: 1.3em;
+    }
+
+    .cardOne,
+    .cardTwo,
+    .cardThree,
+    .cardFour,
+    .cardFive,
+    .cardSix {
+        width: 500px !important;
+        height: 500px !important;
+        transform: scale(0.9) !important;
+    }
+
+    .cardOne,
+    .cardTwo {
+        height: 760px !important;
+    }
+
+    .firstTwo,
+    .lastFour {
+        width: 70vw;
+        grid-template-columns: 50% 50%;
+        gap: 70px;
+    }
+
+    @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-855px}
+}
+
+    .wrapper{
+        margin-top: 100px;
     }
 }

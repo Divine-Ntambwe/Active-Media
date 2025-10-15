@@ -10,6 +10,7 @@ const Digital_Marketing = () => {
     const wrapper = useRef()
     const lastFour = useRef()
     const firstTwo = useRef()
+    const rwHeading = useRef();
     let num = 0
     function onScroll(){
       console.log(document.documentElement.scrollTop)
@@ -43,8 +44,12 @@ const Digital_Marketing = () => {
     
       }
 
-      if (document.documentElement.scrollTop > 240){
-        container.current.classList.add(styles.slideOut)
+      if (document.documentElement.scrollTop > 235){
+        container.current.classList.add(styles.slideOut);
+        rwHeading.current.style.display = "inline";
+        rwHeading.current.classList.add(styles.moveRW)
+
+        
       }
       if (document.documentElement.scrollTop == 0){
        firstTwo.current.classList.remove(styles.disappear)
@@ -66,6 +71,12 @@ const Digital_Marketing = () => {
     return (
       <>
         <img ref={BGImg} className={styles.digitalBackground} src="./backgroundLines.png"/>
+        <h1
+        className={styles.recentWork}
+        ref={rwHeading}
+        >
+          Recent Work
+        </h1>
     <div ref={container} className={styles.container}>
       <h1 ref={heading} >
         GRAPHIC DESIGN &<br />
