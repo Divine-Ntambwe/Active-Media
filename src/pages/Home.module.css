@@ -13,6 +13,25 @@
   /* border: 1px solid red; */
 }
 
+@keyframes slide-out {
+  0%{left:0px}
+  100%{left:-1500px}
+}
+.slideOut {
+  animation: slide-out 3.5s;
+  transition: 1s;
+
+}
+
+@keyframes fade-Out {
+  0%{opacity: 100%;}
+  100%{opacity: 0%;}
+}
+.fadeOut {
+  animation: fade-Out 2s 1s;
+  transition: 1s;
+
+}
 .container{
   width:100%;
   max-width:1200px;
@@ -23,7 +42,7 @@
   /*justify-content:space-between;*/
   
   padding:48px 24px;
-   /*border: solid;*/
+   /* border: solid; */
 }
 
 .left{
@@ -54,6 +73,7 @@
   font-size:16px;
   cursor:pointer;
   box-shadow:0 6px 18px rgb(245, 120, 222);
+  position: relative;
 }
 
 .cta .arrow{padding-left:8px;font-weight:700}
@@ -79,7 +99,7 @@
 
 .orb1{
   position:absolute;
-  left:50%;
+  /* left:50%; */
   top:-10%;
   width: 550px;
   /* min-width: 90%; */
@@ -87,6 +107,7 @@
   z-index: 2;
  /* border: solid; */
  height: 680px;
+ margin-left: 230px;
 }
 
 .orb2{
