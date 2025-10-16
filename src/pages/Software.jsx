@@ -118,9 +118,9 @@ export default function Software() {
             supremeImg.current.classList.add(styles.disappear)
             bgImg.current.style.transform ="translateY(300px) translateX(0px)"
 
-            div5.current.classList.add(styles.fadeIn5);
             laptopGif.current.classList.remove(styles.moveLaptop3);
             laptopGif.current.classList.add(styles.moveLaptop4)
+            div5.current.classList.add(styles.fadeIn5);
           }
           if (slide === 4){
             supremeImg2.current.classList.add(styles.disappear);
@@ -140,7 +140,7 @@ export default function Software() {
           window.location.reload();
         }
 
-      }, 300);
+      }, 100);
     };
 
     setTimeout(()=>{
