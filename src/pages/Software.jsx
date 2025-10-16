@@ -75,7 +75,8 @@ export default function Software() {
     const handleScroll = (e) => {
       
       setTimeout(() => {
-        if (e.deltaY > 20) {
+        if (e.deltaY > 10) {
+           setSlide(slide + 1);
           if (slide === 0) {
             title1.current.classList.remove(styles.fadeIn);
             title1.current.classList.add(styles.fadeOut);
@@ -118,20 +119,27 @@ export default function Software() {
             bgImg.current.style.transform ="translateY(300px) translateX(0px)"
 
             div5.current.classList.add(styles.fadeIn5);
-            laptopGif.current.style.transform ="translateY(-100px) translateX(-800px) scale(2.5)" 
+            laptopGif.current.classList.remove(styles.moveLaptop3);
+            laptopGif.current.classList.add(styles.moveLaptop4)
           }
           if (slide === 4){
             supremeImg2.current.classList.add(styles.disappear);
-            laptopGif.current.style.transform ="translateY(-500px) scale(2.5)" 
+            laptopGif.current.classList.remove(styles.moveLaptop4);
+            laptopGif.current.classList.add(styles.moveLaptop5) ;
+            bgImg.current.style.transform ="translateY(300px) translateX(300px)"
+            bgImg.current.classList.add(styles.disappear)
 
             setTimeout(()=>{
 
               nav("/design-marketing")
-            },300)
+            },1000)
           }
-          setSlide(slide + 1);
          
+         
+        } else if (e.deltaY < -20 && e.deltaY < 0) {
+          window.location.reload();
         }
+
       }, 300);
     };
 

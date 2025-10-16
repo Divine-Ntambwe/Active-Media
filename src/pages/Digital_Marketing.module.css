@@ -10,8 +10,17 @@ transform: scale(0.7) rotate(-90deg);
 /* object-fit:contain; */
 position: absolute;
 top: -200px;
-left: -55px;
-/* animation: moveDown 3s; */
+left: -55px;    
+    animation: appear 1s ;
+}
+
+@keyframes appear {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.appear{
+    animation: appear 1s ;
 }
 
 @keyframes startAnimation {
