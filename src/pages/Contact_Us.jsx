@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import styles from "./Contact_Us.module.css";
 import emailjs from "@emailjs/browser";
+import Navbar from "../component/Navbar";
 
 const Contact_Us = () => {
   const form = useRef();
@@ -30,6 +31,7 @@ const Contact_Us = () => {
 
   return (
     <div className={styles.pageWrapper}>
+      <Navbar/>
 
       {/* Page Title */}
       <h1 className={styles.heading}>CONTACT US</h1>

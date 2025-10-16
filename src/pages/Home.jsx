@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styles from './Home.module.css'
 import Navbar from "../component/Navbar"
 
@@ -11,12 +11,35 @@ import LoopingText from "../component/LoopingText"
 
 function Home() {
   const nav = useNavigate()
+  const title = useRef(),
+  button = useRef(),
+  orb = useRef(),
+  bgImg = useRef(),
+  logo = useRef();
+  function handleNav(){
+    title.current.classList.add(styles.slideOut)
+    orb.current.classList.add(styles.slideOut)
+    button.current.classList.add(styles.slideOut)
+    bgImg.current.classList.add(styles.fadeOut)
+    logo.current.classList.add(styles.fadeOut)
+  }
+
+  function onScroll(){
+    handleNav()
+    setTimeout(()=>{nav("/about-us")},1900)
+  }
+
+    useEffect(() => {
+    window.addEventListener("wheel", onScroll);
+    return () => window.removeEventListener("wheel", onScroll);
+  }, []);
   return (
     <div>
+      <Navbar/>
       <section className={styles.hero}>
         <div className={styles.container}>
           <div className={styles.left}>
-            <h1 className={styles.title}>
+            <h1 ref={title} className={styles.title}>
               Your reliable
               <br />
               Software Development,
@@ -28,21 +51,21 @@ function Home() {
               solution
             </h1>
 
-          <button onClick={()=>{nav("/software")}} className={styles.cta} aria-label="Our Services">
+          <button ref={button} onClick={()=>{handleNav(); setTimeout(()=>{nav("/software")},1900)}} className={styles.cta} aria-label="Our Services">
             Our Services <span className={styles.arrow}>›</span>
           </button>
         </div>
 
         <div className={styles.right}>
-          <div className={styles.blendingBackground}></div>
-          <img src={clouds} alt="decorative clouds" className={styles.orb1} />
+          <div ref={bgImg}className={styles.blendingBackground}></div>
+          <img ref={orb} src={clouds} alt="decorative clouds" className={styles.orb1} />
         </div>
 
       </div>
       </section>
 
       {/* 🔑 Bottom center decrypt/encrypt looping text */}
-      <div className={styles.bottomCenter}>
+      <div ref={logo} className={styles.bottomCenter}>
         <LoopingText text="ACTIVE MEDIA" duration={1000} />
         <LoopingText text="A.M INDUSTRIES" duration={1000} />
       </div>

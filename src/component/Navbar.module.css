@@ -5,10 +5,10 @@
   width: 80%; /* fill screen width */
   max-width: 100vw; /* prevent overflow */
   padding: 0px 5vw;
-  background-color: transparent;
   /* border: 2px solid black; */
   box-sizing: border-box; /* include padding in width */
-  z-index: -2;
+  background-color: transparent !important;
+  z-index: 10 !important;
   position: sticky !important;
   top:0;
 
