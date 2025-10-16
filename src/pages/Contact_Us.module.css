@@ -3,12 +3,13 @@
 .pageWrapper {
   font-family: 'Inter', sans-serif;
   background: #fff;
-  background: radial-gradient(circle 500px at center, rgba(255, 92, 155, 0.6), #fff);
+  background: radial-gradient(circle 400px at center, rgba(255, 92, 155, 0.6), #fff); /* Reduced circle size to 400px for less vertical spread */
   text-align: center;
-  padding: 20px;
-  padding-bottom: 50px;
+  padding: 15px; /* Reduced from 20px */
+  padding-bottom: 40px; /* Reduced from 50px */
   animation: appear 0.3s forwards;
-
+  max-width: 1200px; /* Added to constrain overall width and reduce horizontal scroll */
+  margin: 0 auto; /* Center the wrapper */
 }
 
 @keyframes appear {
@@ -21,9 +22,9 @@
 
 /* Page Title */
 .heading {
-  margin-top: 40px;
-  font-size: 45px;
-  letter-spacing: 8px;
+  margin-top: 30px; /* Reduced from 40px */
+  font-size: 40px; /* Reduced from 45px */
+  letter-spacing: 6px; /* Reduced from 8px */
   font-weight: 330;
   word-wrap: break-word;
   padding-left: 5px;
@@ -31,49 +32,48 @@
 
 /* Contact Card */
 .contactCard {
-  margin: 40px auto;
-  padding: 30px 25px;
+  margin: 30px auto; /* Reduced from 40px */
+  padding: 25px 20px; /* Reduced from 30px 25px */
   width: 100%;
-  max-width: 455px;
+  max-width: 400px; /* Reduced from 455px to make it smaller */
   background: radial-gradient(circle, rgba(255, 103, 161, 0.6), #fff);
   border-radius: 15px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .contactCard h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 16px; /* Reduced from 18px */
+  margin-bottom: 8px; /* Reduced from 10px */
 }
 
 .subHeadingAbout {
-  font-size: 14px;
-  padding-top: 15px;
-  padding-bottom: 50px;
+  font-size: 12px; /* Reduced from 14px */
+  padding-top: 12px; /* Reduced from 15px */
+  padding-bottom: 40px; /* Reduced from 50px */
   color: #333;
   text-align: left;
-  padding-left: 33px  ;
+  padding-left: 28px; /* Reduced from 33px */
 }
 
 .subHeadingContact {
-  font-size: 18px;
-  padding-top: 20px;
-  padding-bottom: 28px;
+  font-size: 16px; /* Reduced from 18px */
+  padding-top: 16px; /* Reduced from 20px */
+  padding-bottom: 22px; /* Reduced from 28px */
   color: #333;
   text-align: left;
-  padding-left: 32px;
+  padding-left: 28px; /* Reduced from 32px */
 }
 
 .subHeadingContact2 {
-  font-size: 25px;
+  font-size: 22px; /* Reduced from 25px */
   font-weight: 300;
-  padding-left: 32px;
+  padding-left: 28px; /* Reduced from 32px */
   text-align: left;
 }
 
 .contactCard hr {
   border: none;
   border-top: 1px solid #999;
-  
 }
 
 .divider{
@@ -84,43 +84,42 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px; /* Reduced from 12px */
   text-align: left;
-  padding-left: 30px;
+  padding-left: 25px; /* Reduced from 30px */
 }
 
 .form label {
-  font-size: 14px;
-  margin-bottom: 3px;
+  font-size: 12px; /* Reduced from 14px */
+  margin-bottom: 2px; /* Reduced from 3px */
 }
 
 .form input {
-  padding: 10px;
+  padding: 8px; /* Reduced from 10px */
   border: 1px solid #ddd;
   border-radius: 8px;
   outline: none;
   width: 88%;
   background: #fff;
-  font-size: 14px;
+  font-size: 12px; /* Reduced from 14px */
 }
 
 .form textarea {
-  padding: 10px;
+  padding: 8px; /* Reduced from 10px */
   border: 1px solid #ddd;
   border-radius: 8px;
   outline: none;
   width: 88%;
   background: #fff;
-  font-size: 14px;
-  resize: none; /* Prevent manual resizing */
-  overflow: hidden; /* Hide scrollbars */
-  min-height: 100px;
+  font-size: 12px; /* Reduced from 14px */
+  resize: none;
+  overflow: hidden;
+  min-height: 80px; /* Reduced from 100px */
 }
 
-
 .form button {
-  margin-top: 15px;
-  padding: 8px;
+  margin-top: 12px; /* Reduced from 15px */
+  padding: 6px; /* Reduced from 8px */
   background: black;
   color: white;
   border: none;
@@ -129,7 +128,7 @@
   transition: 0.3s;
   width: 93%;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px; /* Reduced from 20px */
   box-shadow: 0 0 10px 5px rgba(255, 92, 155, 0.6);
 }
 
@@ -139,9 +138,9 @@
 
 /* Footer Text */
 .footerText {
-  margin: 30px auto 0 auto;
+  margin: 25px auto 0 auto; /* Reduced from 30px */
   max-width: 100%;
-  font-size: 18px;
+  font-size: 16px; /* Reduced from 18px */
   line-height: 1.6;
   font-weight: 300;
 }
@@ -153,42 +152,42 @@
 /* Tablets */
 @media (max-width: 768px) {
   .heading {
-    font-size: 22px;
-    letter-spacing: 5px;
+    font-size: 20px; /* Reduced from 22px */
+    letter-spacing: 4px; /* Reduced from 5px */
   }
 
   .contactCard {
-    padding: 25px 20px;
-    max-width: 90%;
+    padding: 20px 15px; /* Reduced from 25px 20px */
+    max-width: 85%; /* Reduced from 90% */
   }
 
   .footerText {
-    font-size: 16px;
+    font-size: 14px; /* Reduced from 16px */
   }
 }
 
 /* Small Phones */
 @media (max-width: 480px) {
   .heading {
-    font-size: 20px;
-    letter-spacing: 3px;
+    font-size: 18px; /* Reduced from 20px */
+    letter-spacing: 2px; /* Reduced from 3px */
   }
 
   .contactCard {
-    padding: 20px 15px;
+    padding: 15px 10px; /* Reduced from 20px 15px */
   }
 
   .form input {
-    font-size: 13px;
-    padding: 8px;
+    font-size: 11px; /* Reduced from 13px */
+    padding: 6px; /* Reduced from 8px */
   }
 
   .form button {
-    font-size: 14px;
-    padding: 10px;
+    font-size: 12px; /* Reduced from 14px */
+    padding: 8px; /* Reduced from 10px */
   }
 
   .footerText {
-    font-size: 15px;
+    font-size: 13px; /* Reduced from 15px */
   }
 }
