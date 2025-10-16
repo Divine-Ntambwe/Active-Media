@@ -17,13 +17,11 @@
   100%{opacity: 1;}
 }
 
-.disappear{
-}
 
 /* Page Title */
 .heading {
   margin-top: 30px; /* Reduced from 40px */
-  font-size: 40px; /* Reduced from 45px */
+  font-size: 45px; /* Reduced from 45px */
   letter-spacing: 6px; /* Reduced from 8px */
   font-weight: 330;
   word-wrap: break-word;
@@ -42,12 +40,12 @@
 }
 
 .contactCard h2 {
-  font-size: 16px; /* Reduced from 18px */
+  font-size: 18px; /* Reduced from 18px */
   margin-bottom: 8px; /* Reduced from 10px */
 }
 
 .subHeadingAbout {
-  font-size: 12px; /* Reduced from 14px */
+  font-size: 14px; /* Reduced from 14px */
   padding-top: 12px; /* Reduced from 15px */
   padding-bottom: 40px; /* Reduced from 50px */
   color: #333;
@@ -56,7 +54,7 @@
 }
 
 .subHeadingContact {
-  font-size: 16px; /* Reduced from 18px */
+  font-size: 18px; /* Reduced from 18px */
   padding-top: 16px; /* Reduced from 20px */
   padding-bottom: 22px; /* Reduced from 28px */
   color: #333;
@@ -65,7 +63,7 @@
 }
 
 .subHeadingContact2 {
-  font-size: 22px; /* Reduced from 25px */
+  font-size: 25px; /* Reduced from 25px */
   font-weight: 300;
   padding-left: 28px; /* Reduced from 32px */
   text-align: left;
@@ -101,7 +99,7 @@
   outline: none;
   width: 88%;
   background: #fff;
-  font-size: 12px; /* Reduced from 14px */
+  font-size: 14px; /* Reduced from 14px */
 }
 
 .form textarea {
@@ -111,7 +109,7 @@
   outline: none;
   width: 88%;
   background: #fff;
-  font-size: 12px; /* Reduced from 14px */
+  font-size: 14px; /* Reduced from 14px */
   resize: none;
   overflow: hidden;
   min-height: 80px; /* Reduced from 100px */
@@ -128,7 +126,7 @@
   transition: 0.3s;
   width: 93%;
   font-weight: 400;
-  font-size: 18px; /* Reduced from 20px */
+  font-size: 20px; /* Reduced from 20px */
   box-shadow: 0 0 10px 5px rgba(255, 92, 155, 0.6);
 }
 
@@ -140,7 +138,7 @@
 .footerText {
   margin: 25px auto 0 auto; /* Reduced from 30px */
   max-width: 100%;
-  font-size: 16px; /* Reduced from 18px */
+  font-size: 18px; /* Reduced from 18px */
   line-height: 1.6;
   font-weight: 300;
 }
