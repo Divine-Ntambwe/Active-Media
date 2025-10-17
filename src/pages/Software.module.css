@@ -200,12 +200,12 @@ body {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(-2050px);
+    transform: translateY(-2550px);
   }
 }
 
 .fadeOut2{
-  animation: fadeOut2 1.5s forwards;
+  animation: fadeOut2 1.8s forwards;
 }
 
 
@@ -223,7 +223,7 @@ body {
 
 
 .fadeIn3{
-animation: fadeIn3 1s forwards;
+animation: fadeIn3 1.8s forwards;
 }
 
 @keyframes fadeOut3 {
@@ -231,7 +231,7 @@ animation: fadeIn3 1s forwards;
     transform: translateY(-1650px);
   }
   100% {
-    transform: translateY(-2750px);
+    transform: translateY(-3550px);
   }
 }
 
@@ -491,7 +491,7 @@ animation: fadeIn5 1s forwards;
 /* SMALLER SCREENS */
 @media screen and (max-width: 1400px) and (min-width:1300px){
   *{
-    color: darkmagenta;
+    /* color: darkmagenta; */
   }
 
   .paragraphBox p, .pinkBox {
@@ -510,12 +510,23 @@ animation: fadeIn5 1s forwards;
     margin-top: -55px;
   }
 
+   .title{
+     font-size: 2.5em;
+  }
+  .mainImage{
+  margin-top: 50px;
+  width: 800px;
+  height: 430px;
+}
+.ecommerceSection{
+  margin-top: 30px;
+}
   
 }
 
 @media screen and (max-width: 1301px) and (min-width:1120px) {
   *{
-    color:fuchsia
+    /* color:fuchsia */
   }
    .paragraphBox p, .pinkBox{
     font-size: 1.1rem !important;
@@ -548,11 +559,23 @@ animation: fadeIn5 1s forwards;
   .div2{
     margin-top: -105px;
   }
+
+  .title{
+     font-size: 1.8em;
+  }
+  .mainImage{
+  margin-top: 50px;
+  width: 800px;
+  height: 380px;
+}
+.ecommerceSection{
+  margin-top: 0px;
+}
 }
 
 @media screen and (max-width:1121px) {
   *{
-    color:green
+    /* color:green */
   }
    .paragraphBox p, .pinkBox{
     font-size: 1rem !important;
@@ -591,9 +614,45 @@ animation: fadeIn5 1s forwards;
 
 /* LARGER SCREENS */
 /* 80% */
+
+@media screen and (min-width:1690px) and (max-width: 1799px) {
+   *{
+  /* color: aqua; */
+ }
+
+  .paragraphBox p, .pinkBox {
+  font-size: 1.8em;
+ }
+
+ .div1{
+    margin-top: 120px !important;
+  }
+
+   .title1{
+    font-size: 5.9em;
+  }
+
+  
+  .services{
+    font-size: 3em;
+  }
+
+  @keyframes moveLaptop3 {
+  0%{
+    top:45vh;
+  }
+  
+  100%{
+    top: 74vh;
+    left: 66vw;
+  }
+}
+
+
+}
 @media screen and (min-width:1800px) and (max-width: 2200px) {
  *{
-  color: blue;
+  /* color: blue; */
  }
 
  .paragraphBox p, .pinkBox {
@@ -627,12 +686,19 @@ animation: fadeIn5 1s forwards;
    .laptopGif{
     transform: scale(3) !important;
   }
+
+  .mainImage{
+  margin-top: 50px;
+  width: 1200px;
+  height: 600px;
+ 
+}
 }
 
 /* 67% */
 @media screen and (min-width: 2201px) {
   .softwareSection{
-    color:crimson;
+    /* color:crimson; */
     /* font-size: 1.1em; */
   }
 
@@ -648,6 +714,7 @@ animation: fadeIn5 1s forwards;
   .title1{
     font-size: 6.5em;
   }
+ 
 
   .services{
     font-size: 4em;
@@ -668,6 +735,18 @@ animation: fadeIn5 1s forwards;
   .div2{
     margin-top: 50px;
   }
+
+  .title{
+     font-size: 4.5em;
+  }
+  .mainImage{
+  margin-top: 50px;
+  width: 1400px;
+  height: 730px;
+ 
+}
+
+
 }
 
 

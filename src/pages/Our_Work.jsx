@@ -23,7 +23,8 @@ const Recent_Work = () => {
   const logo = [SupremeLogo, rapidtradeLogo, RhLogo];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true); // true = visible, false = faded out
-  const recentWork = useRef()
+  const recentWork = useRef();
+  
 useEffect(() => {
     const handleScroll = (e) => {
       // const step = window.scrollY + 1 // every 200px scroll → new index

@@ -27,10 +27,19 @@ left: -55px;
   0%{top:800px}
   100%{top:0px}
 }
+
+.designMarketingPage{
+ height: 100vh;
+ overflow: hidden !important;
+ display: flex;
+ flex-direction: column;
+ position: relative;
+}
 /* Main container */
 .container {
+    flex:1;
   /* max-width: 70rem;  */
-  height: 98vh;
+  /* height: 80vh; */
   /* margin-left: auto; 
   margin-right: auto; */
   /* padding-left: 1.5rem; 
@@ -39,10 +48,10 @@ left: -55px;
   /* padding-bottom: 4rem;  */
   text-align: center; 
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: 1s;  
   animation: startAnimation 2s;
-  /* border: 1px solid blue; */
+
 }
 
 @keyframes slide-out {
@@ -57,8 +66,8 @@ left: -55px;
 }
 
 @keyframes moveUp {
-    0%{top:0px;}
-    100%{top:-400px;}
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-600px)}
 }
 
 .moveUp {
@@ -84,7 +93,7 @@ left: -55px;
 }
 
 .disappear {
- animation: disappear 1s;
+ animation: disappear 0.8s;
   transition: 2s;
   animation-fill-mode:forwards;  
 }
@@ -139,7 +148,7 @@ left: -55px;
 
 @keyframes moveUp2 {
     0%{top:0px}
-    100%{top:-455px}
+    100%{top:-755px}
 }
 
 .moveUp2 {
@@ -590,7 +599,7 @@ Icons
     .cardSix {
         width: 420px;
         height: 300px;
-        transform: scale(0.75);
+        transform: scale(0.5);
     }
 
     .cardOne,
@@ -602,7 +611,7 @@ Icons
     .lastFour {
         width: 75vw;
         grid-template-columns: 50% 50%;
-        gap: 60px;
+        gap: 0px;
     }
 
     .digitalBackground {
@@ -757,4 +766,129 @@ Icons
     .wrapper{
         margin-top: 100px;
     }
+}
+
+@media screen and (max-width: 1400px) {
+  *{
+    /* color: darkmagenta; */
+  }
+
+  .designMarketingPage h1{
+    font-size: 3.6em !important;
+}
+
+.paragraphs{
+    font-size: 1.1em;
+    padding: 0 40px;
+}
+
+.cardOne,
+    .cardTwo,
+    .cardThree,
+    .cardFour,
+    .cardFive,
+    .cardSix {
+        width: 500px !important;
+        transform: scale(0.61) !important;
+    }
+.cardOne,
+    .cardTwo{
+        /* height: 800px !important; */
+    }
+
+    .cardThree,
+    .cardFour,
+    .cardFive,
+    .cardSix {
+        height: 280px !important;
+    }
+     @keyframes moveUp {
+      0%{transform:translateY(0px);}
+    100%{transform:translateY(-450px)}
+} 
+
+  @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-655px}
+}
+
+
+ 
+}
+
+@media screen and (max-width: 1301px) and (min-width:1120px) {
+  *{
+    /* color:fuchsia */
+  }
+}
+
+@media screen and (max-width:1121px) {
+  *{
+    /* color:green */
+ 
+}
+}
+
+
+/* LARGER SCREENS */
+/* 80% */
+
+@media screen and (min-width:1690px) and (max-width: 1799px) {
+   *{
+  color: aqua;
+ }
+
+
+}
+
+
+
+@media screen and (min-width:1800px) and (max-width: 2200px) {
+*{
+    /* color: pink; */
+
+}
+
+.designMarketingPage h1{
+    font-size: 5em !important;
+}
+
+.paragraphs{
+    font-size: 2em;
+    padding: 0;
+}
+
+.cardOne,
+    .cardTwo,
+    .cardThree,
+    .cardFour,
+    .cardFive,
+    .cardSix {
+        width: 500px !important;
+        transform: scale(0.75) !important;
+    }
+.cardOne,
+    .cardTwo{
+        height: 800px !important;
+    }
+
+    .cardThree,
+    .cardFour,
+    .cardFive,
+    .cardSix {
+        height: 300px !important;
+    }
+      @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-850px}
+}
+
+}
+
+/* 67% */
+@media screen and (min-width: 2201px) {
+
+*{
+    /* color: gold; */
+}
 }

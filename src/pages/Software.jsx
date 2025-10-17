@@ -413,7 +413,7 @@ you covered
         {/* Ozias(End) */}
         {/* Slide 3 (ECommerce) */}
 
-        <div className={`${styles.slide}`} ref={div4}>
+        <div className={`${styles.slide} ${styles.ecommerceSection}`} ref={div4}>
           <h1
             ref={title3}
             className={`${styles.title}`}

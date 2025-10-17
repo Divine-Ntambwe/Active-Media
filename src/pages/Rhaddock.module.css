@@ -6,7 +6,7 @@
   height: 80vh;
   overflow: hidden !important;
   transition: 1s;
-  animation: startAnimation 3.5s;
+  animation: startAnimation 2s ease-in;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,13 +28,14 @@
 
 .recentWork{
     position: absolute;
-    left: -20vw;
+    left: -30vw;
     top: 50vh;
     /* display: none; */
     z-index: 1;
     font-size: 3rem;
     width: 300px;
-    animation: startAnimation 3.5s;
+    
+    animation: startAnimation 2s ease-in;
 
 }
 
