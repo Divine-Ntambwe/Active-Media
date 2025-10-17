@@ -18,6 +18,7 @@ import Navbar from "../component/Navbar";
 
 const Recent_Work = () => {
   const nav = useNavigate()
+  const Link =["https://www.supremebuildit.co.za/","https://rapidtrade.com/","https://www.rhaddock.co.za/"]
   const headings = ["SUPREME BUILD IT", "RAPIDTRADE", "R HADDOCK"];
   const banner = [SupremeBanner, deliveryImg, Group72];
   const logo = [SupremeLogo, rapidtradeLogo, RhLogo];
@@ -94,6 +95,8 @@ useEffect(() => {
             </p>
 
             <div className={styles.rapidTradeViewSite}>
+<a href={Link[currentIndex]} target="_blank" rel="noopener noreferrer">
+
               <svg
                 width="100"
                 height="66"
@@ -114,6 +117,8 @@ useEffect(() => {
                   fill="black"
                 />
               </svg>
+ </a>
+
             </div>
 
             <div className={styles.deliverySection}>
