@@ -64,7 +64,8 @@
   }
 
   .navItem {
-    font-size: 1.5vw; /* scale with viewport */
+    /* font-size: 1.5vw;  */
+    /* scale with viewport */
   }
 }
 
@@ -90,7 +91,8 @@
   }
 
   .navItem {
-    font-size: 3vw; /* scale text with viewport */
+    /* font-size: 3vw;  */
+    /* scale text with viewport */
     padding: 2% 0;
   }
 }

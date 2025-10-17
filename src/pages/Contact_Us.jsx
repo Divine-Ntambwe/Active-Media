@@ -31,7 +31,9 @@ const Contact_Us = () => {
 
   return (
     <div className={styles.pageWrapper}>
-      <Navbar/>
+      <div className={styles.navbarContainer}>
+        <Navbar />
+      </div>
 
       {/* Page Title */}
       <h1 className={styles.heading}>CONTACT US</h1>
