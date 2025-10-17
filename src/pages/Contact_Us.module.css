@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+*{
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+}
+
 .pageWrapper {
   font-family: 'Inter', sans-serif;
   background: #fff;
@@ -9,7 +15,19 @@
   padding-bottom: 40px; /* Reduced from 50px */
   animation: appear 0.3s forwards;
   max-width: 1200px; /* Added to constrain overall width and reduce horizontal scroll */
-  margin: 0 auto; /* Center the wrapper */
+  margin: 0 auto; 
+}
+
+/* Add this to your Contact_Us.module.css file */
+
+.navbarContainer {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  backdrop-filter: blur(7px); /* Apply blur effect to show underlying content faintly */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  width: 100%; /* Ensure full width coverage */
 }
 
 @keyframes appear {
