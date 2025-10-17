@@ -1,40 +1,45 @@
+/* =============================== */
+/* 🔷 Base Layout (Default 100%)   */
+/* =============================== */
+
 .navBar {
   display: flex;
-  justify-content: space-between; /* logo left, menu right */
+  justify-content: space-between;
   align-items: center;
-  width: 80%; /* fill screen width */
-  max-width: 100vw; /* prevent overflow */
-  padding: 0px 5vw;
-  /* border: 2px solid black; */
-  box-sizing: border-box; /* include padding in width */
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
   background-color: transparent !important;
   z-index: 10 !important;
   position: sticky !important;
-  top:0;
-
+  top: 0;
+  left: 0;
 }
 
 .logo {
-  height: 100px; 
+  height: 80px;
   width: auto;
   cursor: pointer;
+  transition: none;
 }
-
 
 .navList {
   display: flex;
-  gap: 3vw; /* spacing between items */
-  list-style-type: none;
+  gap: 3rem;
+  list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .navItem {
-  font-size: 15px;
-  font-weight: 50px;
+  font-size: 18px;
+  font-weight: 500;
   font-family: 'MyFont', sans-serif;
+  white-space: nowrap;
   cursor: pointer;
-  transition: color 0.3s ease;
 }
 
 .navLink {
@@ -43,57 +48,133 @@
   font-weight: 500;
   padding: 4px 8px;
   border-radius: 4px;
-  transition: background 0.2s;
+  display: inline-block;
 }
 
-/* Responsiveness */
+/* ================================================== */
+/* 🧭 Zoom Out Compensation (~67% / ≥1900px viewport)  */
+/* ================================================== */
 
-/* Tablet (≤1024px) */
+@media screen and (min-width: 1900px) {
+  .navBar {
+    width: 80%;
+    max-width: 1350px;
+    padding: 1.25rem 2.5rem;
+  }
+
+  .logo {
+    height: 110px; /* compensate for zoom-out shrink */
+  }
+
+  .navList {
+    gap: 4rem;
+  }
+
+  .navItem {
+    font-size: 24px;
+  }
+
+  .navLink {
+    padding: 6px 12px;
+  }
+}
+
+/* ================================================== */
+/* 🔍 Zoom In Compensation (~125% / ≤1280px viewport)  */
+/* ================================================== */
+
+@media screen and (max-width: 1280px) and (min-width: 1025px) {
+  .navBar {
+    width: 95%;
+    max-width: 1100px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .logo {
+    height: 65px; /* reduce to balance zoom enlargement */
+  }
+
+  .navList {
+    gap: 2rem;
+  }
+
+  .navItem {
+    font-size: 15px;
+  }
+
+  .navLink {
+    padding: 3px 6px;
+  }
+}
+
+/* =============================== */
+/* 📱 Tablet (≤1024px)             */
+/* =============================== */
 @media (max-width: 1024px) {
   .navBar {
-    width: 90%; /* allow more room */
-    padding: 0 4vw;
+    flex-direction: row;
+    width: 95%;
+    padding: 1rem 4vw;
   }
 
   .logo {
-    height: 80px; /* shrink logo */
+    height: 60px;
   }
 
   .navList {
-    gap: 2vw; /* reduce spacing */
+    gap: 2rem;
   }
 
   .navItem {
-    /* font-size: 1.5vw;  */
-    /* scale with viewport */
+    font-size: 16px;
   }
 }
 
-/* Mobile (≤768px) */
+/* =============================== */
+/* 📱 Mobile (≤768px)              */
+/* =============================== */
 @media (max-width: 768px) {
   .navBar {
-    flex-direction: column; /* stack logo and menu */
+    flex-direction: column;
     align-items: flex-start;
-    width: 95%; /* use more width */
-    padding: 2% 5%;
-    background-color: transparent !important;
+    width: 95%;
+    padding: 1rem 5vw;
+    gap: 1rem;
   }
 
   .logo {
-    height: 60px; /* smaller logo for mobile */
+    height: 55px;
   }
 
   .navList {
-    flex-direction: column; /* stack items vertically */
+    flex-direction: column;
     width: 100%;
-    gap: 4%; /* vertical spacing */
-    margin-top: 3%;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
   }
 
   .navItem {
-    /* font-size: 3vw;  */
-    /* scale text with viewport */
-    padding: 2% 0;
+    font-size: 17px;
+    width: 100%;
   }
-}
 
+  .navLink {
+    display: block;
+    width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navBar {
+    width: 100%;
+    padding: 1rem 4vw;
+    }
+
+    .logo {
+    height: 48px;
+    }
+
+    .navItem {
+    font-size: 16px;
+    }
+  }
