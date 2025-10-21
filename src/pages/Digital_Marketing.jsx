@@ -18,7 +18,7 @@ const Digital_Marketing = () => {
   useEffect(() => {
     function onScroll(e) {
       setTimeout(() => {
-        if (e.deltaY > 20) {
+        if (e.deltaY > 12) {
           if (index === 0) {
             BGImg.current.style.top = "100px";
 
@@ -51,9 +51,9 @@ const Digital_Marketing = () => {
               nav("/recent");
             }, 1200);
           }
+          setIndex(index + 1);
         }
-        setIndex(index + 1);
-      }, 200);
+      }, 100);
     }
 
     setTimeout(() => {
