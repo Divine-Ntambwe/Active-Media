@@ -134,17 +134,17 @@ const Digital_Marketing = () => {
           <div ref={par} className={styles.paragraphs}>
             <p>
               We help businesses express the benefits of their products and
-              services in an attractive, compact and concise way through
+              services in an attractive, compact and<br/> concise way through
               colorful brochures, descriptive flyers, eye-catching
               advertisements etc.
             </p>
 
             <p>
               We have the experience and tools to help you build your brand or
-              business. Having an eye-catching custom logo, business cards,
-              letterheads and any branding can increase both online and offline
+              business. Having an eye catching<br/> custom logo, business cards,
+              letterheads and any branding can increase both online and offline<br/>
               presence of your business substantially. Work with creative
-              individuals to build your brand through custom, memorable design.
+              individuals to build your brand through<br/> custom, memorable design.
             </p>
           </div>
 
