@@ -67,7 +67,7 @@ left: -55px;
 
 @keyframes moveUp {
     0%{transform:translateY(0px);}
-    100%{transform:translateY(-600px)}
+    100%{transform:translateY(-400px)}
 }
 
 .moveUp {
@@ -148,7 +148,7 @@ left: -55px;
 
 @keyframes moveUp2 {
     0%{top:0px}
-    100%{top:-755px}
+    100%{top:-655px}
 }
 
 .moveUp2 {
@@ -567,84 +567,7 @@ Icons
 }
 
 /* Ultra-wide screens (1201px to 1600px) */
-@media (min-width: 1201px) and (max-width: 1600px) {
-    .container {
-        padding-top: 7rem;
-        /* max-width: 1400px; */
-        margin: 0 auto;
 
-    }
-
-    .container h1 {
-        font-size: 4em;
-        margin-bottom: 2.5rem;
-    }
-
-    .paragraphs {
-        padding: 0 200px;
-        font-size: 1.25rem;
-        gap: 2rem;
-    }
-
-    .wrapper {
-        padding: 0 150px;
-        max-width: 1400px;
-    }
-
-    .cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        width: 420px;
-        height: 300px;
-        transform: scale(0.5);
-    }
-
-    .cardOne,
-    .cardTwo {
-        height: 620px;
-    }
-
-    .firstTwo,
-    .lastFour {
-        width: 75vw;
-        grid-template-columns: 50% 50%;
-        gap: 0px;
-    }
-
-    .digitalBackground {
-        transform: scale(0.8) rotate(-90deg);
-        top: -220px;
-        left: -60px;
-    }
-
-    .title {
-        font-size: 28px;
-    }
-
-    .text {
-        font-size: 14px;
-    }
-
-    .list li {
-        font-size: 16px;
-        padding-left: 30px;
-    }
-
-    .letterhead::before {
-        width: 40px;
-        height: 50px;
-    }
-
-    .letterhead::after {
-        width: 32px;
-        height: 5px;
-        top: 9px;
-        left: 4px;
-    }
-}
 
 /* Extra ultra-wide screens (1601px and above) */
 @media (min-width: 1601px) and (max-width: 2210px) {
