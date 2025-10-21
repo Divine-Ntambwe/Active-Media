@@ -100,7 +100,7 @@
 .orb1{
   position:absolute;
   /* left:50%; */
-  top:-10%;
+  top:-10%; 
   width: 550px;
   /* min-width: 90%; */
   transform:translateY(-10%);
