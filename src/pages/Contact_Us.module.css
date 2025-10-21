@@ -5,9 +5,18 @@
   background: #fff;
   background: radial-gradient(circle 500px at center, rgba(255, 92, 155, 0.6), #fff);
   text-align: center;
-  padding: 20px;
+  /* padding: 20px; */
   padding-bottom: 50px;
+  animation: appear 0.3s forwards;
 
+}
+
+@keyframes appear {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.disappear{
 }
 
 /* Page Title */
@@ -29,6 +38,16 @@
   background: radial-gradient(circle, rgba(255, 103, 161, 0.6), #fff);
   border-radius: 15px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbarContainer {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+  backdrop-filter: blur(7px); /* Apply blur effect to show underlying content faintly */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  width: 100%; /* Ensure full width coverage */
 }
 
 .contactCard h2 {
