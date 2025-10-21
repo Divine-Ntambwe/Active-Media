@@ -630,27 +630,16 @@ Icons
 
 @media screen and (min-width:1690px) and (max-width: 1799px) {
    *{
-  color: aqua;
+  /* color: aqua; */
  }
 
-
-}
-
-
-
-@media screen and (min-width:1800px) and (max-width: 2200px) {
-*{
-    color: pink;
-
-}
-
-.designMarketingPage h1{
-    font-size: 5em !important;
+ .designMarketingPage h1{
+    font-size: 4em !important;
 }
 
 .paragraphs{
-    font-size: 2em;
-    padding: 0;
+    font-size: 1.8em;
+    padding: 0 10px;
 }
 
 .cardOne,
@@ -675,9 +664,113 @@ Icons
     }
       @keyframes moveUp2 {
     0%{top:0px;}
+    100%{top:-850px}
+}
+
+
+}
+
+
+
+@media screen and (min-width:1800px) and (max-width: 2200px) {
+*{
+    /* color: pink; */
+
+}
+
+.designMarketingPage h1{
+    font-size: 5em !important;
+}
+
+.paragraphs{
+    font-size: 2em;
+    padding: 0;
+}
+
+.cardOne,
+    .cardTwo,
+    .cardThree,
+    .cardFour,
+    .cardFive,
+    .cardSix {
+        width: 500px !important;
+        transform: scale(0.85) !important;
+    }
+.cardOne,
+    .cardTwo{
+        height: 800px !important;
+        
+    }
+
+    .cardThree,
+    .cardFour,
+    .cardFive,
+    .cardSix {
+        height: 300px !important;
+    }
+    @keyframes moveUp2 {
+    0%{top:0px;}
     100%{top:-880px}
 }
 
+@keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-550px)}
+}
+
+}
+
+/* 67% */
+@media screen and (min-width: 2201px) {
+
+*{
+    /* color: gold; */
+}
+}
+
+@media (min-width:2211px) {
+    *{
+        /* color: red; */
+    }
+    .container {
+        font-size: 1.6em;
+    }
+
+    .paragraphs{
+        font-size: 1.3em;
+    }
+
+    .cardOne,
+    .cardTwo,
+    .cardThree,
+    .cardFour,
+    .cardFive,
+    .cardSix {
+        width: 500px !important;
+        height: 500px !important;
+        transform: scale(0.9) !important;
+    }
+
+    .cardOne,
+    .cardTwo {
+        height: 760px !important;
+    }
+
+    .firstTwo,
+    .lastFour {
+        width: 70vw;
+        grid-template-columns: 50% 50%;
+        gap: 70px;
+    }
+
+    @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-855px}
+}
+
+    .wrapper{
+        margin-top: 100px;
+    }
 }
 
 /* 67% */
