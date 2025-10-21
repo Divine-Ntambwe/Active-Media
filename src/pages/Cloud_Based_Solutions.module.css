@@ -229,3 +229,37 @@
     gap: 40px;
   }
 }
+
+
+.pictureBox{
+  display: flex;
+  
+}
+/* .activeChurch {
+  /* height: auto;
+  margin-top: 20px;
+  margin-left: 70px; 
+} */
+
+.pictureBox{
+  border: 1px solid black;
+  width: 90%;
+  display: flex;
+  margin: auto;
+
+}
+
+.churchImage{
+  height: 80vh;
+  width: 100%;
+}
+
+/* .laptopImg{
+  animation: moveToSide 4s infinite alternate ease-in-out;
+}
+
+@keyframes moveToSide{
+  0%{left:0; top:0;}
+  50%{left:400px; top:200px;}
+
+} */

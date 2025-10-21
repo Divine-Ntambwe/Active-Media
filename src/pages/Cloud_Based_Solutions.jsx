@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './Cloud_Based_Solutions.module.css'
-
 import serverStack from '../assets/Untitled/https_/lottiefiles.com/animations/computerztech-lhmk6qciBg.png'
 import swirl from '../assets/blending 1755804129410.png'
 import backgroundElement from '../assets/Frame 77.png'
+import churchImage from '../assets/Frame 78.png'
+import laptopImage from '../assets/lottiefiles.com/animations/computerztech-lhmk6qciBg.png'
 
 function Cloud_Based_Solutions() {
   return (
@@ -43,6 +44,15 @@ function Cloud_Based_Solutions() {
             <img src={backgroundElement} alt="decorative element" className={styles.backgroundDecor} />
           </div>
         </div>
+
+          {/* carmels section begin*/}
+        <div className={styles.pictureBox}>
+          <div className={styles.activeChurch}>
+            <img src={churchImage} alt="Active Church" className={styles.churchImage} />
+          </div>
+          <img src={laptopImage} alt="Laptop" className={styles.laptopImg} />
+        </div>
+        {/* carmels section end */}
       </section>
   )
 }
