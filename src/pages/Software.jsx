@@ -148,7 +148,7 @@ export default function Software() {
     };
 
     setTimeout(() => {
-      if (window.matchMedia("(max-width: 767px) and (min-width: 576px").matches) return
+      if (window.matchMedia("(max-width: 768px) and (min-width: 991px").matches) return
       window.addEventListener("wheel", handleScroll);
       return () => window.removeEventListener("wheel", handleScroll);
     }, 500);

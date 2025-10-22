@@ -770,9 +770,12 @@ animation: fadeIn5 1s forwards;
     text-align: center;
   }
 
-  .title1 {
-    font-size: 2.5em;
-    margin-bottom: 1rem;
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+    margin-top: 70px;
+    
   }
 
   .services {
@@ -786,8 +789,12 @@ animation: fadeIn5 1s forwards;
   }
 
   .laptopGif {
-    transform: scale(1.2) !important;
+    transform: scale(0.8) !important;
+    position: fixed !important;
+    top: 15vh !important;
+    left: 70vw !important;
   }
+
 
   .div2 {
     padding: 40px 0 20px 0;
@@ -835,15 +842,21 @@ animation: fadeIn5 1s forwards;
   }
 
   .pinkBox {
-    font-size: 0.9rem !important;
-    text-align: center;
-    padding: 1rem;
-    margin-left: -20px;
+    font-size: 2.0rem !important;
+    text-align: right;
+    padding: 3rem;
+    margin: 1rem 0;
+    margin-left: -220px;
+    margin-top:75%;
+    max-width: 500px;
+    order: 3;
   }
 
   .backgroundDecor {
-    width: 400px !important;
-    height: 200px !important;
+    height: 285px !important;
+    max-width: 550px;
+     margin-left: -220px;
+     margin-bottom: -59%;
   }
 }
 
@@ -894,6 +907,8 @@ animation: fadeIn5 1s forwards;
   .laptopGif {
     transform: scale(0.8) !important;
     position: fixed !important;
+    top: 20vh !important;
+    left: 70vw !important;
   }
 
   .div2 {
@@ -952,23 +967,22 @@ animation: fadeIn5 1s forwards;
   }
 
   .pinkBox {
-    font-size: 1.0rem !important;
+    font-size: 1.5rem !important;
     text-align: right;
-    padding: 2rem;
+    padding: 3rem;
     margin: 1rem 0;
     margin-left: -450px;
-    margin-bottom:10%;
+    margin-top:15%;
     max-width: 500px;
     order: 3;
-    border:2px solid black;
   }
 
   .backgroundDecor {
     
-    height: 165px !important;
-    max-width: 300px;
+    height: 185px !important;
+    max-width: 350px;
      margin-left: -450px;
-     border:2px solid black;
+     margin-bottom: -9%;
   }
 
   .ecommerceSection {
@@ -1013,10 +1027,12 @@ animation: fadeIn5 1s forwards;
     padding: 0 5px;
   }
 
-  .title1 {
+  .title {
     font-size: 1.8rem;
     margin-bottom: 0.8rem;
     line-height: 1.2;
+    margin-top: 60px;
+    
   }
 
   .services {
@@ -1032,7 +1048,10 @@ animation: fadeIn5 1s forwards;
   }
 
   .laptopGif {
-    transform: scale(0.6) !important;
+    transform: scale(0.8) !important;
+    position: fixed !important;
+    top: 20vh !important;
+    left: 70vw !important;
   }
 
   .div2 {
@@ -1061,6 +1080,8 @@ animation: fadeIn5 1s forwards;
   .title2 {
     margin-left: 0 !important;
     text-align: left;
+  
+    
   }
 
   .div2_2 {
@@ -1082,16 +1103,20 @@ animation: fadeIn5 1s forwards;
   }
 
   .pinkBox {
-    font-size: 0.75rem !important;
-    padding: 0.8rem;
-    max-width: 280px;
+    font-size: 1.0rem !important;
+    padding: 2rem;
+    height:150px;
+    max-width: 390px;
     text-align: center;
-    margin-left: -12px;
+    margin-left: -132px;
+    margin-top: 60px;
   }
 
   .backgroundDecor {
-    width: 200px !important;
-    height: 100px !important;
+    width: 300px !important;
+    height: 150px !important;
+    margin-left: -132px;
+    margin-bottom: -30%;
   }
 }
 
@@ -1115,10 +1140,12 @@ animation: fadeIn5 1s forwards;
     padding: 0;
   }
 
-  .title1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.6rem;
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
     line-height: 1.2;
+    margin-top: 20px;
+    
   }
 
   .services {
@@ -1183,17 +1210,21 @@ animation: fadeIn5 1s forwards;
     order: 3;
   }
 
-  .pinkBox {
-    font-size: 0.7rem !important;
-    padding: 0.6rem;
-    max-width: 260px;
+ .pinkBox {
+    font-size: 1.0rem !important;
+    padding: 1rem;
+    height:150px;
+    max-width: 390px;
     text-align: center;
-    margin-left: -10px;
+    margin-right: 52px;
+    margin-top: 20px;
   }
 
   .backgroundDecor {
-    width: 180px !important;
-    height: 90px !important;
+    width: 200px !important;
+    height: 100px !important;
+    margin-left: -12px;
+    margin-bottom: -40%;
   }
 }
 
