@@ -310,28 +310,51 @@ Icons
 
 @keyframes moveRW {
     0%{
-         left: 1700px;
+         left: 0px;
     }
     100%{
-        left: 900px;
+        left: -1900px;
     }
 }
 .recentWork{
-    position: absolute;
+    /* position: absolute;
     left: 1900px;
-    top: 600px;
+    top: 600px; */
     /* display: none; */
+    position: relative;
     z-index: 1;
     font-size: 3rem;
-    width: 300px;
+    width: 100%;
+    text-align:right;
+}
+
+.rwHeadingContainer{
+    width: 150%;
+    height: 100%;
+    /* position: absolute; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* background-color: red; */
 }
 
 .moveRW{
-    animation: moveRW 3s forwards ;
+    animation: moveRW 2.7s forwards ease-out;
 }
 
 
 @media (max-width: 576px) {
+    *{
+        color:gold ;
+    }
+    .designMarketingPage{
+    overflow: visible !important;
+    }
     .container {
         padding-top: 3rem;
         height: auto;
@@ -349,8 +372,11 @@ Icons
     }
 
     .wrapper {
-        padding: 0 20px;
+        padding: 0 ;
+        grid-template-columns: 100%;
+        /* border: solid; */
     }
+ 
 
     .cardOne,
     .cardTwo,
@@ -358,22 +384,52 @@ Icons
     .cardFour,
     .cardFive,
     .cardSix {
-        width: 100%;
-        height: 200px;
-        transform: scale(1);
+        /* width: 100%; */
+        height: 350px !important;
+       
+       
     }
 
-    .cardOne,
-    .cardTwo {
-        height: 400px;
+    .lastFour{
+        margin-top: 120px;
+    }
+    .firstTwo{
+       transform: scale(1) !important;  
+    }
+
+    .lastFour div{
+        transform: scale(0.56) !important;
+        height: 380px !important;
     }
 
     .firstTwo,
     .lastFour {
         width: 100%;
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: 100% !important;
+        /* gap: 20px; */
     }
+
+    .cardSix{
+        margin: 0px !important;
+    }
+
+    @keyframes floating {
+        0%{transform: translateY(0px);}
+        100%{transform: translateY(-50px);}
+        }
+    
+    .wrapper img{
+       
+         animation: floating 1s ease-in-out infinite alternate;
+        
+    }
+
+    .cardTwo,.cardFive{
+        width: 0px !important;
+    }
+
+    
+
 
     .digitalBackground {
         transform: scale(0.5) rotate(-90deg);
@@ -389,26 +445,14 @@ Icons
         font-size: 10px;
     }
 
-    .list li {
-        font-size: 12px;
-        padding-left: 20px;
-    }
-
-    .letterhead::before {
-        width: 25px;
-        height: 35px;
-    }
-
-    .letterhead::after {
-        width: 20px;
-        height: 3px;
-        top: 6px;
-        left: 3px;
-    }
+    
 }
 
 /* Medium screens (tablets, 577px to 768px) */
 @media (min-width: 577px) and (max-width: 768px) {
+    *{
+        /* color:gold ; */
+    }
     .container {
         padding-top: 4rem;
         height: auto;
@@ -682,7 +726,7 @@ transform: scale(0.55) rotate(-90deg);
 
 @media screen and (max-width:1121px) {
   *{
-    /* color:green */
+    color:green
  
 }
 

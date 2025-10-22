@@ -44,81 +44,41 @@ const Digital_Marketing = () => {
 
           if (index === 2) {
             container.current.classList.add(styles.slideOut);
-            BGImg.current.classList.add(styles.disappear);
-            // rwHeading.current.style.display = "inline";
-            // rwHeading.current.classList.add(styles.moveRW)
+            rwHeading.current.style.display = "inline";
+            rwHeading.current.classList.add(styles.moveRW);
+            BGImg.current.style.left = "800px";
+            BGImg.current.style.top = "-150px";
             setTimeout(() => {
+              // BGImg.current.classList.add(styles.disappear);
               nav("/recent");
-            }, 1200);
+            }, 2000);
           }
           setIndex(index + 1);
+        }else if (e.deltaY < -20 && e.deltaY < 0) {
+          window.location.reload();
         }
       }, 100);
     }
 
     setTimeout(() => {
+      if (window.matchMedia("(max-width: 576px)").matches) return
       window.addEventListener("wheel", onScroll);
       return () => window.removeEventListener("wheel", onScroll);
     }, 500);
   }, [index]);
 
-  const y = window.scrollY;
-  //   if (document.documentElement.scrollTop > 0) {
-  //     // BGImg.current.style.top = "100px"
 
-  //     // heading.current.classList.add(styles.moveUp)
-  //     // // heading.current.style.animationFillMode = "forwards"
 
-  //     // par.current.classList.add(styles.disappear)
-  //     // // par.current.style.animationFillMode = "forwards"
-
-  //     // wrapper.current.classList.add(styles.moveUp)
-  //     // container.current.style.height = "105vh"
-  //     // // wrapper.current.style.animationFillMode = "forwards"
-
-  //   }
-
-  //   if (document.documentElement.scrollTop > 140){
-  //      BGImg.current.style.left = "800px";
-  //      BGImg.current.style.top = "100px"
-
-  //      lastFour.current.classList.add(styles.moveUp2)
-  //     //  lastFour.current.style.animationFillMode = "forwards"
-
-  //      firstTwo.current.classList.add(styles.disappear)
-  //     //  firstTwo.current.style.animationFillMode = "forwards"
-
-  //   }
-
-  //   if (document.documentElement.scrollTop > 235){
-  //     container.current.classList.add(styles.slideOut);
-  //      BGImg.current.classList.add(styles.disappear);
-  //     // rwHeading.current.style.display = "inline";
-  //     // rwHeading.current.classList.add(styles.moveRW)
-  //     setTimeout(()=>{
-  //       nav("/recent")
-  //     },1500)
-
-  //   }
-  //   if (document.documentElement.scrollTop == 0){
-  //    firstTwo.current.classList.remove(styles.disappear)
-  //    lastFour.current.classList.remove(styles.moveUp2)
-  //    wrapper.current.classList.remove(styles.moveUp)
-  //    heading.current.classList.remove(styles.moveUp)
-  //    par.current.classList.remove(styles.disappear)
-
-  //    BGImg.current.style.left = "-55px"
-  //    BGImg.current.style.top = "-200px"
-  // }
-
-  // useEffect(() => {
-  //   window.addEventListener("wheel", onScroll);
-  //   return () => window.removeEventListener("wheel", onScroll);
-  // }, []);
 
   return (
     <>
       <div className={styles.designMarketingPage}>
+        <div className={styles.rwHeadingContainer}>
+
+        <h1 ref={rwHeading} className={styles.recentWork}>
+          RECENT WORKS
+        </h1>
+        </div>
         <img
           ref={BGImg}
           className={styles.digitalBackground}
