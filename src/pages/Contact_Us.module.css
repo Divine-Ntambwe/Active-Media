@@ -2,21 +2,19 @@
 
 .pageWrapper {
   font-family: 'Inter', sans-serif;
-  background: #fff;
   background: radial-gradient(circle 500px at center, rgba(255, 92, 155, 0.6), #fff);
   text-align: center;
-  /* padding: 20px; */
   padding-bottom: 50px;
   animation: appear 0.3s forwards;
-
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @keyframes appear {
-  0%{opacity: 0;}
-  100%{opacity: 1;}
-}
-
-.disappear{
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* Page Title */
@@ -25,29 +23,31 @@
   font-size: 45px;
   letter-spacing: 8px;
   font-weight: 330;
+  padding: 0 10px;
   word-wrap: break-word;
-  padding-left: 5px;
 }
 
 /* Contact Card */
 .contactCard {
   margin: 40px auto;
-  padding: 30px 25px;
-  width: 100%;
-  max-width: 455px;
+  padding: 35px 25px;
+  width: 90%;
+  max-width: 445px;
   background: radial-gradient(circle, rgba(255, 103, 161, 0.6), #fff);
   border-radius: 15px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .navbarContainer {
   position: sticky;
   top: 0;
-  z-index: 1000; /* Ensure it stays above other content */
-  background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
-  backdrop-filter: blur(7px); /* Apply blur effect to show underlying content faintly */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  width: 100%; /* Ensure full width coverage */
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
+
 }
 
 .contactCard h2 {
@@ -61,7 +61,7 @@
   padding-bottom: 50px;
   color: #333;
   text-align: left;
-  padding-left: 33px  ;
+  padding-left: 33px;
 }
 
 .subHeadingContact {
@@ -83,10 +83,9 @@
 .contactCard hr {
   border: none;
   border-top: 1px solid #999;
-  
 }
 
-.divider{
+.divider {
   border-top: 1px solid #000000;
   width: 85%;
 }
@@ -104,42 +103,36 @@
   margin-bottom: 3px;
 }
 
-.form input {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  width: 88%;
-  background: #fff;
-  font-size: 14px;
-}
-
+.form input,
 .form textarea {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
   outline: none;
-  width: 88%;
+  width: 90%;
   background: #fff;
   font-size: 14px;
-  resize: none; /* Prevent manual resizing */
-  overflow: hidden; /* Hide scrollbars */
+  box-sizing: border-box;
+}
+
+.form textarea {
+  resize: none;
+  overflow: hidden;
   min-height: 100px;
 }
 
-
 .form button {
   margin-top: 15px;
-  padding: 8px;
+  padding: 10px;
   background: black;
   color: white;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   transition: 0.3s;
-  width: 93%;
+  width: 95%;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   box-shadow: 0 0 10px 5px rgba(255, 92, 155, 0.6);
 }
 
@@ -150,47 +143,91 @@
 /* Footer Text */
 .footerText {
   margin: 30px auto 0 auto;
-  max-width: 100%;
-  font-size: 18px;
+  max-width: 90%;
+  font-size: 17px;
   line-height: 1.6;
   font-weight: 300;
 }
 
-/* -------------------
-   MEDIA QUERIES
-------------------- */
 
 /* Tablets */
 @media (max-width: 768px) {
   .heading {
-    font-size: 22px;
+    font-size: 32px;
     letter-spacing: 5px;
   }
 
   .contactCard {
     padding: 25px 20px;
-    max-width: 90%;
+    max-width: 95%;
+  }
+
+  .form {
+    padding-left: 15px;
   }
 
   .footerText {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
-/* Small Phones */
+/* Phones */
 @media (max-width: 480px) {
   .heading {
-    font-size: 20px;
-    letter-spacing: 3px;
+    font-size: 26px;
+    letter-spacing: 2px;
   }
 
   .contactCard {
-    padding: 20px 15px;
+    padding: 18px 14px;
+    margin: 20px auto;
+    width: 92%;
   }
 
-  .form input {
+  .form input,
+  .form textarea {
+    width: 100%;
     font-size: 13px;
     padding: 8px;
+  }
+
+  .form button {
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+  }
+
+  .footerText {
+    font-size: 14px;
+    padding: 0 9px;
+  }
+}
+
+/*Extra small screens (like iPhone SE or 86% zoom) */
+@media (max-width: 360px) {
+  .heading {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .contactCard {
+    padding: 11px 7px;
+    width: 94%;
+  }
+
+  .form {
+    padding-left: 10px;
+    gap: 10px;
+  }
+
+  .form label {
+    font-size: 12px;
+  }
+
+  .form input,
+  .form textarea {
+    font-size: 12px;
+    padding: 7px;
   }
 
   .form button {
@@ -199,6 +236,7 @@
   }
 
   .footerText {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
+
