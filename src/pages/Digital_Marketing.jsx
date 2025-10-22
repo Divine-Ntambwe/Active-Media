@@ -18,7 +18,7 @@ const Digital_Marketing = () => {
   useEffect(() => {
     function onScroll(e) {
       setTimeout(() => {
-        if (e.deltaY > 12) {
+        if (e.deltaY > 20) {
           if (index === 0) {
             BGImg.current.style.top = "100px";
 
@@ -73,6 +73,7 @@ const Digital_Marketing = () => {
   return (
     <>
       <div className={styles.designMarketingPage}>
+        <Navbar />
         <div className={styles.rwHeadingContainer}>
 
         <h1 ref={rwHeading} className={styles.recentWork}>
@@ -84,7 +85,6 @@ const Digital_Marketing = () => {
           className={styles.digitalBackground}
           src="./backgroundLines.png"
         />
-        <Navbar />
         <div ref={container} className={styles.container}>
           <h1 ref={heading}>
             GRAPHIC DESIGN &<br />

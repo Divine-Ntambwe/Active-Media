@@ -74,7 +74,7 @@ export default function Software() {
   useEffect(() => {
     const handleScroll = (e) => {
       setTimeout(() => {
-        if (e.deltaY > 10) {
+        if (e.deltaY > 20) {
           setSlide(slide + 1);
           if (slide === 0) {
             setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);

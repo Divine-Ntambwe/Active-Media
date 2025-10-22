@@ -35,11 +35,11 @@ const Recent_Work = () => {
       // const step = window.scrollY + 1 // every 200px scroll → new index
       // if (step !== currentIndex && step < headings.length) {
       // fade out first
-      setFade(false);
+      // setFade(false);
       const diff = e.deltaY;
       // after fade out, switch text and fade back in
       setTimeout(() => {
-        if (diff > 20 && currentIndex < headings.length - 1) {
+        if (diff > 25 && currentIndex < headings.length - 1) {
           setCurrentIndex(currentIndex + 1);
         } else if (diff < 1 && currentIndex > 0 && diff < -20) {
           setCurrentIndex(currentIndex - 1);
@@ -56,8 +56,12 @@ const Recent_Work = () => {
       // }
     };
 
-    window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
+    setTimeout(()=>{
+
+      window.addEventListener("wheel", handleScroll);
+      return () => window.removeEventListener("wheel", handleScroll);
+    },1500)
+
   }, [currentIndex, headings.length]);
 
   return (
