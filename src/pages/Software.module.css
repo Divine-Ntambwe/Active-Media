@@ -749,4 +749,21 @@ animation: fadeIn5 1s forwards;
 
 }
 
+/* Britney's styling */
+
+/* Mobile Phone responsiveness */
+@media screen and (max-width: 480px) {
+  .div2_2{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .div2_2{
+    width: 100%;
+  }
+}
+
+
+
 
