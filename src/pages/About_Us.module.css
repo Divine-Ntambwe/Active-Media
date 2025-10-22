@@ -350,13 +350,15 @@ h5 {
   font-size: 14px;
   text-align: justify;
   text-align-last: right;
-  font-family: "Lato", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .teamText {
   text-align: justify !important;
   text-align-last: right !important;
   margin-left: auto;
+  font-size: 1.1em;
+  font-weight: 300;
  
 }
 

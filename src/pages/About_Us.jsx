@@ -153,8 +153,9 @@ export default function About_Us() {
             </div>
           </div>
         </div>
-
-        {/* Slide 3 */}
+{/* ................................................. */}
+        {/* Carmel's section for responsiveness */}
+{/* ------------------------------------------------- */}
         <div className={`${styles.aboutDiv} ${styles.div3}`}>
           <div className={`${styles.container1} ${styles.fadeInStagger}`}>
             <div className={styles.text}>
@@ -162,14 +163,12 @@ export default function About_Us() {
               <p className={styles.teamText}>
                 Active Media consists of a team of <br />
                 people that are passionate about what <br />
-                they do and strive to ensure that only <br />
-                the very best service is offered to our <br />
-                clients.
-                <br />
-                We stand by our company ethics – ensuring honesty, authenticity and
-                excellence.
-                <br />
-                You have ideas. We have software solutions
+                they do and strive to ensure that only the<br />
+                very best service is offered to our <br />
+                clients. We stand by our company ethics<br />
+                -ensuring honesty, authenticity and<br />
+                excellence. You have ideas. We have <br />
+                software solutions
               </p>
               <p className={styles.passionate}>Passionate</p>
             </div>
