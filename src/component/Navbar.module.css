@@ -231,7 +231,6 @@
   padding-top: 5rem;
   transition: right 0.3s ease-in-out;
   z-index: 10 !important;
-  /* display: none; */
 }
 
 .sideMenu.open {
