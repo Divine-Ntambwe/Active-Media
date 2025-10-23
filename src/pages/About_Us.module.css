@@ -163,7 +163,7 @@ h5{
     font-size: 14px;
     text-align: justify;
     text-align-last: right;
-    font-family: "Lato", sans-serif;
+    font-family: "Inter", sans-serif;
 
 
 }
@@ -324,13 +324,15 @@ h5 {
   font-size: 14px;
   text-align: justify;
   text-align-last: right;
-  font-family: "Lato", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .teamText {
   text-align: justify !important;
   text-align-last: right !important;
   margin-left: auto;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
  
 }
 
@@ -472,6 +474,9 @@ body {
 
 /* RESPONSIVENESS */
 @media (max-width: 600px) {
+  .container1:first-child{
+    flex-direction: column-reverse !important;
+  }
 
         .aboutSection {
         width: 100vw; 
@@ -534,7 +539,8 @@ body {
     }
     
     .teamText {
-        text-align: center !important; 
+        text-align: left !important; 
+        text-align-last: left !important;
         margin: 0 auto; 
         width: 100%; 
     }
@@ -553,7 +559,7 @@ body {
     }
     
     .paragraph {
-        text-align: center !important;
+        text-align: left !important;
         margin: 0 auto;
         width: 100%;
         max-width: 400px; 
@@ -565,7 +571,7 @@ body {
     }
     
     .experties{
-        margin: 10px auto 0; 
+        /* margin: 10px auto 0;  */
     }
     
     .div3 img, .image1{

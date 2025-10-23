@@ -200,7 +200,7 @@ export default function About_Us() {
                 foundation with which any business can begin to maximise on their
                 potential.
               </p>
-              <button className={styles.experties}>Expertise</button>
+              <p style={{}}className={styles.experties}>Expertise</p>
             </div>
           </div>
         </div>
