@@ -153,9 +153,7 @@
 
 /* Tablets */
 @media (max-width: 768px) {
-  .pageWrapper{
-    /* padding: 0 20px; */
-  }
+
   .heading {
     font-size: 32px;
     letter-spacing: 5px;
@@ -180,9 +178,6 @@
   .heading {
     font-size: 26px;
     letter-spacing: 2px;
-  }
-  .pageWrapper{
-    /* padding: 0 20px; */
   }
 
   .contactCard {
@@ -212,9 +207,7 @@
 
 /*Extra small screens (like iPhone SE or 86% zoom) */
 @media (max-width: 360px) {
-  .pageWrapper{
-    padding: 0 20px;
-  }
+  
  
   .heading {
     
