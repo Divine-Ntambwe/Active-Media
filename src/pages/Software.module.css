@@ -1154,5 +1154,87 @@ animation: fadeIn5 1s forwards;
     order: 3;
   }
 }
+@media (max-width: 412px) {
+  .laptopGif {
+    top: 22vh !important;
+    left:36vw !important;
+    width: 90%;
+    /* border: 3px solid blue; */
+  }
+  .title1{
+    font-size: 1.9rem ;
+    width: 100%;
+    top: 5%;
+    left: -12%;
+    padding-right: 100%;
+    margin-right: 30%;
+    /* border: 2px solid red; */
+    position: absolute;
+  }
+  .div1{
+    margin-top: 0px !important;
+    margin-left: 3% !important;
+    /* border: 2px solid green; */
+  }
+  .services{
+    font-size: larger;
+    /* position: absolute; */
+    left: 0vw;
+    text-align: left;
+    padding-top: 3vh;
+  }
+ .textBlock{
+    position: absolute;
+    top: 2%;
+    left: 14%;
+    width: 90%;
+    /* border: 2px solid purple; */
+    text-align: left;
+ }
+ .paragraphBox{
+  margin-right:35vw;
+ }
 
+}
+@media (max-width: 810px) {
+  .laptopGif {
+    top: 25vh !important;
+    left:50vw !important;
+    width: 70%;
+    /* border: 3px solid blue; */
+  }
+  .title1{
+    font-size: 1.9rem ;
+    width: 100%;
+    top: 5%;
+    left: -12%;
+    padding-right: 100%;
+    margin-right: 30%;
+    /* border: 2px solid red; */
+    position: absolute;
+  }
+  .div1{
+    margin-top: 0px !important;
+    margin-left: 3% !important;
+    /* border: 2px solid green; */
+  }
+  .services{
+    font-size: larger;
+    /* position: absolute; */
+    left: 0vw;
+    text-align: left;
+    padding-top: 3vh;
+  }
+ .textBlock{
+    position: absolute;
+    top: 2%;
+    left: 14%;
+    width: 90%;
+    /* border: 2px solid purple; */
+    text-align: left;
+ }
+ .paragraphBox{
+  margin-right:35vw;
+ }
 
+}
