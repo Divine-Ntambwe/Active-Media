@@ -1210,5 +1210,100 @@ animation: fadeIn5 1s forwards;
     margin-bottom: -10%;
   }
 }
+/* ========== 📱 RESPONSIVE DESIGN FOR .div4 SECTION ONLY ========== */
+@media (max-width: 768px) {
+  .softwarePage{
+    overflow-y: visible;
+  }
+  .div4 {
+    flex-direction: column; /* stack elements vertically */
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Ensure heading is visible and nicely spaced */
+  .ecommerceSection h1 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Image full width below heading */
+  .div4 .leftSection img {
+    width: 100%;
+    height: 40vh;
+    margin-bottom: 1rem;
+  }
+
+  /* Text below image */
+  .div4 .rightSection {
+    width: 600px;
+    height: auto;
+    text-align: center;
+    margin-bottom: 1rem;
+    /* margin-left:; */
+  }
+
+  /* Make the laptop appear next to text (side-by-side) */
+  laptopGif {
+    position: static; /* remove absolute positioning for mobile */
+    display: inline-block;
+    width: 45%;
+    height: auto;
+    transform: none;
+    scale: 1; /* reset scaling */
+    margin-left: 300px;
+    vertical-align: middle;
+  }
+
+  .div4 .rightSection p {
+    display: inline-block;
+    width: 45%;
+    vertical-align: middle;
+    background: rgba(255, 221, 239, 0.3);
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
 
 
+
+/* ========== RESPONSIVE: DIV 5 ONLY ========== */
+@media screen and (max-width: 768px) {
+  .div5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .div5 .rightSection {
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .div5 .supImage {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    max-width: 450px;
+    object-fit: contain;
+  }
+}
+
+/* Even smaller mobile screens (e.g. <480px) */
+@media screen and (max-width: 480px) {
+  .div5 {
+    padding: 20px 10px;
+  }
+
+  .div5 .supImage {
+    width: 100%;
+    max-width: 380px;
+  }
+}
