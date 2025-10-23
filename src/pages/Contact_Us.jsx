@@ -32,7 +32,7 @@ const Contact_Us = () => {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.navbarContainer}>
-        <Navbar />
+        {/* <Navbar /> */}
       </div>
 
       {/* Page Title */}

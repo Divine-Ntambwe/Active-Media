@@ -152,6 +152,9 @@
 
 /* Tablets */
 @media (max-width: 768px) {
+  .pageWrapper{
+    padding: 0 20px;
+  }
   .heading {
     font-size: 32px;
     letter-spacing: 5px;
