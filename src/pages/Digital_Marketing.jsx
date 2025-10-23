@@ -8,6 +8,9 @@ import cardThree from "../assets/Group 43.png"
 import cardFour from "../assets/Group 42.png"
 import cardFive from "../assets/Group 39.png"
 import cardSix from "../assets/Group 40.png"
+import cardOneSmall from "../assets/Group 31.png"
+import cardTwoSmall from "../assets/Group 44.png"
+// import cardOneSmall from "../assets/Group 31.png"
 
 
 const Digital_Marketing = () => {
