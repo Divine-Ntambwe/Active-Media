@@ -18,7 +18,7 @@ const Digital_Marketing = () => {
   let scrollDiff; 
   let num = 0;
   useEffect(() => {
-    scrollDiff = window.matchMedia("(max-width:2201px) and (min-width: 576px)").matches?15:15
+    scrollDiff = window.matchMedia("(max-width:2201px) and (min-width: 576px)").matches?15:5
     function onScroll(e) {
       setTimeout(() => {
         if (e.deltaY > scrollDiff) {
