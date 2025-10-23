@@ -46,7 +46,7 @@ const Digital_Marketing = () => {
           }
 
           if (index === 2) {
-            if (window.matchMedia("(max-width:2201px) and (min-width: 576px)").matches){
+            if (window.matchMedia("(max-width:2201px) and (min-width: 1025px)").matches){
 
               container.current.classList.add(styles.slideOut);
               rwHeading.current.style.display = "inline";
@@ -59,7 +59,7 @@ const Digital_Marketing = () => {
               }, 2000);
             }else {
 
-              lastFour.current.style.transform="translateY(-800px)"
+              lastFour.current.style.transform="translateY(var(--lastTwo))"
             }
 
 
