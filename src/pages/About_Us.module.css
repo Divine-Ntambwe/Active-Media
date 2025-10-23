@@ -19,6 +19,7 @@
   transition: transform 0.7s ease;
   width: 100%;
   height: 100%;
+  overflow-y: hidden;
 }
 
 
@@ -65,7 +66,7 @@
 .heading {
   position: absolute;
   top: 5%;
-  left: 10%;
+  left: 13%;
   font-size: 2.4rem;
   font-weight: 700;
   color: #111;
@@ -84,22 +85,23 @@
 
 /* Placement */
 .topLeft {
+    position: absolute;
   top: 13%;
-  left: 10%;
+  left: 13%;
   width: 20%;
 }
 
 .bottomLeft {
   bottom: 18%;
-  left: 25%;
-  width: 18%;
+  padding-left: 21%;
+  width: 100%;
 }
 
 .rightBlock {
+  position: absolute;
   top: 19%;
-  right: 16%;
-  width: 22%;
-  text-align: left;
+  padding-left: 60%;
+  width: 100%;
 }
 
 /* Slide 2 */
@@ -497,3 +499,275 @@ body {
     transform: translate(-40%, -40%); /* back to start */
   }
 }
+/* RESPONSIVENESS-DESKTOP/LAPTOP  */
+@media (min-width: 1750px) {
+  .laptopWrapper {
+    right: 20%;
+    top: 10%;
+    transform: scale(1.1); 
+    width: 45%;
+  }
+
+  .laptop {
+    max-width: 75%;
+  }
+
+  .heading {
+    font-size: 2.9rem;
+    left: 16%;
+    top: 7%;
+    /* color: red; */
+  }
+
+  .textBlock {
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+
+  .topLeft {
+    width: 25%;
+    top: 14%;
+    left: 16%;
+  }
+
+  .bottomLeft {
+    width: 22%;
+    top:30%;
+    left: 3%;
+  }
+
+  .rightBlock {
+    width: 100%;
+    right: -58%;
+    top: 20%;
+  }
+}
+
+/* --- Tablets & Small Laptops  --- */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .aboutSection {
+    height: auto;
+  }
+
+  .laptopWrapper {
+    right: -2%;
+    top: 8%;
+  }
+
+  .laptop {
+    max-width: 70%;
+  }
+
+  .heading {
+    font-size: 2rem; 
+    /* color: red; */
+     top: 8%;
+    left: 9%;
+  }
+
+  .textBlock {
+    font-size: 1rem;
+    width: 30%;
+  }
+
+  .topLeft {
+    top: 13%;
+    left: 9%;
+  }
+
+  .bottomLeft {
+    bottom: 20%;
+    left: 18%;
+  }
+
+  .rightBlock {
+    top: 25%;
+    right: 4%;
+    width: 30%;
+  }
+}
+
+
+/* RESPONSIVENESS-MOBILE */
+@media (max-width: 600px) {
+  .aboutSection {
+    flex-direction: column;
+    height: auto;
+    
+  }
+
+  .aboutDiv {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: center;
+    border: 4px solid red;
+  }
+
+  .laptopWrapper {
+    position: relative; 
+    top: 11%;
+    right: -24%;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .laptop {
+    max-width: 100%;
+    height: auto;
+    /* right: 2rem; */
+  }
+
+  .heading {
+    position: relative;
+    top: -26%;
+    left: -23%;
+    right: 60%;
+    margin-top: 1em;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  /* .textBlock {
+    position: relative;
+    width: 90%;
+    top: -0%;
+    left: 0;
+    margin: 1em auto;
+    font-size: 1rem;
+    line-height: 1.6;
+  } */
+
+  .topLeft {
+    position: relative;
+    top: -41%;
+    left: 10%;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    text-align: left;
+  }
+  .bottomLeft{
+    position: relative;
+    top: -19%;
+    left: -10%;
+    width: 90%;
+    text-align: left;
+  }
+  .rightBlock {
+    position: relative;
+    top: -20%;
+    right: 5%;
+    width: 100%;
+    margin: 0 auto;
+    /* font-size: clamp(0.8rem, 1vw + 0.5rem, 1.2rem); */
+    /* overflow-wrap: break-word;
+    word-break: break-word;
+    text-wrap: balance;  */
+    z-index: 3000;
+  }
+}
+/* @media (max-width: 412px) {
+  .aboutDiv{
+    padding-top: 2rem;
+    overflow-y: hidden;
+    
+  }
+  .textBlock{
+    font-size: 0.96rem;
+  }
+  .heading{
+    position: relative;
+    left: -15%;
+  }
+  .laptopWrapper{
+    width: 100%;
+  }
+  .rightBlock{
+    top: -30%;
+  }
+}
+@media (max-width: 360px) {
+  .textBlock{
+    font-size: 0.8rem;
+    
+  }
+  .heading{
+    left: -12%;
+    top: -45%
+  }
+  .topLeft{
+    left: 10%;
+    top:-45%;
+  }
+  @media (max-width: 384px) {
+    .laptopWrapper{
+      right: -44%;
+  }
+  
+} */
+/* @media (max-width: 810px) {
+  .aboutDiv{
+    border: 5px solid red;
+    color: red;
+  }
+  .laptopWrapper{
+    right: -18%;
+    max-width: 70%;
+    border: 5px solid red;
+
+}
+.laptop{
+  max-width: 90%;
+}
+} */
+
+/* @media (max-width: 870px) {
+ .laptopWrapper{
+  right: -38%;
+  width: 100%;
+  top: 1%;
+ 
+}
+.textBlock{
+  font-size: 1.2rem;
+}
+.heading{
+  font-size: 2.3rem;
+  left: 8%;
+  top: 3%;
+}
+
+}
+.topLeft{
+  width: 100%;
+  top: 8%;
+}
+.bottomLeft{
+  width: 100%;
+  bottom: 26%;
+  left: 10%;
+  top: 30%;
+}
+.rightBlock{
+  top: 80%;
+  right: -10%;
+  width: 100%;
+} */
+/* @media (max-width: 408px) {
+  .laptopWrapper{
+    right: -35%;
+    width: 100%;
+    top: 5%;
+    border: 3px solid red;
+   
+  }
+  .heading{
+    font-size: 2rem;
+    left: 7%;
+    top: 5%;
+  }
+   */
+  
