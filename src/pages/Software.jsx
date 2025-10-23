@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import styles from "./Software.module.css";
 import PurpleLines from "../component/purpleLines";
-// import laptop from "../assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif";
+import laptopImage from "../assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif";
 import backgroundElement from "../assets/Frame 77.png";
 import Navbar from "../component/Navbar";
 import ECommercePage from "./ECommercePage";
@@ -68,7 +68,7 @@ export default function Software() {
   const [show, setShow] = useState(true);
   const nav = useNavigate();
   const [laptop, setLaptop] = useState(
-    "/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif"
+    laptopImage
   );
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function Software() {
         if (e.deltaY > 20) {
           setSlide(slide + 1);
           if (slide === 0) {
-            setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);
+            setLaptop(`${laptop}?${new Date().getTime()}`);
             title1.current.classList.remove(styles.fadeIn);
             title1.current.classList.add(styles.fadeOut);
             par1.current.classList.remove(styles.fadeIn);
@@ -91,7 +91,7 @@ export default function Software() {
             "translateY(200px) translateX(100px)";
           }
           if (slide === 1) {
-            setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);
+            setLaptop(`${laptop}?${new Date().getTime()}`);
             cloudBasedImg.current.classList.add(styles.disappear);
             title2.current.classList.add(styles.fadeOut2);
             par3.current.classList.add(styles.fadeOut2);
@@ -102,7 +102,7 @@ export default function Software() {
             bgImg.current.style.transform = "translateY(0px) translateX(500px)";
           }
           if (slide === 2) {
-            setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);
+            setLaptop(`${laptop}?${new Date().getTime()}`);
             div3.current.classList.remove(styles.fadeIn3);
             div3.current.classList.add(styles.fadeOut3);
 
@@ -115,7 +115,7 @@ export default function Software() {
           }
 
           if (slide === 3) {
-            setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);
+            setLaptop(`${laptop}?${new Date().getTime()}`);
             // div4.current.classList.remove(styles.fadeIn4);
             title3.current.classList.add(styles.fadeOut2);
             par4.current.classList.add(styles.fadeOut2);
@@ -128,7 +128,7 @@ export default function Software() {
            
           }
           if (slide === 4) {
-            setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);
+            setLaptop(`${laptop}?${new Date().getTime()}`);
             supremeImg2.current.classList.add(styles.disappear);
             laptopGif.current.classList.remove(styles.moveLaptop4);
             laptopGif.current.classList.add(styles.moveLaptop5);
@@ -152,7 +152,6 @@ export default function Software() {
       return () => window.removeEventListener("wheel", handleScroll);
     }, 500);
   }, [slide]);
-  console.log(slide);
 
   // // Cloud observer
   // useEffect(() => {
