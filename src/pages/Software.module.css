@@ -490,9 +490,6 @@ animation: fadeIn5 1s forwards;
 
 /* SMALLER SCREENS */
 @media screen and (max-width: 1400px) and (min-width:1300px){
-  *{
-    /* color: darkmagenta; */
-  }
 
   .paragraphBox p, .pinkBox {
   font-size: 1.3em;
@@ -526,15 +523,9 @@ animation: fadeIn5 1s forwards;
 }
 
 @media screen and (max-width: 1301px) and (min-width:1120px) {
-  *{
-    /* color:fuchsia */
-  }
+  
    .paragraphBox p, .pinkBox{
     font-size: 1.1rem !important;
-  }
-
-  .div1{
-    /* margin-top: 10px !important; */
   }
 
   .title1{
@@ -617,9 +608,7 @@ animation: fadeIn5 1s forwards;
 /* 80% */
 
 @media screen and (min-width:1690px) and (max-width: 1799px) {
-   *{
-  /* color: aqua; */
- }
+  
 
   .paragraphBox p, .pinkBox {
   font-size: 1.8em;
@@ -652,9 +641,6 @@ animation: fadeIn5 1s forwards;
 
 }
 @media screen and (min-width:1800px) and (max-width: 2200px) {
- *{
-  /* color: blue; */
- }
 
  .paragraphBox p, .pinkBox {
   font-size: 2em;
@@ -698,12 +684,6 @@ animation: fadeIn5 1s forwards;
 
 /* 67% */
 @media screen and (min-width: 2201px) {
-  .softwareSection{
-    /* color:crimson; */
-    /* font-size: 1.1em; */
-  }
-
-  
  .paragraphBox p, .pinkBox{
     font-size: 2.5rem !important;
   }
