@@ -440,6 +440,7 @@ Icons
     .lastFour div, .firstTwo div{    
      animation: floating 1s ease-in-out infinite alternate;
     }
+    
 
      @keyframes moveUp2 {
     0%{top:0px;}
