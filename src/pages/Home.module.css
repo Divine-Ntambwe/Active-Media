@@ -4,7 +4,7 @@
 }
 
 .hero{
-  width:100%;
+  width:99.8%;
   height:70vh;
   display:flex;
   align-items:center;
@@ -37,8 +37,8 @@
   max-width:1200px;
   margin:0 auto;
   display:flex;
-  position: absolute;
-  top:110px;
+  position: relative;
+  margin-top:110px;
   /*justify-content:space-between;*/
   
   padding:48px 24px;
@@ -101,12 +101,12 @@
   position:absolute;
   /* left:50%; */
   top:-10%; 
-  width: 550px;
+  width: 100%;
   /* min-width: 90%; */
   transform:translateY(-10%);
   z-index: 2;
  /* border: solid; */
- height: 680px;
+ height: 575px;
  margin-left: 230px;
 }
 
@@ -118,15 +118,133 @@
   transform:translateY(6%);
 }
 
-@media (max-width:1100px){
-  .container{flex-direction:column;align-items:flex-start}
-  .right{height:360px;width:100%;margin-top:18px}
-  .title{font-size:42px}
+.swirl{
+  position:absolute;
+  right:0%;
+  top:20%;
+  width:28%;
+  transform:translateY(-20%);
+  z-index:3;
+}
+@media (max-width: 1200px) {
+  /* When the window is slightly reduced — make left take ~67% */
+
+
+  .container {
+    padding: 42px 21px;
+    gap: 18px;
+  }
+
+  .left {
+    flex: 0 0 67%;
+  }
+
+  .right {
+    flex: 0 0 32%;
+    height: 420px;
+  }
+
+  .title, .cta {
+    transform: scale(1);
+    font-size: 48px;
+  }
 }
 
-@media (max-width:600px){
-  .title{font-size:28px}
-  .swirl{display:none}
+@media (max-width: 992px) {
+  /* When the window is reduced further — make left take ~80% */
+  .container {
+    padding: 36px 18px;
+    gap: 12px;
+  }
+
+  .left {
+    flex: 0 0 80%;
+    padding-left: 8px;
+  }
+
+  .right {
+    flex: 0 0 18%;
+    height: 380px;
+  }
+
+  .title {
+    font-size: 48px;
+    line-height: 1.15;
+  }
+
+  .cta {
+    font-size: 16px;
+  }
+
+  /* keep heavy visuals from pushing layout at these sizes */
+  .orb1, .orb2, .swirl {
+    display: none;
+  }
+}
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .hero {
+    height: auto; /* let content decide height */
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  .container {
+    flex-direction: column; /* stack content */
+    align-items: center;
+    margin-top: 10px;
+    padding: 24px 16px;
+  }
+
+  .left, .right {
+    flex: 0 0 100%; /* full width */
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 42px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .cta {
+    margin: 12px auto 0;
+    font-size: 16px;
+  }
+
+  .blendingBackground {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-size: contain;
+  }
+
+    .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: auto;
+    min-height: 260px;
+  }
+
+    .right img {
+    max-width: 100%;
+    height: 100vh;
+    display: block;
+    margin: 50px auto;
+    object-fit: contain;
+  }
+
+  .orb1, .orb2, .swirl {
+    display: none;
+  }
 }
 
 

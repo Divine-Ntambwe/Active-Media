@@ -16,8 +16,6 @@
   100%{opacity: 1;}
 }
 
-.disappear{
-}
 
 /* Page Title */
 .heading {
@@ -46,8 +44,8 @@
   z-index: 1000; /* Ensure it stays above other content */
   background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
   backdrop-filter: blur(7px); /* Apply blur effect to show underlying content faintly */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  width: 100%; /* Ensure full width coverage */
+  -webkit-backdrop-filter: blur(10px); 
+  width: 100%; 
 }
 
 .contactCard h2 {
