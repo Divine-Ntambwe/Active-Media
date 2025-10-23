@@ -34,7 +34,7 @@ animation: appear 1s ;
 
 .designMarketingPage{
  height: 100vh;
- /* overflow: hidden !important;    */
+ overflow: hidden !important;   
  display: flex;
  flex-direction: column;
  position: relative;
@@ -358,7 +358,7 @@ Icons
 
 @media (max-width: 1024px)  {
     *{
-        color:gold ;
+        /* color:gold ; */
     }
     .digitalBackground {
         transform: scale(0.5) rotate(-90deg);
@@ -385,9 +385,16 @@ Icons
 
     .wrapper {
         padding: auto;
-        grid-template-columns: 100%;
+        /* grid-template-columns: 100%; */
 
     }
+    .firstTwo div, .lastFour div{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+   
+}
 
     
 :root{
@@ -410,11 +417,11 @@ Icons
     }
 
     .cardOne img{
-        transform: rotate(8deg) !important;
+        transform: rotate(8.5deg) !important;
     }
 
     .cardTwo img{
-        transform: rotate(-26deg) !important;
+        transform: rotate(-25.9deg) !important;
     }
 
     .cardFour img{
@@ -422,16 +429,16 @@ Icons
     }
 
     .cardFive img{
-        transform: rotate(-30deg) !important;
+        transform: rotate(-31deg) !important;
     }
 
     @keyframes floating {
         0%{transform: translateY(0px);}
-        100%{transform: translateY(-20px);}
+        100%{transform: translateY(-10px);}
         }
     
-    .wrapper div{    
-     /* animation: floating 1s ease-in-out infinite alternate; */
+    .lastFour div, .firstTwo div{    
+     animation: floating 1s ease-in-out infinite alternate;
     }
 
      @keyframes moveUp2 {
@@ -451,7 +458,7 @@ Icons
 
 @media (max-width: 993px) and (min-width: 500px) {
    *{
-    color: pink
+    /* color: pink */
    }
     .container {
         padding-top: 0 !important ;
@@ -476,7 +483,7 @@ Icons
 }
 }
 
-@media (max-width: 500px) and (min-width: 200px) {
+@media (max-width: 501px) and (min-width: 416px) {
    *{
     color: lightgreen
    }
@@ -494,50 +501,114 @@ Icons
     }
     :root{
     --cardRefDim: 350px;
-    --lastTwo: -600px;
+    --lastTwo: -800px;
 
 }
 
-.wrapper{
-    padding: 0 20px;
-}
 .firstTwo {
-    /* border: solid; */
     width: 100vw;
 }
 
-.lastFour img{
-height: calc(var(--cardRefDim));
-width: calc(var(--cardRefDim) );
+
+.cardOne img{
+width: 380px !important;
+height: 380px !important;
+
 }
 
-.cardFive img, .cardFour img{
-height: calc(var(--cardRefDim) ) !important;
-width: calc(var(--cardRefDim) );
-
+.cardTwo img{
+width: 450px !important;
+height: 450px !important; 
 }
 
 .cardThree img, .cardSix img{
-    height: calc(var(--cardRefDim) - 40px ) !important;
-width: calc(var(--cardRefDim) - 40px);
+height: 340px;
+width: 340px;
 }
+.cardFive img, .cardFour img{
+height: 400px !important;
+width: 400px;
+
+}
+
 
 @keyframes moveUp {
     0%{transform:translateY(0px);}
-    100%{transform:translateY(-750px)}
+    100%{transform:translateY(-860px)}
 }
 
    @keyframes moveUp2 {
     0%{top:0px;}
-    100%{top:-850px; }   
+    100%{top:-890px; 
+    }   
 }  
 }
 
+@media screen and (max-width:416px) {
+    *{
+        /* color: blue; */
+    }
+     .container {
+        padding-top: 0 !important ;
+    }
+
+    .container h1 {
+        font-size: 2.2em !important;
+    }
+
+    .paragraphs {
+        padding: 20px 25px;
+        font-size: 1.1em;
+    }
+    :root{
+    --cardRefDim: 350px;
+    --lastTwo: -800px;
+
+}
+
+.firstTwo {
+    width: 100vw;
+}
+
+
+.cardOne img{
+width: 380px !important;
+height: 380px !important;
+
+}
+
+.cardTwo img{
+width: 450px !important;
+height: 450px !important; 
+}
+
+.cardThree img, .cardSix img{
+height: 340px;
+width: 340px;
+}
+.cardFive img, .cardFour img{
+height: 400px !important;
+width: 400px;
+
+}
+
+
+@keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-620px)}
+}
+
+   @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-890px; 
+    }   
+}  
+}
 
 /* 110 */
 @media screen and (max-width: 1400px) and (min-width: 1300px) {
   *{
-    color: darkmagenta;
+    /* color: darkmagenta; */
   }
   .digitalBackground{
 transform: scale(0.55) rotate(-90deg);
@@ -579,7 +650,7 @@ transform: scale(0.55) rotate(-90deg);
 
 @media screen and (max-width: 1301px) and (min-width:1120px) {
   *{
-    color:fuchsia
+    /* color:fuchsia */
   }
 .digitalBackground{
 transform: scale(0.55) rotate(-90deg);
@@ -620,7 +691,7 @@ transform: scale(0.55) rotate(-90deg);
 
 @media screen and (max-width:1121px) and (min-width: 1028px) {
   *{
-    color:green
+    /* color:green */
  
 }
 .digitalBackground{
