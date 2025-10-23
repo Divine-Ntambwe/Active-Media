@@ -21,12 +21,12 @@ export default function About_Us() {
       if (isScrolling.current) return;
       isScrolling.current = true;
 
-      if (e.deltaY > 0) {
+      if (e.deltaY > 80) {
         setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
         
 
       } else {
-        setCurrentSlide((prev) => Math.max(0, prev - 1));
+        // setCurrentSlide((prev) => Math.max(0, prev - 1));
       }
 
       setTimeout(() => {

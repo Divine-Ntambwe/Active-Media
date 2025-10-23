@@ -102,230 +102,185 @@
   text-align: left;
 }
 
-/* Slide 2 */
-.div2 {
-  /* background placeholder if needed */
-}
+/* ==============================
+   Force-preserve original desktop
+   and limit responsive rules to <=1200px
+   ============================== */
 
-.containerB {
-  height: 90vh;
-  font-family: "Inter", sans-serif;
-  display: flex;
-  flex-direction: column;
-}
-
-.aimSection {
-  display: flex;
-  margin-top: 10vh;
-}
-
-.laptopWrapper img {
-  width: 60%;           
-  max-width: 100%;
-  height: auto;
-} 
-
-.textContent {
-  position: relative;
-  z-index: 3;
-  max-width: 700px;
-  padding: 10% 15%;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* .paragraph1 {
-  margin-left: 5%;
-  padding-right: 30%;
-}
-
-.paragraph2 {
-  margin-left: 25%;
-  margin-top: 15%;
-}
-
-.paragraph3 {
-  position: absolute;
-  top: 20%;
-  right: 0%;
-} */
-
-/* Ozias Styling (The Start) */
-.container1{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    width: 80%;
-    /* border: 1px solid red;   */
-    /* justify-content: flex-end;  */
-    gap: 50px;
-    height: 40vh;
-    margin-bottom: 20px;
-    /* height: 53vh; */
-}
-
-.text{
-    /* border: 1px solid black; */
-    /* height: 43vh; */
-    /* width: 35%; */
-    /* margin: 3% 0 0 12%; */
-}
-
-h5{
-    font-size: 14px;
-    text-align: justify;
-    text-align-last: right;
-    font-family: "Lato", sans-serif;
-
-
-}
-
-.passionate{
-    font-size: 10px;
-    font-family: sans-serif;
-    height: 20px;
-    width: 100px;
-    margin-left: auto;
-    /* margin-top: 20px; */
-    text-align: center;
-    padding-top: 7px;
-    background-color: rgba(211, 211, 211, 0.5);
-    border: none;
-    border-radius: 3px;
-}
-
-.div3 img{
-  /* width: 100%;        */
-  width: 500px;
-  height: 40vh;
-  object-fit: fill !important;
-  /* border: 1px solid blue; */
-}
-
-.conatiner2{
-    display: flex;
-    width: 100%;
-    height: 50vh;
-}
-
-.phoneImage{
-  margin-left: auto ;
-    /* height: 43vh;
-    width: 30%; */
-    /* margin: 1% 0 0 22%; */
-}
-
-.text2{
-    /* height: 43vh;
-    width: 23%; */
-    /* margin: 0 0 0 1%; */
-}
-
-.paragraph{
-    /* font-size: 1.3em; */
-    /* text-align: justify; */
-    /* text-align-last: right; */
-    /* font-family: "Inter", sans-serif; */
-    /* font-weight: 300; */
-    /* font-style: normal; */
-}
-
-.title{
-    font-family: "Inter", sans-serif;
-    font-size: 13px;
-    font-weight: 50000000;
-}
-
-.image1{
-    width: 100%;
-}
-
-.experties{
-      font-size: 10px;
-    font-family: sans-serif;
-    height: 20px;
-    width: 100px;
-    margin-right: auto;
-    /* margin-top: 20px; */
-    text-align: center;
-    padding-top: 7px;
-    background-color: rgba(211, 211, 211, 0.5);
-    border: none;
-    border-radius: 3px;
-}
-/* Ozias Styling(The End) */
-
-/* Britney styling start */
-.containerB{
-    /* border: 2px solid rgb(0, 12, 66); */
+/* --- Ensure desktop (>=1201px) keeps your original values --- */
+@media (min-width: 1201px) {
+  .containerB {
     height: 90vh;
     font-family: "Inter", sans-serif;
     display: flex;
     flex-direction: column;
+    padding: 0;
+  }
+
+  .aimSection {
+    display: flex;
+    margin-top: 10vh;
+    align-items: initial;
+    text-align: left;
+  }
+
+  .bigText {
+    height: 27vh;
+    width: 70vw;
+    font-size: 36px;
+    font-weight: 700;
+    font-family: Helvetica;
+    margin-left: 9vw;
+    line-height: normal;
+  }
+
+  .aimParagraph {
+    height: 27vh;
+    width: 55vw;
+    font-weight: 300;
+    font-size: 19px;
+    text-align: left;
+  }
+
+  .SoftwareSection {
+    display: flex;
+    gap: 2vw;
+    margin-left: 9vw;
+    margin-top: 10vh;
+    align-items: flex-start;
+  }
+
+  .mediaImage {
+    width: 28vw;
+    height: 35vh;
+    object-fit: cover;
+  }
+
+  .mediaContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 30vw;
+    padding-top: 2vh;
+    text-align: left;
+  }
+
+  .multimedia {
+    font-size: 16px;
+    font-family: Helvetica;
+  }
+
+  .multimediaParagraph {
+    width: 100%;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .software {
+    font-size: 12px;
+    font-family: sans-serif;
+    height: 4.5vh;
+    width: 8vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-/* No changes to the top section */
-.bigText{
-  /* border: 1px solid red; */
-  height: 27vh;
-  width: 70vw;
-  font-size: 36px;
-  font-weight: 700;
-  font-family: Helvetica;
-  margin-left: 9vw;
+/* --- Responsive rules only for screens 1200px and below --- */
+
+/* Large tablets / small laptops */
+@media (max-width: 1200px) {
+  .containerB { height: auto; padding: 4vh 5vw; }
+
+  .aimSection {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 5vh;
+  }
+
+  .bigText {
+    width: 85%;
+    margin-left: 0;
+    font-size: 32px;
+    line-height: 1.25;
+  }
+
+  .aimParagraph {
+    width: 85%;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-top: 1.5vh;
+  }
+
+  .SoftwareSection {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3vw;
+    margin-left: 0;
+    margin-top: 4vh;
+  }
+
+  .mediaImage {
+    width: 38vw;
+    max-width: 420px;
+    height: auto;
+  }
+
+  .mediaContent { width: 42vw; max-width: 480px; padding-top: 0; }
 }
 
-.aimParagraph {
-  height: 27vh;
-  width: 55vw;
-  font-weight: 300;
-  font-size: 19px;
+/* Tablets & iPad portrait/landscape */
+@media (max-width: 992px) {
+  .bigText { font-size: 28px; width: 90%; }
+  .aimParagraph { font-size: 16px; width: 90%; }
+  .SoftwareSection {
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh;
+    margin-top: 5vh;
+  }
+  .mediaImage { width: 65vw; max-width: none; }
+  .mediaContent { width: 85vw; padding: 0 4vw; }
+  .multimedia { font-size: 17px; }
+  .multimediaParagraph { font-size: 15px; line-height: 1.5; text-align: center; }
+  .software { width: 35vw; font-size: 13px; height: 5vh; }
 }
 
-.SoftwareSection {
-  display: flex;
-  gap: 2vw;
-  margin-left: 9vw;
-  margin-top: 10vh;
-  align-items: flex-start;
+/* Mobile */
+@media (max-width: 768px) {
+  .containerB { padding: 5vh 6vw; }
+  .bigText {
+    font-size: 22px;
+    line-height: 1.35;
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+  .aimParagraph {
+    font-size: 15px;
+    width: 100%;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .SoftwareSection { gap: 3.5vh; margin-top: 4vh; }
+  .mediaImage { width: 85vw; height: auto; }
+  .mediaContent { width: 90vw; padding: 0 2vw; }
+  .multimediaParagraph { font-size: 14px; }
+  .software { width: 50vw; font-size: 12px; height: 5vh; }
 }
 
-.mediaImage {
-  width: 28vw;
-  height: 35vh;
-}
-
-.mediaContent {
-  display: flex;
-  flex-direction: column;
-  gap: 2vh;
-  width: 30vw;
-  padding-top: 2vh;
-}
-
-.multimedia {
-  font-size: 16px;
-  font-family: Helvetica;
-}
-
-.multimediaParagraph {
-  width: 100%;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.software {
-  font-size: 12px;
-  font-family: sans-serif;
-  height: 4.5vh;
-  width: 8vw;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(211, 211, 211, 0.5);
-  border: none;
-  border-radius: 3px;
+/* Small mobile */
+@media (max-width: 480px) {
+  .bigText { font-size: 20px; }
+  .aimParagraph { font-size: 14px; }
+  .multimediaParagraph { font-size: 13px; }
+  .software { width: 60vw; font-size: 11px; }
 }
 
 /* Slide 3 */
