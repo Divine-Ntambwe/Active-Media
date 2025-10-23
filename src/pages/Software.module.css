@@ -1101,7 +1101,7 @@ animation: fadeIn5 1s forwards;
 }
 
 /* Extra Small Mobile Phones (max-width: 413px) */
-@media screen and (max-width: 413px) {
+@media screen and (max-width: 400px) {
   .softwarePage {
     overflow-x: hidden;
   }
@@ -1124,7 +1124,7 @@ animation: fadeIn5 1s forwards;
     font-size: 1.8rem;
     margin-bottom: 0.8rem;
     line-height: 1.2;
-    margin-top: 20px;
+    margin-top: 60px;
     
   }
 
@@ -1141,7 +1141,10 @@ animation: fadeIn5 1s forwards;
   }
 
   .laptopGif {
-    transform: scale(0.5) !important;
+    transform: scale(0.8) !important;
+    position: fixed !important;
+    top: 10vh !important;
+    left: 60vw !important;
   }
 
   .div2 {
@@ -1192,19 +1195,19 @@ animation: fadeIn5 1s forwards;
 
  .pinkBox {
     font-size: 1.0rem !important;
-    padding: 1rem;
-    height:150px;
-    max-width: 390px;
+    padding: 2rem;
+    height:250px;
+    width: 190px;
     text-align: center;
-    margin-right: 52px;
+    margin-left: -116px;
     margin-top: 20px;
   }
 
   .backgroundDecor {
-    width: 200px !important;
-    height: 100px !important;
-    margin-left: -12px;
-    margin-bottom: -40%;
+    width: 250px !important;
+    height: 150px !important;
+    margin-left: -110px;
+    margin-bottom: -10%;
   }
 }
 
