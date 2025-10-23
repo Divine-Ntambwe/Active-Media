@@ -726,7 +726,7 @@ transform: scale(0.55) rotate(-90deg);
 
 @media screen and (max-width:1121px) {
   *{
-    color:green
+    /* color:green */
  
 }
 
