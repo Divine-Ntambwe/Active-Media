@@ -123,7 +123,7 @@
   background: #fff;
   font-size: 14px;
   resize: none; /* Prevent manual resizing */
-  overflow: hidden; /* Hide scrollbars */
+  /* overflow: hidden; Hide scrollbars */
   min-height: 100px;
 }
 
