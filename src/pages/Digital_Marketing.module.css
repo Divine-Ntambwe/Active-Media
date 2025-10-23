@@ -166,9 +166,9 @@ animation: appear 1s ;
   /* gap: 50px; */
 }
 
-.lastFour div{
-/* transform: scaleX(0.9) !important; */
-}
+/* .lastFour img{
+height: 100%;
+} */
 
 .firstTwo{
    width: 80vw;
@@ -354,7 +354,13 @@ Icons
         color:gold ;
     }
     .designMarketingPage{
-    overflow: visible !important;
+    /* overflow-y: visible !important; */
+    }
+    .digitalBackground {
+        transform: scale(0.5) rotate(-90deg);
+        top: -100px;
+        left: -30px;
+        position: absolute;
     }
     .container {
         padding-top: 3rem;
@@ -373,9 +379,9 @@ Icons
     }
 
     .wrapper {
-        padding: 0 ;
+        padding: auto;
         grid-template-columns: 100%;
-        /* border: solid; */
+
     }
  
 
@@ -387,15 +393,14 @@ Icons
     .cardSix {
         /* width: 100%; */
         height: 350px !important;
-       
-       
     }
 
     .lastFour{
         margin-top: 120px;
+        transition: 1.5s;
     }
     .firstTwo{
-       transform: scale(1) !important;  
+       transform: scale(0.8) !important;  
     }
 
     .lastFour div{
@@ -407,6 +412,7 @@ Icons
     .lastFour {
         width: 100%;
         grid-template-columns: 100% !important;
+        border:3px solid #ff1493;
         /* gap: 20px; */
     }
 
@@ -429,15 +435,6 @@ Icons
         width: 0px !important;
     }
 
-    
-
-
-    .digitalBackground {
-        transform: scale(0.5) rotate(-90deg);
-        top: -100px;
-        left: -30px;
-    }
-
     .title {
         font-size: 18px;
     }
@@ -446,6 +443,11 @@ Icons
         font-size: 10px;
     }
 
+     @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-750px; }
+    
+}  
     
 }
 
@@ -725,7 +727,7 @@ transform: scale(0.55) rotate(-90deg);
 
 }
 
-@media screen and (max-width:1121px) {
+@media screen and (max-width:1121px) and (min-width: 576px) {
   *{
     color:green
  

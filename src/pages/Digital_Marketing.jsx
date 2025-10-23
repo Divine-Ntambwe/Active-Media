@@ -14,11 +14,14 @@ const Digital_Marketing = () => {
   const firstTwo = useRef();
   const rwHeading = useRef();
   const nav = useNavigate();
+  const page = useRef();
+  let scrollDiff; 
   let num = 0;
   useEffect(() => {
+    scrollDiff = window.matchMedia("(max-width:2201px) and (min-width: 576px)").matches?15:25
     function onScroll(e) {
       setTimeout(() => {
-        if (e.deltaY > 20) {
+        if (e.deltaY > 15) {
           if (index === 0) {
             BGImg.current.style.top = "100px";
 
@@ -43,15 +46,24 @@ const Digital_Marketing = () => {
           }
 
           if (index === 2) {
-            container.current.classList.add(styles.slideOut);
-            rwHeading.current.style.display = "inline";
-            rwHeading.current.classList.add(styles.moveRW);
-            BGImg.current.style.left = "800px";
-            BGImg.current.style.top = "-150px";
-            setTimeout(() => {
-              // BGImg.current.classList.add(styles.disappear);
-              nav("/recent");
-            }, 2000);
+            if (window.matchMedia("(max-width:2201px) and (min-width: 576px)").matches){
+
+              container.current.classList.add(styles.slideOut);
+              rwHeading.current.style.display = "inline";
+              rwHeading.current.classList.add(styles.moveRW);
+              BGImg.current.style.left = "800px";
+              BGImg.current.style.top = "-150px";
+              setTimeout(() => {
+                BGImg.current.classList.add(styles.disappear);
+                nav("/recent");
+              }, 2000);
+            }else {
+
+              lastFour.current.style.transform="translateY(-800px)"
+            }
+
+
+            
           }
           setIndex(index + 1);
         }else if (e.deltaY < -20 && e.deltaY < 0) {
@@ -61,7 +73,7 @@ const Digital_Marketing = () => {
     }
 
     setTimeout(() => {
-      if (window.matchMedia("(max-width: 576px)").matches) return
+      // if (window.matchMedia("(max-width: 576px)").matches) return
       window.addEventListener("wheel", onScroll);
       return () => window.removeEventListener("wheel", onScroll);
     }, 500);
@@ -72,7 +84,7 @@ const Digital_Marketing = () => {
 
   return (
     <>
-      <div className={styles.designMarketingPage}>
+      <div ref={page}className={styles.designMarketingPage}>
         <Navbar />
         <div className={styles.rwHeadingContainer}>
 
