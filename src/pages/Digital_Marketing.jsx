@@ -18,10 +18,10 @@ const Digital_Marketing = () => {
   let scrollDiff; 
   let num = 0;
   useEffect(() => {
-    scrollDiff = window.matchMedia("(max-width:2201px) and (min-width: 576px)").matches?15:25
+    scrollDiff = window.matchMedia("(max-width:2201px) and (min-width: 576px)").matches?15:15
     function onScroll(e) {
       setTimeout(() => {
-        if (e.deltaY > 15) {
+        if (e.deltaY > scrollDiff) {
           if (index === 0) {
             BGImg.current.style.top = "100px";
 
@@ -66,7 +66,7 @@ const Digital_Marketing = () => {
             
           }
           setIndex(index + 1);
-        }else if (e.deltaY < -20 && e.deltaY < 0) {
+        }else if (e.deltaY < -scrollDiff && e.deltaY < 0) {
           window.location.reload();
         }
       }, 100);
