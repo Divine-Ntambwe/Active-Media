@@ -177,6 +177,9 @@
     font-size: 26px;
     letter-spacing: 2px;
   }
+  .pageWrapper{
+    padding: 0 20px;
+  }
 
   .contactCard {
     padding: 18px 14px;
@@ -205,13 +208,18 @@
 
 /*Extra small screens (like iPhone SE or 86% zoom) */
 @media (max-width: 360px) {
+  .pageWrapper{
+    padding: 0 20px;
+  }
+ 
   .heading {
+    
     font-size: 20px;
     letter-spacing: 1px;
   }
 
   .contactCard {
-    padding: 11px 7px;
+    padding: 11px 17px;
     width: 94%;
   }
 
