@@ -44,18 +44,30 @@ function Navbar() {
       {/* Sidebar (mobile menu) */}
       <div className={`${styles.sideMenu} ${isOpen ? styles.open : ''}`}>
         <ol className={styles.mobileNavList}>
-          <li className={styles.navItem}>
-            <Link to="/software" className={styles.navLink} onClick={() => setIsOpen(false)}>Software & Development</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link to="/design-marketing" className={styles.navLink} onClick={() => setIsOpen(false)}>Design & Marketing</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link to="/about-us" className={styles.navLink} onClick={() => setIsOpen(false)}>About Us</Link>
-          </li>
-          <li className={styles.navItem}>
-            <Link to="/contact-us" className={styles.navLink} onClick={() => setIsOpen(false)}>Contact Us</Link>
-          </li>
+          <div>
+            <li className={styles.navItem}>
+              <Link to="/software" className={styles.navLink} onClick={() => setIsOpen(false)}>Software & Development</Link>
+            </li>
+          </div>
+
+          <div>
+            <li className={styles.navItem}>
+              <Link to="/design-marketing" className={styles.navLink} onClick={() => setIsOpen(false)}>Design & Marketing</Link>
+            </li>
+          </div>
+
+          <div>
+            <li className={styles.navItem}>
+              <Link to="/about-us" className={styles.navLink} onClick={() => setIsOpen(false)}>About Us</Link>
+            </li>
+          </div>
+
+          <div>
+            <li className={styles.navItem}>
+              <Link to="/contact-us" className={styles.navLink} onClick={() => setIsOpen(false)}>Contact Us</Link>
+            </li>
+          </div>
+
         </ol>
       </div>
     </div>
