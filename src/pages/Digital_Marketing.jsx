@@ -14,60 +14,65 @@ const Digital_Marketing = () => {
   const firstTwo = useRef();
   const rwHeading = useRef();
   const nav = useNavigate();
-  let num = 0;
+
   useEffect(() => {
-    function onScroll(e) {
-      setTimeout(() => {
-        if (e.deltaY > 12) {
-          if (index === 0) {
-            BGImg.current.style.top = "100px";
-
-            heading.current.classList.add(styles.moveUp);
-            // heading.current.style.animationFillMode = "forwards"
-
-            par.current.classList.add(styles.disappear);
-            // par.current.style.animationFillMode = "forwards"
-
-            wrapper.current.classList.add(styles.moveUp);
-            // wrapper.current.style.animationFillMode = "forwards"
-          }
-          if (index === 1) {
-            BGImg.current.style.left = "800px";
-            BGImg.current.style.top = "100px";
-
-            lastFour.current.classList.add(styles.moveUp2);
-            //  lastFour.current.style.animationFillMode = "forwards"
-
-            firstTwo.current.classList.add(styles.disappear);
-            //  firstTwo.current.style.animationFillMode = "forwards"
-          }
-
-          if (index === 2) {
-            container.current.classList.add(styles.slideOut);
-            rwHeading.current.style.display = "inline";
-            rwHeading.current.classList.add(styles.moveRW);
-            BGImg.current.style.left = "800px";
-            BGImg.current.style.top = "-150px";
-            setTimeout(() => {
-              // BGImg.current.classList.add(styles.disappear);
-              nav("/recent");
-            }, 2000);
-          }
-          setIndex(index + 1);
-        }else if (e.deltaY < -20 && e.deltaY < 0) {
-          window.location.reload();
+    function handleScroll(deltaY) {
+      if (deltaY > 25) {
+        if (index === 0) {
+          BGImg.current.style.top = "100px";
+          heading.current.classList.add(styles.moveUp);
+          par.current.classList.add(styles.disappear);
+          wrapper.current.classList.add(styles.moveUp);
         }
-      }, 100);
+        if (index === 1) {
+          BGImg.current.style.left = "800px";
+          BGImg.current.style.top = "100px";
+          lastFour.current.classList.add(styles.moveUp2);
+          firstTwo.current.classList.add(styles.disappear);
+        }
+        if (index === 2) {
+          container.current.classList.add(styles.slideOut);
+          rwHeading.current.style.display = "inline";
+          rwHeading.current.classList.add(styles.moveRW);
+          BGImg.current.style.left = "800px";
+          BGImg.current.style.top = "-150px";
+          setTimeout(() => {
+            nav("/recent");
+          }, 2000);
+        }
+        setIndex(index + 1);
+      } else if (deltaY < -25) {
+        window.location.reload();
+      }
+    }
+
+    function onWheel(e) {
+      setTimeout(() => handleScroll(e.deltaY), 100);
+    }
+
+    let touchStartY = 0;
+    function onTouchStart(e) {
+      touchStartY = e.touches[0].clientY;
+    }
+
+    function onTouchMove(e) {
+      const currentY = e.touches[0].clientY;
+      const deltaY = touchStartY - currentY;
+      setTimeout(() => handleScroll(deltaY), 100);
     }
 
     setTimeout(() => {
-      window.addEventListener("wheel", onScroll);
-      return () => window.removeEventListener("wheel", onScroll);
+      window.addEventListener("wheel", onWheel);
+      window.addEventListener("touchstart", onTouchStart);
+      window.addEventListener("touchmove", onTouchMove);
+
+      return () => {
+        window.removeEventListener("wheel", onWheel);
+        window.removeEventListener("touchstart", onTouchStart);
+        window.removeEventListener("touchmove", onTouchMove);
+      };
     }, 500);
   }, [index]);
-
-
-
 
   return (
     <>
