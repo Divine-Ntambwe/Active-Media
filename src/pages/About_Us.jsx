@@ -15,28 +15,34 @@ export default function About_Us() {
   const nav = useNavigate()
 
   useEffect(() => {
-    const handleWheel = (e) => {
-      e.preventDefault(); // prevent vertical scroll
+    let scrollAccumulator = 0; 
 
-      if (isScrolling.current) return;
+  const handleWheel = (e) => {
+    e.preventDefault(); 
+
+    if (isScrolling.current) return;
+
+    scrollAccumulator += e.deltaY;
+
+    // Change slide only after a certain scroll distance
+    const scrollThreshold = 200; 
+
+    if (scrollAccumulator > scrollThreshold) {
+      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
+      scrollAccumulator = 0;
       isScrolling.current = true;
+      setTimeout(() => (isScrolling.current = false), 700);
+    } else if (scrollAccumulator < -scrollThreshold) {
+      setCurrentSlide((prev) => Math.max(0, prev - 1));
+      scrollAccumulator = 0;
+      isScrolling.current = true;
+      setTimeout(() => (isScrolling.current = false), 700);
+    }
+  };
 
-      if (e.deltaY > 0) {
-        setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
-        
-
-      } else {
-        setCurrentSlide((prev) => Math.max(0, prev - 1));
-      }
-
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, 700);
-    };
-
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, []);
+  window.addEventListener("wheel", handleWheel, { passive: false });
+  return () => window.removeEventListener("wheel", handleWheel);
+}, []);
 
   useEffect(() => {
     if (!containerRef.current) return;
