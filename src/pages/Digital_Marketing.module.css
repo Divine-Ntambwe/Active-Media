@@ -34,7 +34,7 @@ animation: appear 1s ;
 
 .designMarketingPage{
  height: 100vh;
- /* overflow: hidden !important;    */
+ overflow: hidden !important;   
  display: flex;
  flex-direction: column;
  position: relative;
@@ -60,7 +60,7 @@ animation: appear 1s ;
 
 @keyframes slide-out {
     0%{left:0}
-    50%{left:-800px}
+    50%{left:-800px;opacity: 0%;}
     100%{left:-800px;opacity: 0%;}
 }
 
@@ -547,7 +547,7 @@ width: 400px;
 
 @media screen and (max-width:416px) {
     *{
-        color: blue;
+        /* color: blue; */
     }
      .container {
         padding-top: 0 !important ;

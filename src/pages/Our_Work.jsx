@@ -67,12 +67,12 @@ const Recent_Work = () => {
   return (
     <>
       <Navbar />
-      {/* <h1
+      <h1
             className={styles.recentWork}
             // ref={rwHeading}
             >
               Recent Work
-            </h1> */}
+            </h1>
       <img
         // ref={BGImg}
         className={styles.recentBackground}

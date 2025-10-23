@@ -42,18 +42,20 @@ const Digital_Marketing = () => {
          if (window.matchMedia("(max-width:2201px) and (min-width: 1025px)").matches){
 
               container.current.classList.add(styles.slideOut);
-              rwHeading.current.style.display = "inline";
-              rwHeading.current.classList.add(styles.moveRW);
+              // rwHeading.current.style.display = "inline";
+              // rwHeading.current.classList.add(styles.moveRW);
               BGImg.current.style.left = "800px";
               BGImg.current.style.top = "-150px";
               setTimeout(() => {
                 BGImg.current.classList.add(styles.disappear);
                 nav("/recent");
-              }, 2000);
+              }, 800);
             }else {
-
               lastFour.current.style.transform="translateY(var(--lastTwo))"
             }
+        }
+        if (index == 3){
+          nav("/recent");
         }
         setIndex(index + 1);
       } else if (deltaY < -25) {
