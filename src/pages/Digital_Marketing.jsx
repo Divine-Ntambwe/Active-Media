@@ -2,6 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Digital_Marketing.module.css";
 import Navbar from "../component/Navbar";
 import { useNavigate } from "react-router-dom";
+import cardOne from "../assets/Group 30.png"
+import cardTwo from "../assets/Group 36.png"
+import cardThree from "../assets/Group 43.png"
+import cardFour from "../assets/Group 42.png"
+import cardFive from "../assets/Group 39.png"
+import cardSix from "../assets/Group 40.png"
+
+
 const Digital_Marketing = () => {
   const [lastY, setLastY] = useState(0);
   const [index, setIndex] = useState(0);
@@ -31,14 +39,21 @@ const Digital_Marketing = () => {
           firstTwo.current.classList.add(styles.disappear);
         }
         if (index === 2) {
-          container.current.classList.add(styles.slideOut);
-          rwHeading.current.style.display = "inline";
-          rwHeading.current.classList.add(styles.moveRW);
-          BGImg.current.style.left = "800px";
-          BGImg.current.style.top = "-150px";
-          setTimeout(() => {
-            nav("/recent");
-          }, 2000);
+         if (window.matchMedia("(max-width:2201px) and (min-width: 1025px)").matches){
+
+              container.current.classList.add(styles.slideOut);
+              rwHeading.current.style.display = "inline";
+              rwHeading.current.classList.add(styles.moveRW);
+              BGImg.current.style.left = "800px";
+              BGImg.current.style.top = "-150px";
+              setTimeout(() => {
+                BGImg.current.classList.add(styles.disappear);
+                nav("/recent");
+              }, 2000);
+            }else {
+
+              lastFour.current.style.transform="translateY(var(--lastTwo))"
+            }
         }
         setIndex(index + 1);
       } else if (deltaY < -25) {
@@ -116,32 +131,32 @@ const Digital_Marketing = () => {
             {/* Card 1 */}
             <div ref={firstTwo} className={styles.firstTwo}>
               <div className={styles.cardOne}>
-                <img src="src\assets\Group 30.png" />
+                <img src={cardOne} />
               </div>
 
               {/* Card 2 */}
               <div className={styles.cardTwo}>
-                <img src="src\assets\Group 36.png" />
+                <img src={cardTwo} />
               </div>
             </div>
 
             <div ref={lastFour} className={styles.lastFour}>
               <div className={styles.cardThree}>
-                <img src="src\assets\Group 43.png" />
+                <img src={cardThree} />
               </div>
 
               <div className={styles.cardFour}>
-                <img src="src\assets\Group 42.png" />
+                <img src={cardFour} />
               </div>
 
               {/* Card 4 */}
               <div className={styles.cardFive}>
-                <img src="src\assets\Group 39.png" />
+                <img src={cardFive}  />
               </div>
 
               {/* Card 5 */}
               <div className={styles.cardSix}>
-                <img src="src\assets\Group 40.png" />
+                <img src={cardSix}  />
               </div>
             </div>
 
