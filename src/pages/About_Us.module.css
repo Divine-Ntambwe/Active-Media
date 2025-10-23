@@ -843,4 +843,31 @@ body {
     }
     
   }
-  
+  @media (max-width: 824px){
+    .laptopWrapper{
+      right: -29%;
+      width: 90%;
+      top:6%;
+      /* border: 3px solid red; */
+  }
+  .heading{
+    width: 90%;
+    top: 5%;
+    left: 13%;
+  }
+  .topLeft{
+    width: 90%;
+    left: 13%;
+    top: 10%;
+  }
+  .bottomLeft{
+    width: 90%;
+    left: -8%;
+    top: 25%;
+  }
+  .rightBlock{
+    top: 65%;
+    right: -3%;
+    width: 90%;
+  }
+}
