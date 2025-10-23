@@ -584,3 +584,304 @@ body {
     }
    
 }
+
+/* Niclette */
+@media (min-width: 1750px) {
+  .laptopWrapper {
+    right: 20%;
+    top: 10%;
+    transform: scale(1.1); 
+    width: 45%;
+  }
+
+  .laptop {
+    max-width: 75%;
+  }
+
+  .heading {
+    font-size: 2.9rem;
+    left: 16%;
+    top: 7%;
+    /* color: red; */
+  }
+
+  .textBlock {
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+
+  .topLeft {
+    width: 25%;
+    top: 14%;
+    left: 16%;
+  }
+
+  .bottomLeft {
+    width: 22%;
+    top:30%;
+    left: 3%;
+  }
+
+  .rightBlock {
+    width: 100%;
+    right: -58%;
+    top: 20%;
+  }
+}
+
+/* --- Tablets & Small Laptops  --- */
+@media (max-width: 1024px) and (min-width: 601px) {
+  .aboutSection {
+    height: auto;
+  }
+
+  .laptopWrapper {
+    right: -2%;
+    top: 8%;
+  }
+
+  .laptop {
+    max-width: 70%;
+  }
+
+  .heading {
+    font-size: 2rem; 
+    /* color: red; */
+     top: 8%;
+    left: 9%;
+  }
+
+  .textBlock {
+    font-size: 1rem;
+    width: 30%;
+  }
+
+  .topLeft {
+    top: 13%;
+    left: 9%;
+  }
+
+  .bottomLeft {
+    bottom: 20%;
+    left: 18%;
+  }
+
+  .rightBlock {
+    top: 25%;
+    right: 4%;
+    width: 30%;
+  }
+}
+
+
+/* RESPONSIVENESS-MOBILE */
+@media (max-width: 600px) {
+  .aboutSection {
+    flex-direction: column;
+    height: auto;
+    
+  }
+
+  .aboutDiv {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    text-align: center;
+  }
+
+  .laptopWrapper {
+    position: relative; 
+    top: 11%;
+    right: -24%;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .laptop {
+    max-width: 100%;
+    height: auto;
+    /* right: 2rem; */
+  }
+
+  .heading {
+    position: relative;
+    top: -26%;
+    left: -23%;
+    right: 60%;
+    margin-top: 1em;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  /* .textBlock {
+    position: relative;
+    width: 90%;
+    top: -0%;
+    left: 0;
+    margin: 1em auto;
+    font-size: 1rem;
+    line-height: 1.6;
+  } */
+
+  .topLeft {
+    position: relative;
+    top: -41%;
+    left: 10%;
+    right: 0;
+    bottom: 0;
+    width: 90%;
+    text-align: left;
+  }
+  .bottomLeft{
+    position: relative;
+    top: -19%;
+    left: -10%;
+    width: 90%;
+    text-align: left;
+  }
+  .rightBlock {
+    position: relative;
+    top: -20%;
+    right: 5%;
+    width: 100%;
+    margin: 0 auto;
+    /* font-size: clamp(0.8rem, 1vw + 0.5rem, 1.2rem); */
+    /* overflow-wrap: break-word;
+    word-break: break-word;
+    text-wrap: balance;  */
+    z-index: 3000;
+  }
+}
+
+  @media (max-width: 431px) {
+    .laptopWrapper{
+      right: -43%;
+      width: 100%;
+      top:7%;
+    }
+    .heading{
+      position: absolute;
+      top: -4%;
+      left: -4%;
+      width: 80%;
+    }
+    .textBlock{
+      font-size: 0.9rem;
+    }
+    .topLeft{
+      position: absolute;
+      top: 5%;
+      left: 10%;
+      width: 90%;
+    }
+    .bottomLeft{
+      position: absolute;
+      top: 19%;
+      left: -10%;
+      width: 90%;
+    }
+    .rightBlock {
+      position: absolute;
+      top: 58%;
+      left: -50%; 
+      width: 100%;
+      margin: 0 auto;
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .laptopWrapper{
+      right: -50%;
+      width: 100%;
+      top:8%;
+    }
+    .heading{
+      position: absolute;
+      top: -3%;
+      left: -2%;
+      width: 80%;
+    }
+    .textBlock{
+      font-size: 0.8rem;
+    }
+    .topLeft{
+      position: absolute;
+      top: 7%;
+      left: 10%;
+      width: 90%;
+    }
+    .bottomLeft{
+      position: absolute;
+      top: 21%;
+      left: -10%;
+      width: 90%;
+    }
+    .rightBlock {
+      position: absolute;
+      top: 60%;
+      left: -50%; 
+      width: 100%;
+      margin: 0 auto;
+      text-align: left;
+    }
+    
+  }
+  @media (max-width: 824px){
+    .laptopWrapper{
+      right: -29%;
+      width: 90%;
+      top:6%;
+      /* border: 3px solid red; */
+  }
+  .heading{
+    width: 90%;
+    top: 5%;
+    left: 13%;
+  }
+  .topLeft{
+    width: 90%;
+    left: 13%;
+    top: 10%;
+  }
+  .bottomLeft{
+    width: 90%;
+    left: -8%;
+    top: 25%;
+  }
+  .rightBlock{
+    top: 65%;
+    right: -3%;
+    width: 90%;
+  }
+}
+@media (max-width: 768px){
+  .laptopWrapper{
+    right: -43%;
+    width: 90%;
+    top:12%;
+    /* border: 3px solid red; */
+}
+.heading{
+  width: 90%;
+  top: -1%;
+  left: -13%;
+}
+.topLeft{
+  width: 90%;
+  left: 5%;
+  top: 9%;
+}
+.bottomLeft{
+  width: 90%;
+  left: -15%;
+  top: 22%;
+}
+.rightBlock{
+  top: 64%;
+  right: 50%;
+  width: 100%;
+}
+}
