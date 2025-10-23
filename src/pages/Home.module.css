@@ -9,7 +9,8 @@
   display:flex;
   align-items:center;
   background:#fff;
-  overflow: hidden;
+  /* overflow: hidden; */
+  z-index: 12 !important;
   /* border: 1px solid red; */
 }
 
@@ -37,8 +38,8 @@
   max-width:1200px;
   margin:0 auto;
   display:flex;
-  position: absolute;
-  top:110px;
+  position: relative;
+  top:55px;
   /*justify-content:space-between;*/
   
   padding:48px 24px;
@@ -88,8 +89,8 @@
   position:absolute;
   left:-8%;
   top:-5%;
-  width:90%;
-  height:100%;
+  width:85%;
+  height:85%;
   background-image: url('../assets/Active_M.jpg');
   background-size: cover;
   background-position: center;
@@ -101,13 +102,14 @@
   position:absolute;
   /* left:50%; */
   top:-10%; 
-  width: 550px;
+  width: 500px;
   /* min-width: 90%; */
   transform:translateY(-10%);
   z-index: 2;
  /* border: solid; */
  height: 680px;
  margin-left: 230px;
+ z-index: 100;
 }
 
 .orb2{
@@ -116,17 +118,72 @@
   bottom:6%;
   width:36%;
   transform:translateY(6%);
+   z-index: 100;
 }
 
-@media (max-width:1100px){
-  .container{flex-direction:column;align-items:flex-start}
-  .right{height:360px;width:100%;margin-top:18px}
-  .title{font-size:42px}
+/* ========== RESPONSIVENESS ========== */
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 1100px) {
+    .title{
+    color: red;
+  }
+  .hero {
+    height: 67vh; /* reduce height slightly */
+  }
+
+  .container {
+    width: 85%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .right {
+    height: 360px;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .orb1 {
+    margin-left: 0;
+    width: 70%;
+  }
 }
 
-@media (max-width:600px){
-  .title{font-size:28px}
-  .swirl{display:none}
+/* Small screens (phones) */
+@media (max-width: 600px) {
+  .hero {
+    height: 80vh; /* increase to fill screen nicely */
+  }
+
+  .container {
+    width: 90%;
+    padding: 24px 12px;
+  }
+
+  .title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .cta {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .right {
+    height: 280px;
+  }
+
+  .orb1, .orb2 {
+    display: none; /* hide for clarity on small devices */
+    position:relative;
+  }
 }
 
 

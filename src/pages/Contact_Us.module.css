@@ -88,6 +88,7 @@
 .divider {
   border-top: 1px solid #000000;
   width: 85%;
+  margin-left: 31px;
 }
 
 .form {
@@ -95,12 +96,14 @@
   flex-direction: column;
   gap: 12px;
   text-align: left;
-  padding-left: 30px;
+  padding-left: 40px;
+  
 }
 
 .form label {
   font-size: 14px;
   margin-bottom: 3px;
+  margin-left:1px;
 }
 
 .form input,
@@ -113,12 +116,14 @@
   background: #fff;
   font-size: 14px;
   box-sizing: border-box;
+  margin-left: 1px;
 }
 
 .form textarea {
   resize: none;
   overflow: hidden;
   min-height: 100px;
+  
 }
 
 .form button {
@@ -130,7 +135,7 @@
   border-radius: 12px;
   cursor: pointer;
   transition: 0.3s;
-  width: 95%;
+  width: 92%;
   font-weight: 400;
   font-size: 18px;
   box-shadow: 0 0 10px 5px rgba(255, 92, 155, 0.6);
