@@ -61,7 +61,6 @@ const Digital_Marketing = () => {
     }
 
     setTimeout(() => {
-      if (window.matchMedia("(max-width: 576px)").matches) return
       window.addEventListener("wheel", onScroll);
       return () => window.removeEventListener("wheel", onScroll);
     }, 500);
