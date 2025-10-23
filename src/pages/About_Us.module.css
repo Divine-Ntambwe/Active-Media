@@ -151,17 +151,14 @@
 } */
 
 /* Ozias Styling (The Start) */
-.container1{
+/* .container1{
     display: grid;
     grid-template-columns: 50% 50%;
     width: 80%;
-    /* border: 1px solid red;   */
-    /* justify-content: flex-end;  */
     gap: 50px;
     height: 40vh;
     margin-bottom: 20px;
-    /* height: 53vh; */
-}
+} */
 
 .text{
     /* border: 1px solid black; */
@@ -232,7 +229,7 @@ h5{
 .title{
     font-family: "Inter", sans-serif;
     font-size: 13px;
-    font-weight: 50000000;
+    font-weight: 500;
 }
 
 .image1{
@@ -240,7 +237,7 @@ h5{
 }
 
 .experties{
-      font-size: 10px;
+    font-size: 10px;
     font-family: sans-serif;
     height: 20px;
     width: 100px;
@@ -337,14 +334,14 @@ h5{
   align-items: center;
 }
 
-.container1 {
+/* .container1 {
   display: grid;
   grid-template-columns: 50% 50%;
   width: 80%;
   gap: 50px;
   height: 300px;
   margin-top: 1.2em;
-}
+} */
 
 h5 {
   font-size: 14px;
@@ -497,5 +494,56 @@ body {
   }
   -20% {
     transform: translate(-40%, -40%); /* back to start */
+  }
+}
+
+@media (max-width:768px){
+  .container1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    gap: 20px
+  }
+  .text, .text2{
+    text-align: center;
+    width: 100%;
+  }
+  .teamText, .paragraph{
+    text-align: center !important;
+    margin: 0 auto;
+    width: 90%;
+  }
+  .div3 img, .image1{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .passionate, .experties{
+    font-size: 12px;
+    width: 120px;
+    height: 30px;
+    padding-top: 5px;
+  }
+  /* Adjust titles and text sizes */
+  .title {
+    font-size: 1.2em;
+  }
+
+  h5 {
+    font-size: 1em;
+  }
+
+  /* Reduce section height so it doesn’t overflow vertically */
+  .aboutDiv {
+    height: auto;
+    padding: 2em 0;
+  }
+
+  .aboutSection {
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
   }
 }
