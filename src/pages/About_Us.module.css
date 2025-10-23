@@ -151,17 +151,6 @@
 } */
 
 /* Ozias Styling (The Start) */
-.container1{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    width: 80%;
-    /* border: 1px solid red;   */
-    /* justify-content: flex-end;  */
-    gap: 50px;
-    height: 40vh;
-    margin-bottom: 20px;
-    /* height: 53vh; */
-}
 
 .text{
     /* border: 1px solid black; */
@@ -212,21 +201,6 @@ h5{
     /* height: 43vh;
     width: 30%; */
     /* margin: 1% 0 0 22%; */
-}
-
-.text2{
-    /* height: 43vh;
-    width: 23%; */
-    /* margin: 0 0 0 1%; */
-}
-
-.paragraph{
-    /* font-size: 1.3em; */
-    /* text-align: justify; */
-    /* text-align-last: right; */
-    /* font-family: "Inter", sans-serif; */
-    /* font-weight: 300; */
-    /* font-style: normal; */
 }
 
 .title{
@@ -423,8 +397,6 @@ body {
   overflow-y: hidden;
 }
 
-
-
 /* Slide visibility + fade control */
 .aboutDiv {
   opacity: 0;
@@ -496,4 +468,113 @@ body {
   -20% {
     transform: translate(-40%, -40%); /* back to start */
   }
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 600px) {
+
+        .aboutSection {
+        width: 100vw; 
+        height: auto; 
+        display: block; 
+    }
+    
+    .aboutDiv {
+        width: 100vw;
+        height: auto; 
+        min-height: 50vh; 
+        padding: 40px 0; 
+        display: block;
+        opacity: 1 !important; 
+    }
+
+    .laptop {
+        max-width: 80%;
+        height: auto;
+    }
+    
+    .div3 {
+        width: 100vw;
+        display: block !important; 
+        padding: 20px 0; 
+        margin: 0 !important;
+    }
+
+    .container1{
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        width: 90%; 
+        max-width: 500px;
+        gap: 30px;
+        margin: 30px auto; 
+        height: auto;
+    }
+    
+    .container1 > div {
+        width: 95%;
+        padding: 0 5%;
+        margin: 0;
+    }
+
+    .lightimage {
+        order: 1; 
+        text-align: center;
+    }
+    .text {
+        order: 2;
+        text-align: center;
+        width: 100%;
+    }
+    
+    h5 {
+        text-align: center !important;
+        text-align-last: center !important;
+        font-size: 1.2em;
+    }
+    
+    .teamText {
+        text-align: center !important; 
+        margin: 0 auto; 
+        width: 100%; 
+    }
+    
+    .passionate{
+        margin: 10px auto 0; 
+    }
+
+        .container1:nth-child(2) .text2 {
+        order: 1; 
+        text-align: center;
+    }
+    .container1:nth-child(2) .phoneImage {
+        order: 2; 
+        text-align: center;
+    }
+    
+    .paragraph {
+        text-align: center !important;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 400px; 
+        font-size: 1em;
+    }
+    
+    .title {
+        font-size: 1.5em; 
+    }
+    
+    .experties{
+        margin: 10px auto 0; 
+    }
+    
+    .div3 img, .image1{
+        width: 90%; 
+        max-height: 250px; 
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto;
+    }
+   
 }
