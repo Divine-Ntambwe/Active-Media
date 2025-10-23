@@ -14,78 +14,69 @@ const Digital_Marketing = () => {
   const firstTwo = useRef();
   const rwHeading = useRef();
   const nav = useNavigate();
-  const page = useRef();
-  let scrollDiff; 
-  let num = 0;
+
   useEffect(() => {
-    scrollDiff = window.matchMedia("(max-width:2201px) and (min-width: 576px)").matches?15:5
-    function onScroll(e) {
-      setTimeout(() => {
-        if (e.deltaY > scrollDiff) {
-          if (index === 0) {
-            BGImg.current.style.top = "100px";
-
-            heading.current.classList.add(styles.moveUp);
-            // heading.current.style.animationFillMode = "forwards"
-
-            par.current.classList.add(styles.disappear);
-            // par.current.style.animationFillMode = "forwards"
-
-            wrapper.current.classList.add(styles.moveUp);
-            // wrapper.current.style.animationFillMode = "forwards"
-          }
-          if (index === 1) {
-            BGImg.current.style.left = "800px";
-            BGImg.current.style.top = "100px";
-
-            lastFour.current.classList.add(styles.moveUp2);
-            //  lastFour.current.style.animationFillMode = "forwards"
-
-            firstTwo.current.classList.add(styles.disappear);
-            //  firstTwo.current.style.animationFillMode = "forwards"
-          }
-
-          if (index === 2) {
-            if (window.matchMedia("(max-width:2201px) and (min-width: 1025px)").matches){
-
-              container.current.classList.add(styles.slideOut);
-              rwHeading.current.style.display = "inline";
-              rwHeading.current.classList.add(styles.moveRW);
-              BGImg.current.style.left = "800px";
-              BGImg.current.style.top = "-150px";
-              setTimeout(() => {
-                BGImg.current.classList.add(styles.disappear);
-                nav("/recent");
-              }, 2000);
-            }else {
-
-              lastFour.current.style.transform="translateY(var(--lastTwo))"
-            }
-
-
-            
-          }
-          setIndex(index + 1);
-        }else if (e.deltaY < -scrollDiff && e.deltaY < 0) {
-          window.location.reload();
+    function handleScroll(deltaY) {
+      if (deltaY > 25) {
+        if (index === 0) {
+          BGImg.current.style.top = "100px";
+          heading.current.classList.add(styles.moveUp);
+          par.current.classList.add(styles.disappear);
+          wrapper.current.classList.add(styles.moveUp);
         }
-      }, 100);
+        if (index === 1) {
+          BGImg.current.style.left = "800px";
+          BGImg.current.style.top = "100px";
+          lastFour.current.classList.add(styles.moveUp2);
+          firstTwo.current.classList.add(styles.disappear);
+        }
+        if (index === 2) {
+          container.current.classList.add(styles.slideOut);
+          rwHeading.current.style.display = "inline";
+          rwHeading.current.classList.add(styles.moveRW);
+          BGImg.current.style.left = "800px";
+          BGImg.current.style.top = "-150px";
+          setTimeout(() => {
+            nav("/recent");
+          }, 2000);
+        }
+        setIndex(index + 1);
+      } else if (deltaY < -25) {
+        window.location.reload();
+      }
+    }
+
+    function onWheel(e) {
+      setTimeout(() => handleScroll(e.deltaY), 100);
+    }
+
+    let touchStartY = 0;
+    function onTouchStart(e) {
+      touchStartY = e.touches[0].clientY;
+    }
+
+    function onTouchMove(e) {
+      const currentY = e.touches[0].clientY;
+      const deltaY = touchStartY - currentY;
+      setTimeout(() => handleScroll(deltaY), 100);
     }
 
     setTimeout(() => {
-      // if (window.matchMedia("(max-width: 576px)").matches) return
-      window.addEventListener("wheel", onScroll);
-      return () => window.removeEventListener("wheel", onScroll);
+      window.addEventListener("wheel", onWheel);
+      window.addEventListener("touchstart", onTouchStart);
+      window.addEventListener("touchmove", onTouchMove);
+
+      return () => {
+        window.removeEventListener("wheel", onWheel);
+        window.removeEventListener("touchstart", onTouchStart);
+        window.removeEventListener("touchmove", onTouchMove);
+      };
     }, 500);
   }, [index]);
 
-
-
-
   return (
     <>
-      <div ref={page}className={styles.designMarketingPage}>
-        <Navbar />
+      <div className={styles.designMarketingPage}>
         <div className={styles.rwHeadingContainer}>
 
         <h1 ref={rwHeading} className={styles.recentWork}>
@@ -97,6 +88,7 @@ const Digital_Marketing = () => {
           className={styles.digitalBackground}
           src="./backgroundLines.png"
         />
+        <Navbar />
         <div ref={container} className={styles.container}>
           <h1 ref={heading}>
             GRAPHIC DESIGN &<br />
