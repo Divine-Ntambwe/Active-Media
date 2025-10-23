@@ -2,9 +2,7 @@ import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import styles from "./Software.module.css";
 import PurpleLines from "../component/purpleLines";
-
-
-import laptop from "../assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif";
+// import laptop from "../assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif";
 import backgroundElement from "../assets/Frame 77.png";
 import Navbar from "../component/Navbar";
 import ECommercePage from "./ECommercePage";
@@ -69,15 +67,17 @@ export default function Software() {
   const [slide, setSlide] = useState(0);
   const [show, setShow] = useState(true);
   const nav = useNavigate();
-
+  const [laptop, setLaptop] = useState(
+    "/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif"
+  );
 
   useEffect(() => {
     const handleScroll = (e) => {
-      
       setTimeout(() => {
         if (e.deltaY > 10) {
-           setSlide(slide + 1);
+          setSlide(slide + 1);
           if (slide === 0) {
+            setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);
             title1.current.classList.remove(styles.fadeIn);
             title1.current.classList.add(styles.fadeOut);
             par1.current.classList.remove(styles.fadeIn);
@@ -85,69 +85,72 @@ export default function Software() {
             par2.current.classList.remove(styles.fadeIn);
             par2.current.classList.add(styles.disappear);
             cloudRef.current.classList.add(styles.fadeIn2);
-
-            laptopGif.current.classList.add(styles.moveLaptop1) ;
-            bgImg.current.style.transform ="translateY(200px) translateX(100px)"
-
+            
+            laptopGif.current.classList.add(styles.moveLaptop1);
+            bgImg.current.style.transform =
+            "translateY(200px) translateX(100px)";
           }
           if (slide === 1) {
+            setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);
             cloudBasedImg.current.classList.add(styles.disappear);
             title2.current.classList.add(styles.fadeOut2);
             par3.current.classList.add(styles.fadeOut2);
             div3.current.classList.add(styles.fadeIn3);
-            
+
             laptopGif.current.classList.remove(styles.moveLaptop1);
-            laptopGif.current.classList.add(styles.moveLaptop2) ;
-            bgImg.current.style.transform ="translateY(0px) translateX(500px)"
+            laptopGif.current.classList.add(styles.moveLaptop2);
+            bgImg.current.style.transform = "translateY(0px) translateX(500px)";
           }
           if (slide === 2) {
+            setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);
             div3.current.classList.remove(styles.fadeIn3);
             div3.current.classList.add(styles.fadeOut3);
 
             div4.current.classList.add(styles.fadeIn4);
 
             laptopGif.current.classList.remove(styles.moveLaptop2);
-            laptopGif.current.classList.add(styles.moveLaptop3)
-            bgImg.current.style.transform ="translateY(0px) translateX(0px)"
+            laptopGif.current.classList.add(styles.moveLaptop3);
+            bgImg.current.style.transform = "translateY(0px) translateX(0px)";
+           
           }
 
-          if (slide === 3){
+          if (slide === 3) {
+            setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);
             // div4.current.classList.remove(styles.fadeIn4);
             title3.current.classList.add(styles.fadeOut2);
             par4.current.classList.add(styles.fadeOut2);
-            supremeImg.current.classList.add(styles.disappear)
-            bgImg.current.style.transform ="translateY(300px) translateX(0px)"
+            supremeImg.current.classList.add(styles.disappear);
+            bgImg.current.style.transform = "translateY(300px) translateX(0px)";
 
             laptopGif.current.classList.remove(styles.moveLaptop3);
-            laptopGif.current.classList.add(styles.moveLaptop4)
+            laptopGif.current.classList.add(styles.moveLaptop4);
             div5.current.classList.add(styles.fadeIn5);
+           
           }
-          if (slide === 4){
+          if (slide === 4) {
+            setLaptop(`/src/assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif?${new Date().getTime()}`);
             supremeImg2.current.classList.add(styles.disappear);
             laptopGif.current.classList.remove(styles.moveLaptop4);
-            laptopGif.current.classList.add(styles.moveLaptop5) ;
-            bgImg.current.style.transform ="translateY(300px) translateX(300px)"
-            bgImg.current.classList.add(styles.disappear)
+            laptopGif.current.classList.add(styles.moveLaptop5);
+            bgImg.current.style.transform =
+              "translateY(300px) translateX(300px)";
+            bgImg.current.classList.add(styles.disappear);
+           
 
-            setTimeout(()=>{
-
-              nav("/design-marketing")
-            },1000)
+            setTimeout(() => {
+              nav("/design-marketing");
+            }, 1000);
           }
-         
-         
         } else if (e.deltaY < -20 && e.deltaY < 0) {
           window.location.reload();
         }
-
       }, 100);
     };
 
-    setTimeout(()=>{
+    setTimeout(() => {
       window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
-    },500)
-      
+      return () => window.removeEventListener("wheel", handleScroll);
+    }, 500);
   }, [slide]);
   console.log(slide);
 
@@ -310,11 +313,10 @@ export default function Software() {
 
   return (
     <div className={styles.softwarePage}>
-     <img key={slide} src={laptop} ref={laptopGif} className={styles.laptopGif}/>
+      <img src={laptop} ref={laptopGif} className={styles.laptopGif} />
       <Navbar />
       <div ref={bgImg} className={styles.bgImg}>
-
-      <PurpleLines/>
+        <PurpleLines />
       </div>
 
       <section className={styles.softwareSection}>
@@ -347,8 +349,6 @@ export default function Software() {
             </div>
           </div>
 
-          
-
           <div
             ref={par2}
             className={`${styles.paragraphBox} ${
@@ -371,27 +371,23 @@ export default function Software() {
         >
           <div className={styles.content}>
             <div className={styles.left}>
-           
-              <div
-              ref={title2}
-              >
-              <h1 className={styles.title}>CLOUD-BASED</h1>
-              <h1 className={styles.title2}>SOLUTIONS</h1>
+              <div ref={title2}>
+                <h1 className={styles.title}>CLOUD-BASED</h1>
+                <h1 className={styles.title2}>SOLUTIONS</h1>
               </div>
             </div>
 
-            <div className={styles.right}
-           
-            >
-              <p className={styles.pinkBox}  ref={par3}>
-                Whether you want to move your<br/>
-
-current solutions to the cloud or<br/>
-
-develop<br/>
-a new project from scratch, we got<br/>
-
-you covered
+            <div className={styles.right}>
+              <p className={styles.pinkBox} ref={par3}>
+                Whether you want to move your
+                <br />
+                current solutions to the cloud or
+                <br />
+                develop
+                <br />
+                a new project from scratch, we got
+                <br />
+                you covered
               </p>
               <img
                 src={backgroundElement}
@@ -406,18 +402,17 @@ you covered
         <div ref={div3}>
           <div className={styles.div2_2}>
             <img src="/src/assets/Frame 78.png" alt="" />
-            
           </div>
         </div>
         {/* Ozias(start) */}
         {/* Ozias(End) */}
         {/* Slide 3 (ECommerce) */}
 
-        <div className={`${styles.slide} ${styles.ecommerceSection}`} ref={div4}>
-          <h1
-            ref={title3}
-            className={`${styles.title}`}
-          >
+        <div
+          className={`${styles.slide} ${styles.ecommerceSection}`}
+          ref={div4}
+        >
+          <h1 ref={title3} className={`${styles.title}`}>
             E-COMMERCE
           </h1>
 
@@ -434,45 +429,32 @@ you covered
             </div>
 
             <div className={styles.rightSection}>
-              <p
-                ref={par4}
-                className={`${styles.pinkBox}`}
-              >
-                From entry level online stores to <br/>
-                enterprise-grade solutions, we
-                have <br/>
-                the technical ability to deliver on your<br/> 
-                requirements and
-                provide you with<br/> 
-                a high-converting and well-<br/>
-                performing online
-                shopping <br/>
+              <p ref={par4} className={`${styles.pinkBox}`}>
+                From entry level online stores to <br />
+                enterprise-grade solutions, we have <br />
+                the technical ability to deliver on your
+                <br />
+                requirements and provide you with
+                <br />
+                a high-converting and well-
+                <br />
+                performing online shopping <br />
                 environment.
               </p>
-
-            
             </div>
           </div>
         </div>
 
-        <div ref={div5}
-        className={styles.div5}
-        >
-          
-                  <div className={styles.rightSection}>
-                    <img
-                      ref={supremeImg2}
-                      src="../src/assets/Frame 111.png"
-                      alt="Supreme Build It"
-                      className={`${styles.supImage} ${styles.mainImage}`}
-                    />
-                  </div>
-                
+        <div ref={div5} className={styles.div5}>
+          <div className={styles.rightSection}>
+            <img
+              ref={supremeImg2}
+              src="../src/assets/Frame 111.png"
+              alt="Supreme Build It"
+              className={`${styles.supImage} ${styles.mainImage}`}
+            />
+          </div>
         </div>
-       
-           
-          
-        
       </section>
     </div>
   );
