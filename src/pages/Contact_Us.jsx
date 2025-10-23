@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./Contact_Us.module.css";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 import Navbar from "../component/Navbar";
 
 const Contact_Us = () => {
@@ -32,7 +32,7 @@ const Contact_Us = () => {
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.navbarContainer}>
-        {/* <Navbar /> */}
+        <Navbar />
       </div>
 
       {/* Page Title */}

@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 @keyframes appear {
@@ -153,7 +154,7 @@
 /* Tablets */
 @media (max-width: 768px) {
   .pageWrapper{
-    padding: 0 20px;
+    /* padding: 0 20px; */
   }
   .heading {
     font-size: 32px;
@@ -162,7 +163,7 @@
 
   .contactCard {
     padding: 25px 20px;
-    max-width: 95%;
+    width: 82%;
   }
 
   .form {
@@ -181,13 +182,13 @@
     letter-spacing: 2px;
   }
   .pageWrapper{
-    padding: 0 20px;
+    /* padding: 0 20px; */
   }
 
   .contactCard {
     padding: 18px 14px;
     margin: 20px auto;
-    width: 92%;
+    width: 82%;
   }
 
   .form input,
@@ -224,6 +225,8 @@
   .contactCard {
     padding: 11px 17px;
     width: 94%;
+    width: 82%;
+   
   }
 
   .form {
