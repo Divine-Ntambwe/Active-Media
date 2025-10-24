@@ -2,8 +2,13 @@ import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import styles from "./Software.module.css";
 import PurpleLines from "../component/purpleLines";
-import laptopImage from "../assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif";
+import purpleLaptop from "../assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif";
 import backgroundElement from "../assets/Frame 77.png";
+import frame78 from "../assets/Frame 78.png"
+import frame79 from "../assets/Frame 79.png"
+import frame111 from "../assets/Frame 111.png"
+
+
 import Navbar from "../component/Navbar";
 import ECommercePage from "./ECommercePage";
 import { useNavigate } from "react-router-dom";
@@ -68,7 +73,7 @@ export default function Software() {
   const [show, setShow] = useState(true);
   const nav = useNavigate();
   const [laptop, setLaptop] = useState(
-    laptopImage
+    `${purpleLaptop}`
   );
 
   useEffect(() => {
@@ -77,7 +82,7 @@ export default function Software() {
         if (e.deltaY > 20) {
           setSlide(slide + 1);
           if (slide === 0) {
-            setLaptop(`${laptop}?${new Date().getTime()}`);
+            setLaptop(`${purpleLaptop}?${new Date().getTime()}`);
             title1.current.classList.remove(styles.fadeIn);
             title1.current.classList.add(styles.fadeOut);
             par1.current.classList.remove(styles.fadeIn);
@@ -91,7 +96,7 @@ export default function Software() {
             "translateY(200px) translateX(100px)";
           }
           if (slide === 1) {
-            setLaptop(`${laptop}?${new Date().getTime()}`);
+            setLaptop(`${purpleLaptop}?${new Date().getTime()}`);
             cloudBasedImg.current.classList.add(styles.disappear);
             title2.current.classList.add(styles.fadeOut2);
             par3.current.classList.add(styles.fadeOut2);
@@ -102,7 +107,7 @@ export default function Software() {
             bgImg.current.style.transform = "translateY(0px) translateX(500px)";
           }
           if (slide === 2) {
-            setLaptop(`${laptop}?${new Date().getTime()}`);
+            setLaptop(`${purpleLaptop}?${new Date().getTime()}`);
             div3.current.classList.remove(styles.fadeIn3);
             div3.current.classList.add(styles.fadeOut3);
 
@@ -115,7 +120,7 @@ export default function Software() {
           }
 
           if (slide === 3) {
-            setLaptop(`${laptop}?${new Date().getTime()}`);
+            setLaptop(`${purpleLaptop}?${new Date().getTime()}`);
             // div4.current.classList.remove(styles.fadeIn4);
             title3.current.classList.add(styles.fadeOut2);
             par4.current.classList.add(styles.fadeOut2);
@@ -128,7 +133,7 @@ export default function Software() {
            
           }
           if (slide === 4) {
-            setLaptop(`${laptop}?${new Date().getTime()}`);
+            setLaptop(`${purpleLaptop}?${new Date().getTime()}`);
             supremeImg2.current.classList.add(styles.disappear);
             laptopGif.current.classList.remove(styles.moveLaptop4);
             laptopGif.current.classList.add(styles.moveLaptop5);
@@ -148,8 +153,11 @@ export default function Software() {
     };
 
     setTimeout(() => {
-      window.addEventListener("wheel", handleScroll);
-      return () => window.removeEventListener("wheel", handleScroll);
+      if (window.matchMedia("(max-width:2201px) and (min-width: 1025px)").matches){
+
+        window.addEventListener("wheel", handleScroll);
+        return () => window.removeEventListener("wheel", handleScroll);
+      }
     }, 500);
   }, [slide]);
 
@@ -350,7 +358,7 @@ export default function Software() {
 
           <div
             ref={par2}
-            className={`${styles.paragraphBox} ${
+            className={`${styles.paragraphBox} ${styles.firstPar} ${
               showFirst ? styles.fadeIn : styles.fadeOut
             }`}
           >
@@ -377,7 +385,7 @@ export default function Software() {
             </div>
 
             <div className={styles.right}>
-              <p className={styles.pinkBox} ref={par3}>
+                           <p className={`${styles.pinkBox1} ${styles.pinkBox}`} ref={par3}>
                 Whether you want to move your
                 <br />
                 current solutions to the cloud or
@@ -400,7 +408,7 @@ export default function Software() {
 
         <div ref={div3}>
           <div className={styles.div2_2}>
-            <img src="/src/assets/Frame 78.png" alt="" />
+            <img src={`${frame78}`} alt="" />
           </div>
         </div>
         {/* Ozias(start) */}
@@ -420,7 +428,7 @@ export default function Software() {
             <div className={styles.leftSection}>
               <img
                 ref={supremeImg}
-                src="../src/assets/Frame 79.png"
+                src={`${frame79}`}
                 alt="A cut above the rest"
                 className={`${styles.mainImage} 
                 }`}
@@ -448,7 +456,7 @@ export default function Software() {
           <div className={styles.rightSection}>
             <img
               ref={supremeImg2}
-              src="../src/assets/Frame 111.png"
+              src={`${frame111}`}
               alt="Supreme Build It"
               className={`${styles.supImage} ${styles.mainImage}`}
             />

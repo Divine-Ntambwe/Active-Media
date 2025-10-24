@@ -491,7 +491,7 @@ Icons
 
 @media (max-width: 501px) and (min-width: 416px) {
    *{
-    color: lightgreen
+    /* color: lightgreen */
    }
     .container {
         padding-top: 0 !important ;
