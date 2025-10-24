@@ -316,6 +316,11 @@ Icons
         left: -1900px;
     }
 }
+
+.moveRW {
+    animation: moveRW 3s ease-out forwards;
+}
+
 .recentWork{
     /* position: absolute;
     left: 1900px;
@@ -343,9 +348,9 @@ Icons
     /* background-color: red; */
 }
 
-.moveRW{
-    animation: moveRW 2.7s forwards ease-out;
-}
+/* .moveRW{
+    animation: moveRW 2.7s none ease-out;
+} */
 
 
 @media (max-width: 576px) {

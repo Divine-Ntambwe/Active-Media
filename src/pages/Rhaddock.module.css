@@ -6,10 +6,13 @@
   height: 80vh;
   overflow: hidden !important;
   transition: 1s;
-  animation: startAnimation 1.5s ease-in;
+  animation: startAnimation 1.5s linear;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 1200px;
+  margin: auto;
+  padding: 16px 32px;
 }
 
 .recentBackground {
@@ -47,7 +50,7 @@
 @keyframes startAnimation {
   0% {
     transform: translateX(400px);
-    opacity: 0;
+    /* opacity: 0; */
   }
   100% {
     transform: translateX(0px);
@@ -172,8 +175,8 @@
   font-family: "Inter", sans-serif;
   justify-content: space-between;
   align-items: center;
-  padding: 0 60px 100px;
   height: 100vh;
+  padding: 16px 32px;
   /* overflow-y: hidden; */
 }
 
@@ -206,16 +209,16 @@
 .deliveryImg {
   position: absolute;
   width: 475px;
-  bottom: -150px;
-  left: 245px;
+  bottom: -210px;
+  left: 365px;
   z-index: 9;
   transition: opacity 0.6s linear;
 }
 
 .logoImg {
   position: absolute;
-  bottom: -160px;
-  left: 713px;
+  bottom: -220px;
+  right: 0;
   width: 300px;
   z-index: 10;
   transition: opacity 0.8s linear, transform 0.8s linear;
@@ -284,19 +287,16 @@
 
 @media (max-width: 1440px) {
   .rapidtrade {
-    padding: 0 50px 80px;
+    padding: 16px 65px;
   }
 
   .deliveryImg {
     width: 400px;
-    left: 200px;
-    bottom: -120px;
+    left: 425px;
   }
 
   .logoImg {
     width: 250px;
-    left: 620px;
-    bottom: -140px;
   }
 }
 
@@ -309,6 +309,7 @@
     padding: 225px 30px 60px;
     height: auto;
     min-height: 100vh;
+    margin-left: 0;
   }
 
   .leftSection {
@@ -346,7 +347,7 @@
   .deliveryImg {
     position: relative;
     width: 100%;
-    max-width: 700px;
+    max-width: 500px;
     left: 0;
     bottom: 0;
   }
@@ -412,6 +413,7 @@
 
   .rapidtrade {
     padding: 30px 20px 50px;
+    margin-left: 0;
   }
 
   .title {
@@ -434,12 +436,11 @@
 
   .deliveryImg {
     width: 80%;
-    max-width: 400px;
+    max-width: 700px;
   }
 
   .logoImg {
-    width: 60%;
-    max-width: 250px;
+    display: none;
   }
 
   .recentWork {
@@ -474,11 +475,13 @@
   }
 
   .container {
-    height: auto;
+    height: 1514px;
+    width: 780px;
   }
 
   .rapidtrade {
     padding: 20px 12px 30px;
+    margin-left: 0;
   }
 
   .title {
