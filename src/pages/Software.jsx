@@ -148,7 +148,7 @@ export default function Software() {
     };
 
     setTimeout(() => {
-      if (window.matchMedia("(max-width: 768px) and (min-width: 991px").matches) return
+      if (window.matchMedia("(max-width: 300x) and (min-width: 991px").matches) return
       window.addEventListener("wheel", handleScroll);
       return () => window.removeEventListener("wheel", handleScroll);
     }, 500);
@@ -379,7 +379,7 @@ export default function Software() {
             </div>
 
             <div className={styles.right}>
-              <p className={styles.pinkBox1} ref={par3}>
+                           <p className={`${styles.pinkBox1} ${styles.pinkBox}`} ref={par3}>
                 Whether you want to move your
                 <br />
                 current solutions to the cloud or
