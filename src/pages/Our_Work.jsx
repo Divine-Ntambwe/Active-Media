@@ -35,7 +35,7 @@ const Recent_Work = () => {
       // const step = window.scrollY + 1 // every 200px scroll → new index
       // if (step !== currentIndex && step < headings.length) {
       // fade out first
-      // setFade(false);
+      setFade(false);
       const diff = e.deltaY;
       // after fade out, switch text and fade back in
       setTimeout(() => {
@@ -45,7 +45,7 @@ const Recent_Work = () => {
           setCurrentIndex(currentIndex - 1);
         }
 
-        if (diff > 20 && currentIndex === headings.length - 1) {
+        if (diff > 25 && currentIndex === headings.length - 1) {
           recentWork.current.classList.add(styles.disappear);
           setTimeout(() => {
             nav("/contact-us");
@@ -55,13 +55,11 @@ const Recent_Work = () => {
       }, 300); // duration matches CSS fade
       // }
     };
-
     setTimeout(()=>{
 
       window.addEventListener("wheel", handleScroll);
       return () => window.removeEventListener("wheel", handleScroll);
-    },1500)
-
+    },2000)
   }, [currentIndex, headings.length]);
 
   return (
