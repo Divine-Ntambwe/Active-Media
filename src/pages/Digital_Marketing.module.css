@@ -559,7 +559,7 @@ width: 400px;
 
 @media screen and (max-width:416px) {
     *{
-        color: blue;
+        /* color: blue; */
     }
      .container {
         padding-top: 0 !important ;
