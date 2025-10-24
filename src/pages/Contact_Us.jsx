@@ -41,7 +41,11 @@ const Contact_Us = () => {
 
       {/* Contact Card */}
       <div className={styles.contactCard}>
-        <h1 className={styles.subHeadingContact2}>How Can We Be Of Assistance?</h1>
+      <h1 className={styles.subHeadingContact2}>
+      How Can We Be Of <span className={styles.assistance}>Assistance?</span>
+      </h1>
+
+
         <p className={styles.subHeadingAbout}>Tell Us About You</p>
         <hr className={styles.divider} />
         <p className={styles.subHeadingContact}>How Can We Contact You?</p>
