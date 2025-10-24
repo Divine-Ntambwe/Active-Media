@@ -4,14 +4,13 @@
 }
 
 .hero{
-  border: 1px solid red;
-  width:99.8%;
+  width:100%;
   height:70vh;
   display:flex;
   align-items:center;
   background:#fff;
-  overflow: hidden;
-  /* border: 1px solid red; */
+  /* overflow: hidden; */
+  position: relative;
 }
 
 @keyframes slide-out {
@@ -35,15 +34,15 @@
 }
 .container{
   width:100%;
-  border: blue;
-  max-width:1200px;
-  margin:0 3%;
+  margin:0 2% 0 2%;
+  height: auto;
   display:flex;
-  position: absolute;
+  position: relative;
   margin-top:110px;
-  /*justify-content:space-between;*/
+  justify-content:space-between;
   
   padding:48px 24px;
+  z-index: 2;
    /* border: solid; */
 }
 
@@ -88,10 +87,10 @@
 
 .blendingBackground{
   position:absolute;
-  left:-8%;
-  top:-5%;
+  left:-35%;
+  top:-20%;
   width:90%;
-  height:100%;
+  height:70vh;
   background-image: url('../assets/Active_M.jpg');
   background-size: cover;
   background-position: center;
@@ -101,14 +100,14 @@
 
 .orb1{
   position:absolute;
-  /* left:50%; */
-  top:-10%; 
+  left:-30%;
+  top:-18%; 
   width: 100%;
   /* min-width: 90%; */
   transform:translateY(-10%);
-  z-index: 2;
+  z-index: 1000;
  /* border: solid; */
- height: 575px;
+ height: 720px;
  margin-left: 230px;
 }
 
@@ -128,62 +127,89 @@
   transform:translateY(-20%);
   z-index:3;
 }
-@media (max-width: 1200px) {
-  /* When the window is slightly reduced — make left take ~67% */
+/* Large Screens */
+/* ------------------------------------------ */
+/* Laptop Screens (around 80% width ~1200px) */
+/* ------------------------------------------ */
+@media (max-width: 1200px) and (min-width: 993px) {
   .container {
-    padding: 0px 0px;
-    gap: 0;
+    padding: 36px 32px;
+    gap: 20px;
   }
 
   .left {
-    flex: 0 0 67%;
+    flex: 0 0 58%;
   }
 
   .right {
-    flex: 0 0 32%;
-    height: 420px;
-  }
-
-  .title, .cta {
-    transform: scale(1);
-    font-size: 48px;
-  }
-}
-
-@media (max-width: 992px) {
-  /* When the window is reduced further — make left take ~80% */
-  .container {
-    padding: 36px 18px;
-    gap: 12px;
-  }
-
-  .left {
-    flex: 0 0 80%;
-    padding-left: 8px;
-  }
-
-  .right {
-    flex: 0 0 18%;
-    height: 380px;
+    flex: 0 0 38%;
+    height: 480px;
   }
 
   .title {
-    font-size: 48px;
-    line-height: 1.15;
+    font-size: 44px;
+    width: 100%;
   }
 
   .cta {
     font-size: 16px;
+    padding: 10px 20px;
   }
 
-  /* keep heavy visuals from pushing layout at these sizes */
-  .orb1, .orb2, .swirl {
-    display: none;
+  .orb1 {
+    width: 100%;
+    left: -20%;
+    height: 640px;
+  }
+
+  .blendingBackground {
+    left: -25%;
+    width: 85%;
   }
 }
-/* Mobile Devices */
+
+/* ------------------------------------------ */
+/* Medium Laptops (around 67% width ~1000px)  */
+/* ------------------------------------------ */
+@media (max-width: 1000px) and (min-width: 850px) {
+  .container {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .left {
+    flex: 0 0 60%;
+  }
+
+  .right {
+    flex: 0 0 38%;
+    height: 420px;
+  }
+
+  .title {
+    font-size: 42px;
+    line-height: 1.1;
+  }
+
+  .cta {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+
+  /* reduce visual clutter slightly */
+  .orb1, .orb2 {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+
+  .swirl {
+    width: 24%;
+    top: 25%;
+  }
+}
+
 /* Tablet Screens */
-@media (max-width: 992px) {
+@media (max-width: 850px) {
   .container {
     flex-direction: column;
     align-items: center;
@@ -226,16 +252,37 @@
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
-    height: auto;
-    padding-top: 40px;
+    height: 90vh;
+    padding: 60px 16px;
+    text-align: center;
+    background-image: url('../assets/Active_M.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+  }
+
+  /* Dark overlay to make background image less visible */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* increase to 0.7–0.8 for darker */
+    z-index: 1;
   }
 
   .container {
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
-    padding: 20px 16px;
+    margin: 30% 5%;
+    padding: 40px 20px;
     text-align: center;
+    position: relative;
+    z-index: 1; /* bring text above overlay */
   }
 
   .left, .right {
@@ -245,44 +292,37 @@
   }
 
   .title {
-    font-size: 32px;
-    line-height: 1.25;
+    font-size: 55px;
+    line-height: 1.0;
     margin-bottom: 20px;
+    color: white;
+    font-weight: 600;
   }
 
   .cta {
-    font-size: 15px;
+    font-size: 25px;
     padding: 12px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(245, 120, 222, 0.6);
+    color: white;
   }
 
   .right {
-    margin-top: 30px;
-  }
-
-  .right img {
-    width: 90%;
-    max-width: 360px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .blendingBackground {
-    width: 100%;
-    height: 240px;
-    background-size: contain;
-    background-position: center;
-    top: 0;
-    left: 0;
-    transform: none;
-  }
-
-  .orb1, .orb2, .swirl {
     display: none;
   }
+
+  .blendingBackground, .orb1, .orb2, .swirl {
+    display: none;
+  }
+
+  .bottomCenter {
+    font-size: 22px; 
+    padding: 12px 28px; 
+    width: 120px; 
+    margin: -100% 0 0 0;
+  }
 }
+
 
 /* Very Small Phones */
 @media (max-width: 480px) {
