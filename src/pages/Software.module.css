@@ -483,20 +483,9 @@ animation: fadeIn5 1s forwards;
 
 /* Ozias Styling(Start) */
 .div2_2{
-  width: 100%;
-  display: flex;
-  justify-content: center; /* centers the image horizontally */
-  align-items: center;     /* centers it vertically if needed */
-  /* padding-top: 7vh; */
-  overflow: hidden;        /* ensures no overflow on small screens */
-}
 
-.div2_2 img {
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;     /* keeps proportions */
-  display: block;
-  border-radius: 8px;      /* optional for smooth corners */
+  height: 70vh;
+  display: flex;
 }
 
 /* SMALLER SCREENS */
@@ -533,17 +522,6 @@ animation: fadeIn5 1s forwards;
   margin-top: 30px;
 }
   
-}
-
-/* Optional: fine-tune spacing for very small screens */
-@media (max-width: 600px) {
-  .div2_2 {
-    padding: 0.5rem;
-  }
-
-  .div2_2 img {
-    max-width: 90%;
-  }
 }
 
 @media screen and (max-width: 1301px) and (min-width:1120px) {

@@ -36,7 +36,7 @@
     gap: 15px;
     margin-bottom: 30px;
     position: absolute;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 
 .arrow {
@@ -55,7 +55,7 @@
 
 .websitePreview {
     position: absolute;
-    z-index: 1000;
+    /* z-index: 1000; */
     margin-top: -50vh;
     margin-left: 19.7vw;
     width: 90vh;
@@ -85,7 +85,7 @@
     width: 25vw;
     margin-top: 105vh;
     position: absolute;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 
 .logo {
@@ -182,7 +182,7 @@
 /* Renamed from .supremeBanner */
 .SupremeBanner {
     position: absolute;
-    z-index: 1000;
+    /* z-index: 1000; */
     margin-top: -85vh;
     margin-left: 19.7vw;
     width: 90vh;
@@ -213,7 +213,7 @@
     margin-top: 107vh;
     margin-right: 10vw;
     position: absolute;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 
 .SupremeArrow{

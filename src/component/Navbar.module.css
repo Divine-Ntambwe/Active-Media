@@ -30,9 +30,9 @@
   align-items: center;
 }
 
-.navList li a:hover {
+/* .navList li a:hover {
   text-decoration: underline;
-}
+} */
 
 .navItem {
   font-size: 23px;
@@ -254,9 +254,9 @@
   font-size: 1.1rem;
 }
 
-.mobileNavList li a:hover {
+/* .mobileNavList li a:hover {
   text-decoration: underline;
-}
+} */
 
 /* Hide burger and sidebar on larger screens */
 @media (max-width: 768px) {

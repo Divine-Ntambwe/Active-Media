@@ -208,7 +208,7 @@ animation: appear 1.5s ;
   font-weight: 400;
   /* background-color: #fff; */
   position: relative;
-  z-index: 9999;
+  /* z-index: 9999; */
 }
 
 .rapidTradeViewSite {
