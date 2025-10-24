@@ -379,7 +379,7 @@ export default function Software() {
             </div>
 
             <div className={styles.right}>
-              <p className={styles.pinkBox} ref={par3}>
+              <p className={styles.pinkBox1} ref={par3}>
                 Whether you want to move your
                 <br />
                 current solutions to the cloud or
