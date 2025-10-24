@@ -30,6 +30,7 @@ const Contact_Us = () => {
   };
 
   return (
+    <>
     <div className={styles.pageWrapper}>
       <div className={styles.navbarContainer}>
         <Navbar />
@@ -79,6 +80,7 @@ const Contact_Us = () => {
         Please let us know how we can help you by filling <br /> out the form.
       </p>
     </div>
+    </>
   );
 };
 
