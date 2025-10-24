@@ -1132,6 +1132,7 @@ animation: fadeIn5 1s forwards;
   }
 }
 
+
 /* Responsiveness for Iphone 14 pro max*/
 @media screen and (min-width: 430px) and (max-width: 575px) {
   .softwarePage {
@@ -1358,7 +1359,7 @@ animation: fadeIn5 1s forwards;
     order: 2;
     display: flex;
     justify-content: center;
-    margin: 0.6rem 0;
+    /* margin: 0.6rem 0; */
     margin-left: -10px;
   }
 
@@ -1366,29 +1367,31 @@ animation: fadeIn5 1s forwards;
     /* width: 140px; */
     height: auto;
     max-width: 75%;
+    margin-bottom: 20px;
   }
 
   .right {
     order: 3;
+
   }
 
  .pinkBox {
     font-size: 1.0rem !important;
     padding: 2rem;
-    height:250px;
+    height:150px;
     width: 190px;
     text-align: center;
-    margin-left: -116px;
+    /* margin-left: -116px; */
     margin-top: 20px;
   }
   .pinkBox1 {
     font-size: 1.0rem !important;
     padding: 2rem;
-    height:250px;
+    height:190px;
     width: 190px;
     text-align: center;
     margin-left: -116px;
-    margin-top: 20px;
+    margin-top: 80px;
   }
 
   .backgroundDecor {
@@ -1497,7 +1500,8 @@ animation: fadeIn5 1s forwards;
   }
   .div2_2{
     width: 100%;
-    display: flex;
+    height:200px;
+        display: flex;
     justify-content: center; /* centers the image horizontally */
     align-items: center;     /* centers it vertically if needed */
     /* padding-top: 7vh; */
