@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import styles from "./About_Us.module.css";
 import lightImg from "../assets/Frame 206.png";
+import phoneImg from "../assets/Frame 201.png"
 import MultiMedia from "../assets/Multimedia.png";
 import PurpleLines from "../component/purpleLines.jsx";
 import { useNavigate } from "react-router-dom";
@@ -80,19 +81,19 @@ export default function About_Us() {
       {/* Slides container */}
       <div className={styles.slidesContainer} ref={containerRef}>
         {/* Slide 1 */}
-        <div className={`${styles.aboutDiv} ${styles.div1}`}>
-          <div className={`${styles.laptopWrapper} ${styles.fadeInStagger}`}>
-            <img src="/laptop.png" alt="Laptop" className={styles.laptop} />
+        <div className={`${styles.aboutDiv} ${styles.div1} ${styles.aboutDivN} ${styles.div1N}`}>
+          <div className={`${styles.laptopWrapper} ${styles.fadeInStagger} ${styles.laptopWrapperN}`}>
+            <img src="/laptop.png" alt="Laptop" className={`${styles.laptop} ${styles.laptopN}`} />
           </div>
-          <h2 className={`${styles.heading} ${styles.fadeInStagger}`}>
+          <h2 className={`${styles.heading} ${styles.fadeInStagger} ${styles.headingN}`}>
             WHO ARE WE ?
           </h2>
-          <p className={`${styles.textBlock} ${styles.topLeft} ${styles.fadeInStagger}`}>
+          <p className={`${styles.textBlockN} ${styles.topLeftN} ${styles.fadeInStagger} ${styles.textBlock} ${styles.topLeft}`}>
             We are a software development and <br />
             media agency that focuses on <br />
             business growth
           </p>
-          <p className={`${styles.textBlock} ${styles.bottomLeft} ${styles.fadeInStagger}`}>
+          <p className={`${styles.textBlock} ${styles.bottomLeft} ${styles.fadeInStagger} ${styles.textBlockN} ${styles.bottomLeftN}`}>
             Active Media consists <br /> of a team of people <br />
             that are passionate <br /> about what they do <br />
             and strive to ensure <br />
@@ -103,7 +104,7 @@ export default function About_Us() {
             authenticity and excellence. <br />
             You have ideas. We have software solutions.
           </p>
-          <p className={`${styles.textBlock} ${styles.rightBlock} ${styles.fadeInStagger}`}>
+          <p className={`${styles.textBlock} ${styles.rightBlock} ${styles.fadeInStagger} ${styles.textBlockN} ${styles.rightBlockN}`}>
             Active Media is a premier multimedia solution company <br />
             with innovative and distinctive solutions <br />
             that go beyond the traditional means of marketing. <br />
@@ -169,7 +170,7 @@ export default function About_Us() {
                 the very best service is offered to our <br />
                 clients.
                 <br />
-                We stand by our company ethics – ensuring honesty, authenticity and
+                We stand by our company ethics - ensuring honesty, authenticity and
                 excellence.
                 <br />
                 You have ideas. We have software solutions
@@ -182,9 +183,9 @@ export default function About_Us() {
           </div>
 
           <div className={`${styles.container1} ${styles.fadeInStagger}`}>
-            <div className={styles.phoneImage}>
+            <div className={styles.phoneImg}>
               <img
-                src="/src/assets/Frame 201.png"
+                src={phoneImg}
                 alt="Phone"
                 className={styles.image1}
               />
@@ -200,7 +201,7 @@ export default function About_Us() {
                 foundation with which any business can begin to maximise on their
                 potential.
               </p>
-              <button className={styles.experties}>Expertise</button>
+              <p style={{}}className={styles.experties}>Expertise</p>
             </div>
           </div>
         </div>

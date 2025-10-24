@@ -17,8 +17,10 @@ import cardSixSmall from "../assets/Group 47.png"
 
 
 const Digital_Marketing = () => {
-  const [lastY, setLastY] = useState(0);
   const [index, setIndex] = useState(0);
+  const isAnimating = useRef(false);
+  const indexRef = useRef(0);
+
   const BGImg = useRef();
   const heading = useRef();
   const par = useRef();
