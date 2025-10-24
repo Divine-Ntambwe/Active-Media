@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import styles from "./About_Us.module.css";
 import lightImg from "../assets/Frame 206.png";
+import phoneImg from "../assets/Frame 201.png"
 import MultiMedia from "../assets/Multimedia.png";
 import PurpleLines from "../component/purpleLines.jsx";
 import { useNavigate } from "react-router-dom";
@@ -182,9 +183,9 @@ export default function About_Us() {
           </div>
 
           <div className={`${styles.container1} ${styles.fadeInStagger}`}>
-            <div className={styles.phoneImage}>
+            <div className={styles.phoneImg}>
               <img
-                src="/src/assets/Frame 201.png"
+                src={phoneImg}
                 alt="Phone"
                 className={styles.image1}
               />
