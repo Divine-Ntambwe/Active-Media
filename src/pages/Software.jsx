@@ -148,9 +148,9 @@ export default function Software() {
     };
 
     setTimeout(() => {
-      if (window.matchMedia("(max-width: 300x) and (min-width: 991px").matches) return
-      window.addEventListener("wheel", handleScroll);
-      return () => window.removeEventListener("wheel", handleScroll);
+      // if (window.matchMedia("(max-width: 300x) and (min-width: 991px").matches) return
+      // window.addEventListener("wheel", handleScroll);
+      // return () => window.removeEventListener("wheel", handleScroll);
     }, 500);
   }, [slide]);
   console.log(slide);

@@ -350,7 +350,7 @@ Icons
 
 @media (max-width: 576px) {
     *{
-        color:gold ;
+        /* color:gold ; */
     }
     .designMarketingPage{
     overflow: visible !important;
