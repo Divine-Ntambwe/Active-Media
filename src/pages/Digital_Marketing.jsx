@@ -3,8 +3,10 @@ import styles from "./Digital_Marketing.module.css";
 import Navbar from "../component/Navbar";
 import { useNavigate } from "react-router-dom";
 const Digital_Marketing = () => {
-  const [lastY, setLastY] = useState(0);
   const [index, setIndex] = useState(0);
+  const isAnimating = useRef(false);
+  const indexRef = useRef(0);
+
   const BGImg = useRef();
   const heading = useRef();
   const par = useRef();
@@ -14,58 +16,123 @@ const Digital_Marketing = () => {
   const firstTwo = useRef();
   const rwHeading = useRef();
   const nav = useNavigate();
-  let num = 0;
+
+  // keep ref in sync with state so handlers read latest value
   useEffect(() => {
-    function onScroll(e) {
+    indexRef.current = index;
+  }, [index]);
+
+  useEffect(() => {
+    const MOBILE_BREAKPOINT = 576;
+    const TOUCH_THRESHOLD = 40; // px minimum to count as swipe
+    const WHEEL_THRESHOLD = 12; // reuse your original wheel threshold
+    let touchStartY = null;
+    let touchLastY = null;
+    let touchStartTime = 0;
+
+    function triggerForward() {
+      if (isAnimating.current) return;
+      isAnimating.current = true;
+      const i = indexRef.current;
+
+      if (i === 0) {
+        BGImg.current.style.top = "100px";
+        heading.current.classList.add(styles.moveUp);
+        par.current.classList.add(styles.disappear);
+        wrapper.current.classList.add(styles.moveUp);
+      } else if (i === 1) {
+        BGImg.current.style.left = "800px";
+        BGImg.current.style.top = "100px";
+        lastFour.current.classList.add(styles.moveUp2);
+        firstTwo.current.classList.add(styles.disappear);
+      } else if (i === 2) {
+        container.current.classList.add(styles.slideOut);
+        rwHeading.current.style.display = "inline";
+        rwHeading.current.classList.add(styles.moveRW);
+        BGImg.current.style.left = "800px";
+        BGImg.current.style.top = "-150px";
+        setTimeout(() => {
+          nav("/recent");
+        }, 2000);
+      }
+
+      // advance index after applying animations
+      setIndex(prev => prev + 1);
+
+      // allow new input after animations settle (tweak timeout to match CSS durations)
+      const ANIM_CLEAR_MS = 1200;
       setTimeout(() => {
-        if (e.deltaY > 12) {
-          if (index === 0) {
-            BGImg.current.style.top = "100px";
-
-            heading.current.classList.add(styles.moveUp);
-            // heading.current.style.animationFillMode = "forwards"
-
-            par.current.classList.add(styles.disappear);
-            // par.current.style.animationFillMode = "forwards"
-
-            wrapper.current.classList.add(styles.moveUp);
-            // wrapper.current.style.animationFillMode = "forwards"
-          }
-          if (index === 1) {
-            BGImg.current.style.left = "800px";
-            BGImg.current.style.top = "100px";
-
-            lastFour.current.classList.add(styles.moveUp2);
-            //  lastFour.current.style.animationFillMode = "forwards"
-
-            firstTwo.current.classList.add(styles.disappear);
-            //  firstTwo.current.style.animationFillMode = "forwards"
-          }
-
-          if (index === 2) {
-            container.current.classList.add(styles.slideOut);
-            rwHeading.current.style.display = "inline";
-            rwHeading.current.classList.add(styles.moveRW);
-            BGImg.current.style.left = "800px";
-            BGImg.current.style.top = "-150px";
-            setTimeout(() => {
-              // BGImg.current.classList.add(styles.disappear);
-              nav("/recent");
-            }, 2000);
-          }
-          setIndex(index + 1);
-        }else if (e.deltaY < -20 && e.deltaY < 0) {
-          window.location.reload();
-        }
-      }, 100);
+        isAnimating.current = false;
+      }, ANIM_CLEAR_MS);
     }
 
-    setTimeout(() => {
-      if (window.matchMedia("(max-width: 576px)").matches) return
-      window.addEventListener("wheel", onScroll);
-      return () => window.removeEventListener("wheel", onScroll);
+    function triggerReload() {
+      // keep same behaviour for big reverse wheel on desktop
+      window.location.reload();
+    }
+
+    function onWheel(e) {
+      if (window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches) return;
+      // ignore small wheel moves
+      if (Math.abs(e.deltaY) < WHEEL_THRESHOLD) return;
+      if (e.deltaY > 0) {
+        triggerForward();
+      } else if (e.deltaY < 0 && e.deltaY < -20) {
+        triggerReload();
+      }
+    }
+
+    function onTouchStart(e) {
+      if (e.touches.length !== 1) return;
+      touchStartY = e.touches[0].clientY;
+      touchLastY = touchStartY;
+      touchStartTime = Date.now();
+    }
+
+    function onTouchMove(e) {
+      if (!touchStartY || e.touches.length !== 1) return;
+      touchLastY = e.touches[0].clientY;
+    }
+
+    function onTouchEnd() {
+      if (touchStartY == null) return;
+      const dy = touchStartY - touchLastY;
+      const dt = Date.now() - touchStartTime;
+      // quick upward swipe or long/slow but large enough swipe
+      if (dy > TOUCH_THRESHOLD) {
+        triggerForward();
+      } else if (dy < -TOUCH_THRESHOLD) {
+        // on mobile, mimic reload on large downward swipe (optional)
+        window.location.reload();
+      }
+      touchStartY = null;
+      touchLastY = null;
+    }
+
+    // Add listeners
+    // Delay attaching wheel slightly to match original behavior
+    const attachTimeout = setTimeout(() => {
+      if (!window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`).matches) {
+        window.addEventListener("wheel", onWheel, { passive: true });
+      }
+      // Always add touch listeners for mobile
+      window.addEventListener("touchstart", onTouchStart, { passive: true });
+      window.addEventListener("touchmove", onTouchMove, { passive: true });
+      window.addEventListener("touchend", onTouchEnd, { passive: true });
     }, 500);
-  }, [index]);
+
+    // cleanup
+    return () => {
+      clearTimeout(attachTimeout);
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // run once
+
+ 
 
 
 
