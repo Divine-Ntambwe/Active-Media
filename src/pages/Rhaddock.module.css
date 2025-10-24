@@ -11,7 +11,11 @@
   flex-direction: column;
   justify-content: center;
 }
-
+.recentWorkPage{
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
 .recentBackground{
 
 transition: 1s;  
@@ -208,7 +212,7 @@ animation: appear 1.5s ;
   font-weight: 400;
   /* background-color: #fff; */
   position: relative;
-  z-index: 100;
+  z-index: 1;
 }
 
 .rapidTradeViewSite {
@@ -225,7 +229,7 @@ animation: appear 1.5s ;
   width: 475px;
   bottom: -150px;
   left: 245px;
-  z-index: 9;
+  /* z-index: 9; */
   transition: opacity 0.6s linear;
 }
 
@@ -234,7 +238,7 @@ animation: appear 1.5s ;
   bottom: -160px;
   left: 713px;
   width: 300px;
-  z-index: 10;
+  z-index: 9;
   transition: opacity 0.8s linear, transform 0.8s linear;
 }
 
@@ -636,9 +640,9 @@ animation: appear 1.5s ;
 } */
 
 @media (max-width: 480px) {
-  .container {
+  /* .container {
     height: auto;
-  }
+  } */
 
   .rapidtrade {
     padding: 20px 12px 30px;

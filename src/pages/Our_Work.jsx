@@ -61,7 +61,7 @@ const Recent_Work = () => {
   }, [currentIndex, headings.length]);
 
   return (
-    <>
+    <div className={styles.recentWorkPage}>
       <Navbar />
       {/* <h1
             className={styles.recentWork}
@@ -183,7 +183,7 @@ const Recent_Work = () => {
         </div>
       </div> */}
       </div>
-    </>
+    </div>
   );
 };
 
