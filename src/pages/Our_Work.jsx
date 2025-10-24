@@ -30,7 +30,7 @@ const Recent_Work = () => {
   const [fade, setFade] = useState(true); // true = visible, false = faded out
   const recentWork = useRef();
 
-  useEffect(() => {
+ useEffect(() => {
     const handleScroll = (e) => {
       // const step = window.scrollY + 1 // every 200px scroll → new index
       // if (step !== currentIndex && step < headings.length) {
@@ -39,20 +39,20 @@ const Recent_Work = () => {
       const diff = e.deltaY;
       // after fade out, switch text and fade back in
       setTimeout(() => {
-        if (diff > 25 && currentIndex < headings.length - 1) {
+        if (diff > 20 && currentIndex < headings.length - 1) {
           setCurrentIndex(currentIndex + 1);
         } else if (diff < 1 && currentIndex > 0 && diff < -20) {
           setCurrentIndex(currentIndex - 1);
         }
 
-        if (diff > 25 && currentIndex === headings.length - 1) {
+        if (diff > 20 && currentIndex === headings.length - 1) {
           recentWork.current.classList.add(styles.disappear);
           setTimeout(() => {
             nav("/contact-us");
           }, 1000);
         }
         setFade(true);
-      }, 300); // duration matches CSS fade
+      }, 400); // duration matches CSS fade
       // }
     };
     setTimeout(()=>{
