@@ -320,7 +320,7 @@ export default function Software() {
 
   return (
     <div className={styles.softwarePage}>
-      <img src={laptop} ref={laptopGif} className={`${styles.laptopGif} ${styles.laptopGifN}`} />
+      <img src={laptop} ref={laptopGif} className={styles.laptopGif} />
       <Navbar />
       <div ref={bgImg} className={styles.bgImg}>
         <PurpleLines />
@@ -334,12 +334,12 @@ export default function Software() {
           }`}
         >
           {/* <PurpleLines /> */}
-          <div className={`${styles.textBlock} ${styles.textBlockN}`}>
+          <div className={styles.textBlock}>
             <h1
               ref={title1}
               className={`${styles.title1} ${
                 showFirst ? styles.fadeIn : styles.fadeOut
-              } ${styles.title1N}`}
+              }`}
             >
               Software <br /> Development
             </h1>
@@ -348,7 +348,7 @@ export default function Software() {
               ref={par1}
               className={`${styles.services} ${
                 showFirst ? styles.fadeIn : styles.fadeOut
-              } ${styles.servicesN}`}
+              }`}
             >
               <p>WEB</p>
               <p>DESIGN</p>
@@ -360,7 +360,7 @@ export default function Software() {
             ref={par2}
             className={`${styles.paragraphBox} ${styles.firstPar} ${
               showFirst ? styles.fadeIn : styles.fadeOut
-            } ${styles.paragraphBoxN}`}
+            }`}
           >
             <p>
               With The Rapid Move of Technology, <br />
@@ -463,6 +463,9 @@ export default function Software() {
           </div>
         </div>
       </section>
+       <button onClick={()=>{ nav("/design-marketing")}} className={styles.cta} aria-label="Our Services">
+            Our Services <span className={styles.arrow}>›</span>
+        </button>
     </div>
   );
 }
