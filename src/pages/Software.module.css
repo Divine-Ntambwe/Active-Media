@@ -1257,7 +1257,29 @@ animation: fadeIn5 1s forwards;
 }
 
 /* Extra Small Mobile Phones (min-width: 412px) */
-@media screen and (max-width: 412px)and (min-width: 360px) {
+@media screen and (max-width: 412px) {
+  *{
+    color:blue;
+  }
+  .services{
+    font-size: 2.5em !important;
+  }
+  .firstPar {
+    /* border: 1px solid red; */
+    justify-content: center;
+    display: flex;
+    height: 80vh;
+  }
+  .div1 h1{
+    font-size: 3.5em;
+  }
+  
+
+  .firstPar p {
+    padding: 10px !important;
+    font-size: 1.25em !important;
+    text-align: left !important;
+  }
   .softwarePage {
     overflow-x: hidden;
   }
@@ -1281,7 +1303,8 @@ animation: fadeIn5 1s forwards;
     margin-bottom: 0.8rem;
     line-height: 1.2;
     margin-top: 60px;
-    
+    color: red !important;
+    text-align: center !important;
   }
 
   .services {
@@ -1297,10 +1320,10 @@ animation: fadeIn5 1s forwards;
   }
 
   .laptopGif {
-    transform: scale(0.8) !important;
-    position: fixed !important;
-    top: 10vh !important;
-    left: 60vw !important;
+    transform: scale(1.1) !important;
+    /* position: fixed !important; */
+    top: 104vh !important;
+    left: 35vw !important;
   }
 
   .div2 {
@@ -1340,7 +1363,7 @@ animation: fadeIn5 1s forwards;
   }
 
   .div2_2 img {
-    width: 140px;
+    /* width: 140px; */
     height: auto;
     max-width: 75%;
   }
@@ -1472,7 +1495,50 @@ animation: fadeIn5 1s forwards;
     width: 100%;
     max-width: 380px;
   }
+  .div2_2{
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centers the image horizontally */
+    align-items: center;     /* centers it vertically if needed */
+    /* padding-top: 7vh; */
+    overflow: hidden;        /* ensures no overflow on small screens */
+  }
+  
+  .div2_2 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;     /* keeps proportions */
+    display: block;
+    border-radius: 8px;      /* optional for smooth corners */
+  }
 }
+
+@media (max-width: 600px) {
+  .div2_2 {
+    padding: 0.5rem;
+  }
+
+  .div2_2 img {
+    max-width: 90%;
+  }
+  .div2_2{
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centers the image horizontally */
+    align-items: center;     /* centers it vertically if needed */
+    /* padding-top: 7vh; */
+    overflow: hidden;        /* ensures no overflow on small screens */
+  }
+  
+  .div2_2 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;     /* keeps proportions */
+    display: block;
+    border-radius: 8px;      /* optional for smooth corners */
+  }
+}
+
 
 
 /* first page */

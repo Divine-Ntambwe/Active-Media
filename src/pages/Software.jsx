@@ -352,7 +352,7 @@ export default function Software() {
 
           <div
             ref={par2}
-            className={`${styles.paragraphBox} ${
+            className={`${styles.paragraphBox} ${styles.firstPar} ${
               showFirst ? styles.fadeIn : styles.fadeOut
             }`}
           >
