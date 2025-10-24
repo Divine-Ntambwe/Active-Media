@@ -329,6 +329,10 @@
   .title {
     font-size: 28px;
   }
+  .homePage{
+    height: 100vh !important;
+    overflow: hidden !important;
+  }
 
   .cta {
     font-size: 14px;
