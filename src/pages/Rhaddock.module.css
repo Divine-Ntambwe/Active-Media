@@ -6,7 +6,7 @@
   height: 80vh;
   overflow: hidden !important;
   transition: 1s;
-  animation: startAnimation 1.5s ease-in;
+  animation: startAnimation 2s ease-in;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +42,8 @@
 }
 
 @keyframes startAnimation {
-  0%{transform: translateX(400px);opacity: 0;}
+  0%{transform: translateX(1200px);opacity: 0;}
+  50%{opacity: 1;}
   100%{transform: translateX(0px);opacity: 1;}
 }
 
@@ -50,7 +51,7 @@
     position: absolute;
     left: -30vw;
     top: 50vh;
-    display: none;
+    /* display: none; */
     z-index: 1;
     font-size: 3rem;
     width: 300px;
@@ -259,6 +260,45 @@
   margin: auto; */
 }
 
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(100px); /* move slightly down for parallax feel */
+  z-index: 1;
+}
+
+.fadeRightIn {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 10;
+}
+
+.fadeRightOut {
+  opacity: 0;
+  transform: translateX(90px); /* move slightly down for parallax feel */
+  z-index: 9;
+}
+
+.fadeImgIn {
+  opacity: 1;
+  z-index: 1;
+}
+
+.fadeImgOut {
+  opacity: 0;
+  z-index: 1;
+}
+
+.bgRotation {
+  transform: rotate(20deg);
+  top: 300px;
+}
+
 /* ========================= */
 /* Responsive Adjustments    */
 /* ========================= */
@@ -340,6 +380,24 @@
 
 /* Tablets & Medium Screens (1024px - 1439px) */
   @media (max-width: 1024px) {
+    @keyframes startAnimation {
+  0%{transform: translateY(1200px);opacity: 0;}
+  50%{opacity: 1;}
+  100%{transform: translateY(0px);opacity: 1;}
+}
+
+.recentWork{
+    position: absolute;
+    left: 30vw !important;
+    top: -20vh !important;
+    /* display: none; */
+    z-index: 1;
+    font-size: 3rem;
+    width: 300px;
+    
+    animation: startAnimation 2s ease-in;
+
+}
     .rapidtrade {
       flex-direction: column;
       align-items: center;
