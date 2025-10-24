@@ -6,13 +6,11 @@
   height: 80vh;
   overflow: hidden !important;
   transition: 1s;
-  animation: startAnimation 2s ease-in;
+  animation: startAnimation 2s ease-in forwards;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1200px;
-  margin: auto;
-  padding: 16px 32px;
+  margin-left: 200px;
 }
 
 .recentBackground {
@@ -182,8 +180,8 @@
   font-family: "Inter", sans-serif;
   justify-content: space-between;
   align-items: center;
+  padding: 0 60px 100px;
   height: 100vh;
-  padding: 16px 32px;
   /* overflow-y: hidden; */
 }
 
@@ -216,16 +214,16 @@
 .deliveryImg {
   position: absolute;
   width: 475px;
-  bottom: -210px;
-  left: 365px;
+  bottom: -150px;
+  left: 245px;
   z-index: 9;
   transition: opacity 0.6s linear;
 }
 
 .logoImg {
   position: absolute;
-  bottom: -220px;
-  right: 0;
+  bottom: -160px;
+  left: 713px;
   width: 300px;
   z-index: 10;
   transition: opacity 0.8s linear, transform 0.8s linear;
@@ -294,17 +292,285 @@
 
 @media (max-width: 1440px) {
   .rapidtrade {
-    padding: 16px 65px;
+    padding: 0 50px 80px;
   }
 
   .deliveryImg {
     width: 400px;
-    left: 425px;
+    left: 200px;
+    bottom: -120px;
   }
 
   .logoImg {
     width: 250px;
+    left: 620px;
+    bottom: -140px;
   }
 }
 
 /* Tablets & Medium Screens (1024px - 1439px) */
+@media (max-width: 1024px) {
+ 
+  .recentWork{
+    position: absolute;
+    left: 0vw !important;
+    top: -10vh !important;
+    font-size: 2em !important;
+    width: 100vw !important;
+    text-align: center;
+  }
+
+  @keyframes startAnimation {
+  0%{transform: translateY(1000px);opacity: 0;}
+  50%{opacity: 1;}
+  100%{transform: translateY(0px);opacity: 1;}
+}
+
+  .rapidtrade {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 225px 30px 60px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .leftSection {
+    max-width: 100%;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 50px;
+  }
+
+  .description {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    font-size: 20px;
+  }
+
+  .rapidTradeViewSite {
+    display: flex;
+    justify-content: center;
+  }
+
+  .deliverySection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .deliveryImg {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    left: 0;
+    bottom: 0;
+  }
+
+  .logoImg {
+    position: relative;
+    width: 50%;
+    max-width: 300px;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    margin: 30px auto;
+    display: block;
+  }
+
+  .websitePreview {
+    position: relative;
+    margin-top: 40px;
+    margin-left: 0;
+  }
+
+  .viewSite {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  .responsiveCenter {
+    width: 100%;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 40px;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .right {
+    width: 100%;
+  }
+
+  .heading {
+    width: 100%;
+  }
+
+  .logoCard {
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    height: 60vh;
+    margin-top: 0;
+  }
+}
+
+/* Small Tablets & Large Mobile (768px - 1023px) */
+@media (max-width: 768px) {
+  .container {
+    display: block;
+  }
+
+  .rapidtrade {
+    padding: 30px 20px 50px;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .rapidTradeViewSite svg {
+    width: 80px;
+    height: 52px;
+  }
+
+  .deliveryImg {
+    width: 80%;
+    max-width: 400px;
+  }
+
+  .logoImg {
+    width: 60%;
+    max-width: 250px;
+  }
+
+  .recentWork {
+    font-size: 2rem;
+    width: 250px;
+  }
+
+  .responsiveCenter {
+    width: 100%;
+  }
+
+  .wrapper {
+    padding: 30px 20px;
+    gap: 30px;
+  }
+
+  .heading {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+
+  .logoCard {
+    height: 50vh;
+    width: 85%;
+  }
+}
+
+/* Small Mobile (max 480px) */
+@media (max-width: 480px) {
+  html, body {
+    width: 100%;
+  }
+
+  .container {
+    height: auto;
+  }
+
+  .rapidtrade {
+    padding: 20px 12px 30px;
+  }
+
+  .title {
+    font-size: 35px;
+    letter-spacing: 0px;
+    margin-bottom: 10px;
+    word-break: break-word;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .rapidTradeViewSite svg {
+    width: 60px;
+    height: 40px;
+  }
+
+  .deliveryImg {
+    width: 90%;
+    max-width: 280px;
+    bottom: -80px;
+  }
+
+  .logoImg {
+    width: 70%;
+    max-width: 180px;
+    bottom: -60px;
+  }
+
+  .recentWork {
+    font-size: 1.2rem;
+    width: 180px;
+    top: 35vh;
+    left: -12vw;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+    width: 100%;
+  }
+
+  .paragraph1 {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .left {
+    flex: 1;
+    width: 100%;
+  }
+
+  .right {
+    flex: 0.5;
+    width: 100%;
+  }
+
+  .logoCard {
+    height: 50vh;
+    width: 100%;
+    margin-top: 0;
+  }
+}
