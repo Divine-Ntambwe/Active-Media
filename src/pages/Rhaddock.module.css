@@ -208,7 +208,7 @@ animation: appear 1.5s ;
   font-weight: 400;
   /* background-color: #fff; */
   position: relative;
-  z-index: 9999;
+  z-index: 100;
 }
 
 .rapidTradeViewSite {
@@ -315,7 +315,7 @@ animation: appear 1.5s ;
   }
 } */
 
-@media (max-width: 1440px) {
+/* @media (max-width: 1440px) {
   .rapidtrade {
     padding: 0 50px 80px;
   }
@@ -331,85 +331,85 @@ animation: appear 1.5s ;
     left: 620px;
     bottom: -140px;
   }
-}
+} */
 
 /* Tablets & Medium Screens (1024px - 1439px) */
-@media (max-width: 1024px) {
-  .rapidtrade {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 225px 30px 60px;
-    height: auto;
-    min-height: 100vh;
-  }
+  @media (max-width: 1024px) {
+    .rapidtrade {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 225px 30px 60px;
+      height: auto;
+      min-height: 100vh;
+    }
 
-  .leftSection {
-    max-width: 100%;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 40px;
-  }
+    .leftSection {
+      max-width: 100%;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 40px;
+    }
 
-  .title {
-    margin-bottom: 20px;
-  }
+    .title {
+      margin-bottom: 20px;
+    }
 
-  .description {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 30px;
-    font-size: 1rem;
-  }
+    .description {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1rem;
+    }
 
-  .rapidTradeViewSite {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
-  }
+    .rapidTradeViewSite {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
 
-  .deliverySection {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .deliverySection {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  .deliveryImg {
-    position: relative;
-    width: 70%;
-    max-width: 500px;
-    left: 0;
-    bottom: 0;
-    margin: 30px auto 0;
-  }
+    .deliveryImg {
+      position: relative;
+      width: 70%;
+      max-width: 500px;
+      left: 0;
+      bottom: 0;
+      margin: 30px auto 0;
+    }
 
-  .logoImg {
-    position: relative;
-    width: 50%;
-    max-width: 300px;
-    top: auto;
-    left: auto;
-    bottom: auto;
-    margin: 30px auto;
-    display: block;
-  }
+    .logoImg {
+      position: relative;
+      width: 50%;
+      max-width: 300px;
+      top: auto;
+      left: auto;
+      bottom: auto;
+      margin: 30px auto;
+      display: block;
+    }
 
-  .websitePreview {
-    position: relative;
-    margin-top: 40px;
-    margin-left: 0;
-  }
+    .websitePreview {
+      position: relative;
+      margin-top: 40px;
+      margin-left: 0;
+    }
 
-  .viewSite {
-    position: relative;
-    margin-bottom: 30px;
-  }
+    .viewSite {
+      position: relative;
+      margin-bottom: 30px;
+    }
 
-  .responsiveCenter {
-    width: 100%;
+    .responsiveCenter {
+      width: 100%;
+    }
   }
-}
 
 /* Small Tablets & Large Mobile (768px - 1023px) */
 @media (max-width: 768px) {
@@ -513,7 +513,7 @@ animation: appear 1.5s ;
 }
 
 /* Small Mobile (max 480px) */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .container {
     height: auto;
   }
@@ -590,13 +590,13 @@ animation: appear 1.5s ;
     width: 100%;
     margin-top: 0;
   }
-}
+} */
 
 /* ========================= */
 /*        Animations         */
 /* ========================= */
 
-.fadeIn {
+/* .fadeIn {
   opacity: 1;
   transform: translateY(0);
   z-index: 2;
@@ -604,7 +604,7 @@ animation: appear 1.5s ;
 
 .fadeOut {
   opacity: 0;
-  transform: translateY(100px); /* move slightly down for parallax feel */
+  transform: translateY(100px); 
   z-index: 1;
 }
 
@@ -616,7 +616,7 @@ animation: appear 1.5s ;
 
 .fadeRightOut {
   opacity: 0;
-  transform: translateX(90px); /* move slightly down for parallax feel */
+  transform: translateX(90px);
   z-index: 9;
 }
 
@@ -633,4 +633,210 @@ animation: appear 1.5s ;
 .bgRotation {
   transform: rotate(20deg);
   top: 300px;
+} */
+
+@media (max-width: 480px) {
+  .container {
+    height: auto;
+  }
+
+  .rapidtrade {
+    padding: 20px 12px 30px;
+  }
+
+  .title {
+    font-size: clamp(1.1rem, 7vw, 1.8rem);
+    letter-spacing: 0;
+    margin-bottom: 10px;
+    word-break: break-word;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+
+  .rapidTradeViewSite svg {
+    width: 60px;
+    height: 40px;
+    margin-top: 30vh;
+  }
+
+  .deliveryImg {
+    width: 52%;
+    max-width: 280px;
+    bottom: 240px;
+    left: -60px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .logoImg {
+    width: 32%;
+    max-width: 180px;
+    bottom: 399px;
+    left: 83px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+  }
+
+  .recentWork {
+    font-size: 1.2rem;
+    width: 180px;
+    top: 35vh;
+    left: 0;
+    position: relative;
+  }
 }
+
+/* 📱 Tablets (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .rapidtrade {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 30px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+
+  .deliveryImg {
+    width: 60%;
+    max-width: 400px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .logoImg {
+    width: 45%;
+    max-width: 250px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .websitePreview {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .rapidTradeViewSite {
+    margin-top: 30px;
+  }
+}
+
+/* 📲 Unified Mobile (≤767px) */
+/* @media (max-width: 767px) {
+  .container {
+    height: auto;
+  }
+
+  .rapidtrade {
+    padding: 20px 12px 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .title {
+    font-size: clamp(1.1rem, 7vw, 1.8rem);
+    letter-spacing: 0;
+    margin-bottom: 10px;
+    word-break: break-word;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .mobile-showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .websitePreview {
+    flex: 1;
+    max-width: 48%;
+    margin: 0;
+  }
+
+  .websitePreview img {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .logoCard {
+    flex: 1;
+    max-width: 45%;
+    height: auto;
+    border-radius: 16px;
+    margin: 0;
+  }
+
+  .rapidTradeViewSite {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rapidTradeViewSite svg {
+    width: 60px;
+    height: 40px;
+  }
+
+  .deliveryImg {
+    width: 52%;
+    max-width: 280px;
+    bottom: 240px;
+    left: -60px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .logoImg {
+    width: 32%;
+    max-width: 180px;
+    bottom: 399px;
+    left: 83px;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+  }
+
+  .recentWork {
+    font-size: 1.2rem;
+    width: 180px;
+    top: 35vh;
+    left: 0;
+    position: relative;
+  }
+
+  .leftSection {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+} */
