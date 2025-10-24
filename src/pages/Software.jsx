@@ -313,7 +313,7 @@ export default function Software() {
 
   return (
     <div className={styles.softwarePage}>
-      <img src={laptop} ref={laptopGif} className={styles.laptopGif} />
+      <img src={laptop} ref={laptopGif} className={`${styles.laptopGif} ${styles.laptopGifN}`} />
       <Navbar />
       <div ref={bgImg} className={styles.bgImg}>
         <PurpleLines />
@@ -327,12 +327,12 @@ export default function Software() {
           }`}
         >
           {/* <PurpleLines /> */}
-          <div className={styles.textBlock}>
+          <div className={`${styles.textBlock} ${styles.textBlockN}`}>
             <h1
               ref={title1}
               className={`${styles.title1} ${
                 showFirst ? styles.fadeIn : styles.fadeOut
-              }`}
+              } ${styles.title1N}`}
             >
               Software <br /> Development
             </h1>
@@ -341,7 +341,7 @@ export default function Software() {
               ref={par1}
               className={`${styles.services} ${
                 showFirst ? styles.fadeIn : styles.fadeOut
-              }`}
+              } ${styles.servicesN}`}
             >
               <p>WEB</p>
               <p>DESIGN</p>
@@ -353,7 +353,7 @@ export default function Software() {
             ref={par2}
             className={`${styles.paragraphBox} ${
               showFirst ? styles.fadeIn : styles.fadeOut
-            }`}
+            } ${styles.paragraphBoxN}`}
           >
             <p>
               With The Rapid Move of Technology, <br />

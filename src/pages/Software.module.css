@@ -1155,4 +1155,90 @@ animation: fadeIn5 1s forwards;
   }
 }
 
+/* ===========Niclette responsiveness Start============ */
+
+@media (max-width: 768px) {
+  .title1N{
+    font-size: 2.5rem;
+    /* padding-top: 2%; */
+    /* border: 6px solid blue; */
+  }
+  .servicesN{
+    font-size: 1.5rem;
+    
+    top: -5%;
+    /* border: 6px solid green; */
+  }
+  .paragraphBoxN {
+    position: absolute;
+    top: -9%;
+    height: 70vh;
+    /* border: 6px solid red; */
+  }
+  .laptopGifN {
+    position: absolute;
+    top: 41%;
+    left: 3%;
+    width: 90%;
+    height: auto;
+    /* border: 6px solid purple; */
+  }
+
+}
+@media (max-width: 824px){
+  .laptopGifN{
+    /* border: 7px solid red; */
+    width: 36%;
+    position: absolute;
+    padding-right: 20vw
+  }
+  .title1N{
+    /* border: 7px solid blue; */
+    font-size: 55px;
+    margin-right: 38vw
+  
+
+  }
+  .servicesN{
+    /* border: 7px solid green; */
+   font-size: 35px;
+   margin-right: 40vw;
+   
+    
+  }
+  .paragraphBoxN{
+    /* border: 7px solid purple; */
+    position: absolute;
+    top: -9%;
+    height: 70vh;
+  }
+}
+@media (max-width: 768px){
+  .paragraphBoxN{
+    /* border: 7px solid green; */
+    position: absolute;
+    top: -10vh;
+    margin-right: 5%;
+  }
+  .title1N{
+    /* border: 7px solid red; */
+    position: absolute;
+    top: -40%;
+    left: 0;
+    text-align: left;
+    margin-right: 5%;
+  }
+ .servicesN{
+  /* border: 5px solid blue; */
+  width: 100%;
+  text-align: left;
+ }
+ .laptopGifN{
+  /* border: 5px solid yellow; */
+  width: 100%;
+  position: absolute;
+  top: 39vh;
+ }
+}
+  
 

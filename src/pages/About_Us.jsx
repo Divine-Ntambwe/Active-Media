@@ -80,19 +80,19 @@ export default function About_Us() {
       {/* Slides container */}
       <div className={styles.slidesContainer} ref={containerRef}>
         {/* Slide 1 */}
-        <div className={`${styles.aboutDiv} ${styles.div1}`}>
-          <div className={`${styles.laptopWrapper} ${styles.fadeInStagger}`}>
-            <img src="/laptop.png" alt="Laptop" className={styles.laptop} />
+        <div className={`${styles.aboutDiv} ${styles.div1} ${styles.aboutDivN} ${styles.div1N}`}>
+          <div className={`${styles.laptopWrapper} ${styles.fadeInStagger} ${styles.laptopWrapperN}`}>
+            <img src="/laptop.png" alt="Laptop" className={`${styles.laptop} ${styles.laptopN}`} />
           </div>
-          <h2 className={`${styles.heading} ${styles.fadeInStagger}`}>
+          <h2 className={`${styles.heading} ${styles.fadeInStagger} ${styles.headingN}`}>
             WHO ARE WE ?
           </h2>
-          <p className={`${styles.textBlock} ${styles.topLeft} ${styles.fadeInStagger}`}>
+          <p className={`${styles.textBlockN} ${styles.topLeftN} ${styles.fadeInStagger} ${styles.textBlock} ${styles.topLeft}`}>
             We are a software development and <br />
             media agency that focuses on <br />
             business growth
           </p>
-          <p className={`${styles.textBlock} ${styles.bottomLeft} ${styles.fadeInStagger}`}>
+          <p className={`${styles.textBlock} ${styles.bottomLeft} ${styles.fadeInStagger} ${styles.textBlockN} ${styles.bottomLeftN}`}>
             Active Media consists <br /> of a team of people <br />
             that are passionate <br /> about what they do <br />
             and strive to ensure <br />
@@ -103,7 +103,7 @@ export default function About_Us() {
             authenticity and excellence. <br />
             You have ideas. We have software solutions.
           </p>
-          <p className={`${styles.textBlock} ${styles.rightBlock} ${styles.fadeInStagger}`}>
+          <p className={`${styles.textBlock} ${styles.rightBlock} ${styles.fadeInStagger} ${styles.textBlockN} ${styles.rightBlockN}`}>
             Active Media is a premier multimedia solution company <br />
             with innovative and distinctive solutions <br />
             that go beyond the traditional means of marketing. <br />
