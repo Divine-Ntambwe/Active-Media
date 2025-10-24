@@ -1,135 +1,128 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Rhaddock.module.css";
-
-// Import the 3D RH logo
 import RhLogo from "../assets/Frame 203.png";
 import Group72 from "../assets/Group 72.png";
 import Blending from "../assets/blending 1755804129410.png";
-
-// Supreme Build Up assets
 import SupremeBanner from "../assets/image copy.png";
 import SupremeLogo from "../assets/SupremeLogo.png";
-
-// Rapidtrade assets
 import deliveryImg from "../assets/rapidtrade1.png";
 import rapidtradeLogo from "../assets/rapidtrade2.png";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 
+const TOUCH_THRESHOLD = 40; // px to count as swipe
+const WHEEL_THRESHOLD = 20; // matches your original checks
+const FADE_MS = 400; // matches your CSS fade duration
+const ANIM_CLEAR_MS = 700; // guard time to avoid double-triggers
+
 const Recent_Work = () => {
-  // const nav = useNavigate();
+  const nav = useNavigate();
   const Link = [
     "https://www.supremebuildit.co.za/",
     "https://rapidtrade.com/",
     "https://www.rhaddock.co.za/",
   ];
-
-
-const TOUCH_THRESHOLD = 40; // px to count as swipe
-const WHEEL_THRESHOLD = 20; // matches your original checks
-const FADE_MS = 300; // matches your fade timeout
-
-
   const headings = ["SUPREME BUILD IT", "RAPIDTRADE", "R HADDOCK"];
   const banner = [SupremeBanner, deliveryImg, Group72];
   const logo = [SupremeLogo, rapidtradeLogo, RhLogo];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
-  const recentWork = useRef();
-  const indexRef = useRef(0);
-  const isHandling = useRef(false);
-  const nav = useNavigate();
+  const recentWork = useRef(null);
+
+  const indexRef = useRef(currentIndex);
+  const handlingRef = useRef(false);
+  const touchStartYRef = useRef(null);
+  const touchLastYRef = useRef(null);
+  const touchStartTimeRef = useRef(0);
 
   useEffect(() => {
     indexRef.current = currentIndex;
   }, [currentIndex]);
 
   useEffect(() => {
-    let touchStartY = null;
-    let touchLastY = null;
-    let touchStartTime = 0;
-
     function doChange(delta) {
-      if (isHandling.current) return;
-      isHandling.current = true;
+      if (handlingRef.current) return;
+      handlingRef.current = true;
 
       setFade(false);
 
       setTimeout(() => {
         const idx = indexRef.current;
+
         if (delta > WHEEL_THRESHOLD && idx < headings.length - 1) {
           setCurrentIndex(idx + 1);
         } else if (delta < -WHEEL_THRESHOLD && idx > 0) {
           setCurrentIndex(idx - 1);
         } else if (delta > WHEEL_THRESHOLD && idx === headings.length - 1) {
-          recentWork.current.classList.add(styles.disappear);
+          if (recentWork.current) recentWork.current.classList.add(styles.disappear);
           setTimeout(() => nav("/contact-us"), 1000);
         }
 
         setFade(true);
-        // allow new interactions after animations settle
+
         setTimeout(() => {
-          isHandling.current = false;
-        }, Math.max(FADE_MS, 600));
+          handlingRef.current = false;
+        }, ANIM_CLEAR_MS);
       }, FADE_MS);
     }
 
     function onWheel(e) {
-      // ignore tiny wheel noise
       if (Math.abs(e.deltaY) < 4) return;
       doChange(e.deltaY);
     }
 
     function onTouchStart(e) {
       if (e.touches.length !== 1) return;
-      touchStartY = e.touches[0].clientY;
-      touchLastY = touchStartY;
-      touchStartTime = Date.now();
+      touchStartYRef.current = e.touches[0].clientY;
+      touchLastYRef.current = touchStartYRef.current;
+      touchStartTimeRef.current = Date.now();
     }
 
     function onTouchMove(e) {
-      if (!touchStartY || e.touches.length !== 1) return;
-      touchLastY = e.touches[0].clientY;
+      if (!touchStartYRef.current || e.touches.length !== 1) return;
+      touchLastYRef.current = e.touches[0].clientY;
     }
 
     function onTouchEnd() {
-      if (touchStartY == null) return;
-      const dy = touchStartY - touchLastY;
-      const dt = Date.now() - touchStartTime;
-      // require meaningful vertical movement
+      if (touchStartYRef.current == null) return;
+      const dy = touchStartYRef.current - touchLastYRef.current;
+      const dt = Date.now() - touchStartTimeRef.current;
       if (Math.abs(dy) >= TOUCH_THRESHOLD) {
-        // positive dy = swipe up (move forward)
         doChange(dy);
       }
-      touchStartY = null;
-      touchLastY = null;
+      touchStartYRef.current = null;
+      touchLastYRef.current = null;
+      touchStartTimeRef.current = 0;
     }
 
-    window.addEventListener("wheel", onWheel, { passive: true });
-    window.addEventListener("touchstart", onTouchStart, { passive: true });
-    window.addEventListener("touchmove", onTouchMove, { passive: true });
-    window.addEventListener("touchend", onTouchEnd, { passive: true });
+    // Attach listeners after a small delay to match original behavior
+    const attachTimeout = setTimeout(() => {
+      window.addEventListener("wheel", onWheel, { passive: true });
+      window.addEventListener("touchstart", onTouchStart, { passive: true });
+      window.addEventListener("touchmove", onTouchMove, { passive: true });
+      window.addEventListener("touchend", onTouchEnd, { passive: true });
+    }, 2000);
 
     return () => {
+      clearTimeout(attachTimeout);
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("touchstart", onTouchStart);
       window.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("touchend", onTouchEnd);
     };
-    // run once; indexRef keeps handler aware of updates
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, []); // run once
 
   return (
     <>
       <Navbar />
-      {/* <h1
+      <h1
             className={styles.recentWork}
             // ref={rwHeading}
             >
               Recent Work
-            </h1> */}
+            </h1>
       <img
         // ref={BGImg}
         className={styles.recentBackground}
