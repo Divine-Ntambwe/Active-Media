@@ -416,21 +416,21 @@ Icons
         transition: 1.5s;
     }
 
-    .cardOne img{
+    /* .cardOne img{
         transform: rotate(8.5deg) !important;
-    }
+    } */
 
-    .cardTwo img{
+    /* .cardTwo img{
         transform: rotate(-25.9deg) !important;
-    }
+    } */
 
-    .cardFour img{
+    /* .cardFour img{
         transform: rotate(15deg) !important;
     }
 
     .cardFive img{
         transform: rotate(-31deg) !important;
-    }
+    } */
 
     @keyframes floating {
         0%{transform: translateY(0px);}
@@ -502,7 +502,7 @@ Icons
     }
     :root{
     --cardRefDim: 350px;
-    --lastTwo: -800px;
+    --lastTwo: -750px;
 
 }
 
@@ -510,8 +510,20 @@ Icons
     width: 100vw;
 }
 
+.cardThree img, .cardSix img,.cardTwo img, .cardOne img{
+width: 340px;
+height: 310px;
+margin-bottom: 60px;
+}
+.cardFive img, .cardFour img{
+width: 340px;
+height: 310px !important;
+margin-bottom: 60px;
 
-.cardOne img{
+}
+
+
+/* .cardOne img{
 width: 380px !important;
 height: 380px !important;
 
@@ -530,24 +542,24 @@ width: 340px;
 height: 400px !important;
 width: 400px;
 
-}
+} */
 
 
 @keyframes moveUp {
     0%{transform:translateY(0px);}
-    100%{transform:translateY(-860px)}
+    100%{transform:translateY(-800px)}
 }
 
    @keyframes moveUp2 {
     0%{top:0px;}
-    100%{top:-890px; 
+    100%{top:-780px; 
     }   
 }  
 }
 
 @media screen and (max-width:416px) {
     *{
-        /* color: blue; */
+        color: blue;
     }
      .container {
         padding-top: 0 !important ;
@@ -573,35 +585,37 @@ width: 400px;
 
 
 .cardOne img{
-width: 380px !important;
-height: 350px !important;
+/* width: 380px !important;
+height: 350px !important; */
 
 }
 
-.cardTwo img{
+/* .cardTwo img{
 width: 450px !important;
 height: 420px !important; 
-}
+} */
 
-.cardThree img, .cardSix img{
-height: 340px;
-width: 310px;
+.cardThree img, .cardSix img,.cardTwo img, .cardOne img{
+width: 340px;
+height: 310px;
+margin-bottom: 60px;
 }
 .cardFive img, .cardFour img{
-height: 400px !important;
-width: 370px;
+width: 340px;
+height: 310px !important;
+margin-bottom: 60px;
 
 }
 
 
 @keyframes moveUp {
     0%{transform:translateY(0px);}
-    100%{transform:translateY(-620px)}
+    100%{transform:translateY(-580px)}
 }
 
    @keyframes moveUp2 {
     0%{top:0px;}
-    100%{top:-890px; 
+    100%{top:-800px; 
     }   
 }  
 }

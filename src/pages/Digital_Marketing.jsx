@@ -10,7 +10,10 @@ import cardFive from "../assets/Group 39.png"
 import cardSix from "../assets/Group 40.png"
 import cardOneSmall from "../assets/Group 31.png"
 import cardTwoSmall from "../assets/Group 44.png"
-// import cardOneSmall from "../assets/Group 31.png"
+import cardFourSmall from "../assets/Group 46.png"
+import cardThreeSmall from "../assets/Group 45.png"
+import cardFiveSmall from "../assets/Group 48.png"
+import cardSixSmall from "../assets/Group 47.png"
 
 
 const Digital_Marketing = () => {
@@ -25,8 +28,10 @@ const Digital_Marketing = () => {
   const firstTwo = useRef();
   const rwHeading = useRef();
   const nav = useNavigate();
+  const [smallScreenSize,setSmallScreen] = useState(false)
 
   useEffect(() => {
+    setSmallScreen(!window.matchMedia("(max-width:2201px) and (min-width: 1025px)").matches)
     function handleScroll(deltaY) {
       if (deltaY > 25) {
         if (index === 0) {
@@ -93,7 +98,6 @@ const Digital_Marketing = () => {
       };
     }, 500);
   }, [index]);
-
   return (
     <>
       <div className={styles.designMarketingPage}>
@@ -136,32 +140,32 @@ const Digital_Marketing = () => {
             {/* Card 1 */}
             <div ref={firstTwo} className={styles.firstTwo}>
               <div className={styles.cardOne}>
-                <img src={cardOne} />
+                <img src={smallScreenSize?cardOneSmall:cardOne} />
               </div>
 
               {/* Card 2 */}
               <div className={styles.cardTwo}>
-                <img src={cardTwo} />
+                <img src={smallScreenSize?cardTwoSmall:cardTwo} />
               </div>
             </div>
 
             <div ref={lastFour} className={styles.lastFour}>
               <div className={styles.cardThree}>
-                <img src={cardThree} />
+                <img src={smallScreenSize?cardThreeSmall:cardThree} />
               </div>
 
               <div className={styles.cardFour}>
-                <img src={cardFour} />
+                <img src={smallScreenSize?cardFourSmall:cardFour} />
               </div>
 
               {/* Card 4 */}
               <div className={styles.cardFive}>
-                <img src={cardFive}  />
+                <img src={smallScreenSize?cardFiveSmall:cardFive}  />
               </div>
 
               {/* Card 5 */}
               <div className={styles.cardSix}>
-                <img src={cardSix}  />
+                <img src={smallScreenSize?cardSixSmall:cardSix}  />
               </div>
             </div>
 
