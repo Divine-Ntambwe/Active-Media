@@ -405,7 +405,6 @@ export default function Software() {
           </div>
         </div>
         {/* Ozias(start) */}
-        {/* Ozias(End) */}
         {/* Slide 3 (ECommerce) */}
 
         <div

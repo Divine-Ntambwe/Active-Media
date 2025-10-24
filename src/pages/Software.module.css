@@ -653,7 +653,7 @@ animation: fadeIn5 1s forwards;
 @media screen and (min-width:1800px) and (max-width: 2200px) {
  *{
   /* color: blue; */
- }
+ } 
 
  .paragraphBox p, .pinkBox {
   font-size: 2em;
