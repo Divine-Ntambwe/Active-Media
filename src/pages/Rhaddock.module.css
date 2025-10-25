@@ -6,30 +6,26 @@
   height: 80vh;
   overflow: hidden !important;
   transition: 1s;
-  animation: startAnimation 1.5s ease-in;
+  animation: startAnimation 2s ease-in;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-.recentWorkPage{
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
+  margin-left: 180px;
 }
 .recentBackground{
-
-transition: 1s;  
-transform: scale(0.7) rotate(-90deg);
-/* object-fit:contain; */
-position: absolute;
-top: -200px;
-left: 0px;    
-animation: appear 1.5s ;
+  
+  transition: 1s;  
+  transform: scale(0.7) rotate(-90deg);
+  /* object-fit:contain; */
+  position: absolute;
+  top: -200px;
+  left: 0px;    
+  animation: appear 1.5s ;
 }
 
 @keyframes appear {
-    0%{opacity: 0;  }
-    100%{opacity: 1}
+  0%{opacity: 0;  }
+  100%{opacity: 1}
 }
 
 @keyframes disappear {
@@ -41,28 +37,35 @@ animation: appear 1.5s ;
   }
 }
 
+
 .disappear {
   animation: disappear 0.8s forwards;
 }
 
 @keyframes startAnimation {
-  0%{transform: translateX(400px);opacity: 0;}
+  0%{transform: translateX(1200px);opacity: 0;}
+  50%{opacity: 1;}
   100%{transform: translateX(0px);opacity: 1;}
 }
 
-/* .recentWork{
+.recentWork{
     position: absolute;
     left: -30vw;
     top: 50vh;
-    display: none;
+    /* display: none; */
     z-index: 1;
     font-size: 3rem;
     width: 300px;
     
     animation: startAnimation 2s ease-in;
 
-} */
+}
 
+.recentWorkPage{
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -258,6 +261,45 @@ animation: appear 1.5s ;
   margin: auto; */
 }
 
+.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+.fadeOut {
+  opacity: 0;
+  transform: translateY(100px); /* move slightly down for parallax feel */
+  z-index: 1;
+}
+
+.fadeRightIn {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 10;
+}
+
+.fadeRightOut {
+  opacity: 0;
+  transform: translateX(90px); /* move slightly down for parallax feel */
+  z-index: 9;
+}
+
+.fadeImgIn {
+  opacity: 1;
+  z-index: 1;
+}
+
+.fadeImgOut {
+  opacity: 0;
+  z-index: 1;
+}
+
+.bgRotation {
+  transform: rotate(20deg);
+  top: 300px;
+}
+
 /* ========================= */
 /* Responsive Adjustments    */
 /* ========================= */
@@ -338,15 +380,15 @@ animation: appear 1.5s ;
 } */
 
 /* Tablets & Medium Screens (1024px - 1439px) */
-  @media (max-width: 1024px) {
-    .rapidtrade {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 225px 30px 60px;
-      height: auto;
-      min-height: 100vh;
-    }
+@media (max-width: 1024px) {
+  .rapidtrade {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 225px 30px 60px;
+    height: auto;
+    min-height: 100vh;
+  }
 
     .leftSection {
       max-width: 100%;

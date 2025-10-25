@@ -2,9 +2,25 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Digital_Marketing.module.css";
 import Navbar from "../component/Navbar";
 import { useNavigate } from "react-router-dom";
+import cardOne from "../assets/Group 30.png"
+import cardTwo from "../assets/Group 36.png"
+import cardThree from "../assets/Group 43.png"
+import cardFour from "../assets/Group 42.png"
+import cardFive from "../assets/Group 39.png"
+import cardSix from "../assets/Group 40.png"
+import cardOneSmall from "../assets/Group 31.png"
+import cardTwoSmall from "../assets/Group 44.png"
+import cardFourSmall from "../assets/Group 46.png"
+import cardThreeSmall from "../assets/Group 45.png"
+import cardFiveSmall from "../assets/Group 48.png"
+import cardSixSmall from "../assets/Group 47.png"
+
+
 const Digital_Marketing = () => {
-  const [lastY, setLastY] = useState(0);
   const [index, setIndex] = useState(0);
+  const isAnimating = useRef(false);
+  const indexRef = useRef(0);
+
   const BGImg = useRef();
   const heading = useRef();
   const par = useRef();
@@ -14,62 +30,76 @@ const Digital_Marketing = () => {
   const firstTwo = useRef();
   const rwHeading = useRef();
   const nav = useNavigate();
-  let num = 0;
+  const [smallScreenSize,setSmallScreen] = useState(false)
+
   useEffect(() => {
-    function onScroll(e) {
-      setTimeout(() => {
-        if (e.deltaY > 12) {
-          if (index === 0) {
-            BGImg.current.style.top = "100px";
-
-            heading.current.classList.add(styles.moveUp);
-            // heading.current.style.animationFillMode = "forwards"
-
-            par.current.classList.add(styles.disappear);
-            // par.current.style.animationFillMode = "forwards"
-
-            wrapper.current.classList.add(styles.moveUp);
-            // wrapper.current.style.animationFillMode = "forwards"
-          }
-          if (index === 1) {
-            BGImg.current.style.left = "800px";
-            BGImg.current.style.top = "100px";
-
-            lastFour.current.classList.add(styles.moveUp2);
-            //  lastFour.current.style.animationFillMode = "forwards"
-
-            firstTwo.current.classList.add(styles.disappear);
-            //  firstTwo.current.style.animationFillMode = "forwards"
-          }
-
-          if (index === 2) {
-            container.current.classList.add(styles.slideOut);
-            rwHeading.current.style.display = "inline";
-            rwHeading.current.classList.add(styles.moveRW);
-            BGImg.current.style.left = "800px";
-            BGImg.current.style.top = "-150px";
-            setTimeout(() => {
-              // BGImg.current.classList.add(styles.disappear);
-              nav("/recent");
-            }, 2000);
-          }
-          setIndex(index + 1);
-        }else if (e.deltaY < -20 && e.deltaY < 0) {
-          window.location.reload();
+    setSmallScreen(!window.matchMedia("(max-width:2201px) and (min-width: 1025px)").matches)
+    function handleScroll(deltaY) {
+      if (deltaY > 25) {
+        if (index === 0) {
+          BGImg.current.style.top = "100px";
+          heading.current.classList.add(styles.moveUp);
+          par.current.classList.add(styles.disappear);
+          wrapper.current.classList.add(styles.moveUp);
         }
-      }, 100);
+        if (index === 1) {
+          BGImg.current.style.left = "800px";
+          BGImg.current.style.top = "100px";
+          lastFour.current.classList.add(styles.moveUp2);
+          firstTwo.current.classList.add(styles.disappear);
+        }
+        if (index === 2) {
+         if (window.matchMedia("(max-width:2201px) and (min-width: 1025px)").matches){
+
+              container.current.classList.add(styles.slideOut);
+              // rwHeading.current.style.display = "inline";
+              // rwHeading.current.classList.add(styles.moveRW);
+              BGImg.current.style.left = "800px";
+              BGImg.current.style.top = "-150px";
+              setTimeout(() => {
+                BGImg.current.classList.add(styles.disappear);
+                nav("/recent");
+              }, 800);
+            }else {
+              lastFour.current.style.transform="translateY(var(--lastTwo))"
+            }
+        }
+        if (index == 3){
+          nav("/recent");
+        }
+        setIndex(index + 1);
+      } else if (deltaY < -25) {
+        window.location.reload();
+      }
+    }
+
+    function onWheel(e) {
+      setTimeout(() => handleScroll(e.deltaY), 100);
+    }
+
+    let touchStartY = 0;
+    function onTouchStart(e) {
+      touchStartY = e.touches[0].clientY;
+    }
+
+    function onTouchMove(e) {
+      const currentY = e.touches[0].clientY;
+      const deltaY = touchStartY - currentY;
+      setTimeout(() => handleScroll(deltaY), 100);
     }
 
     setTimeout(() => {
-      if (window.matchMedia("(max-width: 576px)").matches) return
-      window.addEventListener("wheel", onScroll);
-      return () => window.removeEventListener("wheel", onScroll);
+      window.addEventListener("wheel", onWheel);
+      window.addEventListener("touchstart", onTouchStart);
+      window.addEventListener("touchmove", onTouchMove);
+
+      return () => {
+        window.removeEventListener("wheel", onWheel);
+        window.removeEventListener("touchstart", onTouchStart);
+        window.removeEventListener("touchmove", onTouchMove);
+      };
     }, 500);
   }, [index]);
-
-
-
-
   return (
     <>
       <div className={styles.designMarketingPage}>
@@ -112,32 +142,32 @@ const Digital_Marketing = () => {
             {/* Card 1 */}
             <div ref={firstTwo} className={styles.firstTwo}>
               <div className={styles.cardOne}>
-                <img src="src\assets\Group 30.png" />
+                <img src={smallScreenSize?cardOneSmall:cardOne} />
               </div>
 
               {/* Card 2 */}
               <div className={styles.cardTwo}>
-                <img src="src\assets\Group 36.png" />
+                <img src={smallScreenSize?cardTwoSmall:cardTwo} />
               </div>
             </div>
 
             <div ref={lastFour} className={styles.lastFour}>
               <div className={styles.cardThree}>
-                <img src="src\assets\Group 43.png" />
+                <img src={smallScreenSize?cardThreeSmall:cardThree} />
               </div>
 
               <div className={styles.cardFour}>
-                <img src="src\assets\Group 42.png" />
+                <img src={smallScreenSize?cardFourSmall:cardFour} />
               </div>
 
               {/* Card 4 */}
               <div className={styles.cardFive}>
-                <img src="src\assets\Group 39.png" />
+                <img src={smallScreenSize?cardFiveSmall:cardFive}  />
               </div>
 
               {/* Card 5 */}
               <div className={styles.cardSix}>
-                <img src="src\assets\Group 40.png" />
+                <img src={smallScreenSize?cardSixSmall:cardSix}  />
               </div>
             </div>
 

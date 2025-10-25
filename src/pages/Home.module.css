@@ -9,8 +9,8 @@
   display:flex;
   align-items:center;
   background:#fff;
-  overflow: hidden;
-  /* border: 1px solid red; */
+  /* overflow: hidden; */
+  position: relative;
 }
 
 @keyframes slide-out {
@@ -34,14 +34,15 @@
 }
 .container{
   width:100%;
-  max-width:1200px;
-  margin:0 auto;
+  margin:0 2% 0 2%;
+  height: auto;
   display:flex;
-  position: absolute;
-  top:110px;
-  /*justify-content:space-between;*/
+  position: relative;
+  margin-top:110px;
+  justify-content:space-between;
   
   padding:48px 24px;
+  z-index: 2;
    /* border: solid; */
 }
 
@@ -86,10 +87,10 @@
 
 .blendingBackground{
   position:absolute;
-  left:-8%;
-  top:-5%;
+  left:-35%;
+  top:-20%;
   width:90%;
-  height:100%;
+  height:70vh;
   background-image: url('../assets/Active_M.jpg');
   background-size: cover;
   background-position: center;
@@ -99,14 +100,14 @@
 
 .orb1{
   position:absolute;
-  /* left:50%; */
-  top:-10%; 
-  width: 550px;
+  left:-30%;
+  top:-18%; 
+  width: 100%;
   /* min-width: 90%; */
   transform:translateY(-10%);
-  z-index: 2;
+  z-index: 1000;
  /* border: solid; */
- height: 680px;
+ height: 720px;
  margin-left: 230px;
 }
 
@@ -118,17 +119,236 @@
   transform:translateY(6%);
 }
 
-@media (max-width:1100px){
-  .container{flex-direction:column;align-items:flex-start}
-  .right{height:360px;width:100%;margin-top:18px}
-  .title{font-size:42px}
+.swirl{
+  position:absolute;
+  right:0%;
+  top:20%;
+  width:28%;
+  transform:translateY(-20%);
+  z-index:3;
+}
+/* Large Screens */
+/* ------------------------------------------ */
+/* Laptop Screens (around 80% width ~1200px) */
+/* ------------------------------------------ */
+@media (max-width: 1200px) and (min-width: 993px) {
+  .container {
+    padding: 36px 32px;
+    gap: 20px;
+  }
+
+  .left {
+    flex: 0 0 58%;
+  }
+
+  .right {
+    flex: 0 0 38%;
+    height: 480px;
+  }
+
+  .title {
+    font-size: 44px;
+    width: 100%;
+  }
+
+  .cta {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .orb1 {
+    width: 100%;
+    left: -20%;
+    height: 640px;
+  }
+
+  .blendingBackground {
+    left: -25%;
+    width: 85%;
+  }
 }
 
-@media (max-width:600px){
-  .title{font-size:28px}
-  .swirl{display:none}
+/* ------------------------------------------ */
+/* Medium Laptops (around 67% width ~1000px)  */
+/* ------------------------------------------ */
+@media (max-width: 1000px) and (min-width: 850px) {
+  .container {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .left {
+    flex: 0 0 60%;
+  }
+
+  .right {
+    flex: 0 0 38%;
+    height: 420px;
+  }
+
+  .title {
+    font-size: 42px;
+    line-height: 1.1;
+  }
+
+  .cta {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+
+  /* reduce visual clutter slightly */
+  .orb1, .orb2 {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+
+  .swirl {
+    width: 24%;
+    top: 25%;
+  }
 }
 
+/* Tablet Screens */
+@media (max-width: 850px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    padding: 32px 20px;
+  }
+
+  .left {
+    flex: 0 0 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .right {
+    flex: 0 0 100%;
+    height: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 1.2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta {
+    font-size: 16px;
+    margin: 20px auto 0;
+  }
+
+  .orb1, .orb2, .swirl {
+    display: none;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    height: 90vh;
+    padding: 60px 16px;
+    text-align: center;
+    background-image: url('../assets/Active_M.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+  }
+
+  /* Dark overlay to make background image less visible */
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* increase to 0.7–0.8 for darker */
+    z-index: 1;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin: 30% 5%;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* bring text above overlay */
+  }
+
+  .left, .right {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 0;
+  }
+
+  .title {
+    font-size: 55px;
+    line-height: 1.0;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 600;
+  }
+
+  .cta {
+    font-size: 25px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(245, 120, 222, 0.6);
+    color: white;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .blendingBackground, .orb1, .orb2, .swirl {
+    display: none;
+  }
+
+  .bottomCenter {
+    font-size: 22px; 
+    padding: 12px 28px; 
+    width: 120px; 
+    margin: -100% 0 0 0;
+  }
+}
+
+
+/* Very Small Phones */
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+  .homePage{
+    height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  .cta {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .right img {
+    max-width: 300px;
+  }
+
+  .bottomCenter {
+    font-size: 20px;
+    padding: 10px 24px;
+    width: 110px;
+  }
+}
 
 .bottomCenter {
   position: fixed;

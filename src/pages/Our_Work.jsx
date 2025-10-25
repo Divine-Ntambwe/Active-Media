@@ -1,20 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Rhaddock.module.css";
-
-// Import the 3D RH logo
 import RhLogo from "../assets/Frame 203.png";
 import Group72 from "../assets/Group 72.png";
 import Blending from "../assets/blending 1755804129410.png";
-
-// Supreme Build Up assets
 import SupremeBanner from "../assets/image copy.png";
 import SupremeLogo from "../assets/SupremeLogo.png";
-
-// Rapidtrade assets
 import deliveryImg from "../assets/rapidtrade1.png";
 import rapidtradeLogo from "../assets/rapidtrade2.png";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
+
+const TOUCH_THRESHOLD = 40; // px to count as swipe
+const WHEEL_THRESHOLD = 20; // matches your original checks
+const FADE_MS = 400; // matches your CSS fade duration
+const ANIM_CLEAR_MS = 700; // guard time to avoid double-triggers
 
 const Recent_Work = () => {
   const nav = useNavigate();
@@ -26,49 +25,104 @@ const Recent_Work = () => {
   const headings = ["SUPREME BUILD IT", "RAPIDTRADE", "R HADDOCK"];
   const banner = [SupremeBanner, deliveryImg, Group72];
   const logo = [SupremeLogo, rapidtradeLogo, RhLogo];
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true); // true = visible, false = faded out
-  const recentWork = useRef();
+  const [fade, setFade] = useState(true);
+  const recentWork = useRef(null);
+
+  const indexRef = useRef(currentIndex);
+  const handlingRef = useRef(false);
+  const touchStartYRef = useRef(null);
+  const touchLastYRef = useRef(null);
+  const touchStartTimeRef = useRef(0);
 
   useEffect(() => {
-    const handleScroll = (e) => {
-      // const step = window.scrollY + 1 // every 200px scroll → new index
-      // if (step !== currentIndex && step < headings.length) {
-      // fade out first
+    indexRef.current = currentIndex;
+  }, [currentIndex]);
+
+  useEffect(() => {
+    function doChange(delta) {
+      if (handlingRef.current) return;
+      handlingRef.current = true;
+
       setFade(false);
-      const diff = e.deltaY;
-      // after fade out, switch text and fade back in
+
       setTimeout(() => {
-        if (diff > 20 && currentIndex < headings.length - 1) {
-          setCurrentIndex(currentIndex + 1);
-        } else if (diff < 1 && currentIndex > 0 && diff < -20) {
-          setCurrentIndex(currentIndex - 1);
+        const idx = indexRef.current;
+
+        if (delta > WHEEL_THRESHOLD && idx < headings.length - 1) {
+          setCurrentIndex(idx + 1);
+        } else if (delta < -WHEEL_THRESHOLD && idx > 0) {
+          setCurrentIndex(idx - 1);
+        } else if (delta > WHEEL_THRESHOLD && idx === headings.length - 1) {
+          if (recentWork.current) recentWork.current.classList.add(styles.disappear);
+          setTimeout(() => nav("/contact-us"), 1000);
         }
 
-        if (diff > 20 && currentIndex === headings.length - 1) {
-          recentWork.current.classList.add(styles.disappear);
-          setTimeout(() => {
-            nav("/contact-us");
-          }, 1000);
-        }
         setFade(true);
-      }, 300); // duration matches CSS fade
-      // }
-    };
 
-    window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
-  }, [currentIndex, headings.length]);
+        setTimeout(() => {
+          handlingRef.current = false;
+        }, ANIM_CLEAR_MS);
+      }, FADE_MS);
+    }
+
+    function onWheel(e) {
+      if (Math.abs(e.deltaY) < 4) return;
+      doChange(e.deltaY);
+    }
+
+    function onTouchStart(e) {
+      if (e.touches.length !== 1) return;
+      touchStartYRef.current = e.touches[0].clientY;
+      touchLastYRef.current = touchStartYRef.current;
+      touchStartTimeRef.current = Date.now();
+    }
+
+    function onTouchMove(e) {
+      if (!touchStartYRef.current || e.touches.length !== 1) return;
+      touchLastYRef.current = e.touches[0].clientY;
+    }
+
+    function onTouchEnd() {
+      if (touchStartYRef.current == null) return;
+      const dy = touchStartYRef.current - touchLastYRef.current;
+      const dt = Date.now() - touchStartTimeRef.current;
+      if (Math.abs(dy) >= TOUCH_THRESHOLD) {
+        doChange(dy);
+      }
+      touchStartYRef.current = null;
+      touchLastYRef.current = null;
+      touchStartTimeRef.current = 0;
+    }
+
+    // Attach listeners after a small delay to match original behavior
+    const attachTimeout = setTimeout(() => {
+      window.addEventListener("wheel", onWheel, { passive: true });
+      window.addEventListener("touchstart", onTouchStart, { passive: true });
+      window.addEventListener("touchmove", onTouchMove, { passive: true });
+      window.addEventListener("touchend", onTouchEnd, { passive: true });
+    }, 2000);
+
+    return () => {
+      clearTimeout(attachTimeout);
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // run once
 
   return (
     <div className={styles.recentWorkPage}>
       <Navbar />
-      {/* <h1
+      <h1
             className={styles.recentWork}
             // ref={rwHeading}
             >
               Recent Work
-            </h1> */}
+            </h1>
       <img
         // ref={BGImg}
         className={styles.recentBackground}
