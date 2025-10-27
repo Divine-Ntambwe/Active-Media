@@ -17,112 +17,51 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 
 const Recent_Work = () => {
-  // const nav = useNavigate();
+   const nav = useNavigate();
   const Link = [
     "https://www.supremebuildit.co.za/",
     "https://rapidtrade.com/",
     "https://www.rhaddock.co.za/",
   ];
-
-
-const TOUCH_THRESHOLD = 40; // px to count as swipe
-const WHEEL_THRESHOLD = 20; // matches your original checks
-const FADE_MS = 300; // matches your fade timeout
-
-
   const headings = ["SUPREME BUILD IT", "RAPIDTRADE", "R HADDOCK"];
   const banner = [SupremeBanner, deliveryImg, Group72];
   const logo = [SupremeLogo, rapidtradeLogo, RhLogo];
-
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true);
+  const [fade, setFade] = useState(true); // true = visible, false = faded out
   const recentWork = useRef();
-  const indexRef = useRef(0);
-  const isHandling = useRef(false);
-  const nav = useNavigate();
 
   useEffect(() => {
-    indexRef.current = currentIndex;
-  }, [currentIndex]);
-
-  useEffect(() => {
-    let touchStartY = null;
-    let touchLastY = null;
-    let touchStartTime = 0;
-
-    function doChange(delta) {
-      if (isHandling.current) return;
-      isHandling.current = true;
-
+    const handleScroll = (e) => {
+      // const step = window.scrollY + 1 // every 200px scroll → new index
+      // if (step !== currentIndex && step < headings.length) {
+      // fade out first
       setFade(false);
-
+      const diff = e.deltaY;
+      // after fade out, switch text and fade back in
       setTimeout(() => {
-        const idx = indexRef.current;
-        if (delta > WHEEL_THRESHOLD && idx < headings.length - 1) {
-          setCurrentIndex(idx + 1);
-        } else if (delta < -WHEEL_THRESHOLD && idx > 0) {
-          setCurrentIndex(idx - 1);
-        } else if (delta > WHEEL_THRESHOLD && idx === headings.length - 1) {
-          recentWork.current.classList.add(styles.disappear);
-          setTimeout(() => nav("/contact-us"), 1000);
+        if (diff > 30 && currentIndex < headings.length - 1) {
+          setCurrentIndex(currentIndex + 1);
+        } else if (diff < 30 && currentIndex > 0 && diff < -30) {
+          setCurrentIndex(currentIndex - 1);
         }
 
+        if (diff > 30 && currentIndex === headings.length - 1) {
+          recentWork.current.classList.add(styles.disappear);
+          setTimeout(() => {
+            nav("/contact-us");
+          }, 1000);
+        }
         setFade(true);
-        // allow new interactions after animations settle
-        setTimeout(() => {
-          isHandling.current = false;
-        }, Math.max(FADE_MS, 600));
-      }, FADE_MS);
-    }
-
-    function onWheel(e) {
-      // ignore tiny wheel noise
-      if (Math.abs(e.deltaY) < 4) return;
-      doChange(e.deltaY);
-    }
-
-    function onTouchStart(e) {
-      if (e.touches.length !== 1) return;
-      touchStartY = e.touches[0].clientY;
-      touchLastY = touchStartY;
-      touchStartTime = Date.now();
-    }
-
-    function onTouchMove(e) {
-      if (!touchStartY || e.touches.length !== 1) return;
-      touchLastY = e.touches[0].clientY;
-    }
-
-    function onTouchEnd() {
-      if (touchStartY == null) return;
-      const dy = touchStartY - touchLastY;
-      const dt = Date.now() - touchStartTime;
-      // require meaningful vertical movement
-      if (Math.abs(dy) >= TOUCH_THRESHOLD) {
-        // positive dy = swipe up (move forward)
-        doChange(dy);
-      }
-      touchStartY = null;
-      touchLastY = null;
-    }
-
-    window.addEventListener("wheel", onWheel, { passive: true });
-    window.addEventListener("touchstart", onTouchStart, { passive: true });
-    window.addEventListener("touchmove", onTouchMove, { passive: true });
-    window.addEventListener("touchend", onTouchEnd, { passive: true });
-
-    return () => {
-      window.removeEventListener("wheel", onWheel);
-      window.removeEventListener("touchstart", onTouchStart);
-      window.removeEventListener("touchmove", onTouchMove);
-      window.removeEventListener("touchend", onTouchEnd);
+      }, 300); // duration matches CSS fade
+      // }
     };
-    // run once; indexRef keeps handler aware of updates
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
+    window.addEventListener("wheel", handleScroll);
+    return () => window.removeEventListener("wheel", handleScroll);
+  }, [currentIndex, headings.length]);
 
   return (
-    <>
+    <div className={styles.recentWorkPage}>
       <Navbar />
       {/* <h1
             className={styles.recentWork}
@@ -244,7 +183,7 @@ const FADE_MS = 300; // matches your fade timeout
         </div>
       </div> */}
       </div>
-    </>
+    </div>
   );
 };
 
