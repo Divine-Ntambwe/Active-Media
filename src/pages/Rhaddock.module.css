@@ -6,12 +6,12 @@
   height: 80vh;
   overflow: hidden !important;
   transition: 1s;
-  animation: startAnimation 2.5s ease-in;
+  /* animation: startAnimation 2.5s ease-in; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 1200px;
-    margin: auto;
+  margin: auto;
   padding: 16px 32px;
 }
 
@@ -60,7 +60,7 @@
     /* display: none; */
     z-index: 1;
     font-size: 3rem;
-    width: 300px;
+    /* width: 300px; */
     animation: startAnimation 2.5s ease-in;
 
 }
@@ -198,7 +198,7 @@
 .description {
   font-size: 24px;
   line-height: 1.3;
-  max-width: 582px;
+  width: 582px;
   font-weight: 400;
   position: relative;
   z-index: 9999;
@@ -215,11 +215,13 @@
 
 .deliveryImg {
   position: absolute;
-  width: 475px;
+  width: 500px;
+  height: 300px;
   bottom: -210px;
   left: 365px;
   z-index: 9;
   transition: opacity 0.6s linear;
+
 }
 
 .logoImg {
@@ -291,19 +293,167 @@
 /* ========================= */
 /* Responsive Adjustments    */
 /* ========================= */
+/* 67% */
+@media (min-width:2201px) {
+  *{
+    color: aqua;
+  }
+  .recentWork{
+    font-size: 5em;
+   
+  }
+  .container {
+    width: 1800px;
+    border: solid
+  }
+  .title{
+    font-size: 6em;
+  }
+  .description{
+    font-size: 2em;
+    width: 770px !important;
+  }
 
-@media (max-width: 1440px) {
-  .rapidtrade {
+    .rapidtrade {
     padding: 16px 65px;
   }
 
   .deliveryImg {
-    width: 400px;
-    left: 425px;
+    width: 710px;
+    height: 500px;
+    left: 525px;
+    bottom: -350px;
   }
 
   .logoImg {
-    width: 250px;
+    width: 450px;
+    bottom: -350px;
+  }
+  .rapidTradeViewSite svg{
+    margin-top: 30px;
+    width: 180px;
+  }
+}
+
+@media screen and (min-width:1800px) and (max-width: 2200px) {
+    *{
+    color: blue;
+  }
+   .recentWork{
+    font-size: 4.5em;
+
+  }
+  .container {
+    width: 1400px;
+    /* border: solid */
+  }
+  .title{
+    font-size: 5em;
+  }
+  .description{
+    font-size: 1.8em;
+    width: 700px !important;
+  }
+   .rapidtrade {
+    /* padding: 16px 65px; */
+  }
+
+  .deliveryImg {
+    width: 650px;
+    height: 350px;
+    left: 360px;
+    bottom: -250px;
+  }
+
+  .logoImg {
+    width: 350px;
+    bottom: -250px;
+  }
+  .rapidTradeViewSite svg{
+    margin-top: 30px;
+    width: 130px;
+  }
+}
+
+@media screen and (min-width:1600px) and (max-width: 1799px) {
+    *{
+    color: coral;
+  }
+   .recentWork{
+    font-size: 4em;
+
+  }
+  .container {
+    width: 1300px;
+    border: solid
+  }
+  .title{
+    font-size: 4em;
+  }
+  .description{
+    font-size: 1.6em;
+    width: 700px !important;
+  }
+   .rapidtrade {
+    /* padding: 16px 65px; */
+  }
+
+  .deliveryImg {
+    width: 550px;
+    height: 350px;
+    left: 360px;
+    bottom: -250px;
+  }
+
+  .logoImg {
+    width: 350px;
+    bottom: -250px;
+  }
+  .rapidTradeViewSite svg{
+    margin-top: 30px;
+    width: 130px;
+  }
+}
+/* 110% */
+
+@media (max-width: 1390px) {
+  *{
+    color: darkgreen;
+  }
+   .recentWork{
+    font-size: 3em;
+
+  }
+  .container {
+    width: 1100px;
+    /* border: solid; */
+    height: 75vh;
+  }
+  .title{
+    font-size: 3em;
+  }
+  .description{
+    font-size: 1.4em;
+    width: 550px !important;
+  }
+   .rapidtrade {
+    /* padding: 16px 65px; */
+  }
+
+  .deliveryImg {
+    width: 450px;
+    height: 250px;
+    left: 320px;
+    bottom: -150px;
+  }
+
+  .logoImg {
+    width: 280px;
+    bottom: -170px;
+  }
+  .rapidTradeViewSite svg{
+    /* margin-top: 30px; */
+    width: 90px;
   }
 }
 
