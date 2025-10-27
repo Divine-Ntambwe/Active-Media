@@ -167,10 +167,11 @@ export default function About_Us() {
                 Active Media consists of a team of <br />
                 people that are passionate about what <br />
                 they do and strive to ensure that only <br />
-                the very best service is offered to our <br />
+                the very best service is offered to our 
                 clients.
                 <br />
-                We stand by our company ethics - ensuring honesty, authenticity and
+                We stand by our company ethics -<br/>
+                 ensuring honesty, authenticity and
                 excellence.
                 <br />
                 You have ideas. We have software solutions

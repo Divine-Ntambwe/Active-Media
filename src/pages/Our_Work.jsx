@@ -49,6 +49,7 @@ const Recent_Work = () => {
           recentWork.current.classList.add(styles.disappear);
           setTimeout(() => {
             nav("/contact-us");
+            window.removeEventListener("wheel", handleScroll);
           }, 1000);
         }
         setFade(true);

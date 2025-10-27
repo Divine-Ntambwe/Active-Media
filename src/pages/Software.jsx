@@ -153,7 +153,7 @@ export default function Software() {
     };
 
     setTimeout(() => {
-      if (window.matchMedia("(max-width:2201px) and (min-width: 1025px)").matches){
+      if (window.matchMedia("(min-width: 1025px)").matches){
 
         window.addEventListener("wheel", handleScroll);
         return () => window.removeEventListener("wheel", handleScroll);

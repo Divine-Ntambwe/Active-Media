@@ -197,11 +197,11 @@ h5{
     height: 50vh;
 }
 
-.phoneImage{
-  margin-left: auto ;
-    /* height: 43vh;
-    width: 30%; */
-    /* margin: 1% 0 0 22%; */
+.phoneImg{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  
 }
 
 .title{
@@ -333,7 +333,6 @@ h5 {
   text-align-last: right !important;
   font-weight: 300;
   /* margin-left: auto; */
- 
 }
 
 .passionate {
@@ -355,15 +354,23 @@ h5 {
   object-fit: fill !important;
 }
 
+.image1{
+  width: 530px !important;
+}
+
 .oneImage {
   margin-left: auto;
 }
 
 .paragraph {
-  font-size: 1.1em;
-  font-weight: 300;
+  
   font-family: "Inter", sans-serif;
   width: 400px;
+}
+
+.paragraph, .teamText {
+font-size: 1.4em;
+font-weight: 200;
 }
 
 .title {
@@ -388,7 +395,9 @@ h5 {
   border: none;
   border-radius: 3px;
 }
-
+.experties, .passionate {
+  margin-top: 10px;
+}
 /* Slide 4 */
 /* .div4 {
   background: #ffd93d;
@@ -1083,3 +1092,157 @@ body {
       width: 100%;
     }
     }
+
+
+/* FIXING UP RESPONSIVENESS */
+/* 67% */
+@media (min-width:2201px) {
+  *{
+    color: red;
+  }
+
+  .div1 h2{
+    font-size: 4em !important;
+    left: 10%;
+  }
+  .div1 p {
+    font-size: 1.5em;
+  }
+  .topLeftN{
+    margin-top: 30px !important;
+    left: 10%;
+  }
+  .bottomLeft{
+    left: 20%;
+  }
+}
+
+@media (min-width:2201px) {
+  *{
+    /* color: red; */
+  }
+/* SLIDE ONE */
+  .div1 h2{
+    font-size: 4em !important;
+    left: 10%;
+  }
+  .div1 p {
+    font-size: 1.5em;
+  }
+  .topLeftN{
+    margin-top: 30px !important;
+    left: 10%;
+  }
+  .bottomLeft{
+    left: 20%;
+  }
+
+  /* SLIDE TWO */
+
+  .bigText{
+    font-size: 3.5em !important;
+  }
+
+  .aimParagraph,.multimediaParagraph, .multimedia,.teamText,.paragraph{
+    font-size: 2.1em;
+  }
+  .mediaContent{
+    padding-top: 0 !important;
+  }
+  .mediaImage{
+    height: 34.5vh;
+  }
+  .software {
+    font-size: 1.3em !important;
+  }
+  /* SLIDE THREE */
+  .paragraph{
+    width: 600px;
+  }
+  .container1{
+  height: 450px;
+  }
+
+  .experties, .passionate{
+    font-size: 1.5em;
+    height: 40px;
+    width: 180px;
+    margin-top: 10px;
+  }
+
+  .div3 img, .phoneImg img{
+    width: 700px !important;
+    height: 390px;
+  }
+
+  .div3 h5, .div3 h1 {
+    font-size: 2em;
+  }
+
+  
+}
+/* 80% */
+@media screen and (min-width:1800px) and (max-width: 2200px) {
+*{
+    /* color: blue; */
+  }
+  /* SLIDE ONE */
+  .div1 h2{
+    font-size: 3.5em !important;
+    left: 10%;
+  }
+  .div1 p {
+    font-size: 1.25em;
+  }
+  .topLeftN{
+    margin-top: 30px !important;
+    left: 10%;
+  }
+  .bottomLeft{
+    left: 20%;
+  }
+
+  /* SLIDE TWO */
+  .bigText{
+    font-size: 3.2em !important;
+  }
+
+  .aimParagraph,.multimediaParagraph, .multimedia,.teamText,.paragraph{
+    font-size: 1.7em;
+  }
+  .mediaContent{
+    padding-top: 0 !important;
+  }
+  .mediaImage{
+    height: 34.5vh;
+  }
+  .software {
+    font-size: 1.3em !important;
+  }
+  /* SLIDE THREE */
+  .teamText, .paragraph{
+    font-size: 1.8em;
+  }
+  .paragraph{
+    width: 600px;
+  }
+  .container1{
+  height: 400px;
+  }
+
+  .experties, .passionate{
+    font-size: 1.2em;
+    height: 35px;
+    width: 180px;
+    margin-top: 10px;
+  }
+
+  .div3 img, .phoneImg img{
+    width: 660px !important;
+    height: 340px !important;
+  }
+
+  .div3 h5, .div3 h1 {
+    font-size: 2em;
+  }
+}

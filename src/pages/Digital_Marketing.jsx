@@ -33,7 +33,7 @@ const Digital_Marketing = () => {
   const [smallScreenSize,setSmallScreen] = useState(false)
 
   useEffect(() => {
-    setSmallScreen(!window.matchMedia("(max-width:2201px) and (min-width: 1025px)").matches)
+    setSmallScreen(!window.matchMedia("(min-width: 1025px)").matches)
     function handleScroll(deltaY) {
       if (deltaY > 25) {
         if (index === 0) {
