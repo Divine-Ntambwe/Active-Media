@@ -296,7 +296,7 @@
 /* 67% */
 @media (min-width:2201px) {
   *{
-    color: aqua;
+    /* color: aqua; */
   }
   .recentWork{
     font-size: 5em;
@@ -337,7 +337,7 @@
 
 @media screen and (min-width:1800px) and (max-width: 2200px) {
     *{
-    color: blue;
+    /* color: blue; */
   }
    .recentWork{
     font-size: 4.5em;
@@ -377,7 +377,7 @@
 
 @media screen and (min-width:1600px) and (max-width: 1799px) {
     *{
-    color: coral;
+    /* color: coral; */
   }
    .recentWork{
     font-size: 4em;
@@ -416,9 +416,9 @@
 }
 /* 110% */
 
-@media (max-width: 1390px) {
+@media (max-width: 1390px) and (min-width: 1223px) {
   *{
-    color: darkgreen;
+    /* color: darkgreen; */
   }
    .recentWork{
     font-size: 3em;
@@ -457,256 +457,45 @@
   }
 }
 
-/* Tablets & Medium Screens (1024px - 1439px) */
-@media (max-width: 1024px) {
-  .rapidtrade {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 225px 30px 60px;
-    height: auto;
-    min-height: 100vh;
-    margin-left: 0;
-  }
+/* 120% +*/
 
-  .leftSection {
-    max-width: 100%;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 40px;
+@media (max-width: 1224px) and (min-width: 1024px)  {
+  *{
+    /* color:fuchsia; */
   }
+   .recentWork{
+    font-size: 3em;
 
-  .title {
-    margin-bottom: 20px;
-    font-size: 50px;
   }
-
-  .description {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto 30px;
-    font-size: 20px;
-  }
-
-  .rapidTradeViewSite {
-    display: flex;
-    justify-content: center;
-  }
-
-  .deliverySection {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .deliveryImg {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    left: 0;
-    bottom: 0;
-  }
-
-  .logoImg {
-    position: relative;
-    width: 50%;
-    max-width: 300px;
-    top: auto;
-    left: auto;
-    bottom: auto;
-    margin: 30px auto;
-    display: block;
-  }
-
-  .websitePreview {
-    position: relative;
-    margin-top: 40px;
-    margin-left: 0;
-  }
-
-  .viewSite {
-    position: relative;
-    margin-bottom: 30px;
-  }
-
-  .responsiveCenter {
-    width: 100%;
-  }
-
-  .wrapper {
-    flex-direction: column;
-    padding: 40px 30px;
-    gap: 40px;
-  }
-
-  .left {
-    width: 100%;
-  }
-
-  .right {
-    width: 100%;
-  }
-
-  .heading {
-    width: 100%;
-  }
-
-  .logoCard {
-    position: relative;
-    width: 80%;
-    max-width: 400px;
-    height: 60vh;
-    margin-top: 0;
-  }
-}
-
-/* Small Tablets & Large Mobile (768px - 1023px) */
-@media (max-width: 768px) {
   .container {
-    display: block;
+    width: 1000px;
+    /* border: solid; */
+    height: 75vh;
   }
-
-  .rapidtrade {
-    padding: 30px 20px 50px;
-    margin-left: 0;
+  .title{
+    font-size: 2.7em;
   }
-
-  .title {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
-    letter-spacing: 2px;
-    margin-bottom: 15px;
+  .description{
+    font-size: 1.1em;
+    width: 500px !important;
   }
-
-  .description {
-    font-size: 0.95rem;
-    line-height: 1.4;
-    max-width: 100%;
-    margin-bottom: 25px;
-  }
-
-  .rapidTradeViewSite svg {
-    width: 80px;
-    height: 52px;
+   .rapidtrade {
+    /* padding: 16px 65px; */
   }
 
   .deliveryImg {
-    width: 80%;
-    max-width: 700px;
+    width: 450px;
+    height: 250px;
+    left: 210px;
+    bottom: -150px;
   }
 
   .logoImg {
-    display: none;
+    width: 280px;
+    bottom: -170px;
   }
-
-  .recentWork {
-    font-size: 2rem;
-    width: 250px;
-  }
-
-  .responsiveCenter {
-    width: 100%;
-  }
-
-  .wrapper {
-    padding: 30px 20px;
-    gap: 30px;
-  }
-
-  .heading {
-    font-size: 2.5rem;
-    letter-spacing: 3px;
-  }
-
-  .logoCard {
-    height: 50vh;
-    width: 85%;
-  }
-}
-
-/* Small Mobile (max 480px) */
-@media (max-width: 480px) {
-  html, body {
-    width: 100%;
-  }
-
-  .container {
-    height: 1514px;
-    width: 780px;
-  }
-
-  .rapidtrade {
-    padding: 20px 12px 30px;
-    margin-left: 0;
-  }
-
-  .title {
-    font-size: 35px;
-    letter-spacing: 0px;
-    margin-bottom: 10px;
-    word-break: break-word;
-  }
-
-  .description {
-    font-size: 0.85rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-  }
-
-  .rapidTradeViewSite svg {
-    width: 60px;
-    height: 40px;
-  }
-
-  .deliveryImg {
-    width: 90%;
-    max-width: 280px;
-    bottom: -80px;
-  }
-
-  .logoImg {
-    width: 70%;
-    max-width: 180px;
-    bottom: -60px;
-  }
-
-  .recentWork {
-    font-size: 1.2rem;
-    width: 180px;
-    top: 35vh;
-    left: -12vw;
-  }
-
-  .heading {
-    font-size: 1.8rem;
-    width: 100%;
-  }
-
-  .paragraph1 {
-    max-width: 100%;
-    font-size: 0.9rem;
-  }
-
-  .wrapper {
-    flex-direction: column;
-    padding: 20px;
-    gap: 30px;
-  }
-
-  .left {
-    flex: 1;
-    width: 100%;
-  }
-
-  .right {
-    flex: 0.5;
-    width: 100%;
-  }
-
-  .logoCard {
-    height: 50vh;
-    width: 100%;
-    margin-top: 0;
+  .rapidTradeViewSite svg{
+    /* margin-top: 30px; */
+    width: 90px;
   }
 }

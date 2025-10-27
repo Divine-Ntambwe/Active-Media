@@ -356,14 +356,271 @@ Icons
     /* background-color: red; */
 }
 
-/* .moveRW{
-    animation: moveRW 2.7s none ease-out;
-} */
+/* RESPONSIVENESS */
+
+/* --LAPTOP SIZES-- */
+
+/* 67% */
+
+@media (min-width:2201px) {
+    *{
+        /* color: red; */
+    }
+    :root{
+    --cardRefDim: 700px;
+}
+    .digitalBackground{
+transform: scale(0.9) rotate(-90deg);
+}
+   .designMarketingPage h1{
+    font-size: 6.3em !important;
+    
+}
+
+    .paragraphs{
+        font-size: 2.6em;
+        padding:80px 0 50px 0;
+    }
+
+    @keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-850px)}
+}
+
+    @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-850px}
+}
+
+}
+
+
+/* 80% */
+@media screen and (min-width:1800px) and (max-width: 2200px) {
+*{
+    /* color: pink;     */
+
+}
+
+.digitalBackground{
+transform: scale(0.8) rotate(-90deg);
+}
+
+.designMarketingPage h1{
+    font-size: 5em !important;
+}
+
+.paragraphs{
+    font-size: 2em;
+    padding: 0 100px;
+}
+:root{
+    --cardRefDim: 590px;
+}
+
+.lastFour{
+ grid-template-columns: 45% 45%; 
+ grid-template-rows: 33%;  
+}
+
+.cardSix{
+ margin-left: 220px;
+}
+
+    @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-780px}
+}
+
+@keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-550px)}
+}
+
+}
+
+/* 90% */
+@media screen and (min-width:1690px) and (max-width: 1799px) {
+   *{
+  /* color: aqua; */
+ }
+
+ .designMarketingPage h1{
+    font-size: 4em !important;
+}
+
+.paragraphs{
+    font-size: 1.8em;
+    padding: 0 10px;
+}
+
+:root{
+    --cardRefDim: 540px;
+}
+ @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-700px}
+}
+
+
+} 
+
+
+
+/* 110 */
+@media screen and (max-width: 1400px) and (min-width: 1300px) {
+  *{
+    /* color: darkmagenta; */
+  }
+  .digitalBackground{
+transform: scale(0.55) rotate(-90deg);
+}
+
+  .designMarketingPage h1{
+    font-size: 3.6em !important;
+}
+:root{
+    --cardRefDim: 450px;
+}
+.paragraphs{
+    font-size: 1.3em;
+    padding: 20px 40px 0px 40px;
+}
+
+.lastFour{
+ grid-template-columns: 40% 40%;   
+}
+
+.cardSix{
+    margin-left: 150px;
+}
+
+     @keyframes moveUp {
+      0%{transform:translateY(0px);}
+    100%{transform:translateY(-500px)}
+} 
+
+  @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-570px}
+}
+ 
+}
+/* 120 */
+
+@media screen and (max-width: 1301px) and (min-width:1120px) {
+  *{
+    color:fuchsia;
+  }
+.digitalBackground{
+transform: scale(0.55) rotate(-90deg);
+}
+  
+  .designMarketingPage h1{
+    font-size: 3.6em !important;
+}
+
+.paragraphs{
+    font-size: 1.3em;
+    padding: 20px 40px 0px 40px;
+}
+
+:root{
+    --cardRefDim: 400px;
+}
+
+.lastFour{
+ grid-template-columns: 40% 40%;   
+}
+
+.cardSix{
+    margin-left: 150px;
+}
+
+     @keyframes moveUp {
+      0%{transform:translateY(0px);}
+    100%{transform:translateY(-450px)}
+} 
+
+  @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-550px}
+}
+
+}
+
+/* --TABLETS-- */
+
+/* 150 */
+@media screen and (max-width:1121px) and (min-width: 1025px) {
+  *{
+    /* color:green */
+ 
+}
+.digitalBackground{
+transform: scale(0.7) rotate(-90deg);
+}
+
+.container{
+    padding-top: 2em;
+}
+
+ 
+  .designMarketingPage h1{
+    font-size: 3.5em !important;
+}
+.wrapper{
+    margin-top: 0px !important;
+}
+.paragraphs{
+    font-size: 1.3em;
+    padding: 10px 40px 40px 40px;
+}
+   
+:root{
+    --cardRefDim: 420px;
+}
+
+.lastFour{
+ grid-template-columns: 40% 40%;  
+ grid-template-rows: 35%;
+}
+
+.cardSix{
+    margin-left: 120px;
+}
+
+.lastFour img{
+height: calc(var(--cardRefDim) - 110px);
+width: calc(var(--cardRefDim) - 110px);
+}
+
+.cardFive img, .cardFour img{
+height: calc(var(--cardRefDim) - 30px) !important;
+width: calc(var(--cardRefDim) - 30px);
+
+}
+
+
+
+@keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-350px)}
+} 
+
+  @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-500px}
+}
+}
+
+/* --BIG PHONES-- */
 
 
 @media (max-width: 1024px)  {
+    
     *{
-        /* color:gold ; */
+        color:gold ;
     }
     .digitalBackground {
         transform: scale(0.5) rotate(-90deg);
@@ -421,22 +678,6 @@ Icons
         transition: 1.5s;
     }
 
-    /* .cardOne img{
-        transform: rotate(8.5deg) !important;
-    } */
-
-    /* .cardTwo img{
-        transform: rotate(-25.9deg) !important;
-    } */
-
-    /* .cardFour img{
-        transform: rotate(15deg) !important;
-    }
-
-    .cardFive img{
-        transform: rotate(-31deg) !important;
-    } */
-
     @keyframes floating {
         0%{transform: translateY(0px);}
         100%{transform: translateY(-10px);}
@@ -457,10 +698,6 @@ Icons
 }
     
 }
-
-/* Medium screens (tablets, 577px to 768px) */
-
-
 
 @media (max-width: 993px) and (min-width: 500px) {
    *{
@@ -625,256 +862,13 @@ margin-bottom: 60px;
 }  
 }
 
-/* 110 */
-@media screen and (max-width: 1400px) and (min-width: 1300px) {
-  *{
-    /* color: darkmagenta; */
-  }
-  .digitalBackground{
-transform: scale(0.55) rotate(-90deg);
-}
-
-  .designMarketingPage h1{
-    font-size: 3.6em !important;
-}
-:root{
-    --cardRefDim: 450px;
-}
-.paragraphs{
-    font-size: 1.3em;
-    padding: 20px 40px 0px 40px;
-}
-
-.lastFour{
- grid-template-columns: 40% 40%;   
-}
-
-.cardSix{
-    margin-left: 150px;
-}
-
-     @keyframes moveUp {
-      0%{transform:translateY(0px);}
-    100%{transform:translateY(-500px)}
-} 
-
-  @keyframes moveUp2 {
-    0%{top:0px;}
-    100%{top:-570px}
-}
 
 
 
- 
-}
-
-@media screen and (max-width: 1301px) and (min-width:1120px) {
-  *{
-    /* color:fuchsia */
-  }
-.digitalBackground{
-transform: scale(0.55) rotate(-90deg);
-}
-  
-  .designMarketingPage h1{
-    font-size: 3.6em !important;
-}
-
-.paragraphs{
-    font-size: 1.3em;
-    padding: 20px 40px 0px 40px;
-}
-
-:root{
-    --cardRefDim: 400px;
-}
-
-.lastFour{
- grid-template-columns: 40% 40%;   
-}
-
-.cardSix{
-    margin-left: 150px;
-}
-
-     @keyframes moveUp {
-      0%{transform:translateY(0px);}
-    100%{transform:translateY(-450px)}
-} 
-
-  @keyframes moveUp2 {
-    0%{top:0px;}
-    100%{top:-550px}
-}
-
-}
-
-@media screen and (max-width:1121px) and (min-width: 1028px) {
-  *{
-    /* color:green */
- 
-}
-.digitalBackground{
-transform: scale(0.5) rotate(-90deg);
-}
-
-.container{
-    padding-top: 2em;
-}
-
- 
-  .designMarketingPage h1{
-    font-size: 2.7em !important;
-}
-.wrapper{
-    margin-top: 0px !important;
-}
-.paragraphs{
-    font-size: 0.95em;
-    padding: 10px 40px 40px 40px;
-}
-   
-:root{
-    --cardRefDim: 340px;
-}
-
-.lastFour{
- grid-template-columns: 40% 40%;  
- grid-template-rows: 30%;
-}
-
-.cardSix{
-    margin-left: 120px;
-}
-
-.lastFour img{
-height: calc(var(--cardRefDim) - 110px);
-width: calc(var(--cardRefDim) - 110px);
-}
-
-.cardFive img, .cardFour img{
-height: calc(var(--cardRefDim) - 30px) !important;
-width: calc(var(--cardRefDim) - 30px);
-
-}
 
 
 
-@keyframes moveUp {
-    0%{transform:translateY(0px);}
-    100%{transform:translateY(-350px)}
-} 
-
-  @keyframes moveUp2 {
-    0%{top:0px;}
-    100%{top:-425px}
-}
-}
 
 
-/* LARGER SCREENS */
-/* 90% */
-
-@media screen and (min-width:1690px) and (max-width: 1799px) {
-   *{
-  /* color: aqua; */
- }
-
- .designMarketingPage h1{
-    font-size: 4em !important;
-}
-
-.paragraphs{
-    font-size: 1.8em;
-    padding: 0 10px;
-}
-
-:root{
-    --cardRefDim: 540px;
-}
- @keyframes moveUp2 {
-    0%{top:0px;}
-    100%{top:-700px}
-}
 
 
-}
-
-/* 80% */
-
-@media screen and (min-width:1800px) and (max-width: 2200px) {
-*{
-    /* color: pink; */
-
-}
-
-.digitalBackground{
-transform: scale(0.8) rotate(-90deg);
-}
-
-.designMarketingPage h1{
-    font-size: 5em !important;
-}
-
-.paragraphs{
-    font-size: 2em;
-    padding: 0 100px;
-}
-:root{
-    --cardRefDim: 590px;
-}
-
-.lastFour{
- grid-template-columns: 45% 45%; 
- grid-template-rows: 33%;  
-}
-
-.cardSix{
- margin-left: 220px;
-}
-
-    @keyframes moveUp2 {
-    0%{top:0px;}
-    100%{top:-780px}
-}
-
-@keyframes moveUp {
-    0%{transform:translateY(0px);}
-    100%{transform:translateY(-550px)}
-}
-
-}
-
-/* 67% */
-
-@media (min-width:2201px) {
-    *{
-        /* color: red; */
-    }
-    :root{
-    --cardRefDim: 700px;
-}
-    .digitalBackground{
-transform: scale(0.9) rotate(-90deg);
-}
-   .designMarketingPage h1{
-    font-size: 6.3em !important;
-    
-}
-
-    .paragraphs{
-        font-size: 2.6em;
-        padding:80px 0 50px 0;
-    }
-
-    @keyframes moveUp {
-    0%{transform:translateY(0px);}
-    100%{transform:translateY(-850px)}
-}
-
-    @keyframes moveUp2 {
-    0%{top:0px;}
-    100%{top:-850px}
-}
-
-}
