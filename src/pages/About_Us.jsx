@@ -14,30 +14,113 @@ export default function About_Us() {
   const purpleLines = useRef();
   const slidesCount = 4;
   const nav = useNavigate()
+  const ac = new AbortController();
+
+
 
   useEffect(() => {
-    const handleWheel = (e) => {
-      e.preventDefault(); // prevent vertical scroll
+  const handleWheel = (e) => {
+    e.preventDefault();
 
-      if (isScrolling.current) return;
-      isScrolling.current = true;
+    if (isScrolling.current) return;
+    isScrolling.current = true;
 
-      if (e.deltaY > 0) {
-        setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
-        
+    if (e.deltaY > 20) {
+      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
+    } else if (e.deltaY < -15) {
+      setCurrentSlide((prev) => Math.max(0, prev - 1));
+    }
 
-      } else {
-        setCurrentSlide((prev) => Math.max(0, prev - 1));
-      }
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 700);
+  };
 
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, 700);
-    };
+  let touchStartY = 0;
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, []);
+  const handleTouchStart = (e) => {
+    touchStartY = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaY = touchStartY - touchEndY;
+
+    if (isScrolling.current) return;
+    isScrolling.current = true;
+
+    if (deltaY > 20) {
+      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
+    } else if (deltaY < -15) {
+      setCurrentSlide((prev) => Math.max(0, prev - 1));
+    }
+
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 700);
+  };
+
+  window.addEventListener("wheel", handleWheel, { passive: false });
+  window.addEventListener("touchstart", handleTouchStart, { passive: true });
+  window.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+  return () => {
+    window.removeEventListener("wheel", handleWheel);
+    window.removeEventListener("touchstart", handleTouchStart);
+    window.removeEventListener("touchend", handleTouchEnd);
+  };
+}, []);useEffect(() => {
+  const handleWheel = (e) => {
+    e.preventDefault();
+
+    if (isScrolling.current) return;
+    isScrolling.current = true;
+
+    if (e.deltaY > 20) {
+      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
+    } else if (e.deltaY < -15) {
+      setCurrentSlide((prev) => Math.max(0, prev - 1));
+    }
+
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 700);
+  };
+
+  let touchStartY = 0;
+
+  const handleTouchStart = (e) => {
+    touchStartY = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaY = touchStartY - touchEndY;
+
+    if (isScrolling.current) return;
+    isScrolling.current = true;
+
+    if (deltaY > 20) {
+      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
+    } else if (deltaY < -15) {
+      setCurrentSlide((prev) => Math.max(0, prev - 1));
+    }
+
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 700);
+  };
+
+  window.addEventListener("wheel", handleWheel,{ signal: ac.signal });
+  window.addEventListener("touchstart", handleTouchStart,{ signal: ac.signal });
+  window.addEventListener("touchend", handleTouchEnd, { signal: ac.signal });
+
+  return () => {
+    window.removeEventListener("wheel", handleWheel);
+    window.removeEventListener("touchstart", handleTouchStart);
+    window.removeEventListener("touchend", handleTouchEnd);
+  };
+}, []);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -65,12 +148,13 @@ export default function About_Us() {
       return
 
       case 3: nav("/software")
+      ac.abort();
     }
 
   }, [currentSlide]);
 
   return (
-    <>
+    <div className={styles.softwarePage}>
       <Navbar/>
     <section className={styles.aboutSection}>
       {/* PurpleLines always behind everything */}
@@ -167,10 +251,11 @@ export default function About_Us() {
                 Active Media consists of a team of <br />
                 people that are passionate about what <br />
                 they do and strive to ensure that only <br />
-                the very best service is offered to our <br />
+                the very best service is offered to our 
                 clients.
                 <br />
-                We stand by our company ethics - ensuring honesty, authenticity and
+                We stand by our company ethics -<br/>
+                 ensuring honesty, authenticity and
                 excellence.
                 <br />
                 You have ideas. We have software solutions
@@ -207,6 +292,6 @@ export default function About_Us() {
         </div>
       </div>
     </section>
-    </>
+    </div>
   );
 }
