@@ -1222,6 +1222,9 @@
 
 
 @media (width: 360px) and (height: 740px) {
+  *{
+    color: yellowgreen;
+  }
   .container {
     height: auto;
     overflow: visible !important;
@@ -1316,7 +1319,9 @@
   .rapidTradeViewSite svg {
     width: 100px;
     height: 100px;
-    margin-bottom: -20vh;
+    margin-bottom: 0vh;
+    top: 60vw !important;
+    position: relative !important;
   }
 
   .recentWork {

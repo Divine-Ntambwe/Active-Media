@@ -741,6 +741,9 @@ body {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .experties,.passionate,.software{
+    display: none;
+  }
   .containerB { padding: 5vh 6vw; }
   .bigText {
     font-size: 22px;
@@ -1362,6 +1365,15 @@ left: 20%;
   *{
     /* color: purple; */
   }
+  .div2 {
+    top: -120px;
+    position: relative;
+  }
+  .bigText {
+    height: 13vh !important;
+    font-size: 1.1em;
+    padding-top: 10px;
+  }
   .teamText, .paragraph{
     font-size: 0.8em !important;
   }
@@ -1402,23 +1414,23 @@ left: 20%;
     margin: auto;
    }
    .SoftwareSection{
-    border: solid;
+    /* border: solid; */
     display: flex;
     justify-content: center;
     align-items: center;
-     margin-top: 5vh !important;
+     margin-top: 7.5vh !important;
    }
    .bottomLeftN {
     width: 50vw;
    }
    .rightBlockN {
     box-sizing: border-box;
-    margin-top: 14vh;
+    margin-top: 11vh;
     padding-right: 40vw !important;
     text-align: left;
    }
    .div1 p {
-    font-size: 0.9em;
+    font-size: 0.8em;
    }
    .laptopWrapper{
     left: 43% !important;
