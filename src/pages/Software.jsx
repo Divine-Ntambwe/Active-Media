@@ -318,6 +318,29 @@ export default function Software() {
   // }, [topMV, leftMV, widthMV]);
 
   // const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const bottomDivRef = useRef(null);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      document.body.style.transition = "opacity 1s ease";
+      document.body.style.opacity = "0";
+
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+
+      setTimeout(() => {
+        document.body.style.opacity = "1";
+        nav("/design-marketing");
+      }, 1000); 
+    }
+  }, { threshold: 0.5 });
+
+  const current = bottomDivRef.current;
+  if (current) observer.observe(current);
+
+  return () => current && observer.unobserve(current);
+}, [nav]);
+
 
   return (
     <div className={styles.softwarePage}>
@@ -371,6 +394,7 @@ export default function Software() {
             </p>
           </div>
         </div>
+        
 
         {/* Slide 2 (Cloud-Based Solutions) */}
         <div
@@ -386,7 +410,7 @@ export default function Software() {
             </div>
 
             <div className={styles.right}>
-                           <p className={`${styles.pinkBox1} ${styles.pinkBox}`} ref={par3}>
+                           <p id={`${styles.edit}`}  className={`${styles.pinkBox1} ${styles.pinkBox}`} ref={par3}>
                 Whether you want to move your
                 <br />
                 current solutions to the cloud or
@@ -413,7 +437,7 @@ export default function Software() {
           </div>
         </div>
         {/* Ozias(start) */}
-        {/* Ozias(End) */}
+        {/*  */}
         {/* Slide 3 (ECommerce) */}
 
         <div
@@ -464,9 +488,8 @@ export default function Software() {
           </div>
         </div>
       </section>
-       <button onClick={()=>{ nav("/design-marketing")}} className={styles.cta} aria-label="Our Services">
-            Our Services <span className={styles.arrow}>›</span>
-        </button>
+      <div ref={bottomDivRef} className="navigateToMarketing"></div>
+
     </div>
   );
 }
