@@ -48,8 +48,8 @@ const Recent_Work = () => {
         if (diff > 30 && currentIndex === headings.length - 1) {
           recentWork.current.classList.add(styles.disappear);
           setTimeout(() => {
-            nav("/contact-us");
             window.removeEventListener("wheel", handleScroll);
+            nav("/contact-us");
           }, 1000);
         }
         setFade(true);

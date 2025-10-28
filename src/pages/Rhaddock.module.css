@@ -6,7 +6,7 @@
   height: 80vh;
   overflow: hidden !important;
   transition: 1s;
-  /* animation: startAnimation 2.5s ease-in; */
+  animation: startAnimation 2.5s ease-in;
   display: flex;
   flex-direction: column;
   justify-content: center;

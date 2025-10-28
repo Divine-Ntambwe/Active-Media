@@ -1190,7 +1190,7 @@ body {
 
 @media screen and (min-width:1391px) and (max-width: 1599px) {
 *{
-  color: orangered;
+  /* color: orangered; */
 }
 .bottomLeftN{
 left: 20%;
@@ -1200,7 +1200,7 @@ left: 20%;
 /* 110% */
 @media (max-width: 1390px) and (min-width: 1230px) {
 *{
-  color: palegreen;
+  /* color: palegreen; */
 }
  /* SLIDE ONE */
   .div1 h2{
@@ -1293,7 +1293,7 @@ left: 20%;
 
 @media (max-width: 501px) and (min-width: 400px) {
   *{
-    color: gold;
+    /* color: gold; */
   }
   .teamText, .paragraph{
     font-size: 0.8em !important;
@@ -1360,7 +1360,7 @@ left: 20%;
 
 @media (max-width: 399px) {
   *{
-    color: purple;
+    /* color: purple; */
   }
   .teamText, .paragraph{
     font-size: 0.8em !important;

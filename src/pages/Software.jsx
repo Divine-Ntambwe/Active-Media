@@ -143,6 +143,7 @@ export default function Software() {
            
 
             setTimeout(() => {
+              window.addEventListener("wheel", handleScroll);
               nav("/design-marketing");
             }, 1000);
           }

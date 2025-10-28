@@ -32,6 +32,7 @@ const Digital_Marketing = () => {
   const [smallScreenSize, setSmallScreen] = useState(false);
 
   useEffect(() => {
+    const ac = new AbortController();
     setSmallScreen(!window.matchMedia("(min-width: 1025px)").matches);
     function handleScroll(deltaY) {
       if (deltaY > 25) {
@@ -58,17 +59,19 @@ const Digital_Marketing = () => {
             BGImg.current.style.left = "800px";
             BGImg.current.style.top = "-150px";
             setTimeout(() => {
+              ac.abort();
               BGImg.current.classList.add(styles.disappear);
-              nav("/recent");
               window.removeEventListener("wheel", onWheel);
               window.removeEventListener("touchstart", onTouchStart);
               window.removeEventListener("touchmove", onTouchMove);
+              nav("/recent");
             }, 800);
           } else {
             lastFour.current.style.transform = "translateY(var(--lastTwo))";
           }
         }
         if (index == 3) {
+          ac.abort();
           nav("/recent");
         }
         setIndex(index + 1);
@@ -93,9 +96,9 @@ const Digital_Marketing = () => {
     }
 
     setTimeout(() => {
-      window.addEventListener("wheel", onWheel);
-      window.addEventListener("touchstart", onTouchStart);
-      window.addEventListener("touchmove", onTouchMove);
+      window.addEventListener("wheel", onWheel,{ signal: ac.signal });
+      window.addEventListener("touchstart", onTouchStart,{ signal: ac.signal });
+      window.addEventListener("touchmove", onTouchMove,{ signal: ac.signal });
 
       return () => {
         window.removeEventListener("wheel", onWheel);
