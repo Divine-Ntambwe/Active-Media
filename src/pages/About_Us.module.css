@@ -767,8 +767,8 @@ body {
   *{
     /* color: red !important; */
   }
-  .bigText { font-size: 20px; height: 15vh;}
-  .aimParagraph { font-size: 14px;height: 20vh; }
+  .bigText { font-size: 20px; height: 12vh;}
+  .aimParagraph { font-size: 14px;height: 15vh; }
   .multimediaParagraph { font-size: 14px; }
   .software {  font-size: 11px; }
   .SoftwareSection{
@@ -828,48 +828,7 @@ body {
     }
     
     /* --- Tablets & Small Laptops  --- */
-    @media (max-width: 1024px) and (min-width: 601px) {
-      .aboutSectionN{
-        height: auto;
-      }
     
-      .laptopWrapperN {
-        right: -2%;
-        top: 8%;
-      }
-    
-      .laptopN {
-        max-width: 70%;
-      }
-    
-      .headingN {
-        font-size: 2rem; 
-        /* color: red; */
-         top: 8%;
-        left: 9%;
-      }
-    
-      .textBlockN {
-        font-size: 1rem;
-        width: 30%;
-      }
-    
-      .topLeftN {
-        top: 13%;
-        left: 9%;
-      }
-    
-      .bottomLeftN {
-        bottom: 20%;
-        left: 18%;
-      }
-    
-      .rightBlockN {
-        top: 25%;
-        right: 4%;
-        width: 30%;
-      }
-    }
     
     
     /* RESPONSIVENESS-MOBILE */
@@ -1096,26 +1055,6 @@ body {
 
 /* FIXING UP RESPONSIVENESS */
 /* 67% */
-@media (min-width:2201px) {
-  *{
-    color: red;
-  }
-
-  .div1 h2{
-    font-size: 4em !important;
-    left: 10%;
-  }
-  .div1 p {
-    font-size: 1.5em;
-  }
-  .topLeftN{
-    margin-top: 30px !important;
-    left: 10%;
-  }
-  .bottomLeft{
-    left: 20%;
-  }
-}
 
 @media (min-width:2201px) {
   *{
@@ -1245,4 +1184,127 @@ body {
   .div3 h5, .div3 h1 {
     font-size: 2em;
   }
+}
+
+/* 100% */
+
+@media screen and (min-width:1391px) and (max-width: 1599px) {
+*{
+  color: orangered;
+}
+.bottomLeftN{
+left: 20%;
+}
+}
+
+/* 110% */
+@media (max-width: 1390px) and (min-width: 1230px) {
+*{
+  color: palegreen;
+}
+ /* SLIDE ONE */
+  .div1 h2{
+    /* font-size: 3.5em !important; */
+    /* left: 10%; */
+  }
+  .div1 p {
+    font-size: 0.95em;
+  }
+  .div1 {
+    margin-top: 0 !important;
+    padding-top:0 !important ;
+    top: -2vh;
+  }
+  .topLeftN{
+    margin-top: 30px !important;
+    left: 10%;
+    color: blue;
+    width: 300px;
+  }
+  .bottomLeft{
+    left: 14%;
+    top:35%;
+  }
+
+  
+
+  /* SLIDE THREE */
+  .teamText, .paragraph{
+    font-size: 1.3em;
+  }
+   .div3 img, .phoneImg img{
+    width: 450px !important;
+    height: 240px !important;
+  }
+
+}
+
+/* 120% */
+
+@media screen and (min-width:1025px) and (max-width: 1229px) {
+*{
+  color:pink;
+}
+ /* SLIDE ONE */
+  .div1 h2{
+    font-size: 2em !important;
+    /* left: 10%; */
+  }
+  .div1 p {
+    font-size: 0.85em;
+  }
+  .div1 {
+    margin-top: 0 !important;
+    padding-top:0 !important ;
+    top: -5vh;
+  }
+  .laptopWrapper img{
+    position: relative;
+    transform: scale(0.9);
+    top: -8vh;
+    left: 6vw
+  }
+  .topLeftN{
+    margin-top: 30px !important;
+    left: 10%;
+    width: 300px;
+  }
+  .bottomLeft{
+    left: 14%;
+    top:35%;
+  }
+  /* SLIDE TWO */
+  .aimParagraph,.multimediaParagraph, .multimedia,.teamText,.paragraph{
+    font-size: 1.05em;
+  }
+
+  /* SLIDE THREE */
+  .teamText, .paragraph{
+    font-size: 1.2em;
+  }
+   .div3 img, .phoneImg img{
+    width: 430px !important;
+    height: 220px !important;
+  }
+
+}
+
+@media (max-width: 501px) and (min-width: 416px) {
+  *{
+    /* color: gold; */
+  }
+  .teamText, .paragraph{
+    font-size: 0.75em;
+  }
+  .teamText{
+    width: 100%;
+  }
+   .div3 img, .phoneImg img{
+    width: 100% !important;
+    height: 200px !important;
+  }
+  .paragraph {
+    width: 280px;
+  }
+
 }

@@ -510,7 +510,7 @@ transform: scale(0.55) rotate(-90deg);
 
 @media screen and (max-width: 1301px) and (min-width:1120px) {
   *{
-    color:fuchsia;
+    /* color:fuchsia; */
   }
 .digitalBackground{
 transform: scale(0.55) rotate(-90deg);
@@ -620,7 +620,7 @@ width: calc(var(--cardRefDim) - 30px);
 @media (max-width: 1024px)  {
     
     *{
-        color:gold ;
+        /* color:gold ; */
     }
     .digitalBackground {
         transform: scale(0.5) rotate(-90deg);
