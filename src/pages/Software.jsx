@@ -316,6 +316,29 @@ export default function Software() {
   // }, [topMV, leftMV, widthMV]);
 
   // const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const bottomDivRef = useRef(null);
+
+useEffect(() => {
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      document.body.style.transition = "opacity 1s ease";
+      document.body.style.opacity = "0";
+
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+
+      setTimeout(() => {
+        document.body.style.opacity = "1";
+        nav("/design-marketing");
+      }, 1000); 
+    }
+  }, { threshold: 0.5 });
+
+  const current = bottomDivRef.current;
+  if (current) observer.observe(current);
+
+  return () => current && observer.unobserve(current);
+}, [nav]);
+
 
   return (
     <div className={styles.softwarePage}>
@@ -412,7 +435,7 @@ export default function Software() {
           </div>
         </div>
         {/* Ozias(start) */}
-        {/* Ozias(End) */}
+        {/*  */}
         {/* Slide 3 (ECommerce) */}
 
         <div
@@ -463,6 +486,8 @@ export default function Software() {
           </div>
         </div>
       </section>
+      <div ref={bottomDivRef} className="navigateToMarketing"></div>
+
     </div>
   );
 }

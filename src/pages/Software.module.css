@@ -886,3 +886,8 @@ body {
     display: none;
   }
 }
+
+.fade-container {
+  transition: opacity 1s ease;
+  opacity: 1;
+}
