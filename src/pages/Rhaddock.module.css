@@ -65,6 +65,12 @@
 
 }
 
+.recentWorkPage{
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -504,7 +510,9 @@
   *{
     color: pink;
   }
-  
+  .container {
+    width: 100vw;
+  }
 }
 
 
