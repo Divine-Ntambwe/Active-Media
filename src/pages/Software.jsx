@@ -331,7 +331,7 @@ useEffect(() => {
       setTimeout(() => {
         document.body.style.opacity = "1";
         nav("/design-marketing");
-      }, 1000); 
+      }, 2000); 
     }
   }, { threshold: 0.5 });
 
@@ -461,7 +461,7 @@ useEffect(() => {
             </div>
 
             <div className={styles.rightSection}>
-              <p ref={par4} className={`${styles.pinkBox}`}>
+              <p ref={par4} className={`${styles.pinkBox} ${styles.pinkBox3}`}>
                 From entry level online stores to <br />
                 enterprise-grade solutions, we have <br />
                 the technical ability to deliver on your

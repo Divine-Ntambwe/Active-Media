@@ -717,7 +717,17 @@ body {
     padding: 1rem;
     font-size: 0.9rem;
     text-align: center;
-    width:100%;
+    width:85vw;
+  }
+
+  .pinkBox3{
+    width: 84vw;
+  }
+
+  .paragraphBox p {
+    color: black !important;
+    font-weight: 250;
+    font-size: 1em !important;
   }
 
   /* Laptop gif - hide on mobile */
@@ -801,7 +811,7 @@ body {
     min-width: 355px;
     height: auto;
     margin: 16px  auto 0;
-    margin-left: -19.8px;
+    /* margin-left: -19.8px; */
     padding-top:30px ;
     /* border: 3px solid green; */
    
