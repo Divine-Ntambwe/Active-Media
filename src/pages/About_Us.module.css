@@ -1033,7 +1033,7 @@ body {
     .headingN{
       width: 90%;
       top: -2%;
-      left: -9%;
+      left: -12%;
     }
     .topLeftN{
       width: 90%;
@@ -1330,5 +1330,97 @@ left: 20%;
   }
   .software {
     text-align: center;
+    font-size: 0.9em;
+    width: 30vw; 
+    height: 3.5vh;
+    margin: auto;
+   }
+   .SoftwareSection{
+    border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .bottomLeftN {
+    width: 50vw;
+   }
+   .rightBlockN {
+    box-sizing: border-box;
+    margin-top: 14vh;
+    padding-right: 40vw !important;
+    text-align: left;
+   }
+   .div1 p {
+    font-size: 1em;
+   }
+   .laptopWrapper{
+    left: 43% !important;
+   }
+}
+
+@media (max-width: 399px) {
+  *{
+    color: purple;
   }
+  .teamText, .paragraph{
+    font-size: 0.8em !important;
+  }
+  .teamText{
+    width: 100%;
+  }
+  .div3{
+    top: -4.5vh
+  }
+   .div3 img, .phoneImg img{
+    width: 95% !important;
+    height: 130px !important;
+  }
+  .paragraph {
+    width: 280px;
+  }
+  .multimediaParagraph{
+    box-sizing: border-box;
+    width: 100% !important;  
+    text-align: center !important;
+    line-height: 1.6;
+    padding: 0 30px;
+  }
+  .multimedia {
+    text-align: center;
+  }
+  .containerB {
+    width: 86vw;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+  }
+  .software {
+    text-align: center;
+    font-size: 0.9em;
+    width: 30vw; 
+    height: 3.5vh;
+    margin: auto;
+   }
+   .SoftwareSection{
+    border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     margin-top: 5vh !important;
+   }
+   .bottomLeftN {
+    width: 50vw;
+   }
+   .rightBlockN {
+    box-sizing: border-box;
+    margin-top: 14vh;
+    padding-right: 40vw !important;
+    text-align: left;
+   }
+   .div1 p {
+    font-size: 0.9em;
+   }
+   .laptopWrapper{
+    left: 43% !important;
+   }
 }
