@@ -1,33 +1,29 @@
-/* Software.module.css */
+/* Software.module.css - DESKTOP ONLY + MOBILE (<440px) */
 .softwarePage{
   overflow: hidden;
   height: 100vh;
   position: relative;
-  /* top: -100px; */
 }
 
 .softwareSection {
-  /* width: 100%; */
   font-family: "Inter", sans-serif;
   height: 90vh !important;
-  /* overflow: hidden !important; */
   padding-left: 50px;
 }
 
 .slide {
   width: 100%;
-  min-height: 100vh; 
-  /* full viewport height */
+  min-height: 100vh;
   position: relative;
 }
 
 /* Slide 1: content with laptop */
 .div1 { 
   display: flex;
-  align-items: flex-start; /* Changed from center to start to move content up */
+  align-items: flex-start;
   justify-content: space-between;
   margin-top: 100px;
-  padding-top: 0px; /* Added top padding to control vertical position without huge top gap */
+  padding-top: 0px;
 }
 
 .title1{
@@ -36,9 +32,7 @@
 
 /* Placeholder slides */
 .div2 {
-  /* background: #ffffff; */
   padding: 80px 0 40px 0;
-  /* position: relative; */
   overflow: hidden;
   background: transparent !important;
 }
@@ -57,7 +51,6 @@
 .textBlock {
   position: relative;
   z-index: 2;
-   /* Reduced from 20% to spread horizontally (move left content more to the edge) */
 }
 
 .title {
@@ -79,8 +72,6 @@
   letter-spacing: 2px;
 }
 
-
-
 /* Paragraph box */
 .paragraphBox {
   position: absolute;
@@ -91,13 +82,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  /* border: 1px solid red; */
-
 }
 
 .paragraphBox p, .pinkBox {
- background:rgb(255, 221, 239,0.3);
-  padding: 0.1em 1em 5rem 1em  ;
+  background:rgb(255, 221, 239,0.3);
+  padding: 0.1em 1em 5rem 1em;
   border-radius: 12px;
   font-family: "Inter",sans-serif;
   font-weight: 200;
@@ -106,9 +95,8 @@
 
 /* Reset body scroll */
 body {
-  overflow-y: auto; /* allow vertical scroll */
+  overflow-y: auto;
 }
-
 
 /* Rising Fade In Animation */
 @keyframes riseFadeIn {
@@ -149,7 +137,7 @@ body {
   }
   100% {
     opacity: 0;
-    transform: translate(-50vw, 50vh); /* moves bottom-left */
+    transform: translate(-50vw, 50vh);
   }
 }
 
@@ -180,13 +168,11 @@ body {
   transition: opacity 0.8s ease-in;
 }
 
-
 @keyframes fadeIn2 {
-   0% {
-     transform: translateY(0px);
+  0% {
+    transform: translateY(0px);
   }
   100% {
-    
     transform: translateY(-115vh);
   }
 }
@@ -208,12 +194,8 @@ body {
   animation: fadeOut2 1.8s forwards;
 }
 
-
-
-
-
 @keyframes fadeIn3 {
-   0% {
+  0% {
     transform: translateY(0px);
   }
   100% {
@@ -221,9 +203,8 @@ body {
   }
 }
 
-
 .fadeIn3{
-animation: fadeIn3 1.8s forwards;
+  animation: fadeIn3 1.8s forwards;
 }
 
 @keyframes fadeOut3 {
@@ -240,8 +221,8 @@ animation: fadeIn3 1.8s forwards;
 }
 
 @keyframes fadeIn4 {
-   0% {
-     transform: translateY(0px);
+  0% {
+    transform: translateY(0px);
   }
   100% {
     transform: translateY(-285vh);
@@ -249,12 +230,12 @@ animation: fadeIn3 1.8s forwards;
 }
 
 .fadeIn4{
-animation: fadeIn4 1s forwards;
+  animation: fadeIn4 1s forwards;
 }
 
 @keyframes fadeIn5 {
-   0% {
-     transform: translateY(-390vh);
+  0% {
+    transform: translateY(-390vh);
     opacity: 0;
   }
   100% {
@@ -264,12 +245,11 @@ animation: fadeIn4 1s forwards;
 }
 
 .fadeIn5{
-animation: fadeIn5 1s forwards;
+  animation: fadeIn5 1s forwards;
 }
 
 .laptopGif{
   position: absolute;
-  /* width: 300px; */
   z-index: 10;
   transition: 1s;
   transform:scale(2.5);
@@ -281,7 +261,6 @@ animation: fadeIn5 1s forwards;
   0%{
     left: 70vw;
   }
-  
   100%{
     left: 20vw
   }
@@ -289,14 +268,12 @@ animation: fadeIn5 1s forwards;
 
 .moveLaptop1{
   animation: moveLaptop1 1s 0.1s forwards;
-
 }
 
 @keyframes moveLaptop2 {
   0%{
     left: 18vw;
   }
-  
   100%{
     left: 72vw;
     top: 45vh;
@@ -305,14 +282,12 @@ animation: fadeIn5 1s forwards;
 
 .moveLaptop2{
   animation: moveLaptop2 1s forwards ease-out;
-
 }
 
 @keyframes moveLaptop3 {
   0%{
     top:45vh;
   }
-  
   100%{
     top: 76vh;
     left: 73vw;
@@ -321,7 +296,6 @@ animation: fadeIn5 1s forwards;
 
 .moveLaptop3{
   animation: moveLaptop3 1s forwards ease-out;
-
 }
 
 @keyframes moveLaptop4 {
@@ -329,7 +303,6 @@ animation: fadeIn5 1s forwards;
     top:76vh;
     left: 73vw;
   }
-  
   100%{
     top: 35vh;
     left: 20vw
@@ -338,7 +311,6 @@ animation: fadeIn5 1s forwards;
 
 .moveLaptop4{
   animation: moveLaptop4 1s forwards ease-out;
-
 }
 
 @keyframes moveLaptop5 {
@@ -346,7 +318,6 @@ animation: fadeIn5 1s forwards;
     top:35vh;
     left: 20vw
   }
-  
   100%{
     top: -50vh;
     left: 20vw
@@ -355,15 +326,13 @@ animation: fadeIn5 1s forwards;
 
 .moveLaptop5{
   animation: moveLaptop5 1s forwards ease-out;
-
 }
 
 .bgImg{
   transition: 1s;
 }
 
-
-/* Cloud specific styles - directly from original component */
+/* Cloud specific styles */
 .container {
   width: 100%;
   min-height: calc(100vh - 80px);
@@ -374,7 +343,6 @@ animation: fadeIn5 1s forwards;
 }
 
 .content {
-  /* max-width: 1300px; */
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -387,16 +355,12 @@ animation: fadeIn5 1s forwards;
 .left {
   flex: 0 0 38%;
   display: flex;
-  /* margin-top: -90px; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 30px;
-  /* border: 1px solid red; */
   height: 65vh;
 }
-
-
 
 .title {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
@@ -408,8 +372,8 @@ animation: fadeIn5 1s forwards;
   letter-spacing: 0.5px;
   margin: 0;
   position: relative;
- 
 }
+
 .title2 {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
@@ -428,7 +392,6 @@ animation: fadeIn5 1s forwards;
   left: 40%;
   top: 60%;
   padding: 20px;
-  /* min-height: 190px; */
 }
 
 .right p {
@@ -462,69 +425,74 @@ animation: fadeIn5 1s forwards;
   bottom: 99%;
   width: 800px; 
   height: 450px;
-  /* padding-right: 300px; */
 }
-
 
 .mainImage{
   margin-top: 50px;
   width: 900px;
   height: 500px;
- 
 }
 
 .supImage{
-   margin-right: 100px;
+  margin-right: 100px;
 }
 
 .rightSection{
   margin-top: 50px;
 }
 
-/* Ozias Styling(Start) */
-.div2_2{
+.leftSection{
+  margin-top: 0;
+}
 
+.div2_2{
   height: 70vh;
   display: flex;
 }
 
-/* SMALLER SCREENS */
-@media screen and (max-width: 1400px) and (min-width:1300px){
+.ecommerceSection{
+  margin-top: 0;
+}
 
+/* DESKTOP RESPONSIVE BREAKPOINTS ONLY */
+
+/* 1300px - 1400px */
+@media screen and (max-width: 1400px) and (min-width:1300px){
   .paragraphBox p, .pinkBox {
-  font-size: 1.3em;
- }
+    font-size: 1.3em;
+  }
 
   .left h1 {
     font-size: 2.5em !important;
   }
+
   .backgroundDecor{
     width: 700px !important;
     height: 400px;
-
   }
 
   .div2{
     margin-top: -55px;
   }
 
-   .title{
-     font-size: 2.5em;
+  .title{
+    font-size: 2.5em;
   }
+
   .mainImage{
-  margin-top: 50px;
-  width: 800px;
-  height: 430px;
-}
-.ecommerceSection{
-  margin-top: 30px;
-}
-  
+    margin-top: 50px;
+    width: 800px;
+    height: 430px;
+  }
+
+  .ecommerceSection{
+    margin-top: 30px;
+  }
 }
 
+/* 1120px - 1301px */
 @media screen and (max-width: 1301px) and (min-width:1120px) {
-  
-   .paragraphBox p, .pinkBox{
+  .paragraphBox p, .pinkBox{
     font-size: 1.1rem !important;
   }
 
@@ -543,6 +511,7 @@ animation: fadeIn5 1s forwards;
   .left h1 {
     font-size: 2.5em !important;
   }
+
   .backgroundDecor{
     width: 600px !important;
     height: 300px;
@@ -553,114 +522,71 @@ animation: fadeIn5 1s forwards;
   }
 
   .title{
-     font-size: 1.8em;
+    font-size: 1.8em;
   }
+
   .mainImage{
-  margin-top: 50px;
-  width: 800px;
-  height: 380px;
-}
-.ecommerceSection{
-  margin-top: 0px;
-}
+    margin-top: 50px;
+    width: 800px;
+    height: 380px;
+  }
+
+  .ecommerceSection{
+    margin-top: 0px;
+  }
 }
 
-@media screen and (max-width:1121px) {
-  *{
-    color: black;
-  }
-   .paragraphBox p, .pinkBox{
-    font-size: 1rem !important;
-    padding-bottom: 2em;
+/* 1690px - 1799px */
+@media screen and (min-width:1690px) and (max-width: 1799px) {
+  .paragraphBox p, .pinkBox {
+    font-size: 1.8em;
   }
 
   .div1{
-    margin-top: 90px !important;
-  }
-
-  .title1{
-    font-size: 3em;
-  }
-
-  .services{
-    font-size: 1.5em;
-  }
-
-  .laptopGif{
-    transform: scale(1.6) !important;
-  }
-
-  .left h1 {
-    font-size: 2.5em !important;
-  }
-  .backgroundDecor{
-    width: 600px !important;
-    height: 300px;
-  }
-
-  .div2{
-    margin-top: -105px;
-  }
-}
-
-
-/* LARGER SCREENS */
-/* 80% */
-
-@media screen and (min-width:1690px) and (max-width: 1799px) {
-  
-
-  .paragraphBox p, .pinkBox {
-  font-size: 1.8em;
- }
-
- .div1{
     margin-top: 120px !important;
   }
 
-   .title1{
+  .title1{
     font-size: 5.9em;
   }
 
-  
   .services{
     font-size: 3em;
   }
 
   @keyframes moveLaptop3 {
-  0%{
-    top:45vh;
-  }
-  
-  100%{
-    top: 74vh;
-    left: 66vw;
+    0%{
+      top:45vh;
+    }
+    100%{
+      top: 74vh;
+      left: 66vw;
+    }
   }
 }
 
-
-}
+/* 1800px - 2200px */
 @media screen and (min-width:1800px) and (max-width: 2200px) {
+  .paragraphBox p, .pinkBox {
+    font-size: 2em;
+  }
 
- .paragraphBox p, .pinkBox {
-  font-size: 2em;
- }
-
- .div1{
+  .div1{
     margin-top: 120px !important;
   }
 
-   .title1{
+  .title1{
     font-size: 5.5em;
   }
 
-  
   .services{
     font-size: 3em;
   }
+
   .left h1 {
     font-size: 4em !important;
   }
+
   .backgroundDecor{
     width: 1000px !important;
     height: 500px;
@@ -670,21 +596,20 @@ animation: fadeIn5 1s forwards;
     margin-top: 50px;
   }
 
-   .laptopGif{
+  .laptopGif{
     transform: scale(3) !important;
   }
 
   .mainImage{
-  margin-top: 50px;
-  width: 1200px;
-  height: 600px;
- 
-}
+    margin-top: 50px;
+    width: 1200px;
+    height: 600px;
+  }
 }
 
-/* 67% */
+/* 2201px+ */
 @media screen and (min-width: 2201px) {
- .paragraphBox p, .pinkBox{
+  .paragraphBox p, .pinkBox{
     font-size: 2.5rem !important;
   }
 
@@ -695,7 +620,6 @@ animation: fadeIn5 1s forwards;
   .title1{
     font-size: 6.5em;
   }
- 
 
   .services{
     font-size: 4em;
@@ -705,9 +629,10 @@ animation: fadeIn5 1s forwards;
     transform: scale(3.5) !important;
   }
 
-   .left h1 {
+  .left h1 {
     font-size: 5em !important;
   }
+
   .backgroundDecor{
     width: 1200px !important;
     height: 600px;
@@ -718,831 +643,246 @@ animation: fadeIn5 1s forwards;
   }
 
   .title{
-     font-size: 4.5em;
+    font-size: 4.5em;
   }
+
   .mainImage{
-  margin-top: 50px;
-  width: 1400px;
-  height: 730px;
- 
+    margin-top: 50px;
+    width: 1400px;
+    height: 730px;
+  }
 }
 
-
-}
-
-/* Mobile Responsive Breakpoints */
-
-/* Tablets (768px - 991px) */
-@media screen and (max-width: 991px) and (min-width: 768px) {
+/* ========== MOBILE: MAX-WIDTH 440px ========== */
+@media (max-width: 940px) {
   .softwarePage {
-    overflow-x: hidden;
-  }
-
-  .softwareSection {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .div1 {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 60px;
-    text-align: center;
-  }
-
-  .title {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    line-height: 1.2;
-    margin-top: 70px;
-    
-  }
-
-  .services {
-    font-size: 1.2em;
-    margin-bottom: 1.5rem;
-  }
-
-  .paragraphBox p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .laptopGif {
-    transform: scale(0.8) !important;
-    position: fixed !important;
-    top: 15vh !important;
-    left: 70vw !important;
-  }
-
-
-  .div2 {
-    padding: 40px 0 20px 0;
-    order: 1;
-  }
-
-  .content {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .left {
-    order: 1;
-    text-align: center;
-    padding-left: 40px;
-  }
-
-  .left h1 {
-    font-size: 2rem !important;
-    text-align: left;
-  }
-
-  .title2 {
-    margin-left: 0 !important;
-    text-align: left;
-  }
-
-  .div2_2 {
-    order: 2;
-    display: flex;
-    justify-content: center;
-    margin: 1.5rem 0;
-    margin-left: -20px;
-  }
-
-  .div2_2 img {
-    width: 250px;
+    overflow-y: auto;
     height: auto;
-    max-width: 85%;
   }
-
-  .right {
-    order: 3;
-  }
-
-  .pinkBox {
-    font-size: 2.0rem !important;
-    text-align: right;
-    padding: 3rem;
-    margin: 1rem 0;
-    margin-left: -220px;
-    margin-top:75%;
-    max-width: 500px;
-    order: 3;
-  }
-
-  .pinkBox1 {
-    font-size: 2.0rem !important;
-    text-align: right;
-    padding: 3rem;
-    margin: 1rem 0;
-    margin-left: -220px;
-    margin-top:75%;
-    max-width: 500px;
-    order: 3;
-  }
-
-  .backgroundDecor {
-    height: 285px !important;
-    max-width: 550px;
-     margin-left: -220px;
-     margin-bottom: -59%;
-  }
-}
-
-/* Mobile Phones (576px - 767px) */
-@media screen and (max-width: 767px) and (min-width: 576px) {
-  .softwarePage {
-    overflow-x: hidden;
-    overflow-y: visible;
-  }
-
 
   .softwareSection {
-    padding-left: 15px;
-    padding-right: 15px;
     height: auto !important;
+    padding: 0 16px;
   }
 
+  .slide {
+    min-height: auto;
+    margin-bottom: -24px;
+  }
+
+  /* Section 1 */
   .div1 {
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 20px;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .textBlock {
+    width: 100%;
+    /* border: 2px solid blue; */
     text-align: center;
-    padding: 0 10px;
   }
 
   .title1 {
     font-size: 2rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    margin-bottom: 12px;
   }
 
   .services {
     font-size: 1rem;
-    margin-bottom: 1.2rem;
-    gap: 0.5rem;
+    margin-top: 12px;
+  }
+
+  .services p {
+    margin: 4px 0;
   }
 
   .paragraphBox {
-    margin-top: 1rem;
+    position: static;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 16px; */
+    margin-bottom: 80px;
+    /* border: 2px solid red; */
   }
 
-  .paragraphBox p {
-    font-size: 0.8rem;
-    line-height: 1.4;
-    padding: 0 10px;
+  .paragraphBox p,
+  .pinkBox {
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    width:100%;
   }
 
+  /* Laptop gif - hide on mobile */
   .laptopGif {
-    transform: scale(0.8) !important;
-    position: fixed !important;
-    top: 20vh !important;
-    left: 70vw !important;
+    /* display: none; */
+    top:385px;
+    left:100px;
+    transform: scale(1); /* Reset scale */
+    max-width: 50%; /* Responsive width */
+    height: auto;
   }
 
+  /* Section 2: Cloud */
   .div2 {
-    padding: 50px 10px;
-    margin-top: -40px;
-    order: 1;
+    padding: 24px 0;
+    margin-top: 0;
+    /* border: 2px solid red; */
+
+
+  }
+
+  .container {
+    min-height: 39vh;
+    padding: 24px 0;
+    /* border: 2px solid rgb(26, 228, 228); */
+
   }
 
   .content {
     flex-direction: column;
+    padding: 16px;
+    min-height: auto;
+    gap: 16px;
+    justify-content: center;
     align-items: center;
-    gap: 1rem;
-    padding: 0 15px;
+    /* border: 2px solid rgb(89, 230, 8); */
+
+  }
+  #edit{
+    /* border: 2px solid rgb(201, 42, 116); */
+    margin-left: -19.8px;
+
   }
 
   .left {
+    flex: 1;
     width: 100%;
+    height: auto;
+    padding-top: 0;
+    align-items: center;
     text-align: center;
-    order: 1;
-    padding-left: 50px;
   }
 
-  .left h1 {
-    font-size: 1.5rem !important;
-    margin-bottom: 0.5rem;
-    text-align: left;
+  .title {
+    font-size: 1.8rem;
+    position: static;
+    margin-bottom: 8px;
   }
 
   .title2 {
-    margin-left: 20px !important;
-    text-align: left;
+    font-size: 1.8rem;
+    margin-left: 0;
   }
 
   .right {
+    flex: 1;
+    position: static;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    order: 3;
+    padding: 0;
+    left: auto;
+    top: auto;
   }
 
+  .right p {
+    padding-bottom: 0.5em;
+  }
+
+  .backgroundDecor {
+    position: static;
+    width: 100%;
+    min-width: 355px;
+    height: auto;
+    margin: 16px  auto 0;
+    margin-left: -19.8px;
+    padding-top:30px ;
+    /* border: 3px solid green; */
+   
+  }
+
+  /* Section 3 */
   .div2_2 {
-    order: 2;
-    display: flex;
+    height: auto;
     justify-content: center;
-    align-items: center;
-    margin: 1rem 0;
-    margin-left: -15px;
-    
+    padding: 16px 0;
   }
 
   .div2_2 img {
-    width: 200px;
+    width: 100%;
+    min-width: 320px;
     height: auto;
-    max-width: 80%;
+    padding: 16px 0;
+   
   }
 
-  .pinkBox {
-    font-size: 1.5rem !important;
-    text-align: right;
-    padding: 3rem;
-    margin: 1rem 0;
-    margin-left: -450px;
-    margin-top:15%;
-    max-width: 500px;
-    order: 3;
-  }
-.pinkBox1 {
-    font-size: 1.5rem !important;
-    text-align: right;
-    padding: 3rem;
-    margin: 1rem 0;
-    margin-left: -450px;
-    margin-top:15%;
-    max-width: 500px;
-    order: 3;
+  /* Section 4: E-commerce */
+  .div4 {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
   }
 
+  .leftSection,
+  .rightSection {
+    margin-top: 0;
+    width: 100%;
+  }
 
-  .backgroundDecor {
-    
-    height: 185px !important;
-    max-width: 350px;
-     margin-left: -450px;
-     margin-bottom: -9%;
+  .mainImage {
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   .ecommerceSection {
-    padding: 20px 15px;
-  }
-
-  .ecommerceSection .title {
-    font-size: 1.5rem !important;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .div4 {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .leftSection, .rightSection {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* Small Mobile Phones (414px - 575px) */
-@media screen and (max-width: 575px) and (min-width: 414px) {
-  .softwarePage {
-    overflow-x: hidden;
-  }
-
-  .softwareSection {
-    padding-left: 10px;
-    padding-right: 10px;
-    height: auto !important;
-  }
-
-  .div1 {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    text-align: center;
-    padding: 0 5px;
-  }
-
-  .title {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    line-height: 1.2;
-    margin-top: 60px;
-    
-  }
-
-  .services {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    gap: 0.3rem;
-  }
-
-  .paragraphBox p {
-    font-size: 0.75rem;
-    line-height: 1.4;
-    padding: 0 5px;
-  }
-
-  .laptopGif {
-    transform: scale(0.8) !important;
-    position: fixed !important;
-    top: 20vh !important;
-    left: 70vw !important;
-  }
-
-  .div2 {
-    padding: 15px 0;
-    order: 1;
-  }
-
-  .content {
-    padding: 0 10px;
-    gap: 0.8rem;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left {
-    order: 1;
-    text-align: center;
-    padding-left: 25px;
-  }
-
-  .left h1 {
-    font-size: 1.3rem !important;
-    text-align: left;
-  }
-
-  .title2 {
-    margin-left: 0 !important;
-    text-align: left;
-  
-    
-  }
-
-  .div2_2 {
-    order: 2;
-    display: flex;
-    justify-content: center;
-    margin: 0.8rem 0;
-    margin-left: -12px;
-  }
-
-  .div2_2 img {
-    width: 160px;
-    height: auto;
-    max-width: 80%;
-  }
-
-  .right {
-    order: 3;
-  }
-
-  .pinkBox {
-    font-size: 1.0rem !important;
-    padding: 2rem;
-    height:150px;
-    max-width: 390px;
-    text-align: center;
-    margin-left: -132px;
-    margin-top: 60px;
-  }
-
-  .pinkBox1 {
-    font-size: 1.0rem !important;
-    padding: 2rem;
-    height:150px;
-    max-width: 390px;
-    text-align: center;
-    margin-left: -132px;
-    margin-top: 60px;
-  }
-
-  .backgroundDecor {
-    width: 300px !important;
-    height: 150px !important;
-    margin-left: -132px;
-    margin-bottom: -30%;
-  }
-}
-
-
-/* Responsiveness for Iphone 14 pro max*/
-@media screen and (min-width: 430px) and (max-width: 575px) {
-  .softwarePage {
-    overflow-x: hidden;
-  }
-
-  .softwareSection {
-    padding-left: 10px;
-    padding-right: 10px;
-    height: auto !important;
-  }
-
-  .div1 {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    text-align: center;
-    padding: 0 5px;
-  }
-
-  .title{
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    line-height: 1.2;
-    margin-top: -15px;
-    
-  }
-
-  .services {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    gap: 0.3rem;
-  }
-
-  .paragraphBox p {
-    font-size: 0.75rem;
-    line-height: 1.4;
-    padding: 0 5px;
-  }
-
-  .laptopGif {
-    transform: scale(0.8) !important;
-    position: fixed !important;
-    top: 20vh !important;
-    left: 70vw !important;
-  }
-
-  .div2 {
-    padding: 15px 0;
-    order: 1;
-  }
-
-  .content {
-    padding: 0 10px;
-    gap: 0.8rem;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left {
-    order: 1;
-    text-align: center;
-    padding-left: 25px;
-     margin-top: 140px;
-  }
-
-  .left h1 {
-    font-size: 1.3rem !important;
-    text-align: left;
-  }
-
-  .title2 {
-    margin-left: 0 !important;
-    text-align: left;
-  
-    
-  }
-
-  .div2_2 {
-    order: 2;
-    display: flex;
-    justify-content: center;
-    margin: 0.8rem 0;
-    margin-left: -12px;
-  }
-
-  .div2_2 img {
-    width: 160px;
-    height: auto;
-    max-width: 80%;
-  }
-
-  .right {
-    order: 3;
-  }
-
-  .pinkBox {
-    font-size: 1.0rem !important;
-    padding: 2rem;
-    height:150px;
-    max-width: 390px;
-    text-align: center;
-    margin-left: -132px;
-    margin-top: 60px;
-  }
-
-  .pinkBox1 {
-    font-size: 1.3rem !important;
-    padding: 2rem;
-    height:250px;
-    max-width: 390px;
-    text-align: center;
-    margin-left: -132px;
-    margin-top: 200px;
-  }
-
-  .backgroundDecor {
-    width: 300px !important;
-    height: 150px !important;
-    margin-left: -132px;
-    margin-bottom: -60%;
-  }
-}
-
-/* Extra Small Mobile Phones (min-width: 412px) */
-@media screen and (max-width: 412px) {
-  *{
-    color:blue;
-  }
-  .services{
-    font-size: 2.5em !important;
-  }
-  .firstPar {
-    /* border: 1px solid red; */
-    justify-content: center;
-    display: flex;
-    height: 80vh;
-  }
-  .div1 h1{
-    font-size: 3.5em;
-  }
-  
-
-  .firstPar p {
-    padding: 10px !important;
-    font-size: 1.25em !important;
-    text-align: left !important;
-  }
-  .softwarePage {
-    overflow-x: hidden;
-  }
-
-  .softwareSection {
-    padding-left: 8px;
-    padding-right: 8px;
-    height: auto !important;
-  }
-
-  .div1 {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 25px;
-    text-align: center;
-    padding: 0;
-  }
-
-  .title {
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    line-height: 1.2;
-    margin-top: 60px;
-    color: red !important;
-    text-align: center !important;
-  }
-
-  .services {
-    font-size: 0.8rem;
-    margin-bottom: 0.8rem;
-    gap: 0.2rem;
-  }
-
-  .paragraphBox p {
-    font-size: 0.7rem;
-    line-height: 1.3;
-    padding: 0;
-  }
-
-  .laptopGif {
-    transform: scale(1.1) !important;
-    /* position: fixed !important; */
-    top: 104vh !important;
-    left: 35vw !important;
-  }
-
-  .div2 {
-    padding: 10px 0;
-    order: 1;
-  }
-
-  .content {
-    padding: 0 8px;
-    gap: 0.6rem;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .left {
-    order: 1;
-    text-align: center;
-    padding-left: 20px;
-  }
-
-  .left h1 {
-    font-size: 1.2rem !important;
-    text-align: left;
-  }
-
-  .title2 {
-    margin-left: 0 !important;
-    text-align: left;
-  }
-
-  .div2_2 {
-    order: 2;
-    display: flex;
-    justify-content: center;
-    /* margin: 0.6rem 0; */
-    margin-left: -10px;
-  }
-
-  .div2_2 img {
-    /* width: 140px; */
-    height: auto;
-    max-width: 75%;
-    margin-bottom: 20px;
-  }
-
-  .right {
-    order: 3;
-
-  }
-
- .pinkBox {
-    font-size: 1.0rem !important;
-    padding: 2rem;
-    height:150px;
-    width: 190px;
-    text-align: center;
-    /* margin-left: -116px; */
-    margin-top: 20px;
-  }
-  .pinkBox1 {
-    font-size: 1.0rem !important;
-    padding: 2rem;
-    height:190px;
-    width: 190px;
-    text-align: center;
-    margin-left: -116px;
-    margin-top: 80px;
-  }
-
-  .backgroundDecor {
-    width: 250px !important;
-    height: 150px !important;
-    margin-left: -110px;
-    margin-bottom: -10%;
-  }
-}
-
-
-@media (max-width: 768px) {
-  .softwarePage{
-    overflow-y: visible;
-  }
-  .div4 {
-    flex-direction: column; /* stack elements vertically */
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-  }
-
-  /* Ensure heading is visible and nicely spaced */
-  .ecommerceSection h1 {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 1.2rem;
-  }
-
-  /* Image full width below heading */
-  .div4 .leftSection img {
-    width: 100%;
-    height: 40vh;
-    margin-bottom: 1rem;
-  }
-
-  /* Text below image */
-  .div4 .rightSection {
-    width: 600px;
-    height: auto;
-    text-align: center;
-    margin-bottom: 1rem;
-    /* margin-left:; */
-  }
-
-  /* Make the laptop appear next to text (side-by-side) */
-  laptopGif {
-    position: static; /* remove absolute positioning for mobile */
-    display: inline-block;
-    width: 45%;
-    height: auto;
-    transform: none;
-    scale: 1; /* reset scaling */
-    margin-left: 300px;
-    vertical-align: middle;
-  }
-
-  .div4 .rightSection p {
-    display: inline-block;
-    width: 45%;
-    vertical-align: middle;
-    background: rgba(255, 221, 239, 0.3);
-    border-radius: 12px;
-    padding: 10px;
-    font-size: 1rem;
-  }
-}
-
-
-
-/* ========== RESPONSIVE: DIV 5 ONLY ========== */
-@media screen and (max-width: 768px) {
-  .div5 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 40px 20px;
-    text-align: center;
-  }
-
-  .div5 .rightSection {
     margin-top: 0;
-    margin-right: 0;
+    padding: 16px 0;
   }
 
-  .div5 .supImage {
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-    max-width: 450px;
-    object-fit: contain;
+  .ecommerceSection h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 16px;
   }
-}
 
-/* Even smaller mobile screens (e.g. <480px) */
-@media screen and (max-width: 480px) {
+  /* Section 5 */
   .div5 {
-    padding: 20px 10px;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
   }
 
-  .div5 .supImage {
+  .supImage {
+    /* margin-right: -100px; */
+    margin-top: 20px;
+    padding-bottom: 20px;
+    margin-left: -10px;
     width: 100%;
-    max-width: 380px;
-  }
-  .div2_2{
-    width: 100%;
-    height:200px;
-        display: flex;
-    justify-content: center; /* centers the image horizontally */
-    align-items: center;     /* centers it vertically if needed */
-    /* padding-top: 7vh; */
-    overflow: hidden;        /* ensures no overflow on small screens */
-  }
-  
-  .div2_2 img {
-    max-width: 100%;
+    min-width: 320px;
     height: auto;
-    object-fit: contain;     /* keeps proportions */
-    display: block;
-    border-radius: 8px;      /* optional for smooth corners */
+  }
+
+  /* Remove animations on mobile */
+  .fadeIn2,
+  .fadeOut2,
+  .fadeIn3,
+  .fadeOut3,
+  .fadeIn4,
+  .fadeIn5 {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .bgImg {
+
+    display: none;
   }
 }
-
-@media (max-width: 600px) {
-  .div2_2 {
-    padding: 0.5rem;
-  }
-
-  .div2_2 img {
-    max-width: 90%;
-  }
-  .div2_2{
-    width: 100%;
-    display: flex;
-    justify-content: center; /* centers the image horizontally */
-    align-items: center;     /* centers it vertically if needed */
-    /* padding-top: 7vh; */
-    overflow: hidden;        /* ensures no overflow on small screens */
-  }
-  
-  .div2_2 img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;     /* keeps proportions */
-    display: block;
-    border-radius: 8px;      /* optional for smooth corners */
-  }
-}
-
-
-
-/* first page */

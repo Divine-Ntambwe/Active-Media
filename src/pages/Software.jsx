@@ -369,6 +369,7 @@ export default function Software() {
             </p>
           </div>
         </div>
+        
 
         {/* Slide 2 (Cloud-Based Solutions) */}
         <div
@@ -384,7 +385,7 @@ export default function Software() {
             </div>
 
             <div className={styles.right}>
-                           <p className={`${styles.pinkBox1} ${styles.pinkBox}`} ref={par3}>
+                           <p id={`${styles.edit}`}  className={`${styles.pinkBox1} ${styles.pinkBox}`} ref={par3}>
                 Whether you want to move your
                 <br />
                 current solutions to the cloud or
