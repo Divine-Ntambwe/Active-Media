@@ -70,7 +70,7 @@ export default function About_Us() {
   }, [currentSlide]);
 
   return (
-    <>
+    <div className={styles.softwarePage}>
       <Navbar/>
     <section className={styles.aboutSection}>
       {/* PurpleLines always behind everything */}
@@ -208,6 +208,6 @@ export default function About_Us() {
         </div>
       </div>
     </section>
-    </>
+    </div>
   );
 }

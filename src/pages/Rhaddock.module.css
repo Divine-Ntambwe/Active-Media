@@ -23,6 +23,7 @@
   top: -200px;
   left: 0px;
   animation: appear 1.5s;
+  z-index: -1 !important;
 }
 
 @keyframes appear {
@@ -190,6 +191,8 @@
   align-items: center;
   height: 100vh;
   padding: 16px 32px;
+  /* sam's branch */
+   padding: 0 60px 100px; 
   /* overflow-y: hidden; */
 }
 
@@ -225,6 +228,11 @@
   height: 300px;
   bottom: -210px;
   left: 365px;
+ 
+  /* sam's branch
+   width: 475px;
+  bottom: -150px;
+  left: 245px;  */
   z-index: 9;
   transition: opacity 0.6s linear;
 
@@ -235,6 +243,11 @@
   bottom: -220px;
   right: 0;
   width: 300px;
+
+  /* sam's branch
+  bottom: -160px;
+  left: 713px;
+  width: 300px;  */
   z-index: 10;
   transition: opacity 0.8s linear, transform 0.8s linear;
 }
@@ -295,7 +308,6 @@
   transform: rotate(20deg);
   top: 300px;
 }
-
 /* ========================= */
 /* Responsive Adjustments    */
 /* ========================= */
@@ -508,19 +520,23 @@
 
 @media (max-width:1023px) {
   *{
-    color: pink;
+    /* color: pink; */
   }
   .container {
-    width: 100vw;
+    width: 95vw;
   }
 }
 
 
-@media (max-width: 480px) {
-  .rapidtrade {
-    padding: 20px 12px 30px;
+@media (max-width: 480px) and (min-width:400px) {
+  *{
+    /* color: blueviolet; */
   }
-
+  .rapidtrade {
+    padding: 20px 12px 30px 12px;
+ 
+  }
+  
   .title {
     font-size: clamp(1.1rem, 7vw, 1.8rem);
     letter-spacing: 0;
@@ -540,9 +556,9 @@
   }
 
   .logoImg {
-    width: 180px;  /* Smaller but independent of height */
-    height: 120px; /* Maintain separate control */
-    margin: 0 auto;
+    width: 80vw !important;  /* Smaller but independent of height */
+    height: 100px; /* Maintain separate control */
+    margin: -45vh auto !important;
     position: relative;
     left: 0;
     display: block;
@@ -805,6 +821,9 @@
 } */
 
 @media (max-width: 399px) {
+  *{
+    /* color: blue; */
+  }
   .container {
     height: auto;
     overflow: visible !important;
@@ -877,9 +896,9 @@
 
   .logoImg {
     position: relative;
-    width: 500px;         
+    width: 85vw !important;         
     height: 300px; 
-    margin-top: -35vh;   
+    margin-top: -28vh !important;   
     left: 0;
     z-index: 9;
     transition: opacity 0.8s linear, transform 0.8s linear;
@@ -890,10 +909,12 @@
   }
 
   .rapidTradeViewSite {
-    margin-top: 30px;
+    margin-top: 22vh;
     display: flex;
-    justify-content: center;
+    justify-content: center !important;
     align-items: center;
+    position: absolute;
+    width: 85%;
   }
 
   .rapidTradeViewSite svg {

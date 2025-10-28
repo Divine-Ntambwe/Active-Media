@@ -14,17 +14,17 @@
   z-index: 0; /* ensures it's behind everything */
   pointer-events: none; /* doesn't block clicks */
 }
+.softwarePage {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 .slidesContainer {
   display: flex;
   transition: transform 0.7s ease;
   width: 100%;
   height: 100%;
 }
-
-
-
-
-
 
 .aboutSection {
   display: flex;
@@ -331,7 +331,7 @@ h5 {
 .teamText {
   text-align: justify !important;
   text-align-last: right !important;
-  font-weight: 300;
+  font-weight: 200 !important;
   /* margin-left: auto; */
 }
 
@@ -1218,7 +1218,7 @@ left: 20%;
   .topLeftN{
     margin-top: 30px !important;
     left: 10%;
-    color: blue;
+    /* color: blue; */
     width: 300px;
   }
   .bottomLeft{
@@ -1243,7 +1243,7 @@ left: 20%;
 
 @media screen and (min-width:1025px) and (max-width: 1229px) {
 *{
-  color:pink;
+  /* color:pink; */
 }
  /* SLIDE ONE */
   .div1 h2{
@@ -1289,22 +1289,46 @@ left: 20%;
 
 }
 
-@media (max-width: 501px) and (min-width: 416px) {
+
+
+@media (max-width: 501px) and (min-width: 400px) {
   *{
-    /* color: gold; */
+    color: gold;
   }
   .teamText, .paragraph{
-    font-size: 0.75em;
+    font-size: 0.8em !important;
   }
   .teamText{
     width: 100%;
   }
+  .div3{
+    top: -4.5vh
+  }
    .div3 img, .phoneImg img{
-    width: 100% !important;
-    height: 200px !important;
+    width: 95% !important;
+    height: 180px !important;
   }
   .paragraph {
     width: 280px;
   }
-
+  .multimediaParagraph{
+    box-sizing: border-box;
+    width: 400px !important;
+    text-align: center !important;
+    line-height: 1.6;
+    padding: 0 60px;
+  }
+  .multimedia {
+    text-align: center;
+  }
+  .containerB {
+    border: solid;
+    width: 86vw;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+  }
+  .software {
+    text-align: center;
+  }
 }
