@@ -10,7 +10,7 @@ import rapidtradeLogo from "../assets/rapidtrade2.png";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 
-const TOUCH_THRESHOLD = 40; // px to count as swipe
+const TOUCH_THRESHOLD = 10; // px to count as swipe
 const WHEEL_THRESHOLD = 20; // matches your original checks
 const FADE_MS = 400; // matches your CSS fade duration
 const ANIM_CLEAR_MS = 700; // guard time to avoid double-triggers
@@ -25,6 +25,11 @@ const Recent_Work = () => {
   const headings = ["SUPREME BUILD IT", "RAPIDTRADE", "R HADDOCK"];
   const banner = [SupremeBanner, deliveryImg, Group72];
   const logo = [SupremeLogo, rapidtradeLogo, RhLogo];
+  const description = ["Supreme Build It supplies quality building materials, hardware, and tools for builders and DIY users. With helpful services like paint-mixing, glass-cutting, and fast delivery, they make every construction or renovation project easy, affordable, and efficient from start to finish.",
+    "Rapidtrade provides an advanced cloud-based system for order and sales management. It helps distributors and reps process orders, track deliveries, and manage customers efficiently through powerful mobile tools that improve accuracy, speed, and performance.",
+    "R Haddock & Co offers a complete range of packaging materials for homes and businesses. From moving boxes and bubble wrap to tape and custom packaging, they provide strong, affordable, and practical solutions designed to protect products with quality and care.",
+  ];
+  const svg = []
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
@@ -44,6 +49,7 @@ const Recent_Work = () => {
     function doChange(delta) {
       if (handlingRef.current) return;
       handlingRef.current = true;
+      document.body.style.overflow = "hidden"; // stop normal scroll
 
       setFade(false);
 
@@ -55,7 +61,8 @@ const Recent_Work = () => {
         } else if (delta < -WHEEL_THRESHOLD && idx > 0) {
           setCurrentIndex(idx - 1);
         } else if (delta > WHEEL_THRESHOLD && idx === headings.length - 1) {
-          if (recentWork.current) recentWork.current.classList.add(styles.disappear);
+          if (recentWork.current)
+            recentWork.current.classList.add(styles.disappear);
           setTimeout(() => nav("/contact-us"), 1000);
         }
 
@@ -63,13 +70,23 @@ const Recent_Work = () => {
 
         setTimeout(() => {
           handlingRef.current = false;
+          document.body.style.overflow = "auto"; // re-enable scroll
         }, ANIM_CLEAR_MS);
       }, FADE_MS);
     }
 
+    let wheelTimeout = null;
+
     function onWheel(e) {
-      if (Math.abs(e.deltaY) < 4) return;
+      if (wheelTimeout) return; // debounce multiple triggers
+      if (Math.abs(e.deltaY) < WHEEL_THRESHOLD) return; // ignore tiny scrolls
+
       doChange(e.deltaY);
+
+      // prevent new scrolls for a short time
+      wheelTimeout = setTimeout(() => {
+        wheelTimeout = null;
+      }, ANIM_CLEAR_MS);
     }
 
     function onTouchStart(e) {
@@ -118,11 +135,11 @@ const Recent_Work = () => {
     <div className={styles.recentWorkPage}>
       <Navbar />
       <h1
-            className={styles.recentWork}
-            // ref={rwHeading}
-            >
-              Recent Work
-            </h1>
+        className={styles.recentWork}
+      // ref={rwHeading}
+      >
+        Recent Work & Collaborators
+      </h1>
       <img
         // ref={BGImg}
         className={styles.recentBackground}
@@ -134,19 +151,18 @@ const Recent_Work = () => {
         <div className={styles.rapidtrade} ref={recentWork}>
           <div className={styles.leftSection}>
             <h1
-              className={`${styles.title} ${
-                fade ? styles.fadeIn : styles.fadeOut
-              }`}
+              className={`${styles.title} ${fade ? styles.fadeIn : styles.fadeOut
+                }`}
             >
               {headings[currentIndex]}
             </h1>
-            <p className={styles.description}>
-              Yorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-              turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-              nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-              tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-              feugiat lectus.
+            <p
+              className={`${styles.description} ${fade ? styles.fadeIn : styles.fadeOut
+                }`}
+            >
+              {description[currentIndex]}
             </p>
+
 
             <div className={styles.rapidTradeViewSite}>
               <a
@@ -181,9 +197,8 @@ const Recent_Work = () => {
               <img
                 src={banner[currentIndex]}
                 alt="Delivery"
-                className={`${styles.deliveryImg} ${
-                  fade ? styles.fadeImgIn : styles.fadeImgOut
-                }`}
+                className={`${styles.deliveryImg} ${fade ? styles.fadeImgIn : styles.fadeImgOut
+                  }`}
               />
             </div>
           </div>
@@ -191,9 +206,8 @@ const Recent_Work = () => {
             <img
               src={logo[currentIndex]}
               alt="RapidTrade Logo"
-              className={`${styles.logoImg} ${
-                fade ? styles.fadeRightIn : styles.fadeRightOut
-              }`}
+              className={`${styles.logoImg} ${fade ? styles.fadeRightIn : styles.fadeRightOut
+                }`}
             />
           </div>
           {/* <img src={Blending} className={styles.bgImage} alt="" /> */}
