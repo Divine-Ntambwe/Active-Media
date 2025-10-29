@@ -16,16 +16,14 @@ export default function About_Us() {
   const nav = useNavigate()
   const ac = new AbortController();
 
-
-
-  useEffect(() => {
+ useEffect(() => {
   const handleWheel = (e) => {
     e.preventDefault();
 
     if (isScrolling.current) return;
     isScrolling.current = true;
 
-    if (e.deltaY > 20) {
+    if (e.deltaY > 15) {
       setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
     } else if (e.deltaY < -15) {
       setCurrentSlide((prev) => Math.max(0, prev - 1));
@@ -59,61 +57,12 @@ export default function About_Us() {
       isScrolling.current = false;
     }, 700);
   };
+  setTimeout(()=>{
 
-  window.addEventListener("wheel", handleWheel, { passive: false });
-  window.addEventListener("touchstart", handleTouchStart, { passive: true });
-  window.addEventListener("touchend", handleTouchEnd, { passive: true });
-
-  return () => {
-    window.removeEventListener("wheel", handleWheel);
-    window.removeEventListener("touchstart", handleTouchStart);
-    window.removeEventListener("touchend", handleTouchEnd);
-  };
-}, []);useEffect(() => {
-  const handleWheel = (e) => {
-    e.preventDefault();
-
-    if (isScrolling.current) return;
-    isScrolling.current = true;
-
-    if (e.deltaY > 20) {
-      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
-    } else if (e.deltaY < -15) {
-      setCurrentSlide((prev) => Math.max(0, prev - 1));
-    }
-
-    setTimeout(() => {
-      isScrolling.current = false;
-    }, 700);
-  };
-
-  let touchStartY = 0;
-
-  const handleTouchStart = (e) => {
-    touchStartY = e.touches[0].clientY;
-  };
-
-  const handleTouchEnd = (e) => {
-    const touchEndY = e.changedTouches[0].clientY;
-    const deltaY = touchStartY - touchEndY;
-
-    if (isScrolling.current) return;
-    isScrolling.current = true;
-
-    if (deltaY > 20) {
-      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
-    } else if (deltaY < -15) {
-      setCurrentSlide((prev) => Math.max(0, prev - 1));
-    }
-
-    setTimeout(() => {
-      isScrolling.current = false;
-    }, 700);
-  };
-
-  window.addEventListener("wheel", handleWheel,{ signal: ac.signal });
-  window.addEventListener("touchstart", handleTouchStart,{ signal: ac.signal });
-  window.addEventListener("touchend", handleTouchEnd, { signal: ac.signal });
+    window.addEventListener("wheel", handleWheel,{ signal: ac.signal });
+    window.addEventListener("touchstart", handleTouchStart,{ signal: ac.signal });
+    window.addEventListener("touchend", handleTouchEnd, { signal: ac.signal });
+  },1000);
 
   return () => {
     window.removeEventListener("wheel", handleWheel);

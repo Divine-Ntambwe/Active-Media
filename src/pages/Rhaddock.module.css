@@ -57,7 +57,7 @@
 .recentWork{
     position: absolute;
     left: -30vw;
-    top: 50vh;
+    top: 40vh;
     /* display: none; */
     z-index: 1;
     font-size: 3rem;
@@ -211,6 +211,7 @@
   font-weight: 400;
   position: relative;
   z-index: 9999;
+  /* transition: 5s; */
 }
 
 .rapidTradeViewSite {
@@ -403,7 +404,6 @@
   }
   .container {
     width: 1300px;
-    border: solid
   }
   .title{
     font-size: 4em;

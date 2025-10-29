@@ -33,8 +33,11 @@ const Recent_Work = () => {
   // const svg = []
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true); // true = visible, false = faded out
+  const [fade, setFade] = useState(); // true = visible, false = faded out
   const recentWork = useRef();
+  useEffect(()=>{
+    setFade(true)
+  },[])
 
 useEffect(() => {
   const abortController = new AbortController();
@@ -76,9 +79,12 @@ useEffect(() => {
     handleScroll(deltaY);
   };
 
-  window.addEventListener("wheel", handleWheel, { passive: false, signal });
-  window.addEventListener("touchstart", handleTouchStart, { passive: true, signal });
-  window.addEventListener("touchend", handleTouchEnd, { passive: true, signal });
+  setTimeout(()=>{
+
+    window.addEventListener("wheel", handleWheel, { passive: false, signal });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true, signal });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true, signal });
+  },2500)
 
   return () => {
     abortController.abort(); // cleanup on unmount
