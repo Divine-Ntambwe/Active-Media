@@ -30,9 +30,31 @@ function Home() {
   }
 
     useEffect(() => {
-    window.addEventListener("wheel", onScroll);
-    return () => window.removeEventListener("wheel", onScroll);
-  }, []);
+  const abortController = new AbortController();
+  const signal = abortController.signal;
+
+  const handleWheel = (e) => {
+    if (e.deltaY > 0) onScroll();
+  };
+
+  let touchStartY = 0;
+  const handleTouchStart = (e) => {
+    touchStartY = e.touches[0].clientY;
+  };
+  const handleTouchEnd = (e) => {
+    const touchEndY = e.changedTouches[0].clientY;
+    const diffY = touchStartY - touchEndY;
+    if (diffY > 50) onScroll(); // swipe up
+  };
+
+  window.addEventListener("wheel", handleWheel, { passive: false, signal });
+  window.addEventListener("touchstart", handleTouchStart, { passive: true, signal });
+  window.addEventListener("touchend", handleTouchEnd, { passive: true, signal });
+
+  return () => {
+    abortController.abort(); // removes all listeners
+  };
+}, []);
   return (
     <div className={styles.homePage}>
       <Navbar/>
