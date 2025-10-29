@@ -34,7 +34,7 @@ function Home() {
     return () => window.removeEventListener("wheel", onScroll);
   }, []);
   return (
-    <div>
+    <div className={styles.homePage}>
       <Navbar/>
       <section className={styles.hero}>
         <div className={styles.container}>
