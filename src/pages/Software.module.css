@@ -705,8 +705,8 @@ body {
   }
 
   .slide {
-    min-height: auto;
-    margin-bottom: -24px;
+    min-height: auto !important;
+    margin-bottom: -24px ;
   }
 
   /* Section 1 */
@@ -772,8 +772,9 @@ body {
   /* Laptop gif - hide on mobile */
   .laptopGif {
     /* display: none; */
-    top:385px;
-    left:100px;
+    top: 45vh;
+  left: 28.6vw;
+
     transform: scale(1); /* Reset scale */
     max-width: 50%; /* Responsive width */
     height: auto;
@@ -782,10 +783,12 @@ body {
   /* Section 2: Cloud */
   .div2 {
     padding: 24px 0;
-    margin-top: 0;
+    margin-top: 0 !important;
+    height: 65vh;
     /* border: 2px solid red; */
-
-
+  }
+  .div1 {
+    height: 45vh;
   }
 
   .container {
@@ -876,6 +879,7 @@ body {
     flex-direction: column;
     gap: 16px;
     padding: 0;
+    
   }
 
   .leftSection,
@@ -894,6 +898,7 @@ body {
   .ecommerceSection {
     margin-top: 0;
     padding: 16px 0;
+    height: 55vh !important;
   }
 
   .ecommerceSection h1 {
