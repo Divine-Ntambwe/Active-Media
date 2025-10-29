@@ -59,7 +59,7 @@ const Contact_Us = () => {
           <input type="email" name="user_email" required />
 
           <label>Contact Number :</label>
-          <input type="text" name="contact_number" required />
+          <input type="text" pattern="0\d{9}" name="contact_number" required />
 
           <label>Message :</label>
           <textarea
