@@ -98,7 +98,9 @@ useEffect(() => {
         className={styles.recentWork}
       // ref={rwHeading}
       >
-        Recent Work & Collaborators
+        Recent Work <br/>
+         &<br/>
+        Collaborators
       </h1>
       <img
         // ref={BGImg}

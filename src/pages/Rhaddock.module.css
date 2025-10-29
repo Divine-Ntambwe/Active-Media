@@ -63,7 +63,7 @@
     font-size: 3rem;
     width: 300px;
     animation: startAnimation 2.5s ease-in;
-
+    text-align: center;
 }
 
 .recentWorkPage{
