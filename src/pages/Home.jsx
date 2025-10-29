@@ -26,7 +26,7 @@ function Home() {
 
   function onScroll(){
     handleNav()
-    setTimeout(()=>{nav("/about-us")},1900)
+    setTimeout(()=>{nav("/about-us")},1200)
   }
 
     useEffect(() => {
