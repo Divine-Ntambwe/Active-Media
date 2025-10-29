@@ -26,6 +26,12 @@ const Recent_Work = () => {
   const headings = ["SUPREME BUILD IT", "RAPIDTRADE", "R HADDOCK"];
   const banner = [SupremeBanner, deliveryImg, Group72];
   const logo = [SupremeLogo, rapidtradeLogo, RhLogo];
+  const description = ["Supreme Build It supplies quality building materials, hardware, and tools for builders and DIY users. With helpful services like paint-mixing, glass-cutting, and fast delivery, they make every construction or renovation project easy, affordable, and efficient from start to finish.",
+    "Rapidtrade provides an advanced cloud-based system for order and sales management. It helps distributors and reps process orders, track deliveries, and manage customers efficiently through powerful mobile tools that improve accuracy, speed, and performance.",
+    "R Haddock & Co offers a complete range of packaging materials for homes and businesses. From moving boxes and bubble wrap to tape and custom packaging, they provide strong, affordable, and practical solutions designed to protect products with quality and care.",
+  ];
+  // const svg = []
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true); // true = visible, false = faded out
   const recentWork = useRef();
@@ -83,11 +89,11 @@ useEffect(() => {
     <div className={styles.recentWorkPage}>
       <Navbar />
       <h1
-            className={styles.recentWork}
-            // ref={rwHeading}
-            >
-              Recent Work
-            </h1> 
+        className={styles.recentWork}
+      // ref={rwHeading}
+      >
+        Recent Work & Collaborators
+      </h1>
       <img
         // ref={BGImg}
         className={styles.recentBackground}
@@ -99,19 +105,18 @@ useEffect(() => {
         <div className={styles.rapidtrade} ref={recentWork}>
           <div className={styles.leftSection}>
             <h1
-              className={`${styles.title} ${
-                fade ? styles.fadeIn : styles.fadeOut
-              }`}
+              className={`${styles.title} ${fade ? styles.fadeIn : styles.fadeOut
+                }`}
             >
               {headings[currentIndex]}
             </h1>
-            <p className={styles.description}>
-              Yorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-              turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-              nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-              tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-              feugiat lectus.
+            <p
+              className={`${styles.description} ${fade ? styles.fadeIn : styles.fadeOut
+                }`}
+            >
+              {description[currentIndex]}
             </p>
+
 
             <div className={styles.rapidTradeViewSite}>
               <a
@@ -146,9 +151,8 @@ useEffect(() => {
               <img
                 src={banner[currentIndex]}
                 alt="Delivery"
-                className={`${styles.deliveryImg} ${
-                  fade ? styles.fadeImgIn : styles.fadeImgOut
-                }`}
+                className={`${styles.deliveryImg} ${fade ? styles.fadeImgIn : styles.fadeImgOut
+                  }`}
               />
             </div>
           </div>
@@ -156,9 +160,8 @@ useEffect(() => {
             <img
               src={logo[currentIndex]}
               alt="RapidTrade Logo"
-              className={`${styles.logoImg} ${
-                fade ? styles.fadeRightIn : styles.fadeRightOut
-              }`}
+              className={`${styles.logoImg} ${fade ? styles.fadeRightIn : styles.fadeRightOut
+                }`}
             />
           </div>
           {/* <img src={Blending} className={styles.bgImage} alt="" /> */}

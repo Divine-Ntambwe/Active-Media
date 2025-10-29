@@ -61,7 +61,7 @@
     /* display: none; */
     z-index: 1;
     font-size: 3rem;
-    /* width: 300px; */
+    width: 300px;
     animation: startAnimation 2.5s ease-in;
 
 }
@@ -215,7 +215,7 @@
 
 .rapidTradeViewSite {
   cursor: pointer;
-  z-index: 9;
+  z-index: 1;
 }
 
 .deliverySection {
