@@ -156,22 +156,27 @@
    
    .cta{
     top:5px;
-    width: 83px;
-    height: 30px;
-    font-size: 6.6px;
+    width: 85px;
+    height: 25px;
+    font-size: 8px;
     left: 10px;
     z-index: 2;
+    padding: 0 11px;
+   }
+
+   .arrow{
+    font-size: 13px;
    }
 
    .orb1{
     width: 400px;
     height: 500px;
     top: 230px;
-    left: -550px;
+    left: -553px;
    }
 
    .bottomCenter{
-    height: 25px;
+    height: 28px;
     /* top: 868px; */
     margin:0 0 0 -5%;
    }
