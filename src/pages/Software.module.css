@@ -1,46 +1,43 @@
-/* Software.module.css */
+/* Software.module.css - DESKTOP ONLY + MOBILE (<440px) */
 .softwarePage{
   overflow: hidden;
   height: 100vh;
   position: relative;
-  /* top: -100px; */
 }
 
 .softwareSection {
-  /* width: 100%; */
   font-family: "Inter", sans-serif;
   height: 90vh !important;
-  /* overflow: hidden !important; */
   padding-left: 50px;
 }
 
 .slide {
   width: 100%;
-  min-height: 100vh; 
-  /* full viewport height */
+  height: 100vh;
   position: relative;
 }
 
 /* Slide 1: content with laptop */
 .div1 { 
+  box-sizing: border-box;
   display: flex;
-  align-items: flex-start; /* Changed from center to start to move content up */
+  align-items: center;
   justify-content: space-between;
-  margin-top: 100px;
-  padding-top: 0px; /* Added top padding to control vertical position without huge top gap */
+  margin: 0px auto;
+  width: 80vw;
+  height: 80vh;
 }
 
 .title1{
-  font-size: 4em;
+  font-size: 5.5em;
 }
 
 /* Placeholder slides */
 .div2 {
-  /* background: #ffffff; */
   padding: 80px 0 40px 0;
-  /* position: relative; */
-  overflow: hidden;
+  /* overflow: hidden; */
   background: transparent !important;
+  margin-top: 34vh;
 }
 
 .div4 {
@@ -57,7 +54,8 @@
 .textBlock {
   position: relative;
   z-index: 2;
-   /* Reduced from 20% to spread horizontally (move left content more to the edge) */
+  height: 450px;
+  /* padding-left: 100px; */
 }
 
 .title {
@@ -66,6 +64,8 @@
   line-height: 1.2;
   margin-bottom: 2rem;
   position: absolute;
+ 
+  
 }
 
 .services {
@@ -79,25 +79,23 @@
   letter-spacing: 2px;
 }
 
-
-
 /* Paragraph box */
 .paragraphBox {
   position: absolute;
   line-height: 1.6;
   z-index: 4;
-  width:90%;
-  height: 55%;
+  width:80vw;
+  /* height: 55%; */
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  /* border: 1px solid red; */
-
+  height: 450px;
+  
 }
 
 .paragraphBox p, .pinkBox {
- background:rgb(255, 221, 239,0.3);
-  padding: 0.1em 1em 5rem 1em  ;
+  background:rgb(255, 221, 239,0.3);
+  padding: 0.1em 1em 5rem 1em;
   border-radius: 12px;
   font-family: "Inter",sans-serif;
   font-weight: 200;
@@ -106,9 +104,8 @@
 
 /* Reset body scroll */
 body {
-  overflow-y: auto; /* allow vertical scroll */
+  overflow-y: auto;
 }
-
 
 /* Rising Fade In Animation */
 @keyframes riseFadeIn {
@@ -149,7 +146,7 @@ body {
   }
   100% {
     opacity: 0;
-    transform: translate(-50vw, 50vh); /* moves bottom-left */
+    transform: translate(-50vw, 50vh);
   }
 }
 
@@ -180,13 +177,11 @@ body {
   transition: opacity 0.8s ease-in;
 }
 
-
 @keyframes fadeIn2 {
-   0% {
-     transform: translateY(0px);
+  0% {
+    transform: translateY(0px);
   }
   100% {
-    
     transform: translateY(-115vh);
   }
 }
@@ -208,12 +203,8 @@ body {
   animation: fadeOut2 1.8s forwards;
 }
 
-
-
-
-
 @keyframes fadeIn3 {
-   0% {
+  0% {
     transform: translateY(0px);
   }
   100% {
@@ -221,9 +212,8 @@ body {
   }
 }
 
-
 .fadeIn3{
-animation: fadeIn3 1.8s forwards;
+  animation: fadeIn3 1.8s forwards;
 }
 
 @keyframes fadeOut3 {
@@ -240,8 +230,8 @@ animation: fadeIn3 1.8s forwards;
 }
 
 @keyframes fadeIn4 {
-   0% {
-     transform: translateY(0px);
+  0% {
+    transform: translateY(0px);
   }
   100% {
     transform: translateY(-285vh);
@@ -249,12 +239,12 @@ animation: fadeIn3 1.8s forwards;
 }
 
 .fadeIn4{
-animation: fadeIn4 1s forwards;
+  animation: fadeIn4 1s forwards;
 }
 
 @keyframes fadeIn5 {
-   0% {
-     transform: translateY(-390vh);
+  0% {
+    transform: translateY(-390vh);
     opacity: 0;
   }
   100% {
@@ -264,12 +254,11 @@ animation: fadeIn4 1s forwards;
 }
 
 .fadeIn5{
-animation: fadeIn5 1s forwards;
+  animation: fadeIn5 1s forwards;
 }
 
 .laptopGif{
   position: absolute;
-  /* width: 300px; */
   z-index: 10;
   transition: 1s;
   transform:scale(2.5);
@@ -281,7 +270,6 @@ animation: fadeIn5 1s forwards;
   0%{
     left: 70vw;
   }
-  
   100%{
     left: 20vw
   }
@@ -289,14 +277,12 @@ animation: fadeIn5 1s forwards;
 
 .moveLaptop1{
   animation: moveLaptop1 1s 0.1s forwards;
-
 }
 
 @keyframes moveLaptop2 {
   0%{
     left: 18vw;
   }
-  
   100%{
     left: 72vw;
     top: 45vh;
@@ -305,14 +291,12 @@ animation: fadeIn5 1s forwards;
 
 .moveLaptop2{
   animation: moveLaptop2 1s forwards ease-out;
-
 }
 
 @keyframes moveLaptop3 {
   0%{
     top:45vh;
   }
-  
   100%{
     top: 76vh;
     left: 73vw;
@@ -321,7 +305,6 @@ animation: fadeIn5 1s forwards;
 
 .moveLaptop3{
   animation: moveLaptop3 1s forwards ease-out;
-
 }
 
 @keyframes moveLaptop4 {
@@ -329,7 +312,6 @@ animation: fadeIn5 1s forwards;
     top:76vh;
     left: 73vw;
   }
-  
   100%{
     top: 35vh;
     left: 20vw
@@ -338,7 +320,6 @@ animation: fadeIn5 1s forwards;
 
 .moveLaptop4{
   animation: moveLaptop4 1s forwards ease-out;
-
 }
 
 @keyframes moveLaptop5 {
@@ -346,7 +327,6 @@ animation: fadeIn5 1s forwards;
     top:35vh;
     left: 20vw
   }
-  
   100%{
     top: -50vh;
     left: 20vw
@@ -355,15 +335,13 @@ animation: fadeIn5 1s forwards;
 
 .moveLaptop5{
   animation: moveLaptop5 1s forwards ease-out;
-
 }
 
 .bgImg{
   transition: 1s;
 }
 
-
-/* Cloud specific styles - directly from original component */
+/* Cloud specific styles */
 .container {
   width: 100%;
   min-height: calc(100vh - 80px);
@@ -374,7 +352,6 @@ animation: fadeIn5 1s forwards;
 }
 
 .content {
-  /* max-width: 1300px; */
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -387,16 +364,12 @@ animation: fadeIn5 1s forwards;
 .left {
   flex: 0 0 38%;
   display: flex;
-  /* margin-top: -90px; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 30px;
-  /* border: 1px solid red; */
   height: 65vh;
 }
-
-
 
 .title {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
@@ -408,8 +381,8 @@ animation: fadeIn5 1s forwards;
   letter-spacing: 0.5px;
   margin: 0;
   position: relative;
- 
 }
+
 .title2 {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
@@ -428,7 +401,6 @@ animation: fadeIn5 1s forwards;
   left: 40%;
   top: 60%;
   padding: 20px;
-  /* min-height: 190px; */
 }
 
 .right p {
@@ -462,78 +434,81 @@ animation: fadeIn5 1s forwards;
   bottom: 99%;
   width: 800px; 
   height: 450px;
-  /* padding-right: 300px; */
 }
-
 
 .mainImage{
   margin-top: 50px;
   width: 900px;
   height: 500px;
- 
 }
 
 .supImage{
-   margin-right: 100px;
+  margin-right: 100px;
 }
 
 .rightSection{
   margin-top: 50px;
 }
 
-/* Ozias Styling(Start) */
-.div2_2{
-
-  height: 70vh;
-  display: flex;
+.leftSection{
+  margin-top: 0;
 }
 
-/* SMALLER SCREENS */
+.div2_2{
+  height: 70vh;
+  display: flex;
+  margin-top: -12vh !important ;
+}
+
+.ecommerceSection{
+  margin-top: 0;
+}
+
+/* DESKTOP RESPONSIVE BREAKPOINTS ONLY */
+
+/* 1300px - 1400px */
 @media screen and (max-width: 1400px) and (min-width:1300px){
-  *{
-    /* color: darkmagenta; */
-  }
 
   .paragraphBox p, .pinkBox {
-  font-size: 1.3em;
- }
+    font-size: 1.3em;
+  }
 
   .left h1 {
     font-size: 2.5em !important;
   }
+
   .backgroundDecor{
     width: 700px !important;
     height: 400px;
   }
 
   .div2{
-    margin-top: -55px;
+    margin-top: 28vh;
   }
 
-   .title{
-     font-size: 2.5em;
+  .title{
+    font-size: 2.5em;
   }
+
   .mainImage{
-  margin-top: 50px;
-  width: 800px;
-  height: 430px;
-}
-.ecommerceSection{
-  margin-top: 30px;
-}
-  
+    margin-top: 50px;
+    width: 800px;
+    height: 430px;
+  }
+
+  .ecommerceSection{
+    margin-top: 30px;
+  }
+
+  .rightSection{
+    margin: 5vh;
+  }
 }
 
+/* 1120px - 1301px */
 @media screen and (max-width: 1301px) and (min-width:1120px) {
-  *{
-    /* color:fuchsia */
-  }
-   .paragraphBox p, .pinkBox{
+  .paragraphBox p, .pinkBox{
     font-size: 1.1rem !important;
-  }
-
-  .div1{
-    /* margin-top: 10px !important; */
   }
 
   .title1{
@@ -551,608 +526,422 @@ animation: fadeIn5 1s forwards;
   .left h1 {
     font-size: 2.5em !important;
   }
+
   .backgroundDecor{
     width: 600px !important;
     height: 300px;
   }
 
   .div2{
-    margin-top: -105px;
+    /* margin-top: -105px; */
   }
 
   .title{
-     font-size: 1.8em;
+    font-size: 1.8em;
   }
+
   .mainImage{
-  margin-top: 50px;
-  width: 800px;
-  height: 380px;
-}
-.ecommerceSection{
-  margin-top: 0px;
-}
+    margin-top: 50px;
+    width: 800px;
+    height: 380px;
+  }
+
+  .ecommerceSection{
+    margin-top: 0px;
+  }
 }
 
-@media screen and (max-width:1121px) {
+/* 1690px - 1799px */
+@media screen and (min-width:1690px) and (max-width: 1799px) {
   *{
-    color: black;
+    /* color: red; */
   }
-   .paragraphBox p, .pinkBox{
-    font-size: 1rem !important;
-    padding-bottom: 2em;
+  .paragraphBox p, .pinkBox {
+    font-size: 1.8em;
   }
 
   .div1{
-    margin-top: 90px !important;
+    /* margin-top: 120px !important; */
   }
+
 
   .title1{
-    font-size: 3em;
-  }
-
-  .services{
-    font-size: 1.5em;
-  }
-
-  .laptopGif{
-    transform: scale(1.6) !important;
-  }
-
-  .left h1 {
-    font-size: 2.5em !important;
-  }
-  .backgroundDecor{
-    width: 600px !important;
-    height: 300px;
-  }
-
-  .div2{
-    margin-top: -105px;
-  }
-}
-
-
-/* LARGER SCREENS */
-/* 80% */
-
-@media screen and (min-width:1690px) and (max-width: 1799px) {
-   *{
-  /* color: aqua; */
- }
-
-  .paragraphBox p, .pinkBox {
-  font-size: 1.8em;
- }
-
- .div1{
-    margin-top: 120px !important;
-  }
-
-   .title1{
     font-size: 5.9em;
   }
 
-  
   .services{
     font-size: 3em;
   }
+
+  .supImage{
+    width: 1100px;
+    height: 600px;
+  }
+  
 
   @keyframes moveLaptop3 {
-  0%{
-    top:45vh;
-  }
-  
-  100%{
-    top: 74vh;
-    left: 66vw;
+    0%{
+      top:45vh;
+    }
+    100%{
+      top: 74vh;
+      left: 66vw;
+    }
   }
 }
 
-
-}
+/* 1800px - 2200px */
 @media screen and (min-width:1800px) and (max-width: 2200px) {
- *{
-  /* color: blue; */
- }
-
- .paragraphBox p, .pinkBox {
-  font-size: 2em;
- }
-
- .div1{
-    margin-top: 120px !important;
+  *{
+    /* color: blue; */
   }
-
-   .title1{
-    font-size: 5.5em;
-  }
-
-  
-  .services{
-    font-size: 3em;
-  }
-  .left h1 {
-    font-size: 4em !important;
-  }
-  .backgroundDecor{
-    width: 1000px !important;
-    height: 500px;
-  }
-
-  .div2{
-    margin-top: 50px;
-  }
-
-   .laptopGif{
-    transform: scale(3) !important;
-  }
-
-  .mainImage{
-  margin-top: 50px;
-  width: 1200px;
-  height: 600px;
- 
-}
-}
-
-/* 67% */
-@media screen and (min-width: 2201px) {
-  .softwareSection{
-    /* color:crimson; */
-    /* font-size: 1.1em; */
-  }
-
-  
- .paragraphBox p, .pinkBox{
-    font-size: 2.5rem !important;
+  .paragraphBox p, .pinkBox {
+    font-size: 2em;
   }
 
   .div1{
-    margin-top: 190px !important;
+    /* margin-top: 120px !important; */
   }
 
   .title1{
     font-size: 6.5em;
   }
- 
 
   .services{
-    font-size: 4em;
+    font-size: 3em;
+  }
+  .paragraphBox {
+   
+    height: 500px;
+  }
+
+  .textBlock {
+    height: 500px !important;
+  }
+
+  .left h1 {
+    font-size: 4em !important;
+  }
+
+  .backgroundDecor{
+    width: 1000px !important;
+    height: 500px;
+  }
+
+  
+
+  .laptopGif{
+    transform: scale(3) !important;
+  }
+
+  .mainImage{
+    margin-top: 50px;
+    width: 1200px;
+    height: 600px;
+  }
+}
+
+/* 2201px+ */
+@media screen and (min-width: 2201px) {
+
+  .paragraphBox p, .pinkBox{
+    font-size: 2.5rem !important;
+  }
+
+.paragraphBox, .textBlock {
+    height: 680px;
+  }
+
+  .title1{
+    font-size: 8.5em;
+  }
+
+  .services{
+    font-size: 4.5em;
   }
 
   .laptopGif{
     transform: scale(3.5) !important;
-  }
-
-   .left h1 {
-    font-size: 5em !important;
-  }
-  .backgroundDecor{
-    width: 1200px !important;
-    height: 600px;
-  }
-
-  .div2{
-    margin-top: 50px;
-  }
-
-  .title{
-     font-size: 4.5em;
-  }
-  .mainImage{
-  margin-top: 50px;
-  width: 1400px;
-  height: 730px;
- 
-}
-
-
-}
-
-/* Mobile Responsive Breakpoints */
-
-/* Tablets (768px - 991px) */
-@media screen and (max-width: 991px) and (min-width: 768px) {
-  .softwarePage {
-    overflow-x: hidden;
-  }
-
-  .softwareSection {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .div1 {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 60px;
-    text-align: center;
-  }
-
-  .title1 {
-    font-size: 2.5em;
-    margin-bottom: 1rem;
-  }
-
-  .services {
-    font-size: 1.2em;
-    margin-bottom: 1.5rem;
-  }
-
-  .paragraphBox p {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .laptopGif {
-    transform: scale(1.2) !important;
-  }
-
-  .div2 {
-    padding: 40px 0 30px 0;
-  }
-
-  .content {
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    width: 100%;
-  }
-
-  .left {
-    width: 100%;
-    order: 1;
-    text-align: center;
-    margin-bottom: 1.5rem;
+    top: 345px;
   }
 
   .left h1 {
-    font-size: 2rem !important;
-    text-align: center;
-    margin-bottom: 0.5rem;
+    font-size: 5em !important;
   }
 
-  .right {
-    width: 100%;
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  .backgroundDecor{
+    width: 1200px !important;
+    height: 900px;
   }
 
-  .backgroundDecor {
-    width: 100% !important;
-    max-width: 500px !important;
-    height: 250px !important;
-    margin-bottom: 1.5rem;
-    object-fit: contain;
-    
+  .div2{
+    padding-top: 10vh;
   }
 
-  .pinkBox {
-    font-size: 0.9rem !important;
-    text-align: center;
-    padding: 1rem;
-    width: 100%;
-    max-width: 400px;
-    order: 3;
+  .title{
+    font-size: 4.5em;
+  }
 
+  .mainImage{
+    margin-top: 50px;
+    width: 1400px;
+    height: 730px;
+  }
+  .rightSection {
+    margin: 5vh !important;
   }
 }
 
-/* Mobile Phones (576px - 767px) */
-@media screen and (max-width: 767px) and (min-width: 576px) {
+/* ========== MOBILE: MAX-WIDTH 440px ========== */
+@media (max-width: 940px) {
   .softwarePage {
-    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
   }
 
   .softwareSection {
-    padding-left: 15px;
-    padding-right: 15px;
     height: auto !important;
+    padding: 0 16px;
   }
 
+  .slide {
+    min-height: auto !important;
+    margin-bottom: -24px ;
+  }
+
+  /* Section 1 */
   .div1 {
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 20px;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .textBlock {
+    width: 100%;
+    /* border: 2px solid blue; */
     text-align: center;
-    padding: 0 10px;
   }
 
   .title1 {
     font-size: 2rem;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    margin-bottom: 12px;
   }
 
   .services {
     font-size: 1rem;
-    margin-bottom: 1.2rem;
-    gap: 0.5rem;
+    margin-top: 12px;
+  }
+
+  .services p {
+    margin: 4px 0;
   }
 
   .paragraphBox {
-    margin-top: 1rem;
+    position: static;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 16px; */
+    margin-bottom: 80px;
+    /* border: 2px solid red; */
+  }
+
+  .paragraphBox p,
+  .pinkBox {
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    width:85vw;
+  }
+
+  .pinkBox3{
+    width: 84vw;
   }
 
   .paragraphBox p {
-    font-size: 0.8rem;
-    line-height: 1.4;
-    padding: 0 10px;
+    color: black !important;
+    font-weight: 250;
+    font-size: 1em !important;
   }
 
+  /* Laptop gif - hide on mobile */
   .laptopGif {
-    transform: scale(0.8) !important;
-    position: fixed !important;
+    /* display: none; */
+    top: 45vh;
+  left: 28.6vw;
+
+    transform: scale(1); /* Reset scale */
+    max-width: 50%; /* Responsive width */
+    height: auto;
   }
 
+  /* Section 2: Cloud */
   .div2 {
-    padding: 30px 0 20px 0;
-    margin-top: -30px;
+    padding: 24px 0;
+    margin-top: 0 !important;
+    height: 65vh;
+    /* border: 2px solid red; */
+  }
+  .div1 {
+    height: 45vh;
+  }
+
+  .container {
+    min-height: 39vh;
+    padding: 24px 0;
+    /* border: 2px solid rgb(26, 228, 228); */
+
   }
 
   .content {
     flex-direction: column;
+    padding: 16px;
+    min-height: auto;
+    gap: 16px;
+    justify-content: center;
     align-items: center;
-    gap: 0;
-    padding: 0 15px;
-    width: 100%;
+    /* border: 2px solid rgb(89, 230, 8); */
+
+  }
+  #edit{
+    /* border: 2px solid rgb(201, 42, 116); */
+    margin-left: -19.8px;
+
   }
 
   .left {
+    flex: 1;
     width: 100%;
-    order: 1;
+    height: auto;
+    padding-top: 0;
+    align-items: center;
     text-align: center;
-    margin-bottom: 1.2rem;
   }
 
-  .left h1 {
-    font-size: 1.4rem !important;
-    margin-bottom: 0.3rem;
-    line-height: 1.2;
+  .title {
+    font-size: 1.8rem;
+    position: static;
+    margin-bottom: 8px;
   }
 
   .title2 {
-    margin-left: 0 !important;
+    font-size: 1.8rem;
+    margin-left: 0;
   }
 
   .right {
+    flex: 1;
+    position: static;
     width: 100%;
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+    padding: 0;
+    left: auto;
+    top: auto;
+  }
+
+  .right p {
+    padding-bottom: 0.5em;
   }
 
   .backgroundDecor {
-    width: 100% !important;
-    max-width: 350px !important;
-    height: 175px !important;
-    margin-bottom: 1.2rem;
-    object-fit: contain;
+    position: static;
+    width: 100%;
+    min-width: 355px;
+    height: auto;
+    margin: 16px  auto 0;
+    /* margin-left: -19.8px; */
+    padding-top:30px ;
+    /* border: 3px solid green; */
+   
   }
 
-  .pinkBox {
-    font-size: 0.8rem !important;
-    text-align: center;
-    padding: 0.8rem;
+  /* Section 3 */
+  .div2_2 {
+    height: auto;
+    justify-content: center;
+    padding: 16px 0;
+  }
+
+  .div2_2 img {
     width: 100%;
-    max-width: 320px;
-    order: 3;
-    line-height: 1.4;
+    min-width: 320px;
+    height: auto;
+    padding: 16px 0;
+   
+  }
+
+  /* Section 4: E-commerce */
+  .div4 {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0;
+    
+  }
+
+  .leftSection,
+  .rightSection {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .mainImage {
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   .ecommerceSection {
-    padding: 20px 15px;
+    margin-top: 0;
+    padding: 16px 0;
+    height: 55vh !important;
   }
 
-  .ecommerceSection .title {
-    font-size: 1.5rem !important;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-
-  .div4 {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .leftSection, .rightSection {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* Small Mobile Phones (414px - 575px) */
-@media screen and (max-width: 575px) and (min-width: 414px) {
-  .softwarePage {
-    overflow-x: hidden;
-  }
-
-  .softwareSection {
-    padding-left: 10px;
-    padding-right: 10px;
-    height: auto !important;
-  }
-
-  .div1 {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    text-align: center;
-    padding: 0 5px;
-  }
-
-  .title1 {
+  .ecommerceSection h1 {
     font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    line-height: 1.2;
-  }
-
-  .services {
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
-    gap: 0.3rem;
-  }
-
-  .paragraphBox p {
-    font-size: 0.75rem;
-    line-height: 1.4;
-    padding: 0 5px;
-  }
-
-  .laptopGif {
-    transform: scale(0.6) !important;
-  }
-
-  .div2 {
-    padding: 25px 0 15px 0;
-  }
-
-  .content {
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    padding: 0 10px;
-    width: 100%;
-  }
-
-  .left {
-    width: 100%;
-    order: 1;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
   }
 
-  .left h1 {
-    font-size: 1.2rem !important;
-    margin-bottom: 0.3rem;
-    line-height: 1.2;
-  }
-
-  .right {
+  /* Section 5 */
+  .div5 {
+    justify-content: center;
     width: 100%;
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 16px;
   }
 
-  .backgroundDecor {
-    width: 100% !important;
-    max-width: 280px !important;
-    height: 140px !important;
-    margin-bottom: 1rem;
-    object-fit: contain;
-  }
-
-  .pinkBox {
-    font-size: 0.75rem !important;
-    padding: 0.7rem;
+  .supImage {
+    /* margin-right: -100px; */
+    margin-top: 20px;
+    padding-bottom: 20px;
+    margin-left: -10px;
     width: 100%;
-    max-width: 280px;
-    text-align: center;
-    line-height: 1.4;
-    order: 3;
+    min-width: 320px;
+    height: auto;
+  }
+
+  /* Remove animations on mobile */
+  .fadeIn2,
+  .fadeOut2,
+  .fadeIn3,
+  .fadeOut3,
+  .fadeIn4,
+  .fadeIn5 {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .bgImg {
+
+    display: none;
   }
 }
 
-/* Extra Small Mobile Phones (max-width: 413px) */
-@media screen and (max-width: 413px) {
-  .softwarePage {
-    overflow-x: hidden;
-  }
-
-  .softwareSection {
-    padding-left: 8px;
-    padding-right: 8px;
-    height: auto !important;
-  }
-
-  .div1 {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 25px;
-    text-align: center;
-    padding: 0;
-  }
-
-  .title1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.6rem;
-    line-height: 1.2;
-  }
-
-  .services {
-    font-size: 0.8rem;
-    margin-bottom: 0.8rem;
-    gap: 0.2rem;
-  }
-
-  .paragraphBox p {
-    font-size: 0.7rem;
-    line-height: 1.3;
-    padding: 0;
-  }
-
-  .laptopGif {
-    transform: scale(0.5) !important;
-  }
-
-  .div2 {
-    padding: 20px 0 10px 0;
-  }
-
-  .content {
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    padding: 0 8px;
-    width: 100%;
-  }
-
-  .left {
-    width: 100%;
-    order: 1;
-    text-align: center;
-    margin-bottom: 0.8rem;
-  }
-
-  .left h1 {
-    font-size: 1.1rem !important;
-    margin-bottom: 0.2rem;
-    line-height: 1.2;
-  }
-
-  .right {
-    width: 100%;
-    order: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .backgroundDecor {
-    width: 100% !important;
-    max-width: 240px !important;
-    height: 120px !important;
-    margin-bottom: 0.8rem;
-    object-fit: contain;
-  }
-
-  .pinkBox {
-    font-size: 0.7rem !important;
-    padding: 0.5rem;
-    width: 100%;
-    max-width: 240px;
-    text-align: center;
-    line-height: 1.3;
-    order: 3;
-  }
+.fade-container {
+  transition: opacity 1s ease;
+  opacity: 1;
 }
-
-

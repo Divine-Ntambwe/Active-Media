@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import styles from "./About_Us.module.css";
 import lightImg from "../assets/Frame 206.png";
+import phoneImg from "../assets/Frame 201.png"
 import MultiMedia from "../assets/Multimedia.png";
 import PurpleLines from "../component/purpleLines.jsx";
 import { useNavigate } from "react-router-dom";
@@ -13,30 +14,62 @@ export default function About_Us() {
   const purpleLines = useRef();
   const slidesCount = 4;
   const nav = useNavigate()
+  const ac = new AbortController();
 
-  useEffect(() => {
-    const handleWheel = (e) => {
-      e.preventDefault(); // prevent vertical scroll
+ useEffect(() => {
+  const handleWheel = (e) => {
+    e.preventDefault();
 
-      if (isScrolling.current) return;
-      isScrolling.current = true;
+    if (isScrolling.current) return;
+    isScrolling.current = true;
 
-      if (e.deltaY > 0) {
-        setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
-        
+    if (e.deltaY > 5) {
+      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
+    } else if (e.deltaY < -5) {
+      setCurrentSlide((prev) => Math.max(0, prev - 1));
+    }
 
-      } else {
-        setCurrentSlide((prev) => Math.max(0, prev - 1));
-      }
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 700);
+  };
 
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, 700);
-    };
+  let touchStartY = 0;
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    return () => window.removeEventListener("wheel", handleWheel);
-  }, []);
+  const handleTouchStart = (e) => {
+    touchStartY = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndY = e.changedTouches[0].clientY;
+    const deltaY = touchStartY - touchEndY;
+
+    if (isScrolling.current) return;
+    isScrolling.current = true;
+
+    if (deltaY > 20) {
+      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
+    } else if (deltaY < -15) {
+      setCurrentSlide((prev) => Math.max(0, prev - 1));
+    }
+
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 700);
+  };
+  setTimeout(()=>{
+
+    window.addEventListener("wheel", handleWheel,{ signal: ac.signal });
+    window.addEventListener("touchstart", handleTouchStart,{ signal: ac.signal });
+    window.addEventListener("touchend", handleTouchEnd, { signal: ac.signal });
+  },1000);
+
+  return () => {
+    window.removeEventListener("wheel", handleWheel);
+    window.removeEventListener("touchstart", handleTouchStart);
+    window.removeEventListener("touchend", handleTouchEnd);
+  };
+}, []);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -64,12 +97,13 @@ export default function About_Us() {
       return
 
       case 3: nav("/software")
+      ac.abort();
     }
 
   }, [currentSlide]);
 
   return (
-    <>
+    <div className={styles.softwarePage}>
       <Navbar/>
     <section className={styles.aboutSection}>
       {/* PurpleLines always behind everything */}
@@ -80,19 +114,19 @@ export default function About_Us() {
       {/* Slides container */}
       <div className={styles.slidesContainer} ref={containerRef}>
         {/* Slide 1 */}
-        <div className={`${styles.aboutDiv} ${styles.div1}`}>
-          <div className={`${styles.laptopWrapper} ${styles.fadeInStagger}`}>
-            <img src="/laptop.png" alt="Laptop" className={styles.laptop} />
+        <div className={`${styles.aboutDiv} ${styles.div1} ${styles.aboutDivN} ${styles.div1N}`}>
+          <div className={`${styles.laptopWrapper} ${styles.fadeInStagger} ${styles.laptopWrapperN}`}>
+            <img src="/laptop.png" alt="Laptop" className={`${styles.laptop} ${styles.laptopN}`} />
           </div>
-          <h2 className={`${styles.heading} ${styles.fadeInStagger}`}>
+          <h2 className={`${styles.heading} ${styles.fadeInStagger} ${styles.headingN}`}>
             WHO ARE WE ?
           </h2>
-          <p className={`${styles.textBlock} ${styles.topLeft} ${styles.fadeInStagger}`}>
+          <p className={`${styles.textBlockN} ${styles.topLeftN} ${styles.fadeInStagger} ${styles.textBlock} ${styles.topLeft}`}>
             We are a software development and <br />
             media agency that focuses on <br />
             business growth
           </p>
-          <p className={`${styles.textBlock} ${styles.bottomLeft} ${styles.fadeInStagger}`}>
+          <p className={`${styles.textBlock} ${styles.bottomLeft} ${styles.fadeInStagger} ${styles.textBlockN} ${styles.bottomLeftN}`}>
             Active Media consists <br /> of a team of people <br />
             that are passionate <br /> about what they do <br />
             and strive to ensure <br />
@@ -103,7 +137,7 @@ export default function About_Us() {
             authenticity and excellence. <br />
             You have ideas. We have software solutions.
           </p>
-          <p className={`${styles.textBlock} ${styles.rightBlock} ${styles.fadeInStagger}`}>
+          <p className={`${styles.textBlock} ${styles.rightBlock} ${styles.fadeInStagger} ${styles.textBlockN} ${styles.rightBlockN}`}>
             Active Media is a premier multimedia solution company <br />
             with innovative and distinctive solutions <br />
             that go beyond the traditional means of marketing. <br />
@@ -166,10 +200,11 @@ export default function About_Us() {
                 Active Media consists of a team of <br />
                 people that are passionate about what <br />
                 they do and strive to ensure that only <br />
-                the very best service is offered to our <br />
+                the very best service is offered to our 
                 clients.
                 <br />
-                We stand by our company ethics – ensuring honesty, authenticity and
+                We stand by our company ethics -<br/>
+                 ensuring honesty, authenticity and
                 excellence.
                 <br />
                 You have ideas. We have software solutions
@@ -182,9 +217,9 @@ export default function About_Us() {
           </div>
 
           <div className={`${styles.container1} ${styles.fadeInStagger}`}>
-            <div className={styles.phoneImage}>
+            <div className={styles.phoneImg}>
               <img
-                src="/src/assets/Frame 201.png"
+                src={phoneImg}
                 alt="Phone"
                 className={styles.image1}
               />
@@ -200,12 +235,12 @@ export default function About_Us() {
                 foundation with which any business can begin to maximise on their
                 potential.
               </p>
-              <button className={styles.experties}>Expertise</button>
+              <p style={{}}className={styles.experties}>Expertise</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    </>
+    </div>
   );
 }
