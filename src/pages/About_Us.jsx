@@ -103,13 +103,14 @@ export default function About_Us() {
   }, [currentSlide]);
 
   return (
+    <>
     <div className={styles.softwarePage}>
-      <Navbar/>
-    <section className={styles.aboutSection}>
-      {/* PurpleLines always behind everything */}
       <div className={styles.purpleLinesWrapper} ref={purpleLines}>
         <PurpleLines />
       </div>
+      <Navbar/>
+    <section className={styles.aboutSection}>
+      {/* PurpleLines always behind everything */}
 
       {/* Slides container */}
       <div className={styles.slidesContainer} ref={containerRef}>
@@ -242,5 +243,6 @@ export default function About_Us() {
       </div>
     </section>
     </div>
+    </>
   );
 }

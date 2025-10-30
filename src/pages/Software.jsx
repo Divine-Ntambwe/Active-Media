@@ -353,10 +353,10 @@ useEffect(() => {
   return (
     <div className={styles.softwarePage}>
       <img src={laptop} ref={laptopGif} className={styles.laptopGif} />
-      <Navbar />
       <div ref={bgImg} className={styles.bgImg}>
         <PurpleLines />
       </div>
+      <Navbar />
 
       <section className={styles.softwareSection}>
         {/* Slide 1 */}

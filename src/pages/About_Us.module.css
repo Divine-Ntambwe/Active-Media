@@ -4,8 +4,7 @@
   /* position: fixed; stays across all slides */
   /* top: 0px; */
   position: absolute !important;
-  width: 95vw;
-  height: 80vh; 
+ transform: scale(0.9) ;
   left: -250px;
   transition: ease-in 1s;
   /* display: flex; */
