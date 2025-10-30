@@ -7,7 +7,9 @@
   margin: 0 auto;
   padding: 1rem 2rem;
   box-sizing: border-box;
-  background-color: transparent !important;
+   
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(3px);
   z-index: 10 !important;
   position: sticky !important;
   top: 0;
@@ -207,7 +209,7 @@
   height: 100%;
   /* Match navbar background but with opacity */
   background: rgba(128, 128, 128, 0.9) ; /* same grey tone as navbar, adjust as needed */
-  backdrop-filter: blur(3px); /* optional soft blur */
+  backdrop-filter: blur(1px); /* optional soft blur */
   z-index: 9;
   opacity: 0;
   pointer-events: none;
