@@ -8,6 +8,7 @@ function Navbar() {
 
   return (
     <div className={styles.navBar}>
+      
       {/* Logo */}
       <Link to="/">
         <img src={logo} alt="Active Media Logo" className={styles.logo} />

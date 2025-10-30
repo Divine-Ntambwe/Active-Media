@@ -260,9 +260,10 @@ body {
 .laptopGif{
   position: absolute;
   z-index: 10;
+  /* border:3px solid black ; */
   transition: 1s;
   transform:scale(2.5);
-  top: 25vh;
+  top: 32vh;
   left: 70vw;
 }
 
@@ -471,7 +472,15 @@ body {
 
   .paragraphBox p, .pinkBox {
     font-size: 1.3em;
+    padding: 30px;
+    /* border: 3px solid green; */
   }
+  /* #edit{
+    height: 30vh;
+    border: 3px solid green;
+
+  } */
+   
 
   .left h1 {
     font-size: 2.5em !important;
@@ -693,6 +702,11 @@ body {
 }
 
 /* ========== MOBILE: MAX-WIDTH 440px ========== */
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
 @media (max-width: 940px) {
   .softwarePage {
     overflow-y: auto;
@@ -706,7 +720,7 @@ body {
 
   .slide {
     min-height: auto !important;
-    margin-bottom: -24px ;
+    margin-bottom: -24px;
   }
 
   /* Section 1 */
@@ -756,10 +770,10 @@ body {
     padding: 1rem;
     font-size: 0.9rem;
     text-align: center;
-    width:85vw;
+    width: 85vw;
   }
 
-  .pinkBox3{
+  .pinkBox3 {
     width: 84vw;
   }
 
@@ -773,10 +787,9 @@ body {
   .laptopGif {
     /* display: none; */
     top: 45vh;
-  left: 28.6vw;
-
-    transform: scale(1); /* Reset scale */
-    max-width: 50%; /* Responsive width */
+    left: 28.6vw;
+    transform: scale(1);
+    max-width: 50%;
     height: auto;
   }
 
@@ -787,6 +800,7 @@ body {
     height: 65vh;
     /* border: 2px solid red; */
   }
+
   .div1 {
     height: 45vh;
   }
@@ -795,7 +809,6 @@ body {
     min-height: 39vh;
     padding: 24px 0;
     /* border: 2px solid rgb(26, 228, 228); */
-
   }
 
   .content {
@@ -806,12 +819,11 @@ body {
     justify-content: center;
     align-items: center;
     /* border: 2px solid rgb(89, 230, 8); */
-
   }
-  #edit{
+
+  #edit {
     /* border: 2px solid rgb(201, 42, 116); */
     margin-left: -19.8px;
-
   }
 
   .left {
@@ -852,11 +864,9 @@ body {
     width: 100%;
     min-width: 355px;
     height: auto;
-    margin: 16px  auto 0;
-    /* margin-left: -19.8px; */
-    padding-top:30px ;
+    margin: 16px auto 0;
+    padding-top: 30px;
     /* border: 3px solid green; */
-   
   }
 
   /* Section 3 */
@@ -871,7 +881,6 @@ body {
     min-width: 320px;
     height: auto;
     padding: 16px 0;
-   
   }
 
   /* Section 4: E-commerce */
@@ -879,7 +888,6 @@ body {
     flex-direction: column;
     gap: 16px;
     padding: 0;
-    
   }
 
   .leftSection,
@@ -915,7 +923,6 @@ body {
   }
 
   .supImage {
-    /* margin-right: -100px; */
     margin-top: 20px;
     padding-bottom: 20px;
     margin-left: -10px;
@@ -924,7 +931,7 @@ body {
     height: auto;
   }
 
-  /* Remove animations on mobile */
+  /* Remove desktop animations on mobile */
   .fadeIn2,
   .fadeOut2,
   .fadeIn3,
@@ -936,10 +943,15 @@ body {
   }
 
   .bgImg {
-
     display: none;
   }
+
+  /* 🌸 Add floating animation for all images on mobile */
+  img {
+    animation: floating 1.5s ease-in-out infinite alternate;
+  }
 }
+
 
 .fade-container {
   transition: opacity 1s ease;
