@@ -39,34 +39,59 @@ export default function About_Us() {
   }, []);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-    const offset = -currentSlide * window.innerWidth;
-    containerRef.current.style.transform = `translateX(${offset}px)`;
+  if (!containerRef.current) return;
+  const offset = -currentSlide * window.innerWidth;
+  containerRef.current.style.transform = `translateX(${offset}px)`;
 
-    const slides = containerRef.current.querySelectorAll(`.${styles.aboutDiv}`);
-    slides.forEach((slide, i) => {
-      if (i === currentSlide) {
-        slide.classList.add(styles.active);
-      } else {
-        slide.classList.remove(styles.active);
-      }
-    });
-    switch (currentSlide){
-      case 0 : purpleLines.current.style.left = "-250px"
-      purpleLines.current.style.top = "0px"
+  const slides = containerRef.current.querySelectorAll(`.${styles.aboutDiv}`);
+
+  slides.forEach((slide, i) => {
+    const fadeItems = slide.querySelectorAll(`.${styles.fadeInStagger}`);
+
+    if (i === currentSlide) {
+      slide.classList.add(styles.active);
+
+      // Restart animation
+      fadeItems.forEach((el) => {
+        el.style.animation = "none";
+        el.offsetHeight; // trigger reflow
+        el.style.animation = null;
+      });
+    } else {
+      slide.classList.remove(styles.active);
+    }
+  });
+
+  switch (currentSlide) {
+    case 0:
+      purpleLines.current.style.left = "-250px";
+      purpleLines.current.style.top = "0px";
       return;
-      case 1: { 
-        purpleLines.current.style.left = "200px"
-      purpleLines.current.style.top = "-250px"
-      return
-    }
-      case 2: purpleLines.current.style.top = "-50px"
-      return
+    case 1:
+      purpleLines.current.style.left = "200px";
+      purpleLines.current.style.top = "-250px";
+      return;
+    case 2:
+      purpleLines.current.style.top = "-50px";
+      return;
+    case 3:
+      nav("/software");
+  }
+}, [currentSlide]);
 
-      case 3: nav("/software")
-    }
+  useEffect(() => {
+  // When About_Us first loads (after navigation or reload)
+  const activeSlide = containerRef.current?.querySelector(`.${styles.active}`);
+  if (activeSlide) {
+    const fadeItems = activeSlide.querySelectorAll(`.${styles.fadeInStagger}`);
+    fadeItems.forEach((el) => {
+      el.style.animation = "none";
+      el.offsetHeight; // trigger reflow
+      el.style.animation = null;
+    });
+  }
+}, []);
 
-  }, [currentSlide]);
 
   return (
     <>
