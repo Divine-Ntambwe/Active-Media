@@ -47,13 +47,13 @@ useEffect(() => {
     setFade(false);
 
     setTimeout(() => {
-      if (diff > 30 && currentIndex < headings.length - 1) {
+      if (diff > 0 && currentIndex < headings.length - 1) {
         setCurrentIndex(currentIndex + 1);
-      } else if (diff < -30 && currentIndex > 0) {
+      } else if (diff < 0 && currentIndex > 0) {
         setCurrentIndex(currentIndex - 1);
       }
 
-      if (diff > 30 && currentIndex === headings.length - 1) {
+      if (diff > 0 && currentIndex === headings.length - 1) {
         recentWork.current.classList.add(styles.disappear);
         setTimeout(() => {
           abortController.abort(); // remove all listeners

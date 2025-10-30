@@ -57,6 +57,7 @@ export default function Software() {
   const par1 = useRef(),
     title1 = useRef(),
     par2 = useRef(),
+    div2 = useRef(),
     div3 = useRef(),
     div4 = useRef(),
     div5 = useRef(),
@@ -68,7 +69,9 @@ export default function Software() {
     supremeImg = useRef(),
     supremeImg2 = useRef(),
     laptopGif = useRef(),
-    bgImg = useRef();
+    bgImg = useRef(),
+    div2Content = useRef(),
+    div4Content = useRef()
   const [slide, setSlide] = useState(0);
   const [show, setShow] = useState(true);
   const nav = useNavigate();
@@ -97,10 +100,12 @@ export default function Software() {
           }
           if (slide === 1) {
             setLaptop(`${purpleLaptop}?${new Date().getTime()}`);
-            cloudBasedImg.current.classList.add(styles.disappear);
-            title2.current.classList.add(styles.fadeOut2);
-            par3.current.classList.add(styles.fadeOut2);
             div3.current.classList.add(styles.fadeIn3);
+            div2Content.current.style.transform ="translateY(-550px)";
+            // cloudRef.current.classList.add(styles.fadeOut2)
+            // cloudBasedImg.current.classList.add(styles.disappear);
+            // title2.current.classList.add(styles.fadeOut2);
+            // par3.current.classList.add(styles.fadeOut2);
 
             laptopGif.current.classList.remove(styles.moveLaptop1);
             laptopGif.current.classList.add(styles.moveLaptop2);
@@ -108,6 +113,7 @@ export default function Software() {
           }
           if (slide === 2) {
             setLaptop(`${purpleLaptop}?${new Date().getTime()}`);
+            div2Content.current.classList.add(styles.disappear)
             div3.current.classList.remove(styles.fadeIn3);
             div3.current.classList.add(styles.fadeOut3);
 
@@ -122,18 +128,20 @@ export default function Software() {
           if (slide === 3) {
             setLaptop(`${purpleLaptop}?${new Date().getTime()}`);
             // div4.current.classList.remove(styles.fadeIn4);
-            title3.current.classList.add(styles.fadeOut2);
-            par4.current.classList.add(styles.fadeOut2);
-            supremeImg.current.classList.add(styles.disappear);
+            // title3.current.classList.add(styles.fadeOut3);
+            // par4.current.classList.add(styles.disappear);
+            // supremeImg.current.classList.add(styles.disappear);
+            div4Content.current.style.transform = "translateY(-550px)"
             bgImg.current.style.transform = "translateY(300px) translateX(0px)";
+            div5.current.classList.add(styles.fadeIn5);
 
             laptopGif.current.classList.remove(styles.moveLaptop3);
             laptopGif.current.classList.add(styles.moveLaptop4);
-            div5.current.classList.add(styles.fadeIn5);
            
           }
           if (slide === 4) {
             setLaptop(`${purpleLaptop}?${new Date().getTime()}`);
+            div4Content.current.classList.add(styles.disappear)
             supremeImg2.current.classList.add(styles.disappear);
             laptopGif.current.classList.remove(styles.moveLaptop4);
             laptopGif.current.classList.add(styles.moveLaptop5);
@@ -400,7 +408,12 @@ useEffect(() => {
         <div
           ref={cloudRef}
           className={`${styles.slide} ${styles.container} ${styles.div2}${cloudFadeClass}`}
+
         >
+          <div ref={div2Content}
+          className={styles.div2Content}
+          >
+
           <div className={styles.content}>
             <div className={styles.left}>
               <div ref={title2}>
@@ -429,6 +442,7 @@ useEffect(() => {
               />
             </div>
           </div>
+          </div>
         </div>
 
         <div ref={div3}>
@@ -444,6 +458,11 @@ useEffect(() => {
           className={`${styles.slide} ${styles.ecommerceSection}`}
           ref={div4}
         >
+          <div ref={div4Content}
+          className={styles.div4Content}
+          >
+
+          
           <h1 ref={title3} className={`${styles.title}`}>
             E-COMMERCE
           </h1>
@@ -474,6 +493,7 @@ useEffect(() => {
                 environment.
               </p>
             </div>
+          </div>
           </div>
         </div>
 

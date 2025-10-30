@@ -5,7 +5,7 @@
   background: radial-gradient(circle 500px at center, rgba(255, 92, 155, 0.6), #fff);
   /* text-align: center; */
   padding-bottom: 50px;
-  animation: appear 0.3s forwards;
+  animation: appear 1.5s forwards;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

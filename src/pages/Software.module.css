@@ -35,9 +35,16 @@
 /* Placeholder slides */
 .div2 {
   padding: 80px 0 40px 0;
-  /* overflow: hidden; */
+  overflow: visible !important;
   background: transparent !important;
   margin-top: 34vh;
+ 
+}
+
+.div2Content, .div4Content {
+ transition: 1.5s;
+ overflow: visible;
+
 }
 
 .div4 {
@@ -195,7 +202,7 @@ body {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(-2550px);
+    transform: translateY(-150px);
   }
 }
 
@@ -208,12 +215,12 @@ body {
     transform: translateY(0px);
   }
   100% {
-    transform: translateY(-210vh);
+    transform: translateY(-200vh);
   }
 }
 
 .fadeIn3{
-  animation: fadeIn3 1.8s forwards;
+  animation: fadeIn3 1.5s forwards ease-out;
 }
 
 @keyframes fadeOut3 {
@@ -254,7 +261,7 @@ body {
 }
 
 .fadeIn5{
-  animation: fadeIn5 1s forwards;
+  animation: fadeIn5 3.5s forwards;
 }
 
 .laptopGif{
@@ -284,8 +291,8 @@ body {
     left: 18vw;
   }
   100%{
-    left: 72vw;
-    top: 45vh;
+    left: 68vw;
+    top: 50vh;
   }
 }
 
@@ -313,8 +320,8 @@ body {
     left: 73vw;
   }
   100%{
-    top: 35vh;
-    left: 20vw
+    top: 40vh;
+    left: 15vw
   }
 }
 
@@ -552,7 +559,7 @@ body {
 }
 
 /* 1690px - 1799px */
-@media screen and (min-width:1690px) and (max-width: 1799px) {
+@media screen and (min-width:1600px) and (max-width: 1799px) {
   *{
     /* color: red; */
   }
@@ -584,8 +591,8 @@ body {
       top:45vh;
     }
     100%{
-      top: 74vh;
-      left: 66vw;
+     top: 71vh;
+    left: 62.5vw;
     }
   }
 }

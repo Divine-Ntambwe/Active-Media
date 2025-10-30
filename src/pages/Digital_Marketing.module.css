@@ -136,14 +136,9 @@ animation: appear 1s ;
 .cardFour,
 .cardFive,
 .cardSix{
-  /* background: rgb(255, 214, 232,0.6) ; */
-  /* width: 300px; */
-  /* height: 240px; */
-  /* box-shadow: 0 20px 60px rgba(255, 182, 193, 0.3); */
   transition: transform 0.3s ease;
   position: relative;
-  /* transform: scale(0.65) !important; */
-  /* border: 1px solid red; */
+ 
   
 }
 
@@ -162,14 +157,11 @@ animation: appear 1s ;
 }
 
 .lastFour{
-  width: 80vw;
+  width: 65vw;
   display: grid;
-  /* determines space between cards: */
   grid-template-columns: 50% 50%;
   grid-template-rows: 32%;
   justify-content: center   ;
-  /* border: solid; */
-  /* gap: 50px; */
 }
 
 .lastFour div{
@@ -420,7 +412,7 @@ transform: scale(0.8) rotate(-90deg);
 }
 
 .lastFour{
- grid-template-columns: 45% 45%; 
+ grid-template-columns: 55% 55%; 
  grid-template-rows: 33%;  
 }
 
@@ -489,7 +481,7 @@ transform: scale(0.55) rotate(-90deg);
 }
 
 .lastFour{
- grid-template-columns: 40% 40%;   
+ grid-template-columns: 50% 50%;   
 }
 
 .cardSix{
@@ -531,7 +523,7 @@ transform: scale(0.55) rotate(-90deg);
 }
 
 .lastFour{
- grid-template-columns: 40% 40%;   
+ grid-template-columns: 45% 45%;   
 }
 
 .cardSix{
@@ -583,7 +575,7 @@ transform: scale(0.7) rotate(-90deg);
 }
 
 .lastFour{
- grid-template-columns: 40% 40%;  
+ grid-template-columns: 50% 50%;  
  grid-template-rows: 35%;
 }
 
@@ -648,6 +640,7 @@ width: calc(var(--cardRefDim) - 30px);
 
     .wrapper {
         padding: auto;
+        margin-top: 50px;
         /* grid-template-columns: 100%; */
 
     }
@@ -790,12 +783,12 @@ width: 400px;
 
 @keyframes moveUp {
     0%{transform:translateY(0px);}
-    100%{transform:translateY(-800px)}
+    100%{transform:translateY(-700px)}
 }
 
    @keyframes moveUp2 {
     0%{top:0px;}
-    100%{top:-780px; 
+    100%{top:-750px; 
     }   
 }  
 }
@@ -858,7 +851,7 @@ margin-bottom: 60px;
 
    @keyframes moveUp2 {
     0%{top:0px;}
-    100%{top:-800px; 
+    100%{top:-700px; 
     }   
 }  
 }
@@ -909,12 +902,12 @@ margin-bottom: 20px;
 
 @keyframes moveUp {
     0%{transform:translateY(0px);}
-    100%{transform:translateY(-700px)}
+    100%{transform:translateY(-580px)}
 }
 
    @keyframes moveUp2 {
     0%{top:0px;}
-    100%{top:-700px; 
+    100%{top:-650px; 
     }   
 }  
 }
