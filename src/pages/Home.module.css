@@ -17,8 +17,7 @@
   display:flex;
   align-items:center;
   background:#fff;
-  /* overflow: hidden; */
-  z-index: 12 !important;
+  overflow: hidden;
   /* border: 1px solid red; */
 }
 
@@ -46,8 +45,8 @@
   width:1200px;
   margin:0 auto;
   display:flex;
-  position: relative;
-  top:55px;
+  position: absolute;
+  top:110px;
   /*justify-content:space-between;*/
   
   padding:48px 24px;
@@ -69,7 +68,7 @@
   margin:0 0 28px 0;
   width: 120%;
   position: relative;
-  /* z-index: 10; */
+  z-index: 10;
   /* border: solid; */
 }
 
@@ -97,8 +96,8 @@
   position:absolute;
   left:-8%;
   top:-5%;
-  width:85%;
-  height:85%;
+  width:90%;
+  height:100%;
   background-image: url('../assets/Active_M.jpg');
   background-size: cover;
   background-position: center;
@@ -117,7 +116,6 @@
  /* border: solid; */
  height: 680px;
  margin-left: 230px;
- z-index: 100;
 }
 
 .orb2{
