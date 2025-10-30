@@ -2,18 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  max-width: 1200px;
+  width: 100vw;
+  /* max-width: 1200px; */
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 10rem;
   box-sizing: border-box;
    
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   z-index: 10 !important;
   position: sticky !important;
   top: 0;
   left: 0;
+   
+
 }
 
 .logo {
@@ -33,7 +35,7 @@
 }
 
 .navItem {
-  font-size: 23px;
+  font-size: 18px;
   font-weight: 500;
   font-family: 'MyFont', sans-serif;
   white-space: nowrap;
