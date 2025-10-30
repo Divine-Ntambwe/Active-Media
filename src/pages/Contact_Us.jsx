@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./Contact_Us.module.css";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import Navbar from "../component/Navbar";
 
 const Contact_Us = () => {
@@ -11,10 +11,10 @@ const Contact_Us = () => {
 
     emailjs
       .sendForm(
-        "service_qkzjp5l",        // ✅ Your EmailJS Service ID
-        "template_3h7awxq",       // ✅ Your EmailJS Template ID
+        "service_6dd6fng",        
+        "template_3h7awxq",       
         form.current,
-        "gBcw28gK6_wka5fry"       // ✅ Your EmailJS Public Key
+        "gBcw28gK6_wka5fry"      
       )
       .then(
         (result) => {
@@ -30,6 +30,7 @@ const Contact_Us = () => {
   };
 
   return (
+    <>
     <div className={styles.pageWrapper}>
       <div className={styles.navbarContainer}>
         <Navbar />
@@ -40,7 +41,11 @@ const Contact_Us = () => {
 
       {/* Contact Card */}
       <div className={styles.contactCard}>
-        <h1 className={styles.subHeadingContact2}>How Can We Be Of Assistance?</h1>
+      <h1 className={styles.subHeadingContact2}>
+      How Can We Be Of <span className={styles.assistance}>Assistance?</span>
+      </h1>
+
+
         <p className={styles.subHeadingAbout}>Tell Us About You</p>
         <hr className={styles.divider} />
         <p className={styles.subHeadingContact}>How Can We Contact You?</p>
@@ -54,7 +59,7 @@ const Contact_Us = () => {
           <input type="email" name="user_email" required />
 
           <label>Contact Number :</label>
-          <input type="text" name="contact_number" required />
+          <input type="text" pattern="0\d{9}" name="contact_number" required />
 
           <label>Message :</label>
           <textarea
@@ -79,6 +84,7 @@ const Contact_Us = () => {
         Please let us know how we can help you by filling <br /> out the form.
       </p>
     </div>
+    </>
   );
 };
 

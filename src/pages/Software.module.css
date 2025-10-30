@@ -13,28 +13,31 @@
 
 .slide {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
 }
 
 /* Slide 1: content with laptop */
 .div1 { 
+  box-sizing: border-box;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  margin-top: 100px;
-  padding-top: 0px;
+  margin: 0px auto;
+  width: 80vw;
+  height: 80vh;
 }
 
 .title1{
-  font-size: 4em;
+  font-size: 5.5em;
 }
 
 /* Placeholder slides */
 .div2 {
   padding: 80px 0 40px 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   background: transparent !important;
+  margin-top: 34vh;
 }
 
 .div4 {
@@ -51,6 +54,8 @@
 .textBlock {
   position: relative;
   z-index: 2;
+  height: 450px;
+  /* padding-left: 100px; */
 }
 
 .title {
@@ -59,6 +64,8 @@
   line-height: 1.2;
   margin-bottom: 2rem;
   position: absolute;
+ 
+  
 }
 
 .services {
@@ -77,11 +84,13 @@
   position: absolute;
   line-height: 1.6;
   z-index: 4;
-  width:90%;
-  height: 55%;
+  width:80vw;
+  /* height: 55%; */
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  height: 450px;
+  
 }
 
 .paragraphBox p, .pinkBox {
@@ -448,6 +457,7 @@ body {
 .div2_2{
   height: 70vh;
   display: flex;
+  margin-top: -12vh !important ;
 }
 
 .ecommerceSection{
@@ -458,6 +468,7 @@ body {
 
 /* 1300px - 1400px */
 @media screen and (max-width: 1400px) and (min-width:1300px){
+
   .paragraphBox p, .pinkBox {
     font-size: 1.3em;
   }
@@ -472,7 +483,7 @@ body {
   }
 
   .div2{
-    margin-top: -55px;
+    margin-top: 28vh;
   }
 
   .title{
@@ -487,6 +498,10 @@ body {
 
   .ecommerceSection{
     margin-top: 30px;
+  }
+
+  .rightSection{
+    margin: 5vh;
   }
 }
 
@@ -518,7 +533,7 @@ body {
   }
 
   .div2{
-    margin-top: -105px;
+    /* margin-top: -105px; */
   }
 
   .title{
@@ -538,13 +553,17 @@ body {
 
 /* 1690px - 1799px */
 @media screen and (min-width:1690px) and (max-width: 1799px) {
+  *{
+    /* color: red; */
+  }
   .paragraphBox p, .pinkBox {
     font-size: 1.8em;
   }
 
   .div1{
-    margin-top: 120px !important;
+    /* margin-top: 120px !important; */
   }
+
 
   .title1{
     font-size: 5.9em;
@@ -553,6 +572,12 @@ body {
   .services{
     font-size: 3em;
   }
+
+  .supImage{
+    width: 1100px;
+    height: 600px;
+  }
+  
 
   @keyframes moveLaptop3 {
     0%{
@@ -567,20 +592,31 @@ body {
 
 /* 1800px - 2200px */
 @media screen and (min-width:1800px) and (max-width: 2200px) {
+  *{
+    /* color: blue; */
+  }
   .paragraphBox p, .pinkBox {
     font-size: 2em;
   }
 
   .div1{
-    margin-top: 120px !important;
+    /* margin-top: 120px !important; */
   }
 
   .title1{
-    font-size: 5.5em;
+    font-size: 6.5em;
   }
 
   .services{
     font-size: 3em;
+  }
+  .paragraphBox {
+   
+    height: 500px;
+  }
+
+  .textBlock {
+    height: 500px !important;
   }
 
   .left h1 {
@@ -592,9 +628,7 @@ body {
     height: 500px;
   }
 
-  .div2{
-    margin-top: 50px;
-  }
+  
 
   .laptopGif{
     transform: scale(3) !important;
@@ -609,24 +643,26 @@ body {
 
 /* 2201px+ */
 @media screen and (min-width: 2201px) {
+
   .paragraphBox p, .pinkBox{
     font-size: 2.5rem !important;
   }
 
-  .div1{
-    margin-top: 190px !important;
+.paragraphBox, .textBlock {
+    height: 680px;
   }
 
   .title1{
-    font-size: 6.5em;
+    font-size: 8.5em;
   }
 
   .services{
-    font-size: 4em;
+    font-size: 4.5em;
   }
 
   .laptopGif{
     transform: scale(3.5) !important;
+    top: 345px;
   }
 
   .left h1 {
@@ -635,11 +671,11 @@ body {
 
   .backgroundDecor{
     width: 1200px !important;
-    height: 600px;
+    height: 900px;
   }
 
   .div2{
-    margin-top: 50px;
+    padding-top: 10vh;
   }
 
   .title{
@@ -650,6 +686,9 @@ body {
     margin-top: 50px;
     width: 1400px;
     height: 730px;
+  }
+  .rightSection {
+    margin: 5vh !important;
   }
 }
 
@@ -666,8 +705,8 @@ body {
   }
 
   .slide {
-    min-height: auto;
-    margin-bottom: -24px;
+    min-height: auto !important;
+    margin-bottom: -24px ;
   }
 
   /* Section 1 */
@@ -717,14 +756,25 @@ body {
     padding: 1rem;
     font-size: 0.9rem;
     text-align: center;
-    width:100%;
+    width:85vw;
+  }
+
+  .pinkBox3{
+    width: 84vw;
+  }
+
+  .paragraphBox p {
+    color: black !important;
+    font-weight: 250;
+    font-size: 1em !important;
   }
 
   /* Laptop gif - hide on mobile */
   .laptopGif {
     /* display: none; */
-    top:385px;
-    left:100px;
+    top: 45vh;
+  left: 28.6vw;
+
     transform: scale(1); /* Reset scale */
     max-width: 50%; /* Responsive width */
     height: auto;
@@ -733,10 +783,12 @@ body {
   /* Section 2: Cloud */
   .div2 {
     padding: 24px 0;
-    margin-top: 0;
+    margin-top: 0 !important;
+    height: 65vh;
     /* border: 2px solid red; */
-
-
+  }
+  .div1 {
+    height: 45vh;
   }
 
   .container {
@@ -801,7 +853,7 @@ body {
     min-width: 355px;
     height: auto;
     margin: 16px  auto 0;
-    margin-left: -19.8px;
+    /* margin-left: -19.8px; */
     padding-top:30px ;
     /* border: 3px solid green; */
    
@@ -827,6 +879,7 @@ body {
     flex-direction: column;
     gap: 16px;
     padding: 0;
+    
   }
 
   .leftSection,
@@ -845,6 +898,7 @@ body {
   .ecommerceSection {
     margin-top: 0;
     padding: 16px 0;
+    height: 55vh !important;
   }
 
   .ecommerceSection h1 {

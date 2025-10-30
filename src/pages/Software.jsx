@@ -79,7 +79,7 @@ export default function Software() {
   useEffect(() => {
     const handleScroll = (e) => {
       setTimeout(() => {
-        if (e.deltaY > 10) {
+        if (e.deltaY > 20) {
           setSlide(slide + 1);
           if (slide === 0) {
             setLaptop(`${purpleLaptop}?${new Date().getTime()}`);
@@ -143,6 +143,7 @@ export default function Software() {
            
 
             setTimeout(() => {
+              window.addEventListener("wheel", handleScroll);
               nav("/design-marketing");
             }, 1000);
           }
@@ -153,12 +154,13 @@ export default function Software() {
     };
 
     setTimeout(() => {
-      // if (window.matchMedia("(max-width: 300x) and (min-width: 991px").matches) return
-      // window.addEventListener("wheel", handleScroll);
-      // return () => window.removeEventListener("wheel", handleScroll);
+      if (window.matchMedia("(min-width: 1025px)").matches){
+
+        window.addEventListener("wheel", handleScroll);
+        return () => window.removeEventListener("wheel", handleScroll);
+      }
     }, 500);
   }, [slide]);
-  console.log(slide);
 
   // // Cloud observer
   // useEffect(() => {
@@ -329,7 +331,7 @@ useEffect(() => {
       setTimeout(() => {
         document.body.style.opacity = "1";
         nav("/design-marketing");
-      }, 1000); 
+      }, 1500); 
     }
   }, { threshold: 0.5 });
 
@@ -459,7 +461,7 @@ useEffect(() => {
             </div>
 
             <div className={styles.rightSection}>
-              <p ref={par4} className={`${styles.pinkBox}`}>
+              <p ref={par4} className={`${styles.pinkBox} ${styles.pinkBox3}`}>
                 From entry level online stores to <br />
                 enterprise-grade solutions, we have <br />
                 the technical ability to deliver on your
@@ -486,7 +488,7 @@ useEffect(() => {
           </div>
         </div>
       </section>
-      <div ref={bottomDivRef} className="navigateToMarketing"></div>
+      <div ref={bottomDivRef} className="navigateToMarketing">l</div>
 
     </div>
   );

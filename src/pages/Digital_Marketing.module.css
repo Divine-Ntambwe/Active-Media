@@ -4,6 +4,10 @@
     /* box-sizing: border-box; */
 }
 
+:root{
+    --cardRefDim: 500px;
+}
+
 .digitalBackground{
 transition: 1s;  
 transform: scale(0.7) rotate(-90deg);
@@ -30,7 +34,7 @@ animation: appear 1s ;
 
 .designMarketingPage{
  height: 100vh;
- overflow: hidden !important;
+ overflow: hidden !important;   
  display: flex;
  flex-direction: column;
  position: relative;
@@ -56,7 +60,7 @@ animation: appear 1s ;
 
 @keyframes slide-out {
     0%{left:0}
-    50%{left:-800px}
+    50%{left:-800px;opacity: 0%;}
     100%{left:-800px;opacity: 0%;}
 }
 
@@ -109,7 +113,8 @@ animation: appear 1s ;
   /* line-height: 1.625; */
   max-width: 100%; 
   padding: 10px 150px;
-  font-family: "Inter";
+  font-family: "Inter",sans-serif;
+  font-weight: 300;
   /* border: 1px solid red; */
 }
 
@@ -120,8 +125,7 @@ animation: appear 1s ;
   position: relative;
   z-index: 1;
   padding: 0 100px;
-  
-  /* border:1px solid red; */
+  margin-top: 100px;
   
 }
 
@@ -133,19 +137,19 @@ animation: appear 1s ;
 .cardFive,
 .cardSix{
   /* background: rgb(255, 214, 232,0.6) ; */
-  width: 100px;
-  height: 240px;
+  /* width: 300px; */
+  /* height: 240px; */
   /* box-shadow: 0 20px 60px rgba(255, 182, 193, 0.3); */
   transition: transform 0.3s ease;
   position: relative;
-  transform: scale(0.65) !important;
+  /* transform: scale(0.65) !important; */
   /* border: 1px solid red; */
   
 }
 
 @keyframes moveUp2 {
     0%{top:0px}
-    100%{top:-550px}
+    100%{top:-650px}
 }
 
 .moveUp2 {
@@ -161,54 +165,58 @@ animation: appear 1s ;
   width: 80vw;
   display: grid;
   /* determines space between cards: */
-  grid-template-columns: 40% 40%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 32%;
   justify-content: center   ;
+  /* border: solid; */
   /* gap: 50px; */
 }
 
 .lastFour div{
-/* transform: scaleX(0.9) !important; */
+width: 100%;
+/* border: solid pink; */
+}
+
+.wrapper img{
+height: 100%;
+width: 100%;
 }
 
 .firstTwo{
    width: 80vw;
   display: grid;
   grid-template-columns: 50% 50%; 
+  /* border: solid; */
+}
+
+.firstTwo div{
+ /* border: solid; */
 }
 
 /* Individual Card Styles */
-.cardOne {
-  /* transform: scale(0.65) !important; */
-  height: 580px !important;
-  /* margin-right: 600px;
-  margin-top: 50px; */
+.cardOne img{
+width: var(--cardRefDim);
+height: var(--cardRefDim);
 }
 
-.cardTwo {
-  /* background: linear-gradient(135deg, #ffd6e8 0%, #ffe5f0 100%); */
-  /* transform: scale(0.65) !important; */
-  height: 580px !important;
-  /* margin-top: -440px;
-  margin-left: 350px; */
+.cardTwo img{
+ width: calc(var(--cardRefDim) + 50px);
+height: calc(var(--cardRefDim) + 50px);
 }
 
-.cardThree {
- /* background: linear-gradient(135deg, #ffd6e8 0%, #ffe5f0 100%); */
- /* margin-top: 110px; */
- /* transform: scale(0.9) !important; */
-
+.lastFour img{
+height: calc(var(--cardRefDim) - 150px);
+width: calc(var(--cardRefDim) - 150px);
 }
 
-.cardFour{
-height: 320px !important;
-}
+.cardFive img, .cardFour img{
+height: calc(var(--cardRefDim) - 80px) !important;
+width: calc(var(--cardRefDim) - 80px);
 
-.cardFive{
-height: 0px !important;
 }
 
 .cardSix{
- margin-left: 200px;
+ margin-left: 220px;
 }
 
 
@@ -316,11 +324,16 @@ Icons
         left: -1900px;
     }
 }
+
+.moveRW {
+    animation: moveRW 3s ease-out forwards;
+}
+
 .recentWork{
     /* position: absolute;
     left: 1900px;
     top: 600px; */
-    /* display: none; */
+    display: none;
     position: relative;
     z-index: 1;
     font-size: 3rem;
@@ -340,511 +353,53 @@ Icons
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    pointer-events: none;
     /* background-color: red; */
 }
 
-.moveRW{
-    animation: moveRW 2.7s forwards ease-out;
-}
+/* RESPONSIVENESS */
 
+/* --LAPTOP SIZES-- */
 
-@media (max-width: 576px) {
+/* 67% */
+
+@media (min-width:2201px) {
     *{
-        /* color:gold ; */
+        /* color: red; */
     }
-    .designMarketingPage{
-    overflow: visible !important;
-    }
-    .container {
-        padding-top: 3rem;
-        height: auto;
-    }
-
-    .container h1 {
-        font-size: 2em;
-        margin-bottom: 1rem;
-    }
-
-    .paragraphs {
-        padding: 0 20px;
-        font-size: 1rem;
-        gap: 1rem;
-    }
-
-    .wrapper {
-        padding: 0 ;
-        grid-template-columns: 100%;
-        /* border: solid; */
-    }
- 
-
-    .cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        /* width: 100%; */
-        height: 350px !important;
-       
-       
-    }
-
-    .lastFour{
-        margin-top: 120px;
-    }
-    .firstTwo{
-       transform: scale(1) !important;  
-    }
-
-    .lastFour div{
-        transform: scale(0.56) !important;
-        height: 380px !important;
-    }
-
-    .firstTwo,
-    .lastFour {
-        width: 100%;
-        grid-template-columns: 100% !important;
-        /* gap: 20px; */
-    }
-
-    .cardSix{
-        margin: 0px !important;
-    }
-
-    @keyframes floating {
-        0%{transform: translateY(0px);}
-        100%{transform: translateY(-50px);}
-        }
-    
-    .wrapper img{
-       
-         animation: floating 1s ease-in-out infinite alternate;
-        
-    }
-
-    .cardTwo,.cardFive{
-        width: 0px !important;
-    }
-
-    
-
-
-    .digitalBackground {
-        transform: scale(0.5) rotate(-90deg);
-        top: -100px;
-        left: -30px;
-    }
-
-    .title {
-        font-size: 18px;
-    }
-
-    .text {
-        font-size: 10px;
-    }
-
+    :root{
+    --cardRefDim: 700px;
+}
+    .digitalBackground{
+transform: scale(0.9) rotate(-90deg);
+}
+   .designMarketingPage h1{
+    font-size: 6.3em !important;
     
 }
 
-/* Medium screens (tablets, 577px to 768px) */
-@media (min-width: 577px) and (max-width: 768px) {
-    *{
-        /* color:gold ; */
-    }
-    .container {
-        padding-top: 4rem;
-        height: auto;
+    .paragraphs{
+        font-size: 2.6em;
+        padding:80px 0 50px 0;
     }
 
-    .container h1 {
-        font-size: 2.5em;
-        margin-bottom: 1.5rem;
-    }
-
-    .paragraphs {
-        padding: 0 50px;
-        font-size: 1.05rem;
-        gap: 1.2rem;
-    }
-
-    .wrapper {
-        padding: 0 50px;
-    }
-
-    .cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        width: 100%;
-        height: 240px;
-        transform: scale(0.8);
-    }
-
-    .cardOne,
-    .cardTwo {
-        height: 480px;
-    }
-
-    .firstTwo,
-    .lastFour {
-        width: 100%;
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .digitalBackground {
-        transform: scale(0.6) rotate(-90deg);
-        top: -150px;
-        left: -40px;
-    }
-
-    .title {
-        font-size: 20px;
-    }
-
-    .text {
-        font-size: 11px;
-    }
-
-    .list li {
-        font-size: 13px;
-        padding-left: 22px;
-    }
+    @keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-850px)}
 }
 
-/* Large screens (small desktops, 769px to 992px) */
-@media (min-width: 769px) and (max-width: 992px) {
-    .container {
-        padding-top: 5rem;
-    }
-
-    .container h1 {
-        font-size: 3em;
-    }
-
-    .paragraphs {
-        padding: 0 100px;
-        font-size: 1.1rem;
-    }
-
-    .wrapper {
-        padding: 0 80px;
-    }
-
-    .cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        width: 350px;
-        height: 250px;
-        transform: scale(0.7);
-    }
-
-    .cardOne,
-    .cardTwo {
-        height: 500px;
-    }
-
-    .firstTwo,
-    .lastFour {
-        width: 90vw;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-
-    .digitalBackground {
-        transform: scale(0.65) rotate(-90deg);
-        top: -180px;
-        left: -50px;
-    }
-}
-
-@media (min-width: 993px) and (max-width: 1200px) {
-   
-    .container {
-        padding-top: 6rem;
-    }
-
-    .container h1 {
-        font-size: 3.5em;
-    }
-
-    .paragraphs {
-        padding: 0 150px;
-    }
-
-    .wrapper {
-        padding: 0 100px;
-    }
-
-    .cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        width: 380px;
-        height: 270px;
-        transform: scale(0.65);
-    }
-
-    .cardOne,
-    .cardTwo {
-        height: 580px;
-    }
-
-    .firstTwo,
-    .lastFour {
-        width: 80vw;
-        grid-template-columns: 50% 50%;
-        gap: 50px;
-    }
-}
-
-
-@media screen and (max-width: 1400px) and (min-width: 1300px) {
-  *{
-    /* color: darkmagenta; */
-  }
-  .digitalBackground{
-transform: scale(0.55) rotate(-90deg);
-}
-
-  .designMarketingPage h1{
-    font-size: 3.6em !important;
-}
-
-.paragraphs{
-    font-size: 1.3em;
-    padding: 20px 40px 0px 40px;
-}
-
-.cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        transform: scale(0.6) !important;
-    }
-
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        height: 280px !important;
-    }
-
-    .lastFour {
-        /* border: solid; */
-    }
-    
-    .firstTwo, .lastFour{
-        align-items: center;
-        padding: 0 150px 0 50px;
-        justify-content: center !important;
-       grid-template-columns: 40% 40%;
-        
-    }
-
-     @keyframes moveUp {
-      0%{transform:translateY(0px);}
-    100%{transform:translateY(-450px)}
-} 
-
-  @keyframes moveUp2 {
-    0%{top:0px;}
-    100%{top:-655px}
-}
-
-
- 
-}
-
-@media screen and (max-width: 1301px) and (min-width:1120px) {
-  *{
-    /* color:fuchsia */
-  }
-.digitalBackground{
-transform: scale(0.55) rotate(-90deg);
-}
-  
-  .designMarketingPage h1{
-    font-size: 3.6em !important;
-}
-
-.paragraphs{
-    font-size: 1.3em;
-    padding: 20px 40px 0px 40px;
-}
-
-.cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        transform: scale(0.57) !important;
-    }
-
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        height: 280px !important;
-    }
-
-    .lastFour {
-        /* border: solid; */
-    }
-    
-    .firstTwo, .lastFour{
-        align-items: center;
-        padding: 0 150px 0 50px;
-        justify-content: center !important;
-       grid-template-columns: 40% 40%;
-        
-    }
-
-     @keyframes moveUp {
-      0%{transform:translateY(0px);}
-    100%{transform:translateY(-450px)}
-} 
-
-  @keyframes moveUp2 {
-    0%{top:0px;}
-    100%{top:-655px}
-}
-
-}
-
-@media screen and (max-width:1121px) {
-  *{
-    /* color:green */
- 
-}
-
-.digitalBackground{
-transform: scale(0.5) rotate(-90deg);
-}
-
-.container{
-    padding-top: 2em;
-}
-
- 
-  .designMarketingPage h1{
-    font-size: 2.7em !important;
-}
-
-.paragraphs{
-    font-size: 0.95em;
-    padding: 20px 40px 0px 40px;
-}
-
-.cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        transform: scale(0.45) !important;
-    }
-
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        height: 150px !important;
-    }
-    .cardSix{
- margin-left: 100px;
-}
-
-    .lastFour {
-        /* border: solid; */
-        grid-template-columns: 30% 30%;
-    }
-    
-
-    .firstTwo, .lastFour{
-        align-items: center;
-        padding: 0 300px 0 50px;
-        justify-content: center !important;
-    }
-
-    .firstTwo{
-        grid-template-columns: 40% 40%;
-    }
-
-     @keyframes moveUp {
-      0%{transform:translateY(0px);}
-    100%{transform:translateY(-450px)}
-} 
-
-  @keyframes moveUp2 {
-    0%{top:0px;}
-    100%{top:-515px}
-}
-}
-
-
-/* LARGER SCREENS */
-/* 90% */
-
-@media screen and (min-width:1690px) and (max-width: 1799px) {
-   *{
-  /* color: aqua; */
- }
-
- .designMarketingPage h1{
-    font-size: 4em !important;
-}
-
-.paragraphs{
-    font-size: 1.8em;
-    padding: 0 10px;
-}
-
-.cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        width: 500px !important;
-        transform: scale(0.75) !important;
-    }
-.cardOne,
-    .cardTwo{
-        height: 800px !important;
-    }
-
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        height: 300px !important;
-    }
-      @keyframes moveUp2 {
+    @keyframes moveUp2 {
     0%{top:0px;}
     100%{top:-850px}
 }
 
-
 }
 
-/* 80% */
 
+/* 80% */
 @media screen and (min-width:1800px) and (max-width: 2200px) {
 *{
-    /* color: pink; */
+    /* color: pink;     */
 
 }
 
@@ -860,35 +415,22 @@ transform: scale(0.8) rotate(-90deg);
     font-size: 2em;
     padding: 0 100px;
 }
+:root{
+    --cardRefDim: 590px;
+}
 
-.cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        width: 500px !important;
-        transform: scale(0.85) !important;
-    }
-.cardOne,
-    .cardTwo{
-        height: 800px !important;
-        
-    }
+.lastFour{
+ grid-template-columns: 45% 45%; 
+ grid-template-rows: 33%;  
+}
 
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        height: 300px !important;
-    }
+.cardSix{
+ margin-left: 220px;
+}
 
-    .cardSix{
-        margin-top: 100px;
-    }
     @keyframes moveUp2 {
     0%{top:0px;}
-    100%{top:-850px}
+    100%{top:-780px}
 }
 
 @keyframes moveUp {
@@ -898,61 +440,492 @@ transform: scale(0.8) rotate(-90deg);
 
 }
 
-/* 67% */
+/* 90% */
+@media screen and (min-width:1690px) and (max-width: 1799px) {
+   *{
+  /* color: aqua; */
+ }
 
-@media (min-width:2201px) {
-    *{
-        /* color: red; */
-    }
-    .digitalBackground{
-transform: scale(0.9) rotate(-90deg);
+ .designMarketingPage h1{
+    font-size: 4em !important;
 }
-   .designMarketingPage h1{
-    font-size: 6.3em !important;
+
+.paragraphs{
+    font-size: 1.8em;
+    padding: 0 10px;
+}
+
+:root{
+    --cardRefDim: 540px;
+}
+ @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-700px}
+}
+
+
+} 
+
+
+
+/* 110 */
+@media screen and (max-width: 1400px) and (min-width: 1300px) {
+  *{
+    /* color: darkmagenta; */
+  }
+  .digitalBackground{
+transform: scale(0.55) rotate(-90deg);
+}
+
+  .designMarketingPage h1{
+    font-size: 3.6em !important;
+}
+:root{
+    --cardRefDim: 450px;
+}
+.paragraphs{
+    font-size: 1.3em;
+    padding: 20px 40px 0px 40px;
+}
+
+.lastFour{
+ grid-template-columns: 40% 40%;   
+}
+
+.cardSix{
+    margin-left: 150px;
+}
+
+     @keyframes moveUp {
+      0%{transform:translateY(0px);}
+    100%{transform:translateY(-500px)}
+} 
+
+  @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-570px}
+}
+ 
+}
+/* 120 */
+
+@media screen and (max-width: 1301px) and (min-width:1120px) {
+  *{
+    /* color:fuchsia; */
+  }
+.digitalBackground{
+transform: scale(0.55) rotate(-90deg);
+}
+  
+  .designMarketingPage h1{
+    font-size: 3.6em !important;
+}
+
+.paragraphs{
+    font-size: 1.3em;
+    padding: 20px 40px 0px 40px;
+}
+
+:root{
+    --cardRefDim: 400px;
+}
+
+.lastFour{
+ grid-template-columns: 40% 40%;   
+}
+
+.cardSix{
+    margin-left: 150px;
+}
+
+     @keyframes moveUp {
+      0%{transform:translateY(0px);}
+    100%{transform:translateY(-450px)}
+} 
+
+  @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-550px}
+}
+
+}
+
+/* --TABLETS-- */
+
+/* 150 */
+@media screen and (max-width:1121px) and (min-width: 1025px) {
+  *{
+    /* color:green */
+ 
+}
+.digitalBackground{
+transform: scale(0.7) rotate(-90deg);
+}
+
+.container{
+    padding-top: 2em;
+}
+
+ 
+  .designMarketingPage h1{
+    font-size: 3.5em !important;
+}
+.wrapper{
+    margin-top: 0px !important;
+}
+.paragraphs{
+    font-size: 1.3em;
+    padding: 10px 40px 40px 40px;
+}
+   
+:root{
+    --cardRefDim: 420px;
+}
+
+.lastFour{
+ grid-template-columns: 40% 40%;  
+ grid-template-rows: 35%;
+}
+
+.cardSix{
+    margin-left: 120px;
+}
+
+.lastFour img{
+height: calc(var(--cardRefDim) - 110px);
+width: calc(var(--cardRefDim) - 110px);
+}
+
+.cardFive img, .cardFour img{
+height: calc(var(--cardRefDim) - 30px) !important;
+width: calc(var(--cardRefDim) - 30px);
+
+}
+
+
+
+@keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-350px)}
+} 
+
+  @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-500px}
+}
+}
+
+/* --BIG PHONES-- */
+
+
+@media (max-width: 1024px)  {
+    
+    *{
+        /* color:gold ; */
+    }
+    .digitalBackground {
+        transform: scale(0.5) rotate(-90deg);
+        top: -100px;
+        left: -30px;
+        position: absolute;
+    }
+    .container {
+        padding-top: 3rem;
+        height: auto;
+    }
+
+    .container h1 {
+        font-size: 6em !important;
+        margin-bottom: 1rem;
+        padding: 0 10px;
+    }
+
+    .paragraphs {
+        padding: 0 25px;
+        font-size: 2.5rem;
+        gap: 1rem;
+    }
+
+    .wrapper {
+        padding: auto;
+        /* grid-template-columns: 100%; */
+
+    }
+    .firstTwo div, .lastFour div{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+    
+:root{
+    --cardRefDim: 700px;
+    --lastTwo: -1300px;
+    --cardOne: 7deg;
+}
+.cardSix{
+    margin: 0 !important;
+}
+
+    .firstTwo,
+    .lastFour {
+        grid-template-columns: 100% !important;
+    }
+
+    .lastFour{
+        grid-template-rows:31% ;
+        transition: 1.5s;
+    }
+
+    @keyframes floating {
+        0%{transform: translateY(0px);}
+        100%{transform: translateY(-10px);}
+        }
+    
+    .lastFour div, .firstTwo div{    
+     animation: floating 1s ease-in-out infinite alternate;
+    }
+    
+
+     @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-1400px; }   
+}  
+@keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-1200px)}
+}
     
 }
 
-    .paragraphs{
-        font-size: 2.6em;
-        padding:80px 0 80px 0;
+@media (max-width: 993px) and (min-width: 500px) {
+   *{
+    /* color: pink */
+   }
+    .container {
+        padding-top: 0 !important ;
     }
 
-    .cardOne,
-    .cardTwo,
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        width: 500px !important;
-        height: 500px !important;
-        transform: scale(1.05) !important;
+    .container h1 {
+        font-size: 5em !important;
     }
 
-    .cardOne,
-    .cardTwo {
-        height: 960px !important;
+    .paragraphs {
+        padding: 20px 25px;
+        font-size: 2.5em;
     }
-
-    .cardThree,
-    .cardFour,
-    .cardFive,
-    .cardSix {
-        height: 350px !important;
-    }
-
-    .cardSix{
-        margin: 100px 0 0 300px !important;
-
-        
-    }
-
-    @keyframes moveUp2 {
-    0%{top:0px;}
-    100%{top:-1050px}
+    :root{
+    --cardRefDim: 650px;
+    --lastTwo: -1050px;
 }
 
 @keyframes moveUp {
     0%{transform:translateY(0px);}
-    100%{transform:translateY(-750px)}
-} 
+    100%{transform:translateY(-1000px)}
 }
+}
+
+@media (max-width: 501px) and (min-width: 416px) {
+   *{
+    /* color: lightgreen */
+   }
+    .container {
+        padding-top: 0 !important ;
+    }
+
+    .container h1 {
+        font-size: 3em !important;
+    }
+
+    .paragraphs {
+        padding: 20px 25px;
+        font-size: 1.3em;
+    }
+    :root{
+    --cardRefDim: 350px;
+    --lastTwo: -750px;
+
+}
+
+.firstTwo {
+    width: 100vw;
+}
+
+.cardThree img, .cardSix img,.cardTwo img, .cardOne img{
+width: 340px;
+height: 310px;
+margin-bottom: 60px;
+}
+.cardFive img, .cardFour img{
+width: 340px;
+height: 310px !important;
+margin-bottom: 60px;
+
+}
+
+
+/* .cardOne img{
+width: 380px !important;
+height: 380px !important;
+
+}
+
+.cardTwo img{
+width: 450px !important;
+height: 450px !important; 
+}
+
+.cardThree img, .cardSix img{
+height: 340px;
+width: 340px;
+}
+.cardFive img, .cardFour img{
+height: 400px !important;
+width: 400px;
+
+} */
+
+
+@keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-800px)}
+}
+
+   @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-780px; 
+    }   
+}  
+}
+
+@media screen and (max-width:416px) and (min-width: 390px){
+    *{
+        /* color: blue; */
+    }
+     .container {
+        padding-top: 0 !important ;
+    }
+
+    .container h1 {
+        font-size: 2.2em !important;
+    }
+
+    .paragraphs {
+        padding: 20px 25px;
+        font-size: 1.1em;
+    }
+    :root{
+    --cardRefDim: 350px;
+    --lastTwo: -800px;
+
+}
+
+.firstTwo {
+    width: 100vw;
+}
+
+
+.cardOne img{
+/* width: 380px !important;
+height: 350px !important; */
+
+}
+
+/* .cardTwo img{
+width: 450px !important;
+height: 420px !important; 
+} */
+
+.cardThree img, .cardSix img,.cardTwo img, .cardOne img{
+width: 340px;
+height: 310px;
+margin-bottom: 60px;
+}
+.cardFive img, .cardFour img{
+width: 340px;
+height: 310px !important;
+margin-bottom: 60px;
+
+}
+
+
+@keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-580px)}
+}
+
+   @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-800px; 
+    }   
+}  
+}
+
+@media screen and (max-width:389px) {
+    *{
+        /* color: blue; */
+    }
+     .container {
+        padding-top: 0 !important ;
+    }
+
+    .container h1 {
+        font-size: 2.2em !important;
+    }
+
+    .paragraphs {
+        padding: 20px 25px;
+        font-size: 1.1em;
+    }
+    :root{
+    --cardRefDim: 350px;
+    --lastTwo: -700px;
+
+}
+
+.firstTwo {
+    width: 100vw;
+}
+
+
+.lastFour {
+    grid-template-rows: 20%;
+}
+
+.cardThree img, .cardSix img,.cardTwo img, .cardOne img{
+width: 340px;
+height: 310px;
+margin-bottom: 60px;
+}
+.cardFive img, .cardFour img{
+width: 340px;
+height: 310px !important;
+margin-bottom: 20px;
+
+}
+
+
+@keyframes moveUp {
+    0%{transform:translateY(0px);}
+    100%{transform:translateY(-700px)}
+}
+
+   @keyframes moveUp2 {
+    0%{top:0px;}
+    100%{top:-700px; 
+    }   
+}  
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,16 +1,16 @@
 /* Sam's styles */
 
-.wrapper {
+/* .wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding: 60px;
     gap: 60px;
     font-family: 'Inter', sans-serif;
-}
+} */
 
 /* LEFT SIDE */
-.left {
+/* .left {
     flex: 1;
 }
 
@@ -65,10 +65,10 @@
     width: 100%;
     border-radius: 6px;
     max-width: 900px;
-}
+} */
 
 /* RIGHT SIDE */
-.right {
+/* .right {
     flex: 0.5;
     display: flex;
     justify-content: center;
@@ -109,11 +109,11 @@
     width: 100%;
     max-width: 600px;
     border-radius: 6px;
-}
+} */
 
 /* Britney's refactored styles for Supreme section */
 
-.supreme{
+/* .supreme{
     height: 82vh;
 }
 
@@ -124,33 +124,33 @@
     margin-left: 80px;
     gap: 60px;
     font-family: 'Inter', sans-serif;
-}
+} */
 
 /* Renamed from .left */
-.SupremeLeft {
+/* .SupremeLeft {
     flex: 1;
-}
+} */
 
 /* Renamed from .heading */
-.SupremeHeading {
+/* .SupremeHeading {
     font-size: 3rem;
     font-weight: 600;
     margin-bottom: 20px;
     letter-spacing: 5px;
     word-wrap: break-word;
-}
+} */
 
 /* Renamed from .paragraph */
-.SupremeParagraph {
+/* .SupremeParagraph {
     font-size: 1rem;
     line-height: 1.3;
     margin-bottom: 40px;
     max-width: 400px;
     font-weight: 450;
-}
+} */
 
 /* Renamed from .blendingSection */
-.SupremeBlendingSection {
+/* .SupremeBlendingSection {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -159,17 +159,17 @@
     margin-top: -39vh;
     margin-left: 18vw;
     height: 100%;
-}
+} */
 
 /* Renamed from .blendingImage */
-.SupremeBlendingImage {
+/* .SupremeBlendingImage {
     width: 100%;
     max-width: 600px;
     border-radius: 6px;
-}
+} */
 
 /* Renamed from .viewSite */
-.SupremeViewSite {
+/* .SupremeViewSite {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -177,10 +177,10 @@
     position: relative;
     top: -425px;
     cursor: pointer;
-}
+} */
 
 /* Renamed from .supremeBanner */
-.SupremeBanner {
+/* .SupremeBanner {
     position: absolute;
     z-index: 1000;
     margin-top: -85vh;
@@ -192,18 +192,18 @@
     width: 100%;
     border-radius: 6px;
     max-width: 900px;
-}
+} */
 
 /* Renamed from .right */
-.SupremeRight {
+/* .SupremeRight {
     flex: 0.5;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 /* Renamed from .SupremeLogo */
-.SupremeLogoImage{
+/* .SupremeLogoImage{
     width: 26vh;
     border-radius: 24px;
     display: flex;
@@ -219,7 +219,7 @@
 .SupremeArrow{
     width: 85px;
     height: 85px;
-}
+} */
 
 
 /* ========================================= */
@@ -227,67 +227,64 @@
 /* ========================================= */
 
 /* 1. Base State (Hidden) - Applied on load before scrolling into view */
-.SupremeContent, /* Slide Up Entrance */
-.SupremeBlendingSection, /* Slide Up Entrance */
-.SupremeLogoImage { /* Slide From Right Entrance */
-    /* Initial state: Invisible */
+/* .SupremeContent, 
+.SupremeBlendingSection, 
+.SupremeLogoImage { 
     opacity: 0;
-    /* Define the transition properties (0.7s duration for speed and custom curve for smooth bounce) */
     transition: opacity 0.7s cubic-bezier(0.3, 0.7, 0.4, 0.95), transform 0.7s cubic-bezier(0.3, 0.7, 0.4, 0.95);
-}
+} */
 
 /* Default initial transform for left-side elements (slide up) */
-.SupremeContent,
+/* .SupremeContent,
 .SupremeBlendingSection {
     transform: translateY(40px);
-}
+} */
 
 /* Initial transform for the Supreme Logo (slide from right) */
-.SupremeLogoImage {
-    transform: translateX(100px); /* Move 100px to the right initially */
-}
+/* .SupremeLogoImage {
+    transform: translateX(100px); 
+} */
 
 /* 2. Target State (Visible) - Applied when scrolling INTO view */
-.fadeInSlide {
-    /* Final state: Fully visible */
+/* .fadeInSlide {
     opacity: 1 !important;
-}
+} */
 
 /* Reset transforms to original position when fadeInSlide is active */
 /* Slide-Up Reset */
-.SupremeContent.fadeInSlide,
+/* .SupremeContent.fadeInSlide,
 .SupremeBlendingSection.fadeInSlide {
     transform: translateY(0) !important;
-}
+} */
 
 /* Slide-From-Right Reset */
-.SupremeLogoImage.fadeInSlide {
-    transform: translateX(0) !important; /* Move back to its original position */
-}
+/* .SupremeLogoImage.fadeInSlide {
+    transform: translateX(0) !important; 
+} */
 
 /* 3. Delay Classes for Staggered Animation */
 
 /* Supreme Text Block (.SupremeContent) is the first delayed element (0.0s) */
-.SupremeContent.fadeInSlide {
-    transition-delay: 0.0s; /* Start immediately on scroll trigger */
-}
+/* .SupremeContent.fadeInSlide {
+    transition-delay: 0.0s; 
+} */
 
 /* Blending Image (Delay 1) */
-.SupremeBlendingSection.fadeInSlide {
+/* .SupremeBlendingSection.fadeInSlide {
     transition-delay: 0.3s;
-}
+} */
 
 /* Supreme Logo (Delay 2) */
-.SupremeLogoImage.fadeInSlide {
+/* .SupremeLogoImage.fadeInSlide {
     transition-delay: 0.6s;
-}
+} */
 
 /* ========================================= */
 /* EXIT ANIMATION: Fade up and disappear when scrolling away */
 /* ========================================= */
 
-.SupremeContent.fadeOutUp {
+/* .SupremeContent.fadeOutUp {
     opacity: 0;
-    transform: translateY(-40px); /* Moves up and disappears */
+    transform: translateY(-40px); 
     transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-}
+} */
