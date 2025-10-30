@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar";
 
 const Recent_Work = () => {
-  const nav = useNavigate();
+   const nav = useNavigate();
   const Link = [
     "https://www.supremebuildit.co.za/",
     "https://rapidtrade.com/",
@@ -26,49 +26,82 @@ const Recent_Work = () => {
   const headings = ["SUPREME BUILD IT", "RAPIDTRADE", "R HADDOCK"];
   const banner = [SupremeBanner, deliveryImg, Group72];
   const logo = [SupremeLogo, rapidtradeLogo, RhLogo];
+  const description = ["Supreme Build It supplies quality building materials, hardware, and tools for builders and DIY users. With helpful services like paint-mixing, glass-cutting, and fast delivery, they make every construction or renovation project easy, affordable, and efficient from start to finish.",
+    "Rapidtrade provides an advanced cloud-based system for order and sales management. It helps distributors and reps process orders, track deliveries, and manage customers efficiently through powerful mobile tools that improve accuracy, speed, and performance.",
+    "R Haddock & Co offers a complete range of packaging materials for homes and businesses. From moving boxes and bubble wrap to tape and custom packaging, they provide strong, affordable, and practical solutions designed to protect products with quality and care.",
+  ];
+  // const svg = []
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [fade, setFade] = useState(true); // true = visible, false = faded out
+  const [fade, setFade] = useState(); // true = visible, false = faded out
   const recentWork = useRef();
+  useEffect(()=>{
+    setFade(true)
+  },[])
 
-  useEffect(() => {
-    const handleScroll = (e) => {
-      // const step = window.scrollY + 1 // every 200px scroll → new index
-      // if (step !== currentIndex && step < headings.length) {
-      // fade out first
-      setFade(false);
-      const diff = e.deltaY;
-      // after fade out, switch text and fade back in
-      setTimeout(() => {
-        if (diff > 20 && currentIndex < headings.length - 1) {
-          setCurrentIndex(currentIndex + 1);
-        } else if (diff < 1 && currentIndex > 0 && diff < -20) {
-          setCurrentIndex(currentIndex - 1);
-        }
+useEffect(() => {
+  const abortController = new AbortController();
+  const signal = abortController.signal;
 
-        if (diff > 20 && currentIndex === headings.length - 1) {
-          recentWork.current.classList.add(styles.disappear);
-          setTimeout(() => {
-            nav("/contact-us");
-          }, 1000);
-        }
-        setFade(true);
-      }, 300); // duration matches CSS fade
-      // }
-    };
+  const handleScroll = (diff) => {
+    setFade(false);
 
-    window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
-  }, [currentIndex, headings.length]);
+    setTimeout(() => {
+      if (diff > 30 && currentIndex < headings.length - 1) {
+        setCurrentIndex(currentIndex + 1);
+      } else if (diff < -30 && currentIndex > 0) {
+        setCurrentIndex(currentIndex - 1);
+      }
+
+      if (diff > 30 && currentIndex === headings.length - 1) {
+        recentWork.current.classList.add(styles.disappear);
+        setTimeout(() => {
+          abortController.abort(); // remove all listeners
+          nav("/contact-us");
+        }, 1000);
+      }
+
+      setFade(true);
+    }, 300);
+  };
+
+  const handleWheel = (e) => {
+    e.preventDefault();
+    handleScroll(e.deltaY);
+  };
+
+  let touchStartY = 0;
+  const handleTouchStart = (e) => {
+    touchStartY = e.touches[0].clientY;
+  };
+  const handleTouchEnd = (e) => {
+    const deltaY = touchStartY - e.changedTouches[0].clientY;
+    handleScroll(deltaY);
+  };
+
+  setTimeout(()=>{
+
+    window.addEventListener("wheel", handleWheel, { passive: false, signal });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true, signal });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true, signal });
+  },2500)
+
+  return () => {
+    abortController.abort(); // cleanup on unmount
+  };
+}, [currentIndex, headings.length]);
 
   return (
-    <>
+    <div className={styles.recentWorkPage}>
       <Navbar />
-      {/* <h1
-            className={styles.recentWork}
-            // ref={rwHeading}
-            >
-              Recent Work
-            </h1> */}
+      <h1
+        className={styles.recentWork}
+      // ref={rwHeading}
+      >
+        Recent Work <br/>
+         &<br/>
+        Collaborators
+      </h1>
       <img
         // ref={BGImg}
         className={styles.recentBackground}
@@ -80,19 +113,18 @@ const Recent_Work = () => {
         <div className={styles.rapidtrade} ref={recentWork}>
           <div className={styles.leftSection}>
             <h1
-              className={`${styles.title} ${
-                fade ? styles.fadeIn : styles.fadeOut
-              }`}
+              className={`${styles.title} ${fade ? styles.fadeIn : styles.fadeOut
+                }`}
             >
               {headings[currentIndex]}
             </h1>
-            <p className={styles.description}>
-              Yorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-              turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus
-              nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum
-              tellus elit sed risus. Maecenas eget condimentum velit, sit amet
-              feugiat lectus.
+            <p
+              className={`${styles.description} ${fade ? styles.fadeIn : styles.fadeOut
+                }`}
+            >
+              {description[currentIndex]}
             </p>
+
 
             <div className={styles.rapidTradeViewSite}>
               <a
@@ -127,9 +159,8 @@ const Recent_Work = () => {
               <img
                 src={banner[currentIndex]}
                 alt="Delivery"
-                className={`${styles.deliveryImg} ${
-                  fade ? styles.fadeImgIn : styles.fadeImgOut
-                }`}
+                className={`${styles.deliveryImg} ${fade ? styles.fadeImgIn : styles.fadeImgOut
+                  }`}
               />
             </div>
           </div>
@@ -137,9 +168,8 @@ const Recent_Work = () => {
             <img
               src={logo[currentIndex]}
               alt="RapidTrade Logo"
-              className={`${styles.logoImg} ${
-                fade ? styles.fadeRightIn : styles.fadeRightOut
-              }`}
+              className={`${styles.logoImg} ${fade ? styles.fadeRightIn : styles.fadeRightOut
+                }`}
             />
           </div>
           {/* <img src={Blending} className={styles.bgImage} alt="" /> */}
@@ -183,7 +213,7 @@ const Recent_Work = () => {
         </div>
       </div> */}
       </div>
-    </>
+    </div>
   );
 };
 

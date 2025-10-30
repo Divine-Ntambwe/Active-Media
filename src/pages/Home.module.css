@@ -3,6 +3,14 @@
   --dark: #0a0a0a;
 }
 
+.homePage{
+  width: 100vw !important;
+  height: 100vh;
+  overflow: hidden !important;
+  /* border: solid; */
+  position: relative;
+}
+
 .hero{
   width:100%;
   height:70vh;
@@ -15,11 +23,11 @@
 }
 
 @keyframes slide-out {
-  0%{left:0px}
-  100%{left:-1500px}
+  0%{transform:translateX(0px)}
+  100%{transform:translateX(-1000px)}
 }
 .slideOut {
-  animation: slide-out 3.5s;
+  animation: slide-out 2s;
   transition: 1s;
 
 }
@@ -29,13 +37,13 @@
   100%{opacity: 0%;}
 }
 .fadeOut {
-  animation: fade-Out 2s 1s;
+  animation: fade-Out 1.5s 0.5s;
   transition: 1s;
 
 }
 .container{
   width:100%;
-  max-width:1200px;
+  width:1200px;
   margin:0 auto;
   display:flex;
   position: relative;
@@ -69,7 +77,7 @@
   background:linear-gradient(180deg,var(--pink),#e8519b);
   color:white;
   border:none;
-  padding:12px 22px;
+  padding:8px 22px;
   border-radius:10px;
   font-size:16px;
   cursor:pointer;
@@ -101,8 +109,8 @@
 .orb1{
   position:absolute;
   /* left:50%; */
-  top:-10%; 
-  width: 500px;
+  /* top:-20% !important;  */
+  width: 550px;
   /* min-width: 90%; */
   transform:translateY(-10%);
   z-index: 2;
@@ -118,72 +126,288 @@
   bottom:6%;
   width:36%;
   transform:translateY(6%);
-   z-index: 100;
+  
 }
 
-/* ========== RESPONSIVENESS ========== */
 
-/* Medium screens (tablets, small laptops) */
-@media (max-width: 1100px) {
-    .title{
-    color: red;
-  }
-  .hero {
-    height: 67vh; /* reduce height slightly */
-  }
+/*Media Queries for different screen sizes(phones)*/
+@media(min-width:300px)and (max-width:600px){
+  .container{
+    width:100% !important;
+    height: 80vh;
+    overflow:hidden;
+    top: 5vh
+     }
 
-  .container {
-    width: 85%;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+   .blendingBackground{
+    z-index:0;
+    top: -140px;
+    width:620px;
+    height: 600px;
+    transform: scale(0.6);
+    left: -430px
+   }
 
-  .title {
-    font-size: 40px;
-  }
+   .title{
+    left: 10px;
+    font-size:24px;
+    width:300px;
+    top: 10px;
+    z-index: 5;
+   }
+   
+   
+   .cta{
+    top:5px;
+    width: 85px;
+    height: 25px;
+    font-size: 8px;
+    left: 10px;
+    z-index: 2;
+    padding: 0 11px;
+   }
 
-  .right {
-    height: 360px;
-    width: 100%;
-    margin-top: 24px;
-  }
+   .arrow{
+    font-size: 13px;
+   }
 
-  .orb1 {
-    margin-left: 0;
-    width: 70%;
-  }
+   .orb1{
+    width: 400px;
+    height: 500px;
+    top: 230px;
+    left: -553px;
+   }
+
+   .bottomCenter{
+    height: 28px;
+    /* top: 868px; */
+    margin:0 0 0 -5%;
+   }
+
 }
 
-/* Small screens (phones) */
-@media (max-width: 600px) {
-  .hero {
-    height: 80vh; /* increase to fill screen nicely */
-  }
 
-  .container {
-    width: 90%;
-    padding: 24px 12px;
-  }
+/* Media Queries for different screen sizes(100%)*/
+@media (min-width:1300px)and (max-width:1500px){
 
-  .title {
-    font-size: 28px;
-    text-align: center;
-  }
+  .container{
+    width:1900px !important;
+    height: 68.6vh;
+    overflow:hidden;
+     }
 
-  .cta {
+
+   .blendingBackground{
+    z-index:0;
+    top: -8px;
+    width:380px;
+    height: 520px;
+    transform: scale(0.8);
+    left: -490px
+   }
+
+   .title{
+    left: 20px;
+    font-size:43px;
+    width:700px;
+    top: 3px
+   }
+   
+   
+   .cta{
+    top:7px;
+    width: 150px;
+    height: 37px;
     font-size: 14px;
-    padding: 10px 18px;
-  }
+    left: 20px;
+   }
 
-  .right {
-    height: 280px;
-  }
+   .orb1{
+    width: 620px;
+    height: 685px;
+    top: -32px;
+    left: -480px;
+   }
 
-  .orb1, .orb2 {
-    display: none; /* hide for clarity on small devices */
-    position:relative;
-  }
+}
+
+
+/* Media Queries for different screen sizes(90%)*/
+@media (min-width:1500px)and (max-width:1700px){
+  .container{
+    width:1900px !important;
+    height: 72vh;
+    overflow:hidden;
+     }
+
+
+   .blendingBackground{
+    z-index:0;
+    top: -4px;
+    width:450px;
+    height: 565px;
+    transform: scale(0.8);
+    left: -450px
+   }
+
+   .title{
+    left: 20px;
+    font-size:48px;
+    width:700px;
+    top: 10px
+   }
+   
+   
+   .cta{
+    top:7px;
+    width: 167px;
+    height: 40px;
+    font-size: 16px;
+    left: 20px;
+   }
+
+   .orb1{
+    width: 690px;
+    height: 770px;
+    top: -30px;
+    left: -395px;
+   }
+
+}
+
+/* Media Queries for different screen sizes(80%)*/
+@media (min-width:1700px)and (max-width:2000px){
+
+  .container{
+    width:1800px !important;
+    height: 74vh;
+    overflow:hidden;
+     }
+
+   .blendingBackground{
+    z-index:0;
+    top: 2px;
+    width:600px;
+    height: 650px;
+    transform: scale(0.8);
+    left: -399px
+   }
+
+   .title{
+    left: 20px;
+    font-size:54px;
+    width:800px;
+    top: 20px
+   }  
+
+  
+   .cta{
+    top:20px;
+    width: 180px;
+    height: 43px;
+    font-size: 18px;
+    left: 20px;
+   }
+
+   .orb1{
+    width: 775px;
+    height: 858px;
+    top: -20px;
+    left: -260px
+   }
+
+}
+
+
+/* Media Queries for different screen sizes(75%)*/
+@media (min-width:1800px)and (max-width:2000px){
+
+  .container{
+      width:1900px !important;
+      height: 75vh;
+      overflow:hidden;
+     }
+
+
+   .blendingBackground{
+    z-index:0;
+    top: 2px;
+    width:600px;
+    height: 700px;
+    transform: scale(0.8);
+    left: -400px
+   }
+
+
+   .title{
+    left: 20px;
+    font-size:58px;
+    width:800px;
+    top: 20px
+   }
+   
+   
+   .cta{
+    top:20px;
+    width: 190px;
+    height: 49px;
+    font-size: 20px;
+    left: 20px;
+   }
+
+   .orb1{
+    width: 825px;
+    height: 910px;
+    top: -20px;
+    left: -260px
+   }
+
+}
+
+
+/* Media Queries for different screen sizes(67%)*/
+@media(min-width:2000px)and (max-width:2500px){
+
+    .container{
+      width:2600px !important;
+      height: 75vh;
+      overflow:hidden;
+     }
+
+
+   .blendingBackground{
+    z-index:0;
+    top: 2px;
+    width:650px;
+    height: 800px;
+    transform: scale(0.8);
+    left: -650px
+   }
+
+
+   .title{
+    left: 20px;
+    font-size:66px;
+    width:800px;
+    top: 32px;
+    line-height:1.14;
+   }
+   
+   
+   .cta{
+    top:35px;
+    width: 215px;
+    height: 56px;
+    font-size: 22px;
+    left: 20px;
+   }
+
+   .orb1{
+    width: 928px;
+    height: 1005px;
+    top: -20px;
+    left: -470px
+   }
 }
 
 
@@ -196,6 +420,7 @@
   font-size: 25px; 
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   color:  #ffffff;
+  z-index: 2;
 
   /* Half-capsule styles */
   background-color: #000;
