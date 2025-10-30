@@ -58,6 +58,11 @@
   /* padding-left: 100px; */
 }
 
+.bgImg{
+  border: 1px solid red;
+  /* margin-bottom: 50vh; */
+}
+
 .title {
   font-size: 4.5rem;
   font-weight: 600;
