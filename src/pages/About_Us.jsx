@@ -105,10 +105,10 @@ export default function About_Us() {
   return (
     <>
     <div className={styles.softwarePage}>
+      <Navbar/>
       <div className={styles.purpleLinesWrapper} ref={purpleLines}>
         <PurpleLines />
       </div>
-      <Navbar/>
     <section className={styles.aboutSection}>
       {/* PurpleLines always behind everything */}
 
