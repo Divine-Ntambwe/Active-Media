@@ -3,6 +3,7 @@ import styles from "./About_Us.module.css";
 import lightImg from "../assets/Frame 206.png";
 import phoneImg from "../assets/Frame 201.png"
 import MultiMedia from "../assets/Multimedia.png";
+import bgImg from "../assets/backgroundLines.png";
 import PurpleLines from "../component/purpleLines.jsx";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar.jsx";
@@ -107,7 +108,7 @@ export default function About_Us() {
     <div className={styles.softwarePage}>
       <Navbar/>
       <div className={styles.purpleLinesWrapper} ref={purpleLines}>
-        <PurpleLines />
+        <img src={bgImg}/>
       </div>
     <section className={styles.aboutSection}>
       {/* PurpleLines always behind everything */}
