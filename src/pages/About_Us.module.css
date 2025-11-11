@@ -674,7 +674,7 @@ body {
 /* --- Responsive rules only for screens 1200px and below --- */
 
 /* Large tablets / small laptops */
-@media (max-width: 1200px) {
+@media (max-width: 1023px) {
   .containerB { height: auto; padding: 4vh 5vw; }
 
   .aimSection {
@@ -1197,14 +1197,7 @@ left: 20%;
 
 /* 110% */
 @media (max-width: 1390px) and (min-width: 1230px) {
-*{
-  /* color: palegreen; */
-}
- /* SLIDE ONE */
-  .div1 h2{
-    /* font-size: 3.5em !important; */
-    /* left: 10%; */
-  }
+
   .div1 p {
     font-size: 0.95em;
   }
@@ -1285,6 +1278,165 @@ left: 20%;
     height: 220px !important;
   }
 
+}
+
+/* Small tablets (portrait) 600px - 799px */
+@media screen and (min-width: 600px) and (max-width: 799px) {
+  *{
+    /* color:pink; */
+  }
+
+  /* SLIDE ONE */
+  .div1 h2{
+    font-size: 1.25em !important;
+    /* left: 6%; */
+  }
+  .div1 p {
+    font-size: 0.85em;
+  }
+  .div1 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: -3vh;
+  }
+  .laptopWrapper img{
+    position: relative;
+    transform: scale(0.82);
+    top: -6vh;
+    left: 4vw;
+    max-width: 86%;
+    height: auto;
+  }
+  .topLeftN{
+    margin-top: 18px !important;
+    left: 8%;
+    width: 240px;
+  }
+  .bottomLeft{
+    left: 10%;
+    top: 32%;
+  }
+
+  /* SLIDE TWO */
+  .aimParagraph, .multimediaParagraph, .multimedia, .teamText, .paragraph{
+    font-size: 0.95em;
+  }
+
+  /* SLIDE THREE */
+  .teamText, .paragraph{
+    font-size: 1.05em;
+  }
+  .div3 img, .phoneImg img{
+    width: 340px !important;
+    height: 180px !important;
+    max-width: 92%;
+  }
+}
+
+/* Medium tablets (landscape small) 800px - 899px */
+@media screen and (min-width: 800px) and (max-width: 899px) {
+  *{
+    /* color:pink; */
+  }
+
+  /* SLIDE ONE */
+  .div1 h2{
+    font-size: 1.5em !important;
+    /* left: 8%; */
+  }
+  .div1 p {
+    font-size: 0.9em;
+  }
+  .div1 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: -4vh;
+  }
+  .laptopWrapper img{
+    position: relative;
+    transform: scale(0.86);
+    top: -7vh;
+    left: 5vw;
+    max-width: 88%;
+    height: auto;
+  }
+  .topLeftN{
+    margin-top: 22px !important;
+    left: 9%;
+    width: 270px;
+  }
+  .bottomLeft{
+    left: 12%;
+    top: 33%;
+  }
+
+  /* SLIDE TWO */
+  .aimParagraph, .multimediaParagraph, .multimedia, .teamText, .paragraph{
+    font-size: 1.0em;
+  }
+
+  /* SLIDE THREE */
+  .teamText, .paragraph{
+    font-size: 1.1em;
+  }
+  .div3 img, .phoneImg img{
+    width: 380px !important;
+    height: 195px !important;
+    max-width: 90%;
+  }
+}
+
+/* Large tablets (landscape / tablet max) 900px - 1024px */
+@media screen and (min-width: 900px) and (max-width: 1024px) {
+  *{
+    /* color:pink; */
+  }
+
+  /* SLIDE ONE */
+  .div1 h2{
+    font-size: 1.85em !important;
+    /* left: 9%; */
+  }
+  .div1 p {
+    font-size: 0.95em;
+  }
+  .div1 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    top: -4.5vh;
+  }
+  .laptopWrapper img{
+    position: relative;
+    transform: scale(0.9);
+    top: 6vh;
+    left: 17vw !important;
+    max-width: 90%;
+    height: auto;
+  }
+  .topLeftN{
+    margin-top: 26px !important;
+    left: 9.5%;
+    width: 290px;
+  }
+  .bottomLeft{
+    left: 13%;
+    top: 34%;
+  }
+
+  /* SLIDE TWO */
+  .aimParagraph, .multimediaParagraph, .multimedia, .teamText, .paragraph{
+    font-size: 1.02em;
+  }
+
+  /* SLIDE THREE */
+  .teamText, .paragraph{
+    font-size: 1.15em;
+  }
+  .div3 img, .phoneImg img{
+    width: 410px !important;
+    height: 210px !important;
+    max-width: 92%;
+  }
 }
 
 

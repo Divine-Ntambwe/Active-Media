@@ -33,7 +33,7 @@ const Digital_Marketing = () => {
 
   useEffect(() => {
     const ac = new AbortController();
-    setSmallScreen(!window.matchMedia("(min-width: 1025px)").matches);
+    setSmallScreen(!window.matchMedia("(min-width: 1023px)").matches);
     function handleScroll(deltaY) {
       if (deltaY > 25) {
         if (index === 0) {
