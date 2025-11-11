@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./Contact_Us.module.css";
-import emailjs from "@emailjs/browser";
+ import emailjs from "@emailjs/browser";
 import Navbar from "../component/Navbar";
 
 const Contact_Us = () => {
@@ -11,8 +11,8 @@ const Contact_Us = () => {
 
     emailjs
       .sendForm(
-        "service_6dd6fng",        
-        "template_3h7awxq",       
+        "service_6zle3yk",        
+        "template_vgllfp3",       
         form.current,
         "gBcw28gK6_wka5fry"      
       )
@@ -59,7 +59,7 @@ const Contact_Us = () => {
           <input type="email" name="user_email" required />
 
           <label>Contact Number :</label>
-          <input type="text" pattern="0\d{9}" name="contact_number" required />
+          <input type="text" name="contact_number" required />
 
           <label>Message :</label>
           <textarea
