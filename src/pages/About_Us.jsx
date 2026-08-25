@@ -1,79 +1,51 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./About_Us.module.css";
 import lightImg from "../assets/Frame 206.png";
-import phoneImg from "../assets/Frame 201.png"
+import phoneImg from "../assets/Frame 201.png";
 import MultiMedia from "../assets/Multimedia.png";
 import bgImg from "../assets/backgroundLines.png";
-import PurpleLines from "../component/purpleLines.jsx";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../component/Navbar.jsx";
+import { useScrollNavigation } from "../hooks/useScrollNavigation";
 
 export default function About_Us() {
   const containerRef = useRef(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const isScrolling = useRef(false);
   const purpleLines = useRef();
-  const slidesCount = 4;
-  const nav = useNavigate()
-  const ac = new AbortController();
+  const slidesCount = 3;
+  const navigate = useNavigate();
 
- useEffect(() => {
-  const handleWheel = (e) => {
-    e.preventDefault();
-
-    if (isScrolling.current) return;
-    isScrolling.current = true;
-
-    if (e.deltaY > 5) {
-      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
-    } else if (e.deltaY < -5) {
-      setCurrentSlide((prev) => Math.max(0, prev - 1));
+  // Use the unified scroll hook
+  const { currentSlide, setCurrentSlide } = useScrollNavigation({
+    totalSlides: slidesCount,
+    forwardTarget: '/software',
+    backwardTarget: '/',
+    onSlideChange: (newSlide, direction) => {
+      // Update purple lines position
+      switch(newSlide) {
+        case 0:
+          purpleLines.current.style.left = "-250px";
+          purpleLines.current.style.top = "0px";
+          break;
+        case 1:
+          purpleLines.current.style.left = "200px";
+          purpleLines.current.style.top = "-250px";
+          break;
+        case 2:
+          purpleLines.current.style.top = "-50px";
+          break;
+        case 3:
+          // Will navigate to /software via forwardTarget
+          break;
+        default:
+          break;
+      }
     }
+  });
 
-    setTimeout(() => {
-      isScrolling.current = false;
-    }, 700);
-  };
-
-  let touchStartY = 0;
-
-  const handleTouchStart = (e) => {
-    touchStartY = e.touches[0].clientY;
-  };
-
-  const handleTouchEnd = (e) => {
-    const touchEndY = e.changedTouches[0].clientY;
-    const deltaY = touchStartY - touchEndY;
-
-    if (isScrolling.current) return;
-    isScrolling.current = true;
-
-    if (deltaY > 20) {
-      setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
-    } else if (deltaY < -15) {
-      setCurrentSlide((prev) => Math.max(0, prev - 1));
-    }
-
-    setTimeout(() => {
-      isScrolling.current = false;
-    }, 700);
-  };
-  setTimeout(()=>{
-
-    window.addEventListener("wheel", handleWheel,{ signal: ac.signal });
-    window.addEventListener("touchstart", handleTouchStart,{ signal: ac.signal });
-    window.addEventListener("touchend", handleTouchEnd, { signal: ac.signal });
-  },1000);
-
-  return () => {
-    window.removeEventListener("wheel", handleWheel);
-    window.removeEventListener("touchstart", handleTouchStart);
-    window.removeEventListener("touchend", handleTouchEnd);
-  };
-}, []);
-
+  // Handle slide transition
   useEffect(() => {
     if (!containerRef.current) return;
+    
     const offset = -currentSlide * window.innerWidth;
     containerRef.current.style.transform = `translateX(${offset}px)`;
 
@@ -85,36 +57,16 @@ export default function About_Us() {
         slide.classList.remove(styles.active);
       }
     });
-    switch (currentSlide){
-      case 0 : purpleLines.current.style.left = "-250px"
-      purpleLines.current.style.top = "0px"
-      return;
-      case 1: { 
-        purpleLines.current.style.left = "200px"
-      purpleLines.current.style.top = "-250px"
-      return
-    }
-      case 2: purpleLines.current.style.top = "-50px"
-      return
-
-      case 3: nav("/software")
-      ac.abort();
-    }
-
   }, [currentSlide]);
 
   return (
-    <>
     <div className={styles.softwarePage}>
       <Navbar/>
       <div className={styles.purpleLinesWrapper} ref={purpleLines}>
         <img src={bgImg}/>
       </div>
-    <section className={styles.aboutSection}>
-      {/* PurpleLines always behind everything */}
-
-      {/* Slides container */}
-      <div className={styles.slidesContainer} ref={containerRef}>
+      <section className={styles.aboutSection}>
+        <div className={styles.slidesContainer} ref={containerRef}>
         {/* Slide 1 */}
         <div className={`${styles.aboutDiv} ${styles.div1} ${styles.aboutDivN} ${styles.div1N}`}>
           <div className={`${styles.laptopWrapper} ${styles.fadeInStagger} ${styles.laptopWrapperN}`}>
@@ -244,6 +196,6 @@ export default function About_Us() {
       </div>
     </section>
     </div>
-    </>
+    
   );
 }
