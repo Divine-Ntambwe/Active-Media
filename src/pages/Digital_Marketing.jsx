@@ -41,7 +41,6 @@ const Digital_Marketing = () => {
     backwardTarget: '/software',
     debounceDelay: 800,
     onSlideChange: (newSlide, direction) => {
-      // newSlide is the slide we're GOING TO (0-based index)
       console.log("Going to slide:", newSlide, "Direction:", direction);
       
       // Slide 0 → 1: First animation
