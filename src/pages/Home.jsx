@@ -25,7 +25,7 @@ function Home() {
   useScrollNavigation({
     totalSlides: 1,
     forwardTarget: '/about-us',
-    backwardTarget: '/', // Stay on home
+    // backwardTarget: '/', // Stay on home
     debounceDelay: 1200,
     onNavigateForward: handleNavigate
   });

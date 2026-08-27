@@ -1,3 +1,4 @@
+// pages/Software.jsx
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Software.module.css";
 import PurpleLines from "../component/purpleLines";
@@ -13,11 +14,6 @@ import { useScrollNavigation } from "../hooks/useScrollNavigation";
 export default function Software() {
   const navigate = useNavigate();
   const [laptop, setLaptop] = useState(purpleLaptop);
-  const [showFirst, setShowFirst] = useState(true); // ✅ ADD THIS
-  const [cloudFadeClass, setCloudFadeClass] = useState(""); // ✅ ADD THIS
-  
-  // ✅ ADD THIS REF
-  const bottomDivRef = useRef(null);
   
   // Refs for animation elements
   const title1 = useRef(), par1 = useRef(), par2 = useRef();
@@ -28,108 +24,233 @@ export default function Software() {
   const par4 = useRef(), cloudBasedImg = useRef();
   const supremeImg = useRef(), supremeImg2 = useRef();
 
-  // ✅ ADD THIS for navigation to Digital Marketing
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          document.body.style.transition = "opacity 1s ease";
-          document.body.style.opacity = "0";
-
-          window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth",
-          });
-
-          setTimeout(() => {
-            document.body.style.opacity = "1";
-            navigate("/design-marketing");
-          }, 1500);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    const current = bottomDivRef.current;
-    if (current) observer.observe(current);
-
-    return () => current && observer.unobserve(current);
-  }, [navigate]);
-
   // Use unified scroll hook
-  useScrollNavigation({
+  const { currentSlide } = useScrollNavigation({
     totalSlides: 5,
     forwardTarget: '/design-marketing',
-    backwardTarget: '/about-us',
     debounceDelay: 600,
     onSlideChange: (newSlide, direction) => {
-      // Animation logic per slide
+      // Handle backward at start
+      if (direction === 'backward-at-start' && newSlide === 0) {
+        navigate('/');
+        return;
+      }
+      
       const prevSlide = newSlide - 1;
       
-      if (prevSlide === 0) {
-        setLaptop(`${purpleLaptop}?${Date.now()}`);
-        title1.current?.classList.remove(styles.fadeIn);
-        title1.current?.classList.add(styles.fadeOut);
-        par1.current?.classList.remove(styles.fadeIn);
-        par1.current?.classList.add(styles.disappear);
-        par2.current?.classList.remove(styles.fadeIn);
-        par2.current?.classList.add(styles.disappear);
-        cloudRef.current?.classList.add(styles.fadeIn2);
-        laptopGif.current?.classList.add(styles.moveLaptop1);
-        if (bgImg.current) {
-          bgImg.current.style.transform = "translateY(200px) translateX(100px)";
+      // ============================================
+      // FORWARD: Add animations
+      // ============================================
+      if (direction === 'forward') {
+        if (prevSlide === 0) {
+          setLaptop(`${purpleLaptop}?${Date.now()}`);
+          title1.current?.classList.remove(styles.fadeIn);
+          title1.current?.classList.add(styles.fadeOut);
+          par1.current?.classList.remove(styles.fadeIn);
+          par1.current?.classList.add(styles.disappear);
+          par2.current?.classList.remove(styles.fadeIn);
+          par2.current?.classList.add(styles.disappear);
+          cloudRef.current?.classList.add(styles.fadeIn2);
+          laptopGif.current?.classList.add(styles.moveLaptop1);
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(200px) translateX(100px)";
+          }
         }
-        setShowFirst(false); // ✅ Hide first slide
+
+        if (prevSlide === 1) {
+          setLaptop(`${purpleLaptop}?${Date.now()}`);
+          div3.current?.classList.add(styles.fadeIn3);
+          if (div2Content.current) {
+            div2Content.current.style.transform = "translateY(-550px)";
+          }
+          laptopGif.current?.classList.remove(styles.moveLaptop1);
+          laptopGif.current?.classList.add(styles.moveLaptop2);
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(0px) translateX(500px)";
+          }
+        }
+
+        if (prevSlide === 2) {
+          setLaptop(`${purpleLaptop}?${Date.now()}`);
+          div2Content.current?.classList.add(styles.disappear);
+          div3.current?.classList.remove(styles.fadeIn3);
+          div3.current?.classList.add(styles.fadeOut3);
+          div4.current?.classList.add(styles.fadeIn4);
+          laptopGif.current?.classList.remove(styles.moveLaptop2);
+          laptopGif.current?.classList.add(styles.moveLaptop3);
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(0px) translateX(0px)";
+          }
+        }
+
+        if (prevSlide === 3) {
+          setLaptop(`${purpleLaptop}?${Date.now()}`);
+          if (div4Content.current) {
+            div4Content.current.style.transform = "translateY(-550px)";
+          }
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(300px) translateX(0px)";
+          }
+          div5.current?.classList.add(styles.fadeIn5);
+          laptopGif.current?.classList.remove(styles.moveLaptop3);
+          laptopGif.current?.classList.add(styles.moveLaptop4);
+        }
+
+        if (prevSlide === 4) {
+          setLaptop(`${purpleLaptop}?${Date.now()}`);
+          div4Content.current?.classList.add(styles.disappear);
+          supremeImg2.current?.classList.add(styles.disappear);
+          laptopGif.current?.classList.remove(styles.moveLaptop4);
+          laptopGif.current?.classList.add(styles.moveLaptop5);
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(300px) translateX(300px)";
+            bgImg.current.classList.add(styles.disappear);
+          }
+        }
       }
 
-      if (prevSlide === 1) {
-        setLaptop(`${purpleLaptop}?${Date.now()}`);
-        div3.current?.classList.add(styles.fadeIn3);
-        if (div2Content.current) {
-          div2Content.current.style.transform = "translateY(-550px)";
+      // ============================================
+      // BACKWARD: REMOVE animations (RESET!)
+      // ============================================
+      if (direction === 'backward') {
+        // When going BACK to Slide 0 (first slide)
+        if (newSlide === 0) {
+          // Reset all animations
+          title1.current?.classList.remove(styles.fadeOut);
+          title1.current?.classList.add(styles.fadeIn);
+          par1.current?.classList.remove(styles.disappear);
+          par1.current?.classList.add(styles.fadeIn);
+          par2.current?.classList.remove(styles.disappear);
+          par2.current?.classList.add(styles.fadeIn);
+          
+          // Remove cloud animations
+          cloudRef.current?.classList.remove(styles.fadeIn2);
+          
+          // Reset laptop position
+          laptopGif.current?.classList.remove(
+            styles.moveLaptop1,
+            styles.moveLaptop2,
+            styles.moveLaptop3,
+            styles.moveLaptop4,
+            styles.moveLaptop5
+          );
+          
+          // Reset background
+          if (bgImg.current) {
+            bgImg.current.style.transform = "";
+            bgImg.current.classList.remove(styles.disappear);
+          }
+          
+          // Reset div3
+          div3.current?.classList.remove(styles.fadeIn3, styles.fadeOut3);
+          
+          // Reset div4
+          div4.current?.classList.remove(styles.fadeIn4);
+          
+          // Reset div5
+          div5.current?.classList.remove(styles.fadeIn5);
+          
+          // Reset div2Content
+          if (div2Content.current) {
+            div2Content.current.style.transform = "";
+            div2Content.current.classList.remove(styles.disappear);
+          }
+          
+          // Reset div4Content
+          if (div4Content.current) {
+            div4Content.current.style.transform = "";
+            div4Content.current.classList.remove(styles.disappear);
+          }
+          
+          // Reset supremeImg2
+          supremeImg2.current?.classList.remove(styles.disappear);
         }
-        laptopGif.current?.classList.remove(styles.moveLaptop1);
-        laptopGif.current?.classList.add(styles.moveLaptop2);
-        if (bgImg.current) {
-          bgImg.current.style.transform = "translateY(0px) translateX(500px)";
-        }
-      }
 
-      if (prevSlide === 2) {
-        setLaptop(`${purpleLaptop}?${Date.now()}`);
-        div2Content.current?.classList.add(styles.disappear);
-        div3.current?.classList.remove(styles.fadeIn3);
-        div3.current?.classList.add(styles.fadeOut3);
-        div4.current?.classList.add(styles.fadeIn4);
-        laptopGif.current?.classList.remove(styles.moveLaptop2);
-        laptopGif.current?.classList.add(styles.moveLaptop3);
-        if (bgImg.current) {
-          bgImg.current.style.transform = "translateY(0px) translateX(0px)";
+        // When going BACK to Slide 1 (cloud section)
+        if (newSlide === 1) {
+          // Remove div3 animations
+          div3.current?.classList.remove(styles.fadeIn3, styles.fadeOut3);
+          
+          // Reset laptop to moveLaptop1 position
+          laptopGif.current?.classList.remove(
+            styles.moveLaptop2,
+            styles.moveLaptop3,
+            styles.moveLaptop4,
+            styles.moveLaptop5
+          );
+          laptopGif.current?.classList.add(styles.moveLaptop1);
+          
+          // Reset div2Content
+          if (div2Content.current) {
+            div2Content.current.style.transform = "";
+            div2Content.current.classList.remove(styles.disappear);
+          }
+          
+          // Reset background
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(200px) translateX(100px)";
+            bgImg.current.classList.remove(styles.disappear);
+          }
         }
-      }
 
-      if (prevSlide === 3) {
-        setLaptop(`${purpleLaptop}?${Date.now()}`);
-        if (div4Content.current) {
-          div4Content.current.style.transform = "translateY(-550px)";
+        // When going BACK to Slide 2 (E-commerce)
+        if (newSlide === 2) {
+          // Remove div4 animations
+          div4.current?.classList.remove(styles.fadeIn4);
+          
+          // Reset laptop to moveLaptop2 position
+          laptopGif.current?.classList.remove(
+            styles.moveLaptop3,
+            styles.moveLaptop4,
+            styles.moveLaptop5
+          );
+          laptopGif.current?.classList.add(styles.moveLaptop2);
+          
+          // Reset div3
+          div3.current?.classList.remove(styles.fadeOut3);
+          div3.current?.classList.add(styles.fadeIn3);
+          
+          // Reset background
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(0px) translateX(500px)";
+          }
         }
-        if (bgImg.current) {
-          bgImg.current.style.transform = "translateY(300px) translateX(0px)";
-        }
-        div5.current?.classList.add(styles.fadeIn5);
-        laptopGif.current?.classList.remove(styles.moveLaptop3);
-        laptopGif.current?.classList.add(styles.moveLaptop4);
-      }
 
-      if (prevSlide === 4) {
-        setLaptop(`${purpleLaptop}?${Date.now()}`);
-        div4Content.current?.classList.add(styles.disappear);
-        supremeImg2.current?.classList.add(styles.disappear);
-        laptopGif.current?.classList.remove(styles.moveLaptop4);
-        laptopGif.current?.classList.add(styles.moveLaptop5);
-        if (bgImg.current) {
-          bgImg.current.style.transform = "translateY(300px) translateX(300px)";
-          bgImg.current.classList.add(styles.disappear);
+        // When going BACK to Slide 3
+        if (newSlide === 3) {
+          // Reset div5 animations
+          div5.current?.classList.remove(styles.fadeIn5);
+          
+          // Reset laptop to moveLaptop3 position
+          laptopGif.current?.classList.remove(
+            styles.moveLaptop4,
+            styles.moveLaptop5
+          );
+          laptopGif.current?.classList.add(styles.moveLaptop3);
+          
+          // Reset div4Content
+          if (div4Content.current) {
+            div4Content.current.style.transform = "";
+            div4Content.current.classList.remove(styles.disappear);
+          }
+          
+          // Reset background
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(0px) translateX(0px)";
+          }
+        }
+
+        // When going BACK to Slide 4
+        if (newSlide === 4) {
+          // Reset laptop to moveLaptop4 position
+          laptopGif.current?.classList.remove(styles.moveLaptop5);
+          laptopGif.current?.classList.add(styles.moveLaptop4);
+          
+          // Reset background
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(300px) translateX(0px)";
+            bgImg.current.classList.remove(styles.disappear);
+          }
         }
       }
     }
@@ -147,14 +268,14 @@ export default function Software() {
         {/* Slide 1 */}
         <div
           className={`${styles.slide} ${styles.div1} ${
-            showFirst ? styles.active : styles.fadeOutSection
+            currentSlide === 0 ? styles.active : styles.fadeOutSection
           }`}
         >
           <div className={styles.textBlock}>
             <h1
               ref={title1}
               className={`${styles.title1} ${
-                showFirst ? styles.fadeIn : styles.fadeOut
+                currentSlide === 0 ? styles.fadeIn : styles.fadeOut
               }`}
             >
               Software <br /> Development
@@ -163,7 +284,7 @@ export default function Software() {
             <div
               ref={par1}
               className={`${styles.services} ${
-                showFirst ? styles.fadeIn : styles.fadeOut
+                currentSlide === 0 ? styles.fadeIn : styles.fadeOut
               }`}
             >
               <p>WEB</p>
@@ -175,7 +296,7 @@ export default function Software() {
           <div
             ref={par2}
             className={`${styles.paragraphBox} ${styles.firstPar} ${
-              showFirst ? styles.fadeIn : styles.fadeOut
+              currentSlide === 0 ? styles.fadeIn : styles.fadeOut
             }`}
           >
             <p>
@@ -190,7 +311,7 @@ export default function Software() {
         {/* Slide 2 (Cloud-Based Solutions) */}
         <div
           ref={cloudRef}
-          className={`${styles.slide} ${styles.container} ${styles.div2} ${cloudFadeClass}`}
+          className={`${styles.slide} ${styles.container} ${styles.div2}`}
         >
           <div ref={div2Content} className={styles.div2Content}>
             <div className={styles.content}>
@@ -288,9 +409,6 @@ export default function Software() {
           </div>
         </div>
       </section>
-      <div ref={bottomDivRef} className="navigateToMarketing">
-        l
-      </div>
     </div>
   );
 }

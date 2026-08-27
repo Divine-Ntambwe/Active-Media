@@ -9,11 +9,12 @@ export const useScrollNavigation = ({
   onNavigateBackward,
   forwardTarget,
   backwardTarget = '/',
+  initialSlide = 0,
   debounceDelay = 700,
   touchThreshold = 20,
   wheelThreshold = 5
 }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(initialSlide);
   const isScrolling = useRef(false);
   const navigate = useNavigate();
 
@@ -31,12 +32,16 @@ export const useScrollNavigation = ({
           onNavigateForward();
         }
         if (forwardTarget) {
-          setTimeout(() => navigate(forwardTarget), 300);
+          // Pass the last slide index when navigating forward
+          setTimeout(() => {
+            navigate(forwardTarget, { 
+              state: { fromSlide: totalSlides - 1 } 
+            });
+          }, 300);
         }
         return prev;
       }
 
-      // Call the onSlideChange callback
       if (onSlideChange) {
         onSlideChange(next, 'forward');
       }
@@ -57,29 +62,26 @@ export const useScrollNavigation = ({
     setCurrentSlide(prev => {
       const next = prev - 1;
       
-      // If we're at the first slide, navigate backward
-      if (next < 0) {
-        if (onNavigateBackward) {
-          onNavigateBackward();
+      // If we can go to previous slide
+      if (next >= 0) {
+        if (onSlideChange) {
+          onSlideChange(next, 'backward');
         }
-        if (backwardTarget) {
-          setTimeout(() => navigate(backwardTarget), 300);
-        }
-        return prev;
+        return next;
       }
-
-      // Call the onSlideChange callback
+      
+      // We're on the FIRST slide - tell the page
       if (onSlideChange) {
-        onSlideChange(next, 'backward');
+        onSlideChange(0, 'backward-at-start');
       }
-
-      return next;
+      
+      return prev;
     });
 
     setTimeout(() => {
       isScrolling.current = false;
     }, debounceDelay);
-  }, [onSlideChange, onNavigateBackward, backwardTarget, navigate, debounceDelay]);
+  }, [onSlideChange, debounceDelay]);
 
   // Wheel event handler
   const handleWheel = useCallback((e) => {
@@ -126,7 +128,6 @@ export const useScrollNavigation = ({
     const abortController = new AbortController();
     const { signal } = abortController;
 
-    // Add listeners immediately (no delay!)
     window.addEventListener('wheel', handleWheel, { passive: false, signal });
     window.addEventListener('touchstart', handleTouchStart, { passive: true, signal });
     window.addEventListener('touchend', handleTouchEnd, { passive: true, signal });

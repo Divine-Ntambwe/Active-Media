@@ -1,10 +1,11 @@
+// pages/About_Us.jsx
 import React, { useRef, useEffect } from "react";
 import styles from "./About_Us.module.css";
 import lightImg from "../assets/Frame 206.png";
 import phoneImg from "../assets/Frame 201.png";
 import MultiMedia from "../assets/Multimedia.png";
 import bgImg from "../assets/backgroundLines.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Navbar from "../component/Navbar.jsx";
 import { useScrollNavigation } from "../hooks/useScrollNavigation";
 
@@ -13,13 +14,22 @@ export default function About_Us() {
   const purpleLines = useRef();
   const slidesCount = 3;
   const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Get the slide we should start on (from Home)
+  const fromSlide = location.state?.fromSlide || 0;
 
-  // Use the unified scroll hook
-  const { currentSlide, setCurrentSlide } = useScrollNavigation({
+  const { currentSlide } = useScrollNavigation({
     totalSlides: slidesCount,
     forwardTarget: '/software',
-    backwardTarget: '/',
+    initialSlide: fromSlide,
     onSlideChange: (newSlide, direction) => {
+      // Handle backward at start - go to Home
+      if (direction === 'backward-at-start' && newSlide === 0) {
+        navigate('/');
+        return;
+      }
+      
       // Update purple lines position
       switch(newSlide) {
         case 0:
@@ -32,9 +42,6 @@ export default function About_Us() {
           break;
         case 2:
           purpleLines.current.style.top = "-50px";
-          break;
-        case 3:
-          // Will navigate to /software via forwardTarget
           break;
         default:
           break;
@@ -67,135 +74,132 @@ export default function About_Us() {
       </div>
       <section className={styles.aboutSection}>
         <div className={styles.slidesContainer} ref={containerRef}>
-        {/* Slide 1 */}
-        <div className={`${styles.aboutDiv} ${styles.div1} ${styles.aboutDivN} ${styles.div1N}`}>
-          <div className={`${styles.laptopWrapper} ${styles.fadeInStagger} ${styles.laptopWrapperN}`}>
-            <img src="/laptop.png" alt="Laptop" className={`${styles.laptop} ${styles.laptopN}`} />
+          {/* Slide 1 */}
+          <div className={`${styles.aboutDiv} ${styles.div1} ${styles.aboutDivN} ${styles.div1N}`}>
+            <div className={`${styles.laptopWrapper} ${styles.fadeInStagger} ${styles.laptopWrapperN}`}>
+              <img src="/laptop.png" alt="Laptop" className={`${styles.laptop} ${styles.laptopN}`} />
+            </div>
+            <h2 className={`${styles.heading} ${styles.fadeInStagger} ${styles.headingN}`}>
+              WHO ARE WE ?
+            </h2>
+            <p className={`${styles.textBlockN} ${styles.topLeftN} ${styles.fadeInStagger} ${styles.textBlock} ${styles.topLeft}`}>
+              We are a software development and <br />
+              media agency that focuses on <br />
+              business growth
+            </p>
+            <p className={`${styles.textBlock} ${styles.bottomLeft} ${styles.fadeInStagger} ${styles.textBlockN} ${styles.bottomLeftN}`}>
+              Active Media consists <br /> of a team of people <br />
+              that are passionate <br /> about what they do <br />
+              and strive to ensure <br />
+              that only the very best <br />
+              service is offered to <br /> our clients.
+              <br />
+              We stand by our company ethics <br />– ensuring honesty, <br />
+              authenticity and excellence. <br />
+              You have ideas. We have software solutions.
+            </p>
+            <p className={`${styles.textBlock} ${styles.rightBlock} ${styles.fadeInStagger} ${styles.textBlockN} ${styles.rightBlockN}`}>
+              Active Media is a premier multimedia solution company <br />
+              with innovative and distinctive solutions <br />
+              that go beyond the traditional means of marketing. <br />
+              Great business needs great software
+            </p>
           </div>
-          <h2 className={`${styles.heading} ${styles.fadeInStagger} ${styles.headingN}`}>
-            WHO ARE WE ?
-          </h2>
-          <p className={`${styles.textBlockN} ${styles.topLeftN} ${styles.fadeInStagger} ${styles.textBlock} ${styles.topLeft}`}>
-            We are a software development and <br />
-            media agency that focuses on <br />
-            business growth
-          </p>
-          <p className={`${styles.textBlock} ${styles.bottomLeft} ${styles.fadeInStagger} ${styles.textBlockN} ${styles.bottomLeftN}`}>
-            Active Media consists <br /> of a team of people <br />
-            that are passionate <br /> about what they do <br />
-            and strive to ensure <br />
-            that only the very best <br />
-            service is offered to <br /> our clients.
-            <br />
-            We stand by our company ethics <br />– ensuring honesty, <br />
-            authenticity and excellence. <br />
-            You have ideas. We have software solutions.
-          </p>
-          <p className={`${styles.textBlock} ${styles.rightBlock} ${styles.fadeInStagger} ${styles.textBlockN} ${styles.rightBlockN}`}>
-            Active Media is a premier multimedia solution company <br />
-            with innovative and distinctive solutions <br />
-            that go beyond the traditional means of marketing. <br />
-            Great business needs great software
-          </p>
-        </div>
 
-        {/* Slide 2 */}
-        <div className={`${styles.aboutDiv} ${styles.div2}`}>
-          <div className={`${styles.containerB} ${styles.fadeInStagger}`}>
-            {/* Top Section */}
-            <div className={`${styles.aimSection} ${styles.fadeInStagger}`}>
-              <div className={styles.bigText}>
-                WE ARE A SOFTWARE <br />
-                DEVELOPMENT AND MEDIA <br />
-                AGENCY THAT FOCUSES ON <br />
-                BUSINESSES GROWTH.
+          {/* Slide 2 */}
+          <div className={`${styles.aboutDiv} ${styles.div2}`}>
+            <div className={`${styles.containerB} ${styles.fadeInStagger}`}>
+              <div className={`${styles.aimSection} ${styles.fadeInStagger}`}>
+                <div className={styles.bigText}>
+                  WE ARE A SOFTWARE <br />
+                  DEVELOPMENT AND MEDIA <br />
+                  AGENCY THAT FOCUSES ON <br />
+                  BUSINESSES GROWTH.
+                </div>
+                <div className={styles.aimParagraph}>
+                  We aim to provide each individual service <br />
+                  to a whole host of industries. Our <br />
+                  expertise allows us to fully customise <br />
+                  each product to work for every individual <br />
+                  business model - providing a strong <br />
+                  foundation with which any business can <br />
+                  begin to maximise on their potential.
+                </div>
               </div>
-              <div className={styles.aimParagraph}>
-                We aim to provide each individual service <br />
-                to a whole host of industries. Our <br />
-                expertise allows us to fully customise <br />
-                each product to work for every individual <br />
-                business model - providing a strong <br />
-                foundation with which any business can <br />
-                begin to maximise on their potential.
+
+              <div className={`${styles.SoftwareSection} ${styles.fadeInStagger}`}>
+                <div className={styles.mediaImageDiv}>
+                  <img
+                    src={MultiMedia}
+                    alt="Multimedia"
+                    className={styles.mediaImage}
+                  />
+                </div>
+
+                <div className={styles.mediaContent}>
+                  <div className={styles.multimedia}><b>Multimedia</b></div>
+                  <div className={styles.multimediaParagraph}>
+                    Active Media is a premier multimedia solution company with
+                    innovative and distinctive solutions that go beyond the
+                    traditional means of marketing. Great business needs great
+                    software.
+                  </div>
+                  <div className={styles.software}>Software</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Slide 3 */}
+          <div className={`${styles.aboutDiv} ${styles.div3}`}>
+            <div className={`${styles.container1} ${styles.fadeInStagger}`}>
+              <div className={styles.text}>
+                <h5>Team</h5>
+                <p className={styles.teamText}>
+                  Active Media consists of a team of <br />
+                  people that are passionate about what <br />
+                  they do and strive to ensure that only <br />
+                  the very best service is offered to our 
+                  clients.
+                  <br />
+                  We stand by our company ethics -<br/>
+                   ensuring honesty, authenticity and
+                  excellence.
+                  <br />
+                  You have ideas. We have software solutions
+                </p>
+                <p className={styles.passionate}>Passionate</p>
+              </div>
+              <div className={styles.lightimage}>
+                <img src={lightImg} alt="LightBulb" />
               </div>
             </div>
 
-            {/* Multimedia + Software section */}
-            <div className={`${styles.SoftwareSection} ${styles.fadeInStagger}`}>
-              <div className={styles.mediaImageDiv}>
+            <div className={`${styles.container1} ${styles.fadeInStagger}`}>
+              <div className={styles.phoneImg}>
                 <img
-                  src={MultiMedia}
-                  alt="Multimedia"
-                  className={styles.mediaImage}
+                  src={phoneImg}
+                  alt="Phone"
+                  className={styles.image1}
                 />
               </div>
-
-              <div className={styles.mediaContent}>
-                <div className={styles.multimedia}><b>Multimedia</b></div>
-                <div className={styles.multimediaParagraph}>
-                  Active Media is a premier multimedia solution company with
-                  innovative and distinctive solutions that go beyond the
-                  traditional means of marketing. Great business needs great
-                  software.
-                </div>
-                <div className={styles.software}>Software</div>
+              <div className={styles.text2}>
+                <h1 className={styles.title}>Solutions</h1>
+                <p className={styles.paragraph}>
+                  We aim to provide each individual service to a whole host of
+                  industries.
+                  <br />
+                  Our expertise allows us to fully customise each product to work
+                  for every individual business model - providing a strong
+                  foundation with which any business can begin to maximise on their
+                  potential.
+                </p>
+                <p className={styles.experties}>Expertise</p>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Slide 3 */}
-        <div className={`${styles.aboutDiv} ${styles.div3}`}>
-          <div className={`${styles.container1} ${styles.fadeInStagger}`}>
-            <div className={styles.text}>
-              <h5>Team</h5>
-              <p className={styles.teamText}>
-                Active Media consists of a team of <br />
-                people that are passionate about what <br />
-                they do and strive to ensure that only <br />
-                the very best service is offered to our 
-                clients.
-                <br />
-                We stand by our company ethics -<br/>
-                 ensuring honesty, authenticity and
-                excellence.
-                <br />
-                You have ideas. We have software solutions
-              </p>
-              <p className={styles.passionate}>Passionate</p>
-            </div>
-            <div className={styles.lightimage}>
-              <img src={lightImg} alt="LightBulb" />
-            </div>
-          </div>
-
-          <div className={`${styles.container1} ${styles.fadeInStagger}`}>
-            <div className={styles.phoneImg}>
-              <img
-                src={phoneImg}
-                alt="Phone"
-                className={styles.image1}
-              />
-            </div>
-            <div className={styles.text2}>
-              <h1 className={styles.title}>Solutions</h1>
-              <p className={styles.paragraph}>
-                We aim to provide each individual service to a whole host of
-                industries.
-                <br />
-                Our expertise allows us to fully customise each product to work
-                for every individual business model - providing a strong
-                foundation with which any business can begin to maximise on their
-                potential.
-              </p>
-              <p style={{}}className={styles.experties}>Expertise</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
     </div>
-    
   );
 }
