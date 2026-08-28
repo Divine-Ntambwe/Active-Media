@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+// pages/Software.jsx
+import React, { useEffect, useState, useRef } from "react";
 import styles from "./Software.module.css";
 import PurpleLines from "../component/purpleLines";
 import purpleLaptop from "../assets/8b33733d2e54c0a5d76d8a9d0e2dabc54a0ced29.gif";
@@ -7,207 +7,315 @@ import backgroundElement from "../assets/Frame 77.png";
 import frame78 from "../assets/Frame 78.png";
 import frame79 from "../assets/Frame 79.png";
 import frame111 from "../assets/Frame 111.png";
-
 import Navbar from "../component/Navbar";
-import ECommercePage from "./ECommercePage";
 import { useNavigate } from "react-router-dom";
 
-export default function Software() {
-  const [showFirst, setShowFirst] = useState(true);
-
-  // For Cloud_Based_Solutions
-  const cloudRef = useRef(null);
-  const [cloudFadeClass, setCloudFadeClass] = useState("");
-
-  const div1 = useRef();
-  const par1 = useRef(),
-    title1 = useRef(),
-    par2 = useRef(),
-    div2 = useRef(),
-    div3 = useRef(),
-    div4 = useRef(),
-    div5 = useRef(),
-    title2 = useRef(),
-    title3 = useRef(),
-    par3 = useRef(),
-    par4 = useRef(),
-    cloudBasedImg = useRef(),
-    supremeImg = useRef(),
-    supremeImg2 = useRef(),
-    laptopGif = useRef(),
-    bgImg = useRef(),
-    div2Content = useRef(),
-    div4Content = useRef();
-  const [slide, setSlide] = useState(0);
-  const [show, setShow] = useState(true);
-  const nav = useNavigate();
-  const [laptop, setLaptop] = useState(`${purpleLaptop}`);
-
-  useEffect(
-    () => {
-      const SWIPE_THRESHOLD = 50; // pixels
-      const DEBOUNCE_MS = 300; // prevent rapid repeats
-
-      const isAnimatingRef = { current: false };
-      let lastTrigger = 0;
-      let touchStartY = 0;
-
-      const advanceSlide = () => {
-        if (isAnimatingRef.current) return;
-        const now = Date.now();
-        if (now - lastTrigger < DEBOUNCE_MS) return;
-        lastTrigger = now;
-        isAnimatingRef.current = true;
-
-        setSlide((prevSlide) => {
-          const next = prevSlide + 1;
-
-          // Run transition logic for the NEXT slide (mirrors original checks on slide)
-          if (prevSlide === 0) {
-            setLaptop(`${purpleLaptop}?${Date.now()}`);
-            title1.current.classList.remove(styles.fadeIn);
-            title1.current.classList.add(styles.fadeOut);
-            par1.current.classList.remove(styles.fadeIn);
-            par1.current.classList.add(styles.disappear);
-            par2.current.classList.remove(styles.fadeIn);
-            par2.current.classList.add(styles.disappear);
-            cloudRef.current.classList.add(styles.fadeIn2);
-            laptopGif.current.classList.add(styles.moveLaptop1);
-            bgImg.current.style.transform =
-              "translateY(200px) translateX(100px)";
-          }
-
-          if (prevSlide === 1) {
-            setLaptop(`${purpleLaptop}?${Date.now()}`);
-            div3.current.classList.add(styles.fadeIn3);
-            div2Content.current.style.transform = "translateY(-550px)";
-            laptopGif.current.classList.remove(styles.moveLaptop1);
-            laptopGif.current.classList.add(styles.moveLaptop2);
-            bgImg.current.style.transform = "translateY(0px) translateX(500px)";
-          }
-
-          if (prevSlide === 2) {
-            setLaptop(`${purpleLaptop}?${Date.now()}`);
-            div2Content.current.classList.add(styles.disappear);
-            div3.current.classList.remove(styles.fadeIn3);
-            div3.current.classList.add(styles.fadeOut3);
-            div4.current.classList.add(styles.fadeIn4);
-            laptopGif.current.classList.remove(styles.moveLaptop2);
-            laptopGif.current.classList.add(styles.moveLaptop3);
-            bgImg.current.style.transform = "translateY(0px) translateX(0px)";
-          }
-
-          if (prevSlide === 3) {
-            setLaptop(`${purpleLaptop}?${Date.now()}`);
-            div4Content.current.style.transform = "translateY(-550px)";
-            bgImg.current.style.transform = "translateY(300px) translateX(0px)";
-            div5.current.classList.add(styles.fadeIn5);
-            laptopGif.current.classList.remove(styles.moveLaptop3);
-            laptopGif.current.classList.add(styles.moveLaptop4);
-          }
-
-          if (prevSlide === 4) {
-            setLaptop(`${purpleLaptop}?${Date.now()}`);
-            div4Content.current.classList.add(styles.disappear);
-            supremeImg2.current.classList.add(styles.disappear);
-            laptopGif.current.classList.remove(styles.moveLaptop4);
-            laptopGif.current.classList.add(styles.moveLaptop5);
-            bgImg.current.style.transform =
-              "translateY(300px) translateX(300px)";
-            bgImg.current.classList.add(styles.disappear);
-
-            setTimeout(() => {
-              window.addEventListener("wheel", wheelHandler); // restore wheel if you removed it
-              nav("/design-marketing");
-            }, 1000);
-          }
-
-          // allow next trigger after a short delay so animations can start
-          setTimeout(() => {
-            isAnimatingRef.current = false;
-          }, Math.max(DEBOUNCE_MS, 600));
-
-          return next;
-        });
-      };
-
-      const wheelHandler = (e) => {
-        // small delay to match your original setTimeout( ..., 100)
-        setTimeout(() => {
-          if (e.deltaY > 20) {
-            advanceSlide();
-          } else if (e.deltaY < -20) {
-            window.location.reload();
-          }
-        }, 100);
-      };
-
-      const touchStart = (e) => {
-        if (!e.touches || e.touches.length === 0) return;
-        touchStartY = e.touches[0].clientY;
-      };
-
-      const touchEnd = (e) => {
-        const touchEndY =
-          (e.changedTouches && e.changedTouches[0].clientY) || 0;
-        const deltaY = touchStartY - touchEndY;
-
-        if (deltaY > SWIPE_THRESHOLD) {
-          advanceSlide();
-        } else if (deltaY < -SWIPE_THRESHOLD) {
-          window.location.reload();
-        }
-      };
-
-      // Attach listeners after a small delay (keeps your original timing)
-      const attachTimeout = setTimeout(() => {
-        if (window.matchMedia("(min-width:1023px)").matches) {
-          window.addEventListener("wheel", wheelHandler, { passive: true });
-          window.addEventListener("touchstart", touchStart, { passive: true });
-          window.addEventListener("touchend", touchEnd, { passive: true });
-        }
-      }, 500);
-
-      return () => {
-        clearTimeout(attachTimeout);
-        window.removeEventListener("wheel", wheelHandler);
-        window.removeEventListener("touchstart", touchStart);
-        window.removeEventListener("touchend", touchEnd);
-      };
-    },
-    [
-      /* no slide here because we use functional updates inside */
-    ]
-  );
-
-  const bottomDivRef = useRef(null);
+function useSoftwareScroll(onSlideChange, navigate) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const currentSlideRef = useRef(0);
+  const callbackRef = useRef(onSlideChange);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          document.body.style.transition = "opacity 1s ease";
-          document.body.style.opacity = "0";
+    callbackRef.current = onSlideChange;
+  }, [onSlideChange]);
 
-          window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth",
-          });
+  useEffect(() => {
+    if (!window.matchMedia("(min-width: 1023px)").matches) return undefined;
 
-          setTimeout(() => {
-            document.body.style.opacity = "1";
-            nav("/design-marketing");
-          }, 1500);
+    let isScrolling = false;
+    let touchStartY = 0;
+    const unlockDelay = 600;
+
+    const move = (direction) => {
+      if (isScrolling) return;
+      isScrolling = true;
+
+      const previousSlide = currentSlideRef.current;
+      const nextSlide = direction === "forward" ? previousSlide + 1 : previousSlide - 1;
+
+      if (nextSlide < 0) {
+        navigate("/about-us");
+      } else if (nextSlide >= 5) {
+        navigate("/design-marketing");
+      } else {
+        currentSlideRef.current = nextSlide;
+        setCurrentSlide(nextSlide);
+        callbackRef.current(nextSlide, direction);
+      }
+
+      window.setTimeout(() => {
+        isScrolling = false;
+      }, unlockDelay);
+    };
+
+    const onWheel = (event) => {
+      if (event.deltaY > 20) move("forward");
+      if (event.deltaY < -20) move("backward");
+    };
+
+    const onTouchStart = (event) => {
+      touchStartY = event.touches[0]?.clientY ?? 0;
+    };
+
+    const onTouchEnd = (event) => {
+      const touchEndY = event.changedTouches[0]?.clientY ?? touchStartY;
+      const deltaY = touchStartY - touchEndY;
+      if (deltaY > 50) move("forward");
+      if (deltaY < -50) move("backward");
+    };
+
+    window.addEventListener("wheel", onWheel, { passive: true });
+    window.addEventListener("touchstart", onTouchStart, { passive: true });
+    window.addEventListener("touchend", onTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchend", onTouchEnd);
+    };
+  }, [navigate]);
+
+  return currentSlide;
+}
+
+export default function Software() {
+  const navigate = useNavigate();
+  const [laptop, setLaptop] = useState(purpleLaptop);
+  
+  // Refs for animation elements
+  const title1 = useRef(), par1 = useRef(), par2 = useRef();
+  const div2Content = useRef(), div3 = useRef(), div4 = useRef();
+  const div5 = useRef(), laptopGif = useRef(), bgImg = useRef();
+  const div4Content = useRef(), cloudRef = useRef();
+  const title2 = useRef(), title3 = useRef(), par3 = useRef();
+  const par4 = useRef(), cloudBasedImg = useRef();
+  const supremeImg = useRef(), supremeImg2 = useRef();
+
+  const currentSlide = useSoftwareScroll((newSlide, direction) => {
+      // Handle backward at start
+      if (direction === 'backward-at-start' && newSlide === 0) {
+        navigate('/about-us');
+        return;
+      }
+      
+      const prevSlide = newSlide - 1;
+      
+      // ============================================
+      // FORWARD: Add animations
+      // ============================================
+      if (direction === 'forward') {
+        if (prevSlide === 0) {
+          setLaptop(`${purpleLaptop}?${Date.now()}`);
+          title1.current?.classList.remove(styles.fadeIn);
+          title1.current?.classList.add(styles.fadeOut);
+          par1.current?.classList.remove(styles.fadeIn);
+          par1.current?.classList.add(styles.disappear);
+          par2.current?.classList.remove(styles.fadeIn);
+          par2.current?.classList.add(styles.disappear);
+          cloudRef.current?.classList.add(styles.fadeIn2);
+          laptopGif.current?.classList.add(styles.moveLaptop1);
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(200px) translateX(100px)";
+          }
         }
-      },
-      { threshold: 0.5 }
-    );
 
-    const current = bottomDivRef.current;
-    if (current) observer.observe(current);
+        if (prevSlide === 1) {
+          setLaptop(`${purpleLaptop}?${Date.now()}`);
+          div3.current?.classList.add(styles.fadeIn3);
+          if (div2Content.current) {
+            div2Content.current.style.transform = "translateY(-550px)";
+          }
+          laptopGif.current?.classList.remove(styles.moveLaptop1);
+          laptopGif.current?.classList.add(styles.moveLaptop2);
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(0px) translateX(500px)";
+          }
+        }
 
-    return () => current && observer.unobserve(current);
-  }, [nav]);
+        if (prevSlide === 2) {
+          setLaptop(`${purpleLaptop}?${Date.now()}`);
+          div2Content.current?.classList.add(styles.disappear);
+          div3.current?.classList.remove(styles.fadeIn3);
+          div3.current?.classList.add(styles.fadeOut3);
+          div4.current?.classList.add(styles.fadeIn4);
+          laptopGif.current?.classList.remove(styles.moveLaptop2);
+          laptopGif.current?.classList.add(styles.moveLaptop3);
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(0px) translateX(0px)";
+          }
+        }
+
+        if (prevSlide === 3) {
+          setLaptop(`${purpleLaptop}?${Date.now()}`);
+          if (div4Content.current) {
+            div4Content.current.style.transform = "translateY(-550px)";
+          }
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(300px) translateX(0px)";
+          }
+          div5.current?.classList.add(styles.fadeIn5);
+          laptopGif.current?.classList.remove(styles.moveLaptop3);
+          laptopGif.current?.classList.add(styles.moveLaptop4);
+        }
+
+        if (prevSlide === 4) {
+          setLaptop(`${purpleLaptop}?${Date.now()}`);
+          div4Content.current?.classList.add(styles.disappear);
+          supremeImg2.current?.classList.add(styles.disappear);
+          laptopGif.current?.classList.remove(styles.moveLaptop4);
+          laptopGif.current?.classList.add(styles.moveLaptop5);
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(300px) translateX(300px)";
+            bgImg.current.classList.add(styles.disappear);
+          }
+        }
+      }
+
+      // ============================================
+      // BACKWARD: REMOVE animations (RESET!)
+      // ============================================
+      if (direction === 'backward') {
+        // When going BACK to Slide 0 (first slide)
+        if (newSlide === 0) {
+          // Reset all animations
+          title1.current?.classList.remove(styles.fadeOut);
+          title1.current?.classList.add(styles.fadeIn);
+          par1.current?.classList.remove(styles.disappear);
+          par1.current?.classList.add(styles.fadeIn);
+          par2.current?.classList.remove(styles.disappear);
+          par2.current?.classList.add(styles.fadeIn);
+          
+          // Remove cloud animations
+          cloudRef.current?.classList.remove(styles.fadeIn2);
+          
+          // Reset laptop position
+          laptopGif.current?.classList.remove(
+            styles.moveLaptop1,
+            styles.moveLaptop2,
+            styles.moveLaptop3,
+            styles.moveLaptop4,
+            styles.moveLaptop5
+          );
+          
+          // Reset background
+          if (bgImg.current) {
+            bgImg.current.style.transform = "";
+            bgImg.current.classList.remove(styles.disappear);
+          }
+          
+          // Reset div3
+          div3.current?.classList.remove(styles.fadeIn3, styles.fadeOut3);
+          
+          // Reset div4
+          div4.current?.classList.remove(styles.fadeIn4);
+          
+          // Reset div5
+          div5.current?.classList.remove(styles.fadeIn5);
+          
+          // Reset div2Content
+          if (div2Content.current) {
+            div2Content.current.style.transform = "";
+            div2Content.current.classList.remove(styles.disappear);
+          }
+          
+          // Reset div4Content
+          if (div4Content.current) {
+            div4Content.current.style.transform = "";
+            div4Content.current.classList.remove(styles.disappear);
+          }
+          
+          // Reset supremeImg2
+          supremeImg2.current?.classList.remove(styles.disappear);
+        }
+
+        // When going BACK to Slide 1 (cloud section)
+        if (newSlide === 1) {
+          // Remove div3 animations
+          div3.current?.classList.remove(styles.fadeIn3, styles.fadeOut3);
+          
+          // Reset laptop to moveLaptop1 position
+          laptopGif.current?.classList.remove(
+            styles.moveLaptop2,
+            styles.moveLaptop3,
+            styles.moveLaptop4,
+            styles.moveLaptop5
+          );
+          laptopGif.current?.classList.add(styles.moveLaptop1);
+          
+          // Reset div2Content
+          if (div2Content.current) {
+            div2Content.current.style.transform = "";
+            div2Content.current.classList.remove(styles.disappear);
+          }
+          
+          // Reset background
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(200px) translateX(100px)";
+            bgImg.current.classList.remove(styles.disappear);
+          }
+        }
+
+        // When going BACK to Slide 2 (E-commerce)
+        if (newSlide === 2) {
+          // Remove div4 animations
+          div4.current?.classList.remove(styles.fadeIn4);
+          
+          // Reset laptop to moveLaptop2 position
+          laptopGif.current?.classList.remove(
+            styles.moveLaptop3,
+            styles.moveLaptop4,
+            styles.moveLaptop5
+          );
+          laptopGif.current?.classList.add(styles.moveLaptop2);
+          
+          // Reset div3
+          div3.current?.classList.remove(styles.fadeOut3);
+          div3.current?.classList.add(styles.fadeIn3);
+          
+          // Reset background
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(0px) translateX(500px)";
+          }
+        }
+
+        // When going BACK to Slide 3
+        if (newSlide === 3) {
+          // Reset div5 animations
+          div5.current?.classList.remove(styles.fadeIn5);
+          
+          // Reset laptop to moveLaptop3 position
+          laptopGif.current?.classList.remove(
+            styles.moveLaptop4,
+            styles.moveLaptop5
+          );
+          laptopGif.current?.classList.add(styles.moveLaptop3);
+          
+          // Reset div4Content
+          if (div4Content.current) {
+            div4Content.current.style.transform = "";
+            div4Content.current.classList.remove(styles.disappear);
+          }
+          
+          // Reset background
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(0px) translateX(0px)";
+          }
+        }
+
+        // When going BACK to Slide 4
+        if (newSlide === 4) {
+          // Reset laptop to moveLaptop4 position
+          laptopGif.current?.classList.remove(styles.moveLaptop5);
+          laptopGif.current?.classList.add(styles.moveLaptop4);
+          
+          // Reset background
+          if (bgImg.current) {
+            bgImg.current.style.transform = "translateY(300px) translateX(0px)";
+            bgImg.current.classList.remove(styles.disappear);
+          }
+        }
+      }
+  }, navigate);
 
   return (
     <div className={styles.softwarePage}>
@@ -221,15 +329,14 @@ export default function Software() {
         {/* Slide 1 */}
         <div
           className={`${styles.slide} ${styles.div1} ${
-            showFirst ? styles.active : styles.fadeOutSection
+            currentSlide === 0 ? styles.active : styles.fadeOutSection
           }`}
         >
-          {/* <PurpleLines /> */}
           <div className={styles.textBlock}>
             <h1
               ref={title1}
               className={`${styles.title1} ${
-                showFirst ? styles.fadeIn : styles.fadeOut
+                currentSlide === 0 ? styles.fadeIn : styles.fadeOut
               }`}
             >
               Software <br /> Development
@@ -238,7 +345,7 @@ export default function Software() {
             <div
               ref={par1}
               className={`${styles.services} ${
-                showFirst ? styles.fadeIn : styles.fadeOut
+                currentSlide === 0 ? styles.fadeIn : styles.fadeOut
               }`}
             >
               <p>WEB</p>
@@ -250,7 +357,7 @@ export default function Software() {
           <div
             ref={par2}
             className={`${styles.paragraphBox} ${styles.firstPar} ${
-              showFirst ? styles.fadeIn : styles.fadeOut
+              currentSlide === 0 ? styles.fadeIn : styles.fadeOut
             }`}
           >
             <p>
@@ -265,7 +372,7 @@ export default function Software() {
         {/* Slide 2 (Cloud-Based Solutions) */}
         <div
           ref={cloudRef}
-          className={`${styles.slide} ${styles.container} ${styles.div2}${cloudFadeClass}`}
+          className={`${styles.slide} ${styles.container} ${styles.div2}`}
         >
           <div ref={div2Content} className={styles.div2Content}>
             <div className={styles.content}>
@@ -277,25 +384,22 @@ export default function Software() {
               </div>
 
               <div className={styles.right}>
-                <div
-                 className={`${styles.pinkPar2}`}
-                >
-
-                <p
-                  id={`${styles.edit}`}
-                  className={`${styles.pinkBox1} ${styles.pinkBox}`}
-                  ref={par3}
-                >
-                  Whether you want to move your
-                  <br />
-                  current solutions to the cloud or
-                  <br />
-                  develop
-                  <br />
-                  a new project from scratch, we got
-                  <br />
-                  you covered
-                </p>
+                <div className={`${styles.pinkPar2}`}>
+                  <p
+                    id={`${styles.edit}`}
+                    className={`${styles.pinkBox1} ${styles.pinkBox}`}
+                    ref={par3}
+                  >
+                    Whether you want to move your
+                    <br />
+                    current solutions to the cloud or
+                    <br />
+                    develop
+                    <br />
+                    a new project from scratch, we got
+                    <br />
+                    you covered
+                  </p>
                 </div>
                 <img
                   src={backgroundElement}
@@ -313,10 +417,8 @@ export default function Software() {
             <img src={`${frame78}`} alt="" />
           </div>
         </div>
-        {/* Ozias(start) */}
-        {/*  */}
-        {/* Slide 3 (ECommerce) */}
 
+        {/* Slide 3 (ECommerce) */}
         <div
           className={`${styles.slide} ${styles.ecommerceSection}`}
           ref={div4}
@@ -326,15 +428,13 @@ export default function Software() {
               E-COMMERCE
             </h1>
 
-            {/* First Section - like the screenshot */}
             <div className={styles.div4}>
               <div className={styles.leftSection}>
                 <img
                   ref={supremeImg}
                   src={`${frame79}`}
                   alt="A cut above the rest"
-                  className={`${styles.mainImage} 
-                }`}
+                  className={`${styles.mainImage}`}
                 />
               </div>
 
@@ -370,9 +470,6 @@ export default function Software() {
           </div>
         </div>
       </section>
-      <div ref={bottomDivRef} className="navigateToMarketing">
-        l
-      </div>
     </div>
   );
 }

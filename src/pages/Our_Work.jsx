@@ -61,6 +61,11 @@ useEffect(() => {
         }, 1000);
       }
 
+      if (diff < 0 && currentIndex === 0) {
+        abortController.abort();
+        nav("/design-marketing");
+      }
+
       setFade(true);
     }, 300);
   };
