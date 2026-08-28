@@ -11,6 +11,8 @@ import Navbar from "../component/Navbar.jsx";
 export default function About_Us() {
   const containerRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const slideRef = useRef(0);
+  const currentSlideRef = useRef(0);
   const isScrolling = useRef(false);
   const purpleLines = useRef();
   const slidesCount = 4;
@@ -27,7 +29,11 @@ export default function About_Us() {
     if (e.deltaY > 5) {
       setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
     } else if (e.deltaY < -5) {
-      setCurrentSlide((prev) => Math.max(0, prev - 1));
+      if (currentSlideRef.current === 0) {
+        nav("/");
+      } else {
+        setCurrentSlide((prev) => Math.max(0, prev - 1));
+      }
     }
 
     setTimeout(() => {
@@ -51,7 +57,11 @@ export default function About_Us() {
     if (deltaY > 20) {
       setCurrentSlide((prev) => Math.min(slidesCount - 1, prev + 1));
     } else if (deltaY < -15) {
-      setCurrentSlide((prev) => Math.max(0, prev - 1));
+      if (currentSlideRef.current === 0) {
+        nav("/");
+      } else {
+        setCurrentSlide((prev) => Math.max(0, prev - 1));
+      }
     }
 
     setTimeout(() => {
@@ -60,7 +70,7 @@ export default function About_Us() {
   };
   setTimeout(()=>{
 
-    window.addEventListener("wheel", handleWheel,{ signal: ac.signal });
+    window.addEventListener("wheel", handleWheel, { passive: false, signal: ac.signal });
     window.addEventListener("touchstart", handleTouchStart,{ signal: ac.signal });
     window.addEventListener("touchend", handleTouchEnd, { signal: ac.signal });
   },1000);
@@ -74,6 +84,8 @@ export default function About_Us() {
 
   useEffect(() => {
     if (!containerRef.current) return;
+    currentSlideRef.current = currentSlide;
+    slideRef.current = currentSlide;
     const offset = -currentSlide * window.innerWidth;
     containerRef.current.style.transform = `translateX(${offset}px)`;
 

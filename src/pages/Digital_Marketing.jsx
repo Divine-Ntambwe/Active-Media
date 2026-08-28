@@ -32,54 +32,60 @@ const Digital_Marketing = () => {
   const [smallScreenSize, setSmallScreen] = useState(false);
 
   useEffect(() => {
+      indexRef.current = index;
     const ac = new AbortController();
     setSmallScreen(!window.matchMedia("(min-width: 1023px)").matches);
-    function handleScroll(deltaY) {
-      if (deltaY > 25) {
-        if (index === 0) {
-          BGImg.current.style.top = "100px";
-          heading.current.classList.add(styles.moveUp);
-          par.current.classList.add(styles.disappear);
-          wrapper.current.classList.add(styles.moveUp);
-        }
-        if (index === 1) {
-          BGImg.current.style.left = "800px";
-          BGImg.current.style.top = "100px";
-          lastFour.current.classList.add(styles.moveUp2);
-          firstTwo.current.classList.add(styles.disappear);
-        }
-        if (index === 2) {
-          if (
-            window.matchMedia("(max-width:2201px) and (min-width: 1025px)")
-              .matches
-          ) {
-            container.current.classList.add(styles.slideOut);
-            // rwHeading.current.style.display = "inline";
-            // rwHeading.current.classList.add(styles.moveRW);
-            BGImg.current.style.left = "800px";
-            BGImg.current.style.top = "-150px";
-            setTimeout(() => {
-              ac.abort();
-              BGImg.current.classList.add(styles.disappear);
-              window.removeEventListener("wheel", onWheel);
-              window.removeEventListener("touchstart", onTouchStart);
-              window.removeEventListener("touchmove", onTouchMove);
-              nav("/recent");
-            }, 800);
-          } else {
-            lastFour.current.style.transform = "translateY(var(--lastTwo))";
-          }
-        }
-        if (index == 3) {
+   function handleScroll(deltaY) {
+  const currentIndexValue = indexRef.current;
+  
+  if (deltaY > 25) {
+    // Forward scroll logic - use currentIndexValue for conditions
+    if (currentIndexValue === 0) {
+      BGImg.current.style.top = "100px";
+      heading.current.classList.add(styles.moveUp);
+      par.current.classList.add(styles.disappear);
+      wrapper.current.classList.add(styles.moveUp);
+    }
+    if (currentIndexValue === 1) {
+      BGImg.current.style.left = "800px";
+      BGImg.current.style.top = "100px";
+      lastFour.current.classList.add(styles.moveUp2);
+      firstTwo.current.classList.add(styles.disappear);
+    }
+    if (currentIndexValue === 2) {
+      if (
+        window.matchMedia("(max-width:2201px) and (min-width: 1025px)")
+          .matches
+      ) {
+        container.current.classList.add(styles.slideOut);
+        BGImg.current.style.left = "800px";
+        BGImg.current.style.top = "-150px";
+        setTimeout(() => {
           ac.abort();
+          BGImg.current.classList.add(styles.disappear);
+          window.removeEventListener("wheel", onWheel);
+          window.removeEventListener("touchstart", onTouchStart);
+          window.removeEventListener("touchmove", onTouchMove);
           nav("/recent");
-        }
-        setIndex(index + 1);
-      } else if (deltaY < -25) {
-        window.location.reload();
+        }, 800);
+      } else {
+        lastFour.current.style.transform = "translateY(var(--lastTwo))";
       }
     }
-
+    if (currentIndexValue === 3) {
+      ac.abort();
+      nav("/recent");
+    }
+    setIndex(currentIndexValue + 1);
+  } else if (deltaY < -25) {
+    // Backward scroll logic - already using the ref correctly
+    if (currentIndexValue === 0) {
+      nav("/software");
+    } else {
+      setIndex(currentIndexValue - 1);
+    }
+  }
+}
     function onWheel(e) {
       setTimeout(() => handleScroll(e.deltaY), 100);
     }
